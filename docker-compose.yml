@@ -1,0 +1,11 @@
+---
+
+version: '3.7'
+
+services:
+  exercises:
+    build: .
+    volumes:
+      - .:/exercises-typescript
+    command: make check
+

@@ -1,0 +1,7 @@
+---
+
+language:
+  docker_image: "hexletbasics/exercises-typescript"
+  extension: ts
+  exercise_filename: index.ts
+  exercise_test_filename: test.ts
