@@ -1,7 +1,7 @@
 {
   "name": "hexlet-basics",
   "scripts": {
-    "test": "jest"
+    "test": "jest --colors"
   },
   "dependencies": {
     "@types/sinon": "10.0.6",
