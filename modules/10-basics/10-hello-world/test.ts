@@ -1,7 +1,9 @@
-import { sinon } from 'sinon';
+import sinon from 'sinon';
+import getPathToIndex from '../../../src/tests';
 
 test('hello world', async () => {
 	// FIXME: дописать
-	sinon.spy(console, 'log');
-	await import('./index');
+	const spy = sinon.spy(console, 'log');
+	await import(getPathToIndex());
+	sinon.assert.calledWith(spy, 'Hello, World!');
 });

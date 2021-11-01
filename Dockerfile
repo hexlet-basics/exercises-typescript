@@ -1,9 +1,6 @@
 FROM hexletbasics/base-image:latest
 
-RUN npm install -g typescript
-RUN npm install -g jest jest-cli babel-jest @babel/core @babel/preset-env
-RUN npm install -g ts-jest @types/jest
-RUN npm install -g sinon
+RUN npm install -g jest jest-cli
 
 WORKDIR /exercises-typescript
 
