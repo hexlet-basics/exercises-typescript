@@ -1,7 +1,7 @@
-import { sinon } from 'sinon';
+import sinon from 'sinon';
 
 test('hello world', async () => {
-	// FIXME: дописать
-	sinon.spy(console, 'log');
-	await import('./index');
+	const spy = sinon.spy(console, 'log');
+	await import(`${__dirname}/index`);
+	sinon.assert.calledWith(spy, 'Hello, World!');
 });
