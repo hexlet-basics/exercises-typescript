@@ -1,11 +1,9 @@
 ---
 
-version: '3.7'
+version: '3'
 
 services:
   exercises:
     build: .
-    volumes:
-      - .:/exercises-typescript
+    image: hexletbasics/exercises-typescript:cached
     command: make check
-
