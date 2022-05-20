@@ -1,3 +1,3 @@
 // @ts-check
 
-import './index.ts';
+test('comments', async () => {});
