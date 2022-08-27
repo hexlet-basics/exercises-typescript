@@ -1,1 +1,1 @@
-jest
+npx jest --colors
