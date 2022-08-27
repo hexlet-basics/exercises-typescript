@@ -1,7 +1,5 @@
-import sinon from 'sinon';
+import multi from './index';
 
-test('hello world', async () => {
-  const spy = sinon.spy(console, 'log');
-  await import(`${__dirname}/index`);
-  sinon.assert.calledWith(spy, 'Hello, World!');
+test('hello world', () => {
+    expect(multi(1, 3)).toBe(3);
 });
