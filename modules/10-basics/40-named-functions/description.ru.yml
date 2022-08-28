@@ -7,7 +7,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name: string) {
-      return `Hello, #{name.toUpperCase()}!`;
+    return `Hello, #{name.toUpperCase()}!`;
   }
   ```
 
@@ -24,7 +24,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name?: string) {
-      return `Hello, #{name ? name.toUpperCase() : 'Guest'}!`;
+    return `Hello, #{name ? name.toUpperCase() : 'Guest'}!`;
   }
 
   getGreetingPhrase('Mike'); // Hello, Mike!
@@ -37,7 +37,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name?: string | null) {
-      return `Hello, #{name ? name.toUpperCase() : 'Guest'}!`;
+    return `Hello, #{name ? name.toUpperCase() : 'Guest'}!`;
   }
   ```
 
@@ -49,10 +49,10 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name: string = 'Guest') {
-      return `Hello, #{name.toUpperCase()}!`;
+    return `Hello, #{name.toUpperCase()}!`;
   }
 
-  getGreetingPhrase(); // Hello, Guest!
+  getGreetingPhrase() // Hello, Guest!
   ```
 
   ## Тип возвращаемого значения
@@ -60,8 +60,8 @@ theory: |
   Во многих случаях, TypeScript выводит тип возвращаемого значения самостоятельно, но его можно указывать явно:
 
   ```typescript
-  function getGreetingPhrase(name: string) : string {
-      return `Hello, #{name.toUpperCase()}!`;
+  function getGreetingPhrase(name: string): string {
+    return `Hello, #{name.toUpperCase()}!`;
   }
   ```
 
@@ -69,15 +69,15 @@ theory: |
 
 instructions: |
 
-  На данном этапе мы знаем ещё слишком мало, чтобы писать какой-то интересный код, поэтому просто скопируйте и выполните код ниже. В этом коде используется библиотека ActiveSupport, которая расширяет язык некоторыми полезными возможностями. Изначально она была создана для Rails, но используется и за его пределами.
+  Реализуйте функцию `getHiddenCard()`, которая принимает на вход номер кредитки (состоящий из 16 цифр) в виде строки и возвращает его скрытую версию, которая может использоваться на сайте для отображения. Если исходная карта имела номер *2034399002125581*,  то скрытая версия выглядит так *\*\*\*\*5581*. Другими словами, функция заменяет первые 12 символов, на звездочки. Количество звездочек регулируется вторым необязательным параметром. Значение по умолчанию — 4.
 
-  ```ruby
-  # На сервере время в UTC
-  # Считаться будет от него
-  puts 1.day.ago - 1.week + 3.hours
+  ```javascript
+  // Кредитка передается внутрь как строка
+  getHiddenCard('1234567812345678', 2) // "**5678"
+  getHiddenCard('1234567812345678', 3) // "***5678"
+  getHiddenCard('1234567812345678')    // "****5678"
+  getHiddenCard('2034399002121100', 1) // "*1100"
   ```
 
-tips:
-  - |
-    [Ruby-комьюнити](https://slack-ru.hexlet.io/)
 # tips:
+#   - |

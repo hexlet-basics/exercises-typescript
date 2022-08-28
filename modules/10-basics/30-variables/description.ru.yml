@@ -10,7 +10,7 @@ theory: |
 
   let company = 'Hexlet';
   let user = {
-      firstName: 'Miro',
+    firstName: 'Miro',
   };
   let fruits = ['apple', 'banana'];
   ```
@@ -51,7 +51,7 @@ theory: |
 
   ```typescript
   let user = {
-      firstName: 'Miro',
+    firstName: 'Miro',
   };
 
   // Property 'lastName' does not exist on type '{ firstName: string; }'.

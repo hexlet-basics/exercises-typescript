@@ -3,8 +3,27 @@
 name: Анонимные функции
 theory: |
 
+  В отличии от именованных функций, анонимные и стрелочные функции почти всегда используются в том же месте где и определяются. Благодаря этому TypeScript может вывести типы их параметров. Для определения таких функций указание типов опускают:
+
+  ```typescript
+  const fruits = ['banana', 'mango', 'apple'];
+  const upperFruits = fruits.map((name) => name.toUpperCase());
+  // ['BANANA', 'MANGO', 'APPLE']
+  ```
+
+  Этот процесс называется *contextual typing*, так как контекст определения функции, позволяет вывести типы входных параметров. В итоге код выглядит абсолютно идентично коду на JavaScript
+
+  Если функция определяется вне контекста, то к ней применяются те же правила, что и к именованным функциям.
+
+  ```typescript
+  const toUpper = (name: string): string => name.toUpperCase();
+  const upperFruits = fruits.map(toUpper);
+  ```
+
 
 instructions: |
+
+  FIXME: add instructions
 
 
 # tips:

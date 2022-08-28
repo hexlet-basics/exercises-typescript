@@ -1,0 +1,59 @@
+---
+
+name: Типы Объектов (Object Types)
+theory: |
+
+  Тип объекта состоит из типов всех входящих в него свойств. Он выводится автоматически:
+
+  ```typescript
+  // Тип: { firstName: string; points: number; }
+  const user = {
+    firstName: 'Mike',
+    pointsCount: 1000,
+  };
+
+  // Type 'number' is not assignable to type 'string'.
+  user.firstName = 7;
+  ```
+
+  В отличии от JavaScript, TypeScript не позволяет обращаться к несуществующим свойствам. Это значит, что структура любого объекта должна быть задана при его инициализации.
+
+  ```typescript
+  // Property 'age' does not exist on type '{ firstName: string; points: number; }'.
+  user.age = 100;
+  ```
+
+  Чтобы принять такой объект в функцию как параметр, нужно указать его структуру:
+
+  ```typescript
+  // Свойства в описании типа разделяются ;
+  function doSomething(user: { firstName: string; pointsCount: number; }) {
+    // ...
+  }
+  ```
+
+  Теперь во внутрь можно передавать любой объект, совпадающий по свойствам:
+
+  ```typescript
+  doSomething({ firstName: 'Alice', pointsCount: 2000 });
+  doSomething({ firstName: 'Bob', pointsCount: 1800 });
+
+  // Так нельзя
+  doSomething({ firstName: 'Bob' });
+  // И так тоже
+  doSomething({ firstName: 'Bob', pointsCount: 1800, key: 'another' });
+  ```
+
+  Как и в случае примитивных типов данных, ни null ни undefined по умолчанию не разрешены. Чтобы изменить это поведение, понадобятся уже знакомые инструменты:
+
+  ```typescript
+  // firstName может быть undefined
+  // pointsCount может быть null
+  function doSomething(user: { firstName?: string; pointsCount: number | null; }) {
+    // ...
+  }
+  ```
+
+instructions: |
+
+# tips:

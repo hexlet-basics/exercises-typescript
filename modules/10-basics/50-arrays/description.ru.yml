@@ -1,0 +1,37 @@
+---
+
+name: Массивы
+theory: |
+
+  Как и в случае с примитивными типами данных, TypeScript умеет выводить тип массива.
+
+  ```typescript
+  const fruits = ['banana', 'mango', 'apple'];
+  // Все работает
+  const upperFruits = fruits.map((name) => name.toUpperCase());
+
+  // А так уже нет
+  // Property 'key' does not exist on type 'string'.
+  const upperFruits = fruits.map((name) => name.key);
+  ```
+
+  Однако, массив это составной тип данных, который представляет собой контейнер для какого-то другого типа. Например массив чисел это не тоже самое что массив строк. Такой тип обозначается по-другому, используя квадратные скобки: `number[]`, `string[]`. Определение массива выше можно было бы записать так:
+
+  ```typescript
+  const fruits: string[] = ['banana', 'mango', 'apple'];
+  ```
+
+  Точно так же описываются типы в определении функций:
+
+  ```typescript
+  function toUpperArray(items: string[]) {
+    return items.map((s) => s.toUpperCase());
+  }
+  ```
+
+instructions: |
+
+  FIXME: add instructions
+
+# tips:
+#   - |

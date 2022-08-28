@@ -1,12 +1,14 @@
-function repeat(text: string, count: number) {
-    // BEGIN
-    let result = '';
-    for (let i = 0; i < count; i += 0) {
-        result += text;
-    }
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 
-    return result;
-    // END
+function repeat(text: string, count: number) {
+  // BEGIN
+  let result = '';
+  for (let i = 0; i < count; i += 0) {
+    result += text;
+  }
+
+  return result;
+  // END
 }
 
 export default repeat;

@@ -1,9 +1,14 @@
 env:
   browser: false
   es2021: true
-extends: standard-with-typescript
+  node: true
+extends:
+  - airbnb-base
+  - airbnb-typescript/base
 overrides: []
 parserOptions:
+  project: './tsconfig.json'
   ecmaVersion: latest
   sourceType: module
-rules: {}
+rules:
+  no-console: 0

@@ -25,10 +25,9 @@ theory: |
 
   Если в таком коде есть ошибки типов, например в функцию вместо числа пришел `null`, то об ошибке мы узнаем только во время запуска кода, например:
 
-  ```typescript
+  ```javascript
   function sum(a, b) {
-      # Отступ 4 пробела
-      return a + b;
+    return a + b;
   }
 
   sum(null, 5); // упс
@@ -38,7 +37,7 @@ theory: |
 
   ```typescript
   function sum(a: number, b: number) {
-      return a + b;
+    return a + b;
   }
 
   sum(null, 5);
