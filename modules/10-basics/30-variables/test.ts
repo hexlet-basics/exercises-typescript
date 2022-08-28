@@ -1,7 +1,6 @@
-import sinon from 'sinon';
+import repeat from './index';
 
-test('hello world', async () => {
-  const spy = sinon.spy(console, 'log');
-  await import(`${__dirname}/index`);
-  sinon.assert.calledWith(spy, 'Hello, World!');
+test('repeat', () => {
+    expect(repeat('wow', 3)).toBe('wowwowwow');
+    expect(repeat('s', 2)).toBe('ss');
 });

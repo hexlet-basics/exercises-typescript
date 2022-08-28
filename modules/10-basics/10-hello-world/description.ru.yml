@@ -17,4 +17,5 @@ instructions: |
   console.log('Hello, World!');
   ```
 
-# tips:
+tips:
+  - [Repl для экспериментов с TypeScript](https://www.typescriptlang.org/play)

@@ -1,1 +1,12 @@
-console.log('Hello, World!');
+function repeat(text: string, count: number) {
+    // BEGIN
+    let result = '';
+    for (let i = 0; i < count; i += 0) {
+        result += text;
+    }
+
+    return result;
+    // END
+}
+
+export default repeat;
