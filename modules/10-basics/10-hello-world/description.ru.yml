@@ -18,4 +18,5 @@ instructions: |
   ```
 
 tips:
-  - [Repl для экспериментов с TypeScript](https://www.typescriptlang.org/play)
+  - |
+    [Repl для экспериментов с TypeScript](https://www.typescriptlang.org/play)
