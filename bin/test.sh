@@ -1,1 +1,1 @@
-npx jest --colors
+npx jest --colors `pwd`
