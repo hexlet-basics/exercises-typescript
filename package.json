@@ -3,6 +3,7 @@
   "scripts": {
     "test": "jest --colors"
   },
+  "type": "module",
   "dependencies": {
     "@typescript-eslint/parser": "^5.36.1",
     "sinon": "^14.0.0",

@@ -16,7 +16,7 @@ test('function', () => {
     age: 5,
   };
 
-  expect(getOlderUser(user1, user2)).toEqual(user1);
+  expect(getOlderUser(user1, user2)).toEqual(user2);
   expect(getOlderUser(user2, user1)).toEqual(user2);
 
   expect(getOlderUser(user2, user3)).toBeNull();
