@@ -35,3 +35,6 @@ compose-schema-validate:
 ci-check:
 	docker-compose --file docker-compose.yml build
 	docker-compose --file docker-compose.yml up --abort-on-container-exit
+
+test-fast:
+	npx jest
