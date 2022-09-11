@@ -1,12 +1,12 @@
-import filter from './index';
+import map from './index';
 
 test('function', () => {
-  const result = filter([], (n) => n > 3);
+  const result = map([], (n) => n + 3);
   expect(result).toEqual([]);
 
-  const result2 = filter([3, 2, 8, 9], (n) => n > 3);
-  expect(result2).toEqual([8, 9]);
+  const result2 = map([3, 9], (n) => n - 3);
+  expect(result2).toEqual([0, 6]);
 
-  const result3 = filter([3, 2, 8, 9], (n) => n < 8);
-  expect(result3).toEqual([3, 2]);
+  const result3 = map([8, 9], (n) => n + 8);
+  expect(result3).toEqual([16, 17]);
 });

@@ -1,13 +1,9 @@
 // BEGIN
-function filter(numbers: number[], callback: (n: number) => boolean) {
+function map(numbers: number[], callback: (n: any, index: number) => number) {
   const result: number[] = [];
-  numbers.forEach((n) => {
-    if (callback(n)) {
-      result.push(n);
-    }
-  });
+  numbers.forEach((n, index) => result.push(callback(n, index)));
   return result;
 }
 // END
 
-export default filter;
+export default map;
