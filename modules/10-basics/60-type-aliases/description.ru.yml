@@ -36,7 +36,13 @@ theory: |
   doSomething({ firstName: 'Bob', pointsCount: 1800 });
   ```
 
-  Алиасы типов можно задавать и для объединений:
+  Алиасы можно задавать для любых типов данных, от простых:
+
+  ```typescript
+  type SomeType = string;
+  ```
+
+  до составных:
 
   ```typescript
   type SomeType = string | number | null;

@@ -3,6 +3,71 @@
 name: Деструктуризация
 theory: |
 
+  Деструктуризация в определении функций - механизм, с помощью которого объект переданный как аргумент распаковывается и его части присваиваются локальным переменным функции. В JavaScript он выглядит так:
+
+  ```javascript
+  // Обычное определение
+  const f = (user) => {
+    console.log(user.firstName, user.age);
+  };
+
+  // Деструктурированный объект
+  const f = ({ firstName, age }) => {
+    console.log(firstName, age);
+  };
+
+  const user = { firstName: 'Smith', age: 30 };
+  f(user);
+  ```
+
+  Несмотря на визуальное сходство с параметрами функции, деструктурированный объект все равно остается объектом, поэтому в TypeScript описание его типа идет после закрывающей фигурной скобки:
+
+  ```typescript
+  // Обычное определение
+  function f(user: { firstName: string, age: number }) {
+    console.log(firstName, age);
+  }
+
+  // Деструктурированный объект
+  function f({ firstName, age }: { firstName: string, age: number }) {
+    console.log(firstName, age);
+  }
+  ```
+
+  Можно сделать код менее многословным вынеся определение типа в алиас:
+
+  ```typescript
+  type User = {
+    firstName: string;
+    age: number;
+  }
+
+  function foo({ firstName, age }: User) {
+    console.log(firstName, age);
+  }
+  ```
+
+  Все тоже самое применимо и к массивам:
+
+  ```typescript
+  // Обычное определение
+  function foo(point: number[]) {
+    console.log(point);
+  }
+
+  // Деструктурированный массив
+  function foo([x, y]: number[]) {
+    console.log(x, y);
+  }
+
+  type Point = number[];
+
+  // С алиасом
+  function foo([x, y]: Point) {
+    console.log(x, y);
+  }
+  ```
+
 instructions: |
 
 # tips:
