@@ -6,7 +6,7 @@ theory: |
   Опциональные параметры в функциях задаются с помощью знака вопроса после типа:
 
   ```typescript
-  function split(str: string, separator: string?)
+  function split(str: string, separator?: string)
 
   split('hexlet');
   split('hexlet,code-basics', ',');
