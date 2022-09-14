@@ -7,7 +7,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name: string) {
-    return `Hello, #{name.toUpperCase()}!`;
+    return `Hello, ${name.toUpperCase()}!`;
   }
   ```
 
@@ -24,7 +24,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name?: string) {
-    return `Hello, #{name ? name.toUpperCase() : 'Guest'}!`;
+    return `Hello, ${name ? name.toUpperCase() : 'Guest'}!`;
   }
 
   getGreetingPhrase('Mike'); // Hello, Mike!
@@ -37,7 +37,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name?: string | null) {
-    return `Hello, #{name ? name.toUpperCase() : 'Guest'}!`;
+    return `Hello, ${name ? name.toUpperCase() : 'Guest'}!`;
   }
   ```
 
@@ -49,7 +49,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name: string = 'Guest') {
-    return `Hello, #{name.toUpperCase()}!`;
+    return `Hello, ${name.toUpperCase()}!`;
   }
 
   getGreetingPhrase() // Hello, Guest!
@@ -61,7 +61,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name: string): string {
-    return `Hello, #{name.toUpperCase()}!`;
+    return `Hello, ${name.toUpperCase()}!`;
   }
   ```
 
