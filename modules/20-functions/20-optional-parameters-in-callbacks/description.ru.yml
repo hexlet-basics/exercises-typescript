@@ -3,7 +3,7 @@
 name: Опциональные параметры в колбеках
 theory: |
 
-  Опциональные параметры в функциях задаются с помощью знака вопроса после типа:
+  Опциональные параметры в функциях задаются с помощью знака вопроса после параметра:
 
   ```typescript
   function split(str: string, separator?: string)
@@ -28,7 +28,7 @@ theory: |
 
   ```typescript
   // Необязательный параметр index
-  function filter(coll: number[], callback: (arg: number, index: number?) => boolean) {
+  function filter(coll: number[], callback: (arg: number, index?: number) => boolean) {
     const result: number[] = [];
     coll.forEach((n, index) => {
       // Здесь он передается в колбек
@@ -47,11 +47,11 @@ theory: |
   ```typescript
   // Выполнится без ошибок
   filter([1, 2], (n) => n > 1);
-  // Object is possibly 'null'
+  // Object is possibly 'undefined'
   filter([1, 2], (n, index) => index > n);
   ```
 
-  В данном случае ошибка обозначает то, что из-за "необязательности", внутри колбека в теории может оказаться `null`, чего по смыслу происходить не может, индекс всегда определен.
+  В данном случае ошибка обозначает то, что из-за "необязательности", внутри колбека в теории может оказаться `undefined`, чего по смыслу происходить не может, индекс всегда определен.
 
   Правильным решением для таких ситуаций будет отказ от опциональности:
 
