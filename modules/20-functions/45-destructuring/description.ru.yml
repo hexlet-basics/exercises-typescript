@@ -70,4 +70,15 @@ theory: |
 
 instructions: |
 
-# tips:
+  Реализуйте функцию, которая, которая принимает на вход курс и возвращает количество лекций внутри него:
+
+  ```typescript
+  const course = { lessons: ['intro', 'lala'] };
+  lessonsCount(course); // 2
+  ```
+
+  Используйте внутри деструктуризацию, для того, чтобы извлечь уроки прямо в параметрах функции.
+
+tips:
+  - |
+    [Официальная документация](https://www.typescriptlang.org/docs/handbook/2/functions.html#parameter-destructuring)
