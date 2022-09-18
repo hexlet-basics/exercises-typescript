@@ -3,6 +3,60 @@
 name: Многомерные массивы
 theory: |
 
+  Для определения многомерных массивов используется синтаксис `Type[][]`. Дословно это означает что перед нами массив содержащий массивы со значениями типа `Type`. Несколько примеров:
+
+  ```typescript
+  // Тип number[][] выводится автоматически
+  const items1 = [[3, 8], [10, 4, 8]];
+
+  const items2: number[][] = []
+  // или так Array<number[]>
+
+  // Используя алиас
+  type User = {
+    name: string;
+  }
+
+  // или так Array<User[]>
+  const users: User[] = [
+    [{ name: 'Eva'}, { name: 'Adam' }],
+  ];
+  ```
+
+  Добавление в такие массивы не массивов приведет к ошибке типизации:
+
+  ```typescript
+  items1.push(99); // Error: Type 'number' is not assignable
+  ```
+
+  Для определения массивов составных типов нужно использовать скобки.
+
+  ```typescript
+  const coll: (string | number)[][] = [];
+  coll.push(['hexlet', 5])
+  ```
+
+  Или можно использовать синтаксис `Array<Array<Type>>`. Здесь мы видим массив, внутри которого находятся массивы содержащие значения типа `Type`:
+
+  ```typescript
+  const coll: Array<Array<string | number>> = [];
+  coll.push(['hexlet', 5])
+  ```
+
+  Сами массивы при этом могут быть частью объекта. Технически это позволяет создавать бесконечную вложенность из объектов и массивов:
+
+  ```typescript
+  type Course = {
+    name: string;
+    lessons: Lesson[];
+  }
+
+  type Lesson = {
+    name: string;
+    links: string[];
+  }
+  ```
+
 instructions: |
 
 
