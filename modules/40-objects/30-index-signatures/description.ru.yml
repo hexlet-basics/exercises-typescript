@@ -1,6 +1,6 @@
 ---
 
-name: Объекты как аргументы
+name: Динамические ключи (Index Signature)
 theory: |
 
   https://dmitripavlutin.com/typescript-index-signatures/
