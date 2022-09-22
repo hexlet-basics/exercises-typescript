@@ -49,11 +49,11 @@ theory: |
 
   ```typescript
   function foo(): void {
-    return true; // boom!
+    return true; // Error!
   }
 
   const bar = function(): void {
-    return true; // boom!
+    return true; // Error!
   };
   ```
 

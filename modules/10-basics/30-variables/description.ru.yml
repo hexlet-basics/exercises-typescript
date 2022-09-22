@@ -25,7 +25,7 @@ theory: |
   age = 11.1;
 
   // Type 'string' is not assignable to type 'number'.
-  age = 'boom!';
+  age = 'some string'; // Error!
   ```
 
   Если мы попытаемся передать эту переменную в метод, который ожидает другой тип, то это тоже приведет к ошибке:
@@ -43,7 +43,7 @@ theory: |
   items.push(4); // Все хорошо
 
   // Argument of type 'string' is not assignable to parameter of type 'number'.
-  items.push('boom!');
+  items.push('code-basics'); // Error!
   ```
 
   С объектами ситуация еще строже. В TypeScript нельзя не только менять тип свойств внутри объекта, но и добавлять новые свойства динамически.
@@ -74,7 +74,7 @@ theory: |
 
   ```typescript
   let age = 30;
-  age = null; // Boom!
+  age = null; // Error!
   ```
 
   Такое поведение защищает нас от большого числа ошибок, связанных с отсутствием проверок на null. С другой стороны, иногда `null` является допустимым значением. В этом случае используется специальный Union Type:
