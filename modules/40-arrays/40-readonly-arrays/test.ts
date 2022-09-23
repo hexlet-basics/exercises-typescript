@@ -1,10 +1,7 @@
-import isTheSamePoint, { Point } from './index';
+import reverse from './index';
 
 test('function', () => {
-  const p1: Point = [1, 2, 3];
-  const p2: Point = [1, 2, 3];
-  const p3: Point = [0, 2, 3];
-
-  expect(isTheSamePoint(p1, p2)).toBe(true);
-  expect(isTheSamePoint(p1, p3)).toBe(false);
+  expect(reverse([])).toEqual([]);
+  expect(reverse([1, 2])).toEqual([2, 1]);
+  expect(reverse([8, 3, 9])).toEqual([9, 3, 8]);
 });

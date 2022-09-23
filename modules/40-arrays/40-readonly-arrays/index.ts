@@ -1,7 +1,11 @@
-export type Point = [number, number, number];
+function reverse(coll: readonly number[]) {
+  const init: number[] = [];
+  const result = coll.reduce((acc, value, index) => {
+    acc[coll.length - index] = value;
+    return acc;
+  }, init);
 
-function isTheSamePoint(p1: Point, p2: Point): boolean {
-  return p1[0] === p2[0] && p1[1] === p2[1] && p1[2] === p2[2];
+  return result;
 }
 
-export default isTheSamePoint;
+export default reverse;
