@@ -3,7 +3,23 @@
 name: Дженерики (Типы)
 theory: |
 
+  Поговорим подробнее про Generic Types. Возьмем для примера массив. Массив это тип-контейнер, который хранит внутри себя значения любого указанного типа. Логика работы массива не зависит от типа данных хранящихся внутри. Такое определение автоматически говорит о том, что мы имеем дело с обобщенным типом.
 
+  ```typescript
+  type MyColl = {
+    coll: number[];
+    forEach(callback: (value: number) => void): void;
+    get(index: number): number;
+  }
+  ```
+
+  ```typescript
+  type MyColl<T> = {
+    coll: Array<T>;
+    forEach(callback: (value: T) => void): void;
+    get(index: T): T;
+  }
+  ```
 
 instructions: |
 
