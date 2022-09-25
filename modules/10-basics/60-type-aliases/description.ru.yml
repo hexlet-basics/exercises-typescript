@@ -11,7 +11,7 @@ theory: |
   type User = {
     firstName: string;
     pointsCount: number;
-  };
+  }
   ```
 
   Теперь можно провести замену во всех функциях:
@@ -36,7 +36,9 @@ theory: |
   doSomething({ firstName: 'Bob', pointsCount: 1800 });
   ```
 
-  Алиасы можно задавать для любых типов данных, от простых:
+  Несмотря на выше сказанное, разработчики на TypeScript говорят "создал тип", а не "создал алиас типа" или "создал псевдоним типа". Поэтому в этом курсе мы будем придерживаться общепринятого формата.
+
+  Типы можно задавать для любых типов данных, от простых:
 
   ```typescript
   type SomeType = string;
@@ -45,7 +47,40 @@ theory: |
   до составных:
 
   ```typescript
+  // union тип из трех возможных значений
   type SomeType = string | number | null;
+
+  // Функция
+  type Countable = (coll: number[]) => number
+  ```
+
+  ## Объекты и функции
+
+  Описание типа функции вне объекта и внутри отличается. Когда функция записывается самостоятельно, то используется формат стрелочной функции:
+
+  ``typescript
+  type Countable = (coll: number[]) => number
+  ```
+
+  Внутри типа описывающего объект формат меняется на такой же, который используется для обычных свойств:
+
+  ```typescript
+  type User = {
+    firstName: string;
+    pointsCount: number;
+    count(coll: number[]): number;
+  }
+  ```
+
+  Но это не касается колбеков, которые могут быть использованы внутри:
+
+  ```typescript
+  type User = {
+    firstName: string;
+    pointsCount: number;
+    // Типы взяты для примера
+    count(coll: (v: string) => string): number;
+  }
   ```
 
 instructions: |
