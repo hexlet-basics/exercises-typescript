@@ -8,6 +8,7 @@ theory: |
   ```typescript
   // В таком случае тип будет any[],
   // так как TypeScript не может вывести тип содержимого
+  // ведь его еще нет
   const items = [];
   ```
 
@@ -16,8 +17,9 @@ theory: |
   ```typescript
   // Ошибка возникет уже во время запуска кода
   const value: any = 5;
-  value() // ok
-  value.trim() // ok
+  value.toString(); // ok
+  value(); // ok
+  value.trim(); // ok
   value = 'wow'; // ok
   ```
 
