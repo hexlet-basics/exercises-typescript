@@ -7,7 +7,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name: string) {
-    return `Hello, #{name.toUpperCase()}!`;
+    return `Hello, ${name.toUpperCase()}!`;
   }
   ```
 
@@ -20,11 +20,11 @@ theory: |
 
   ## Необязательный параметр
 
-  Чтобы сделать параметр необязательным, нужно добаавить знак *?* после имени переменной:
+  Чтобы сделать параметр необязательным, нужно добавить знак *?* после имени переменной:
 
   ```typescript
   function getGreetingPhrase(name?: string) {
-    return `Hello, #{name ? name.toUpperCase() : 'Guest'}!`;
+    return `Hello, ${name ? name.toUpperCase() : 'Guest'}!`;
   }
 
   getGreetingPhrase('Mike'); // Hello, Mike!
@@ -37,7 +37,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name?: string | null) {
-    return `Hello, #{name ? name.toUpperCase() : 'Guest'}!`;
+    return `Hello, ${name ? name.toUpperCase() : 'Guest'}!`;
   }
   ```
 
@@ -45,11 +45,11 @@ theory: |
 
   ## Значение по умолчанию
 
-  Со значением по умолчанию ситуация проще. Здесь не нужно ничего дополнительно указывать, значение задается как в JavaScript, а сама переменная автоматически становится необзятальной:
+  Со значением по умолчанию ситуация проще. Здесь не нужно ничего дополнительно указывать, значение задается как в JavaScript, а сама переменная автоматически становится необязательной:
 
   ```typescript
   function getGreetingPhrase(name: string = 'Guest') {
-    return `Hello, #{name.toUpperCase()}!`;
+    return `Hello, ${name.toUpperCase()}!`;
   }
 
   getGreetingPhrase() // Hello, Guest!
@@ -61,7 +61,7 @@ theory: |
 
   ```typescript
   function getGreetingPhrase(name: string): string {
-    return `Hello, #{name.toUpperCase()}!`;
+    return `Hello, ${name.toUpperCase()}!`;
   }
   ```
 
