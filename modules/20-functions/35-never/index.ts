@@ -1,9 +1,7 @@
 // BEGIN
-function forEach(numbers: number[], callback: (n: any, index: number) => void) {
-  const result: number[] = [];
-  numbers.forEach((n, index) => callback(n, index));
-  return result;
+function fail(): never {
+  throw new Error('wow');
 }
 // END
 
-export default forEach;
+export default fail;
