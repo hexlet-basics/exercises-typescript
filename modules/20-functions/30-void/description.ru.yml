@@ -7,7 +7,7 @@ theory: |
 
   ```typescript
   function noop() {
-     // внутри пусто
+    // внутри пусто
   }
   ```
 
