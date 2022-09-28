@@ -1,0 +1,47 @@
+---
+
+name: Тип Never
+theory: |
+
+  Тип `never` используется в том случае, когда функция гарантированно ничего не возвращает. Например если внутри функции есть бесконечный цикл:
+
+  ```typescript
+  function infiniteLoop(): never {
+    while (true) {
+      // Какая-то логика
+    }
+  }
+  ```
+
+  Или если функция выбрасывает исключение:
+
+  ```typescript
+  function stop(message: string): never {
+    throw new Error(message);
+  }
+  ```
+
+  Важным условием для `never` является отсутствие нормального завершения функции. Например в примере ниже компилятор выдаст ошибку:
+
+  ```typescript
+  // A function returning 'never' cannot have a reachable end point.
+  function printSomething(): never {
+    console.log('hexlet');
+  }
+  ```
+
+  Функция `printSomething()` ничего не возвращает явно, но из-за того, что она завершается в принципе, JavaScript подставляет неявный возврат `undefined`.
+
+  `never` автоматически выводится даже там, где прописан явный возврат, но компилятор "видит" что этот возврат невозможен:
+
+  ```typescript
+  function fail() { // Автоматически выводится never
+    // функция stop, определенная выше, имеет возвращаемый тип never
+    return stop('Something failed');
+  }
+  ```
+
+instructions: |
+
+  Реализуйте функцию `fail()`, которая выбрасывает любое исключение. Пропишете ее возвращаемый тип явно.
+# tips:

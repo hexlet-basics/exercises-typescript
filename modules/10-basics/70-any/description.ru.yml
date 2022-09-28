@@ -3,11 +3,24 @@
 name: Тип Any
 theory: |
 
-  В TypeScript добавлен специальный тип `any`, который используется там, где проверка типов не нужна, либо, когда TypeScript не может вывести тип данных автоматически. Использование `any` превращает TypeScript в JavaScript, так как данные с таким типом перестают проверяться.
+  В TypeScript добавлен специальный тип `any`, который используется там, где проверка типов не нужна, либо, когда TypeScript не может вывести тип данных автоматически.
 
   ```typescript
-  // В таком случае тип будет any[]
+  // В таком случае тип будет any[],
+  // так как TypeScript не может вывести тип содержимого
+  // ведь его еще нет
   const items = [];
+  ```
+
+  Использование `any` превращает TypeScript в JavaScript, так как данные с таким типом перестают проверяться.
+
+  ```typescript
+  // Ошибка возникет уже во время запуска кода
+  const value: any = 5;
+  value.toString(); // ok
+  value(); // ok
+  value.trim(); // ok
+  value = 'wow'; // ok
   ```
 
   `any` полезен, например, при переводе проекта из JavaScript в TypeScript, когда сначала все типы объявляются как `any`, а затем понемногу переписываются на нужные.
@@ -22,14 +35,15 @@ theory: |
   const sentence = 'table cat table dog dog apple table';
 
   const words = sentence.split(' ');
+  const initial = {};
   const result = words.reduce((acc, word) => {
     acc[word] = Object.hasOwn(acc, word) ? acc[word] + 1 : 1;
     return acc;
-  }, {});
+  }, initial);
   // { table: 3, cat: 1, dog: 2, apple: 1 }
   ```
 
-  Компилятор TypeScript такой код не пропустит, он укажет на то, что объект `{}` не содержит ключей со строковым типом
+  Компилятор TypeScript такой код не пропустит, он укажет на то, что объект находящийся в константе `initial` не содержит ключей со строковым типом.
 
   ```
   No index signature with a parameter of type 'string' was found on type '{}'.
@@ -42,7 +56,7 @@ theory: |
   const sentence = 'table cat table dog dog apple table';
 
   const words = sentence.split(' ');
-  const initial: any = {}; // вынесли в переменную
+  const initial: any = {}; // Указали тип как any
   const result = words.reduce((acc, word) => {
     acc[word] = Object.hasOwn(acc, word) ? acc[word] + 1 : 1;
     return acc;
@@ -50,7 +64,6 @@ theory: |
   ```
 
   TypeScript больше не показывает ошибку компиляции, что с одной стороны хорошо, с другой, сама проверка допустимости действий над этим объектом отключена. Если в дальнейшем обратиться к несуществующему свойству в этом объекте, TypeScript не укажет на ошибку.
-
 
 instructions: |
 
@@ -63,6 +76,6 @@ instructions: |
   // { name: 'hexlet', count: 3, order: 'asc' }
   ```
 
-  Эту задачу лучше всего решать через метод `reduce`
+  Эту задачу лучше всего решать через метод `reduce()`
 
 # tips:
