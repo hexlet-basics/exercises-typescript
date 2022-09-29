@@ -1,0 +1,12 @@
+---
+
+name: Перечисления (Enums)
+theory: |
+
+  Перечисления, одна из немногих возможностей в TypeScript не связанная напрямую с типами.
+
+instructions: |
+
+tips:
+  - |
+    [Официальная документация](https://www.typescriptlang.org/docs/handbook/enums.html)
