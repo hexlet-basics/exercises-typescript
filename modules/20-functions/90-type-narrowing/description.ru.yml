@@ -1,0 +1,12 @@
+---
+
+name: Narrowing
+theory: |
+
+  https://camchenry.com/blog/typescript-type-guards
+
+instructions: |
+
+tips:
+  - |
+    [Официальная документация](https://www.typescriptlang.org/docs/handbook/2/narrowing.html)
