@@ -1,3 +1,4 @@
+// BEGIN
 enum ModalStatus {
   Opened,
   Closed,
@@ -9,6 +10,7 @@ function buildModal(text: string, status: ModalStatus) {
     status,
   };
 }
+// END
 
 export { ModalStatus };
 export default buildModal;

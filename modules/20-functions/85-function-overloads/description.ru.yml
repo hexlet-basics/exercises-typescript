@@ -10,10 +10,10 @@ theory: |
   function concat(a: string, b: string): string;
 
   function concat(a: any, b: any): string {
-    if (typeof a === 'string')
-      return `${a}{b}`
+    if (typeof a === 'string') {
+      return `${a}{b}`;
     } else {
-      return `${a.toFixed()}{b.toFixed()}`
+      return `${a.toFixed()}{b.toFixed()}`;
     }
   }
 

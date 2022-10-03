@@ -32,4 +32,10 @@ theory: |
 
 instructions: |
 
+  Определите тип `CustomType`, который может принимать следующие значения:
+
+  1. null
+  2. undefined
+  3. числа
+
 # tips:
