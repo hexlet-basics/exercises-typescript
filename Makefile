@@ -12,7 +12,7 @@ compose-install:
 	docker-compose run exercises npm install
 
 code-lint:
-	# java -jar /opt/checkstyle.jar -c checkstyle.xml modules src
+	npx eslint .
 
 # compile:
 	# @(for i in $$(find . -type f -name Main.java); do javac $$(dirname $$i)/*.java ; done)
