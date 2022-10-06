@@ -11,10 +11,16 @@ instructions: |
   (method) String.at(index: number): string | undefined
   ```
 
-  С точки зрения теории множеств, операция union обозначает объединение. То есть это множесто состоящее из элементов объединенных множеств
+  С точки зрения теории множеств, операция union обозначает объединение. То есть это множесто состоящее из элементов исходных множеств
 
   ```typescript
   type NumberOrString = number | string;
+  ```
+
+  Таких множеств может быть любое количество:
+
+  ```typescript
+  type Primitives = number | string | null | undefined | boolean;
   ```
 
 # tips:
