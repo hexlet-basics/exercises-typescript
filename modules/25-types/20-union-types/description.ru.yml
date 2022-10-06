@@ -1,0 +1,20 @@
+---
+
+name: Объединения (Union Types)
+theory: |
+
+instructions: |
+
+  Типы объединения играют большую роль в TypeScript, они позволяют выразить, обычную для JavaScript, ситуацию, когда возвращаемое значение или аргумент функции могуть менять свой тип. Например метод `String.prototype.at()` может возвращать значение типа `string`, либо `undefined`
+
+  ```typescript
+  (method) String.at(index: number): string | undefined
+  ```
+
+  С точки зрения теории множеств, операция union обозначает объединение. То есть это множесто состоящее из элементов объединенных множеств
+
+  ```typescript
+  type NumberOrString = number | string;
+  ```
+
+# tips:

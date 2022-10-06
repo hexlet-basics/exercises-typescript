@@ -12,7 +12,7 @@ theory: |
   split('hexlet,code-basics', ',');
   ```
 
-  В таком случае реальный тип переменной `separator` будет `string | undefined`.
+  В таком случае реальный тип переменной `separator` будет `string | undefined` (`string` или `undefined`).
 
   Другой вариант задать опциональный параметр, это присвоить значение по умолчанию:
 
