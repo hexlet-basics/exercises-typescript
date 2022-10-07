@@ -1,5 +1,5 @@
 // BEGIN
-function getHiddenCard(cardNumber: string, starsCount: number = 4): string {
+function getHiddenCard(cardNumber: string, starsCount = 4): string {
   const visibleDigitsLine = cardNumber.slice(12);
   return `${'*'.repeat(starsCount)}${visibleDigitsLine}`;
 }

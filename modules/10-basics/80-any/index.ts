@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+
+// BEGIN
 function getParams(query: string) {
   const parts = query.split('&');
   const init: any = {};
@@ -9,5 +14,6 @@ function getParams(query: string) {
 
   return result;
 }
+// END
 
 export default getParams;
