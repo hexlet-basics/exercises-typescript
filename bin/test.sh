@@ -1,2 +1,2 @@
 npx jest --colors `pwd`
-# npx tsc --noEmit
+npx tsc --noEmit
