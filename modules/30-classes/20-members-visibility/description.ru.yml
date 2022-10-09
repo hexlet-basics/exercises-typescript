@@ -3,7 +3,8 @@
 name: Защита свойств и методов
 theory: |
 
-  В процессе...
+  1. Встроенный JavaScript механизм
+  2. Механизм встроенный в TypeScript
 
 instructions: |
 
