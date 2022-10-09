@@ -77,16 +77,17 @@ theory: |
   function concat(a: number, b: number): string;
   function concat(a: string, b: string): string;
 
-  function concat(a: any, b: any): string {
+  function concat(a: unknown, b: unknown): string {
     if (typeof a == 'string') {
-      return `${a}{b}`;
+      return `${a}${b}`;
+      //        ^? (parameter) a: string
     } else {
-      return `${a.toFixed()}{b.toFixed()}`;
+      return `${a.toFixed()}${b.toFixed()}`;
     }
   }
   ```
 
-  Narrowing большая тема с кучей ньюансов. Подробнее с особенностями работы этого механизма можно ознакомиться в документации. В любом случае, он будет встречаться в TypeScript достаточно часто и вы так или иначе с ним разберетесь.
+  Narrowing большая тема с кучей нюансов. Подробнее с особенностями работы этого механизма можно ознакомиться в документации. В любом случае, он будет встречаться в TypeScript достаточно часто и вы так или иначе с ним разберетесь.
 
 instructions: |
 
