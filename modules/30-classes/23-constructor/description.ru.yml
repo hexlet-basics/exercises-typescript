@@ -1,10 +1,7 @@
 ---
 
-name: Защита свойств и методов
+name: Конструктор
 theory: |
-
-  1. Встроенный JavaScript механизм
-  2. Механизм встроенный в TypeScript
 
 instructions: |
 
