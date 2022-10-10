@@ -6,6 +6,8 @@ compose:
 	docker-compose up
 
 compose-build:
+	# TODO: move to common.mk or make compose to do it automatically
+	docker pull hexletbasics/base-image
 	docker-compose build
 
 compose-install:

@@ -1,11 +1,13 @@
 ---
 
-name: Структурная типизация
+name: Вариантность и Ковариантность
 theory: |
 
   https://www.zhenghao.io/posts/type-hierarchy-tree
 
   В процессе...
+
+  Доносим идею о компромисе между гибкостью и типобезопаностью
 
 instructions: |
 
