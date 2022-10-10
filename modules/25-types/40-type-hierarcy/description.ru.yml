@@ -1,12 +1,16 @@
 ---
 
-name: Структурная типизация
+name: Иерархия типов
 theory: |
+
+  * Надмножество unknown
+  * Пустое множество never
+  * any - во всех дырках затычка
+  * Присваиваемость (assignability)
+  * Присваиваемость функций
 
   https://www.zhenghao.io/posts/type-hierarchy-tree
 
   В процессе...
 
 instructions: |
-
-# tips:

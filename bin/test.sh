@@ -1,2 +1,4 @@
-npx jest --colors `pwd`
-npx tsc --noEmit
+#! /bin/sh
+npx tsc --noEmit &
+npx jest --colors `pwd` &
+wait
