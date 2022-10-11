@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 // BEGIN
 function map(numbers: number[], callback: (n: any, index: number) => number) {
   const result: number[] = [];
