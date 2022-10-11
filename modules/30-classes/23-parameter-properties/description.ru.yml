@@ -1,0 +1,21 @@
+---
+
+name: Свойства параметров
+theory: |
+
+  Заполнение свойств из параметров конструктора настолько частая задача в работе с классами, что в TypeScript добавили специальный синтаксис, позволяющий делать это автоматически:
+
+  ```typescript
+  class SomeClass {
+    one: number;
+    private two: string;
+
+    constructor(public one: number, private two: number) {}
+  }
+  ```
+
+instructions: |
+
+tips:
+  - |
+    [Перегрузка конструктора](https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors)
