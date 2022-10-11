@@ -1,7 +1,27 @@
 ---
 
-name: Классы
+name: Классы как типы
 theory: |
+
+  Классы в TypeScript являются одновременно значением и типом данных. Второе нам особенно важно в контексте типизации функций и методов:
+
+  ```typescript
+  class Point {
+    x: number;
+    y: number;
+
+    constructor(x: number, y: number) {
+      this.x = x;
+      this.y = y;
+    }
+  }
+
+  function isEqual(p1: Point, p2: Point) {
+    return p1.x === p2.x && p1.y === p2.y;
+  }
+  ```
+
+  <!-- FIXME: что дальше? -->
 
 instructions: |
 

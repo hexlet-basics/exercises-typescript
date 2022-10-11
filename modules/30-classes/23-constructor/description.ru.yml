@@ -5,4 +5,6 @@ theory: |
 
 instructions: |
 
-# tips:
+tips:
+  - |
+    [Перегрузка конструктора](https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors)
