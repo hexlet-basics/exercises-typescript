@@ -1,0 +1,8 @@
+---
+
+name: Пересечение (Intersections Types)
+theory: |
+
+  * `type Intersection = X & Y;`
+
+instructions: |

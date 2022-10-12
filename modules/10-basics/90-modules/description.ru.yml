@@ -1,0 +1,8 @@
+---
+name: Система модулей
+theory: |
+
+  * отличия от стандартного ESM
+  * `import * as path from 'path'`
+
+instructions: |
