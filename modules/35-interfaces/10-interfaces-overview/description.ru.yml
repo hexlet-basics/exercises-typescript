@@ -28,7 +28,7 @@ theory: |
 
   class SchoolClass implements Countable {
     // Тут какая-то логика
-    count() {
+    count(): number {
       // Обязательно создать этот метод, так как он указан в интерфейсе
     }
   }

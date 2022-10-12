@@ -10,6 +10,6 @@ test('function', () => {
   expect(result2).toEqual([4, 10]);
 
   const result3: number[] = [];
-  forEach([8, 9], (n: number, i) => result3.push(n + i));
+  forEach([8, 9], (n: number, i) => result3.push(n + i!));
   expect(result3).toEqual([8, 10]);
 });
