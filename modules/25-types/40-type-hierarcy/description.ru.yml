@@ -46,6 +46,15 @@ theory: |
 
   <!-- TODO: добавить картинку -->
 
+  ```typescript
+  type StringNumber = number | string;
+
+  let value: StringNumber = 10;
+  value = 'string'
+  ```
+
+  <!-- TODO: добавить картинку с кругами Эйлера -->
+
 instructions: |
 
 tips:
