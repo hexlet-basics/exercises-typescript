@@ -5,4 +5,12 @@ theory: |
 
 instructions: |
 
+  ```typescript
+  function extend<T, U>(a: T, b: U): T & U {
+    return Object.assign({}, a, b);
+  }
+
+  const obj = extend({ one: 1 }, { two: 2 });
+  ```
+
 # tips:
