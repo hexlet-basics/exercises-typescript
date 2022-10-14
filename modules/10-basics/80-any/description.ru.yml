@@ -80,4 +80,6 @@ instructions: |
 
   Эту задачу лучше всего решать через метод `reduce()`
 
-# tips:
+tips:
+  - |
+    [Официальная документация про any](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any)

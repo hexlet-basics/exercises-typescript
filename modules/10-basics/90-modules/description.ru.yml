@@ -2,7 +2,54 @@
 name: Система модулей
 theory: |
 
-  * отличия от стандартного ESM
-  * `import * as path from 'path'`
+  Думаю, большинство из вас уже сталкивалось с нехваткой для проекта использования только одного файла. И когда в одном файле скапливается множество различных сущностей, а для имен очередной функции приходится придумывать префиксы, приходят на помощь модули и пространства имен( `namespace`). Вот и TypeScript предоставляет нам оба этих инструмента.
+
+  Система модулей TypeScript была создана до стандартизации ESM модулей. По-умолчанию она совместима с nodejs модулями, использует идентичный алгоритм определения импортов и экспортов, при этом синтаксически очень похожа на ESM, где мы используем ключевые слова `import`/`export` для импортирования в текущий модуль и экспорта из него, при этом остается валидным использование CommonJS модулей.
+
+  ```typescript
+  // @file helloWorld.ts
+  export default function helloWorld() {
+    console.log("Hello, world!");
+  }
+
+  //@file main.ts
+  import helloWorld from './helloWorld';
+  ```
+
+  И как в ESM стандарте также поддерживается именованный экспорт/импорт и импорт всего экспортированного через `import * as smth from './somewhere`.
+
+  Также есть специальный синтаксис, который позволят импортировать и экспортировать отдельно типы, чаще всего это используется для явного разделения определений и реализации:
+
+  ```typescript
+  // @file user.types.ts
+  export type User = { name: string };
+
+  // @file main.ts
+  import type { User } from './user.types'
+  ```
+
+  Если модули решают проблему разнородных сущностей и коллизий с помощью разнесения кода по нескольким файлам, то механизм `namespace` позволяет оставаться в рамках одного файла :
+
+  ```typescript
+  namespace Hello {
+    export function helloWorld() {
+        console.log("Hello, world!");
+    }
+  }
+
+  const helloWorld = Hello.helloWorld();
+  ```
+
+  Больше всего этот механизм пригождается авторам библиотек и оберток с типами, они заключают все интерфейсы в один `namespace`, тем самым предоставляют гибкость использовать слияние интерфейсов (тему одну одного из следующих уроков в курсе) и гарантию отсутствия коллизий.
 
 instructions: |
+
+tips:
+  - |
+    [Официальная документация про модули](https://www.typescriptlang.org/docs/handbook/modules.html)
+  - |
+    [Как происходит Module Resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html#how-nodejs-resolves-modules)
+  - |
+    [О модулях в JavaScript на Hexlet](https://ru.hexlet.io/courses/programming-basics/lessons/modules/theory_unit)
+  - |
+    [Официальная документация про Namespaces](https://www.typescriptlang.org/docs/handbook/namespaces.html)
