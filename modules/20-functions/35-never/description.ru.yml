@@ -21,6 +21,14 @@ theory: |
   }
   ```
 
+  Или когда функция завершает программу:
+
+  ```typescript
+  function exit(code: number = 0): never {
+    process.exit(code);
+  }
+  ```
+
   Важным условием для `never` является отсутствие нормального завершения функции. Например в примере ниже компилятор выдаст ошибку:
 
   ```typescript
@@ -36,8 +44,8 @@ theory: |
 
   ```typescript
   function fail() { // Автоматически выводится never
-    // функция stop, определенная выше, имеет возвращаемый тип never
-    return stop('Something failed');
+    // функция exit, определенная выше, имеет возвращаемый тип never
+    return exit(1);
   }
   ```
 
