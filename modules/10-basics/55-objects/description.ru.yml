@@ -6,7 +6,7 @@ theory: |
   Тип объекта состоит из типов всех входящих в него свойств. Он выводится автоматически:
 
   ```typescript
-  // Тип: { firstName: string; points: number; }
+  // Тип: { firstName: string; pointsCount: number; }
   const user = {
     firstName: 'Mike',
     pointsCount: 1000,
@@ -20,7 +20,7 @@ theory: |
   В отличии от JavaScript, TypeScript не позволяет обращаться к несуществующим свойствам. Это значит, что структура любого объекта должна быть задана при его инициализации.
 
   ```typescript
-  // Property 'age' does not exist on type '{ firstName: string; points: number; }'.
+  // Property 'age' does not exist on type '{ firstName: string; pointsCount: number; }'.
   user.age = 100;
   ```
 
