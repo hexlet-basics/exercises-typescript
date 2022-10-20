@@ -23,7 +23,7 @@ theory: |
   type MyColl = {
     data: Array<number>;
     forEach(callback: (value: number) => void, index: number, array: Array<number>): void;
-    at(index: number): number;
+    at(index: number): number | undefined;
   }
   ```
 
@@ -34,10 +34,10 @@ theory: |
   const coll: MyColl = {
     data: [1, 3, 8],
     forEach(callback, index) {
-      this.coll.forEach(callback);
+      this.data.forEach(callback);
     },
     at(index) {
-      return this.coll.at(index);
+      return this.data.at(index);
     },
   }
 
@@ -50,7 +50,7 @@ theory: |
   type MyColl<T> = {
     data: Array<T>;
     forEach(callback: (value: T) => void, index: T, array: Array<T>): void;
-    at(index: T): T;
+    at(index: T): T | undefined;
   }
   ```
 
