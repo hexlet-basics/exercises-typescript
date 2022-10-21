@@ -3,7 +3,7 @@
 name: Переменные
 theory: |
 
-  Переменные и константы в TypeScript определяются точно так же как и в JavaScript:
+  Переменные и константы в TypeScript определяются точно так же, как и в JavaScript:
 
   ```typescript
   let age = 10;
