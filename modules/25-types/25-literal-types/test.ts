@@ -1,7 +1,12 @@
+import type { Equal, Assert } from 'type-assertions';
+import { assert } from 'type-assertions';
+
 import startGame from './index';
 
 test('startTurtleGame', () => {
   const { makeTurn, state } = startGame();
+
+  assert<Equal<ReturnType<typeof makeTurn>, void>>;
 
   expect(state).toEqual(['turtle', null, null, null, null]);
 

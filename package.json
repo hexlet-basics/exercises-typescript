@@ -6,7 +6,8 @@
   "type": "module",
   "dependencies": {
     "npm-check-updates": "^16.3.8",
-    "sinon": "^14.0.1"
+    "sinon": "^14.0.1",
+    "type-assertions": "^1.1.0"
   },
   "devDependencies": {
     "@swc/jest": "^0.2.23",

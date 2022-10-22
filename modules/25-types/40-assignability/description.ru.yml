@@ -30,6 +30,8 @@ instructions: |
 tips:
   - |
     [Assignability в старой документации](https://github.com/microsoft/TypeScript-New-Handbook/blob/master/reference/Assignability.md)
+  - |
+    [Таблица assignability в официальной документации](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability)
 
 definitions:
   - name: Совместимость типов (Types Compatibility)

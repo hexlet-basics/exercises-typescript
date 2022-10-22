@@ -3,14 +3,20 @@
 name: Ковариантность и контрвариантность
 theory: |
 
-  https://www.zhenghao.io/posts/type-hierarchy-tree
-
   В процессе...
 
   Доносим идею о компромисе между гибкостью и типобезопаностью
   Присваиваемость функций
 
   В TypeScript каждый сложный тип является ковариантным в своих членах — объектах, классах, массивах и возвращаемых типах функций, за одним исключением: типы параметров функций контрвариантны.
+
+  ```typescript
+  type Formatter = (val: string) => string;
+
+  const formatToConcrete: Formatter = (_val: string): 'test' => 'test';
+  const formatToNumber: Formatter = (val: string): string | number => +val;
+  // Type '(val: string) => string | number' is not assignable to type 'Formatter'.
+  ```
 
 instructions: |
 
