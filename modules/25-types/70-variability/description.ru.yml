@@ -34,4 +34,6 @@ theory: |
 
 instructions: |
 
-# tips:
+tips:
+  - |
+    [Статья Теория программирования: Вариантность](https://habr.com/ru/post/477448/)
