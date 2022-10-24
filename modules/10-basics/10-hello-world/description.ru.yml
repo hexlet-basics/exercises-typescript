@@ -26,3 +26,7 @@ instructions: |
 tips:
   - |
     [Repl для экспериментов с TypeScript](https://www.typescriptlang.org/play)
+  - |
+    [strict в tsconfig](https://www.typescriptlang.org/tsconfig#strict)
+  - |
+    [Документация по флагам запуска tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html#compiler-options)
