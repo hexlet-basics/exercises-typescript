@@ -38,13 +38,14 @@ theory: |
   sort(arr, comparator);
   ```
 
-  Попробуйте объяснить поведение проверки типов через коваринтность и контрвариантность самостоятельно в следующем примере:
+  Попробуйте самостоятельно объяснить поведение проверки типов через коваринтность в следующем примере:
 
   ```typescript
   type Formatter = (val: string) => string;
 
   const formatToConcrete: Formatter = (_val: string): 'test' => 'test';
-  const formatToNumber: Formatter = (val: string): string | number => +val;  // Type '(val: string) => string | number' is not assignable to type 'Formatter'.
+  const formatToNumber: Formatter = (val: string | number): string | number => String(val);
+  //    ~~~~~~~~~~~~~~
   ```
 
   Когда проверка типов требует более широкий тип это называется контрвариантностью.
