@@ -27,6 +27,8 @@ tips:
   - |
     [Repl для экспериментов с TypeScript](https://www.typescriptlang.org/play)
   - |
+    [Инструкция по установке TypeScript](https://github.com/Hexlet/ru-instructions/blob/main/typescript.md)
+  - |
     [strict в tsconfig](https://www.typescriptlang.org/tsconfig#strict)
   - |
     [Документация по флагам запуска tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html#compiler-options)
