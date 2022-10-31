@@ -43,6 +43,15 @@ theory: |
   Больше всего этот механизм пригождается авторам библиотек и оберток с типами, они заключают все интерфейсы в один `namespace`, что упрощает пользователям слияние интерфейсов (тему одну одного из следующих уроков в курсе), а также гарантию отсутствия коллизий имен.
 
 instructions: |
+  Опишите модуль `Company` в котором экспортируется функция `isEmployeeEmail()`. Функция принимает почту и домен. Если емейл пользователя содержит указанный домен, то функция возвращает `true`:
+
+  ```typescript
+  Company.isEmployeeEmail({ email: 'tirion@hexlet.io', 'hexlet.io'});
+  // true
+  Company.isEmployeeEmail({ email: 'user@example.com', 'hexlet.io'});
+  // false
+  ```
+
 
 tips:
   - |
@@ -53,3 +62,5 @@ tips:
     [О модулях в JavaScript на Hexlet](https://ru.hexlet.io/courses/programming-basics/lessons/modules/theory_unit)
   - |
     [Официальная документация про Namespaces](https://www.typescriptlang.org/docs/handbook/namespaces.html)
+  - |
+    [Метод includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
