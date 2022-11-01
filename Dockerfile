@@ -10,7 +10,7 @@ RUN npm install
 
 COPY . .
 
-ENV PATH /exercises-typescript/bin:$PATH
+ENV PATH /exercises-typescript/bin:/exercises-typescript/node_modules/.bin:$PATH
 # ENV NODE_OPTIONS --max-old-space-size=4096
 # --experimental-vm-modules
 ENV CI true
