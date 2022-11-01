@@ -1,4 +1,4 @@
-import type { Equal, Assert } from 'type-assertions';
+import type { Equal } from 'type-assertions';
 import { assert } from 'type-assertions';
 
 import startGame from './index';
