@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 // BEGIN
 namespace Company {
-  export function isEmployeeEmail(email: string, domain: string) {
-    return email.includes(domain);
+  export function isEmployeeEmail(email: string, domain: string): boolean {
+    return email.endsWith(`@${domain}`);
   }
 }
 // END
