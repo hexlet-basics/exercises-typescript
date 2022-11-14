@@ -95,6 +95,6 @@ instructions: |
   repeat('wo', 3); // wowowo
   ```
 
-# tips:
-#   - |
-#     [Ruby-комьюнити](https://slack-ru.hexlet.io/)
+tips:
+  - |
+    [Метод String.repeat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
