@@ -18,7 +18,9 @@ theory: |
 
   ```typescript
   // Знака вопроса больше нет, так как есть значение по умолчанию
-  function split(str: string, separator: string = ',')
+  function split(str: string, separator: string = ',') {
+    // ...
+  }
 
   split('hexlet');
   split('hexlet,code-basics', ',');
@@ -56,7 +58,9 @@ theory: |
   Правильным решением для таких ситуаций будет отказ от опциональности:
 
   ```typescript
-  function filter(coll: number[], callback: (arg: number, index: number) => boolean)
+  function filter(coll: number[], callback: (arg: number, index: number) => boolean) {
+    // ...
+  }
   ```
 
   Почему такой код сработает? В JavaScript если функция вызывается с большим количеством параметров, чем определено, то лишние просто игнорируются. TypeScript ведет себя также. Колбеки с меньшим числом параметров всегда могут появляться там, где они же ожидаются с большим числом параметров, при условии совпадении типов общих параметров.
