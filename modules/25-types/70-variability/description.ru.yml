@@ -13,8 +13,8 @@ theory: |
   const comparator = (item1: number, item2: number) => Math.sign(item1 - item2);
   //    ^? const comparator = (item1: number, item2: number) => number;
 
-  sort(arr, comparator); // Error: Type 'number' is not assignable to type '0 | 1 | -1'.
-  //        ~~~~~~~~~~
+  sort(arr, comparator);
+  //        ~~~~~~~~~~ Error: Type 'number' is not assignable to type '0 | 1 | -1'.
   ```
 
   Множество объединения трех литеральных типов `-1 | 0 | 1` является подмножеством `number`, но из ошибки можем понять, что возвращаемый тип должен быть либо таким же, либо более узким. Такое поведение проверки типов называется ковариантностью.
