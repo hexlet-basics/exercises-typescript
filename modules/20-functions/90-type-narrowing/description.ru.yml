@@ -23,7 +23,7 @@ theory: |
       }
     }
     // пустой объект
-    if (v instanceof Object) {
+    if (value instanceof Object) {
       if (Object.keys(value).length === 0) {
         return false;
       }
