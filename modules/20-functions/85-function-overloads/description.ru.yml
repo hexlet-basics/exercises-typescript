@@ -65,7 +65,7 @@ theory: |
 
 instructions: |
 
-  Реализуйте функцию `sayHello()`, которая аналогична примеру на Kotlin из теории:
+  Реализуйте и экспортируйте по умолчанию функцию `sayHello()`, которая аналогична примеру на Kotlin из теории:
 
   ```typescript
   sayHello('John'); // Hi John
