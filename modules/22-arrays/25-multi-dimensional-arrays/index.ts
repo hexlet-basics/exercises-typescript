@@ -1,3 +1,4 @@
+// BEGIN
 type Cell = string | null;
 type FieldRow = Cell[];
 type Field = FieldRow[];
@@ -11,5 +12,6 @@ function getField(size: number): Field {
 
   return field;
 }
+// END
 
 export default getField;
