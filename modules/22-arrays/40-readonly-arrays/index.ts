@@ -1,3 +1,4 @@
+// BEGIN
 function reverse(coll: readonly number[]) {
   const init: number[] = [];
   const result = coll.reduce((acc, value, index) => {
@@ -7,5 +8,6 @@ function reverse(coll: readonly number[]) {
 
   return result;
 }
+// END
 
 export default reverse;
