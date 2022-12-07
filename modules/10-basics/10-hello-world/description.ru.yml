@@ -1,5 +1,4 @@
 ---
-
 name: Привет, Мир!
 theory: |
   По традиции начнем с написания программы 'Hello, World!'. Эта программа будет выводить на экран текст:
@@ -32,3 +31,5 @@ tips:
     [strict в tsconfig](https://www.typescriptlang.org/tsconfig#strict)
   - |
     [Документация по флагам запуска tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html#compiler-options)
+  - |
+    [Статья "Как устроена система типов в TypeScript"](https://ru.hexlet.io/blog/posts/sistema-tipov-v-typescript)
