@@ -12,7 +12,7 @@ theory: |
     console.log("Hello, world!");
   }
 
-  //@file main.ts
+  // @file main.ts
   import helloWorld from './helloWorld';
   ```
 
