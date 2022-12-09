@@ -27,6 +27,8 @@ theory: |
 
 instructions: |
 
+  В процессе ...
+
 tips:
   - |
     [Assignability в старой документации](https://github.com/microsoft/TypeScript-New-Handbook/blob/master/reference/Assignability.md)
