@@ -25,7 +25,7 @@ theory: |
   ```typescript
   // Обычное определение
   function f(user: { firstName: string, age: number }) {
-    console.log(firstName, age);
+    console.log(user.firstName, user.age);
   }
 
   // Деструктурированный объект
