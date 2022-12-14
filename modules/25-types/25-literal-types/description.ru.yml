@@ -104,9 +104,9 @@ theory: |
 
   ```typescript
   const ormConfig = {
-    type: 'mysql';
-    host: 'localhost';
-    port: 5432;
+    type: 'mysql',
+    host: 'localhost',
+    port: 5432,
   } as const;
   ```
 
