@@ -56,7 +56,8 @@ theory: |
   const moderator = {
     firstName: 'Danil',
     lastName: 'Polovinkin',
-    type: 'moderator'
+    type: 'moderator',
+    email: 'danil@polovinkin.com'
   }
 
   const formatUser = (user: { type: string, firstName: string, lastName: string }) =>
