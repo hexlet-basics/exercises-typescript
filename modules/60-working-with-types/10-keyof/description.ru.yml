@@ -1,9 +1,7 @@
 ---
 
-name: Динамические ключи (Index Signature)
+name: Оператор типа keyof
 theory: |
-
-  https://dmitripavlutin.com/typescript-index-signatures/
 
   В процессе...
 
