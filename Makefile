@@ -12,6 +12,9 @@ compose-build:
 compose-install:
 	docker-compose run exercises npm install
 
+compose-update:
+	docker-compose run exercises npx ncu -u
+
 code-lint:
 	npx eslint .
 
