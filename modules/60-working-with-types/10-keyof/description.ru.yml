@@ -1,12 +1,46 @@
 ---
-
 name: Оператор типа keyof
 theory: |
 
-  FIXME: В процессе ...
+  Для доступа к свойствам объектов, элементам массивов и символах строк в TypeScript мы, как и в JavaScript, используем ключи (индексы). 
+  Множество допустимых значений ключей объекта можно получить с помощью оператора keyof. 
+
+  ```typescript
+  type Coords = {
+    latitude: number,
+    longitude: number,
+  };
+
+  type Measurement = keyof Coords; // 'latitude' | 'longitude';
+  ```
+
+  Для объектов, тип которых не был объявлен явным образом, keyof вернет string | number, т.к. доступ к ключам объекта может быть осуществлен с помощью значений только этих двух типов.
+  Ключи объекта - это всегда строки, при обращении к свойству объекта (или установке свойства) с помощью числа оно автоматически будет приведено к строке.
+
+  ```typescript
+  type HTTPStatusCodes = {
+    200: 'OK',
+    404: 'Not Found', 
+    418: 'I`m a teapot'
+  }
+
+  type Code = keyof HTTPStatusCodes; // 200 | 404 | 418 
+  ```
+
+  Оператор keyof так же работает для массивов и строк, тип индексов для них - это number.
+
+  ```typescript
+  type ArrayIndex = keyof any[]; // number
+  type StringIndex = keyof string; // number
+  ```
 
 instructions: |
 
-  FIXME: В процессе ...
+  Реализуйте функцию `fromEntries(entries)`, которая принимает на вход массив вхождений [ключ, значение] и возвращает объект, составленных из этих вхождений.
+
+  ```typescript
+  const entries = [['name', 'Vincent'], ['job', 'painter']];
+  fromEntries(entries); // { name: 'Vincent', job: 'painter' }
+  ```
 
 # tips:
