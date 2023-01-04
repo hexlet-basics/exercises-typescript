@@ -1,5 +1,5 @@
 // BEGIN
-function max(first: number, ...rest: number[]) {
+function max(first: number, ...rest: number[]): number {
   return Math.max(first, ...rest);
 }
 // END

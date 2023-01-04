@@ -1,10 +1,15 @@
 type Turtle = 'turtle' | null;
 
-const startGame = () => {
+type Game = {
+  makeTurn: (direction: 'left' | 'right') => void;
+  state: Array<Turtle>;
+};
+
+const startGame = (): Game => {
   const state: Array<Turtle> = ['turtle', null, null, null, null];
 
   // BEGIN
-  const makeTurn = (direction: 'left' | 'right') => {
+  const makeTurn = (direction: 'left' | 'right'): void => {
     const turtleIndex = state.indexOf('turtle');
     const nextIndex = direction === 'left' ? turtleIndex - 1 : turtleIndex + 1;
 

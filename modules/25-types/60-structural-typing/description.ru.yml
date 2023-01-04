@@ -43,7 +43,7 @@ theory: |
     type: 'admin'
   }
 
-  const formatUser = (user: { type: string, firstName: string, lastName: string }) =>
+  const formatUser = (user: { type: string, firstName: string, lastName: string }): string =>
     [user.type, ':', user.firstName, user.lastName].join(' ');
 
   formatUser(user); // ok
@@ -60,7 +60,7 @@ theory: |
     email: 'danil@polovinkin.com'
   }
 
-  const formatUser = (user: { type: string, firstName: string, lastName: string }) =>
+  const formatUser = (user: { type: string, firstName: string, lastName: string }): string =>
     [user.type, ':', user.firstName, user.lastName].join(' ');
 
   formatUser(moderator); // ok

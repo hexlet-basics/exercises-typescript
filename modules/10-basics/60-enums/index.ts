@@ -4,7 +4,7 @@ enum ModalStatus {
   Closed,
 }
 
-function buildModal(text: string, status: ModalStatus) {
+function buildModal(text: string, status: ModalStatus): { text: string; status: ModalStatus } {
   return {
     text,
     status,

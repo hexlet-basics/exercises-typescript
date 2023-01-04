@@ -11,7 +11,7 @@ type User = {
   email: string
 };
 
-function authorize(user: User | null) {
+function authorize(user: User | null): boolean {
   const companyDomain = 'hexlet.io';
 
   const email = user?.email ?? '';

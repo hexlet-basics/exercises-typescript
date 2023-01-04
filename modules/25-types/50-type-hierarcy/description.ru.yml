@@ -102,4 +102,4 @@ instructions: |
 
 tips:
   - |
-    [Дерево иерархии типов](https://www.zhenghao.io/posts/type-hierarchy-tree)
+    [Как устроена система типов в TypeScript](https://ru.hexlet.io/blog/posts/sistema-tipov-v-typescript)

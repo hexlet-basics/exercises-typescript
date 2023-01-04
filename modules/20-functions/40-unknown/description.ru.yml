@@ -40,7 +40,7 @@ theory: |
   Затем, уже внутри тела можно выполнить нужную проверку, чтобы узнать с чем мы имеем дело:
 
   ```typescript
-  function isError(value: unknown) {
+  function isError(value: unknown): boolean {
     return value instanceof Error;
   }
   ```

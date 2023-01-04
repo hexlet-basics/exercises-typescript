@@ -1,3 +1,4 @@
+// BEGIN
 function sayHello(name: string): string;
 function sayHello(firstName: string, lastName: string): string;
 function sayHello(firstName: string, lastName?: string): string {
@@ -7,5 +8,6 @@ function sayHello(firstName: string, lastName?: string): string {
 
   return `Hello ${firstName} ${lastName}`;
 }
+// END
 
 export default sayHello;
