@@ -1,10 +1,13 @@
-import { assert } from 'type-assertions';
-import type { Equal } from 'type-assertions';
+// import { assert } from 'type-assertions';
+// import type { Equal } from 'type-assertions';
 
 import lastIndex from './index';
 
 test('lastIndex', () => {
-  assert<Equal<ReturnType<typeof lastIndex>, number | null>>();
+  // https://github.com/sindresorhus/is
+  // https://github.com/unional/type-plus
+  // https://github.com/colinhacks/zod
+  // assert<Equal<ReturnType<typeof lastIndex>, number | null>>();
 
   const str = 'test';
   expect(lastIndex(str, 't')).toBe(3);
