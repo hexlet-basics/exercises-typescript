@@ -1,5 +1,4 @@
 ---
-
 name: Пересечение (Intersections Types)
 theory: |
 
@@ -33,4 +32,13 @@ theory: |
 
 instructions: |
 
-  FIXME: В процессе ...
+  Реализуйте функцию `intersection(...arrays)`, которая принимает массивы и возвращает массив уникальных элементов, которые встречаются в каждом из них.
+  Небольшое упрощение - в массивах ожидаются элементы типа number | string | boolean | null.
+
+  ```typescript
+  const RGB = ['Red', 'Green', 'Blue'];
+  const RYB = ['Red', 'Yellow', 'Blue'];
+
+  intersection(RGB, RYB); // ['Red', 'Blue']
+  intersection(RGB, []); // []
+  ```
