@@ -1,5 +1,5 @@
 // BEGIN
-type Cell = string | null;
+type Cell = null;
 type FieldRow = Cell[];
 type Field = FieldRow[];
 
