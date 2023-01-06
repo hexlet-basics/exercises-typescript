@@ -9,9 +9,9 @@ theory: |
   function concat(a: number, b: number): string;
   function concat(a: string, b: string): string;
 
-  function concat(a: unknown, b: unknown): string {
+  function concat(a: any, b: any): string {
     if (typeof a === 'string') {
-      return `${a}{b}`;
+      return `${a}${b}`;
     } else {
       return `${a.toFixed()}${b.toFixed()}`;
     }
@@ -32,11 +32,11 @@ theory: |
 
   ```typescript
   function add(a: number, b: number, c: number): number;
-  function add(a: number, b: number): unknown;
-  function add(a: string, b: string): unknown;
+  function add(a: number, b: number): number;
+  function add(a: string, b: string): string;
 
   // Сигнатура подходит под все примеры выше
-  function add(a: unknown, b: unknown, c?: unknown): unknown {
+  function add(a: any, b: any, c?: number): unknown {
     // тут вся логика
     if (c === undefined) {
       // ...
