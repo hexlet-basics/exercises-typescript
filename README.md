@@ -20,7 +20,7 @@ make ci-check
 make compose-test
 
 # run linters and validators
-make compose-code-lint
+make code-lint
 make compose-description-lint
 make compose-schema-validate
 ```

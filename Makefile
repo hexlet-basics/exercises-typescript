@@ -19,7 +19,7 @@ code-lint:
 	npx eslint .
 
 # compile:
-	# @(for i in $$(find . -type f -name Main.java); do javac $$(dirname $$i)/*.java ; done)
+#	@(for i in $$(find . -type f -name Main.java); do javac $$(dirname $$i)/*.java ; done)
 
 # clean:
 #   @$$(find . -type f -name *.class -delete)
