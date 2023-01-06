@@ -53,7 +53,7 @@ theory: |
   Код с `any` будет работать всегда, но он выключает проверку типов. Чтобы этого не происходило, нужно всегда явно типизировать пустой массив:
 
   ```typescript
-  const items: number[] = [];
+  const items: Array<number> = [];
   ```
 
 instructions: |

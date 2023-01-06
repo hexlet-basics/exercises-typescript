@@ -84,7 +84,7 @@ theory: |
       type: string;
   }
 
-  const admin: IntersectionUser = { username: 'test', password: 'test', type: 'admin' } // требуется совпадение объектным типом и слева и справа от оператора &
+  const admin: IntersectionUser = { username: 'test', password: 'test', type: 'admin' } // требуется совпадение c объектным типом и слева и справа от оператора &
 
   type UnionUser = {
       username: string;

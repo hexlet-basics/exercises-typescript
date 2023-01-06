@@ -8,9 +8,8 @@ theory: |
   Пересечение указывается с помощью символа `&`, по обе стороны от которого располагаются типы. Давайте определим тип объекта со статусом заказа, а затем более строгий тип с точной ценой в сотню:
 
   ```typescript
-  type OrderStatus = 'Created' | 'Paid' | 'Shipped' | 'Delivered';
   type Order = {
-    status: OrderStatus,
+    status: 'Created',
   }
 
   type OneHundredOrder = Order & {
