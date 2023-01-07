@@ -77,8 +77,8 @@ theory: |
   function concat(a: number, b: number): string;
   function concat(a: string, b: string): string;
 
-  function concat(a: unknown, b: unknown): string {
-    if (typeof a == 'string') {
+  function concat(a: any, b: any): string {
+    if (typeof a === 'string') {
       return `${a}${b}`;
       //        ^? (parameter) a: string
     } else {
