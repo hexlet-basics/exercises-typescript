@@ -1,5 +1,5 @@
 // BEGIN
-function compact(items: Array<number | null>): Array<number | null> {
+function compact(items: (number | null)[]): number[] {
   return items.filter((item) => item !== null);
 }
 // END
