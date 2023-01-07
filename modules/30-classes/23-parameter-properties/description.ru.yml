@@ -7,10 +7,11 @@ theory: |
 
   ```typescript
   class SomeClass {
-    one: number;
-    private two: string;
-
     constructor(public one: number, private two: number) {}
+
+      get three(): string {
+        return `${this.one} ${this.two}`;
+    }
   }
   ```
 
@@ -21,3 +22,5 @@ instructions: |
 tips:
   - |
     [Перегрузка конструктора](https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors)
+  - |
+    [Typescript Constructor Shorthand](https://dev.to/satansdeer/typescript-constructor-shorthand-3ibd)
