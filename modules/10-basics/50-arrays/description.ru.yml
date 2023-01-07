@@ -24,7 +24,7 @@ theory: |
   Точно так же описываются типы в определении функций:
 
   ```typescript
-  function toUpperArray(items: string[]): string {
+  function toUpperArray(items: string[]): string[] {
     return items.map((s) => s.toUpperCase());
   }
   ```
