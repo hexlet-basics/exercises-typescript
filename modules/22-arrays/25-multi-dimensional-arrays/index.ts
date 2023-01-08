@@ -1,16 +1,7 @@
 // BEGIN
-type Cell = null;
-type FieldRow = Cell[];
-type Field = FieldRow[];
-
-function getField(size: number): Field {
-  const field: Field = [];
-  for (let i = 0; i < size; i += 1) {
-    const row: FieldRow = Array<Cell>(size).fill(null, 0);
-    field.push(row);
-  }
-
-  return field;
+function getField(size: number): null[][] {
+  const row = Array<null>(size).fill(null);
+  return Array<null[]>(size).fill(row);
 }
 // END
 
