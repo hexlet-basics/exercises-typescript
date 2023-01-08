@@ -1,5 +1,4 @@
 ---
-
 name: Об интерфейсах
 theory: |
 
@@ -41,7 +40,7 @@ theory: |
   Теперь во всех функциях, где объекты используются только для того, чтобы посчитать количество чего-либо внутри них, можно указывать `Countable` вместо `SchoolClass`:
 
   ```typescript
-  // А не function doSomething(obj: Countable)
+  // А не function doSomething(obj: SchoolClass)
   function doSomething(obj: Countable) {
     // Где-то внутри вызывается
     obj.count();

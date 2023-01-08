@@ -1,10 +1,10 @@
 // BEGIN
 function reverse(coll: ReadonlyArray<number>): Array<number> {
-  const init: number[] = [];
-  const result = coll.reduce((acc, value, index) => {
-    acc[coll.length - index - 1] = value;
-    return acc;
-  }, init);
+  const result: number[] = [];
+
+  for (let i = coll.length - 1; i >= 0; i -= 1) {
+    result.push(coll[i]);
+  }
 
   return result;
 }

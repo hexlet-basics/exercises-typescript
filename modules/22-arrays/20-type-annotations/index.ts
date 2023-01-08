@@ -1,6 +1,14 @@
 // BEGIN
-function compact(items: (number | null)[]): number[] {
-  return items.filter((item) => item !== null) as number[];
+function compact(items: (null | number)[]): number[] {
+  const result: number[] = [];
+
+  items.forEach((item) => {
+    if (item !== null) {
+      result.push(item);
+    }
+  });
+
+  return result;
 }
 // END
 

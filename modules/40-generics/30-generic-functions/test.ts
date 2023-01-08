@@ -7,8 +7,9 @@ test('function', () => {
       return this.items.push(value);
     },
     filter(callback) {
-      const newItems = this.items.filter(callback);
-      return { ...this, items: newItems };
+      const filteredItems = this.items.filter(callback);
+
+      return { ...this, items: filteredItems };
     },
   };
 
