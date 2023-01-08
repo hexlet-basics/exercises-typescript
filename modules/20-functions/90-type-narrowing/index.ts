@@ -1,8 +1,10 @@
 // BEGIN
 function last(value: string | number): string | number {
-  return typeof value === 'number'
-    ? value % 10
-    : value.at(-1) ?? '';
+  if (typeof value === 'number') {
+    return value % 10;
+  }
+  
+  return value.at(-1) ?? '';
 }
 // END
 
