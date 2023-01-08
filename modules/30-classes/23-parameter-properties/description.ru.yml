@@ -7,13 +7,32 @@ theory: |
 
   ```typescript
   class SomeClass {
-    constructor(public one: number, private two: number) {}
+    constructor(public one: number, private two: string) {}
 
       get three(): string {
         return `${this.one} ${this.two}`;
     }
   }
   ```
+
+  Этот код делает тоже самое что и этот:
+
+  ```typescript
+    class SomeClass {
+      public one: number;
+      private two: string;
+      constructor(one: number, two: string) {
+        this.one = one;
+        this.two = two; 
+      }
+        get three(): string {
+          return `${this.one} ${this.two}`;
+      }
+    }
+  ```
+
+  Новый синтаксиси позволяет не дублировать код заполнения свойтс из параметров и деляет его более лаконичным. 
+
 
 instructions: |
 
