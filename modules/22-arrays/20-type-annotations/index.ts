@@ -1,6 +1,6 @@
 // BEGIN
-function compact(items: Array<number | null>): Array<number | null> {
-  return items.filter((item) => item !== null);
+function compact(items: (number | null)[]): number[] {
+  return items.filter((item) => item !== null) as number[];
 }
 // END
 
