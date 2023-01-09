@@ -1,5 +1,4 @@
 ---
-
 name: Аннотации типов
 theory: |
 
@@ -55,6 +54,23 @@ theory: |
   ```typescript
   const items: Array<number> = [];
   ```
+
+  ## Утверждение типа возвращаемого значения
+
+  `val is` в TypeScript - это утверждение типа, которое используется для указания компилятору TypeScript, что переменная val имеет определенный тип. Например:
+
+  ```typescript
+  function isString(val: any): val is string {
+    return typeof val === 'string';
+  }
+
+  const x = 'Hello, world';
+  if (isString(x)) {
+    console.log(x.toUpperCase()); // Output: HELLO, WORLD
+  }
+  ```
+
+  В этом примере функция isString принимает аргумент val с типом any и возвращает значение true, если val является строкой, и false в противном случае. Затем x объявляется как строка и передается в функцию isString. Как только утверждение типа val is string было успешно выполнено, мы можем безопасно вызывать метод toUpperCase для x.
 
 instructions: |
 
