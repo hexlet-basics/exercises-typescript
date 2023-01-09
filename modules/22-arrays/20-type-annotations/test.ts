@@ -1,7 +1,12 @@
-import compact from './index';
+import uniq from './index';
 
 test('function', () => {
-  expect(compact([])).toEqual([]);
-  expect(compact([2, 3, -100])).toEqual([2, 3, -100]);
-  expect(compact([null, 9, 3, null, 8])).toEqual([9, 3, 8]);
+  expect(uniq([])).toEqual([]);
+  expect(uniq([2, 3, -100, -100, -100])).toEqual([2, 3, -100]);
+  expect(uniq(['as', 'good', 'as', 'it', 'gets'])).toEqual([
+    'as',
+    'good',
+    'it',
+    'gets',
+  ]);
 });
