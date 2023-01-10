@@ -52,7 +52,7 @@ theory: |
     return `Hello, ${name.toUpperCase()}!`;
   }
 
-  getGreetingPhrase() // Hello, Guest!
+  getGreetingPhrase() // Hello, GUEST!
   ```
 
   ## Тип возвращаемого значения
