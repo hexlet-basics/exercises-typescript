@@ -4,7 +4,7 @@ function last(value: string | number): string | number {
     return value % 10;
   }
 
-  return value.at(-1) ?? '';
+  return value[value.length - 1] ?? '';
 }
 // END
 
