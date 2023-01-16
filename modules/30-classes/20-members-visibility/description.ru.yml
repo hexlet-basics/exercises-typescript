@@ -23,7 +23,7 @@ theory: |
   }
   ```
 
-  Но свойства можно сделать приватными. Тогда пропадет возможность обращаться к ним снаружи напрямую:
+  Также свойства можно сделать приватными. Тогда пропадет возможность обращаться к ним снаружи напрямую:
 
   ```typescript
   class Point {
@@ -39,6 +39,38 @@ theory: |
   const p = new Point(10, 8);
   p.x; // Error!
   p.y; // Error!
+  ```
+
+  И наконец, можно сделать свойства защищенными. Это значит, что они доступны внутри класса и в наследниках:
+
+  ```typescript
+  class Point {
+    protected x: number;
+    protected y: number;
+
+    constructor(x: number, y: number) {
+      this.x = x;
+      this.y = y;
+    }
+  }
+
+  class Point3D extends Point {
+    protected z: number;
+
+    constructor(x: number, y: number, z: number) {
+      super(x, y);
+      this.z = z;
+    }
+
+    public getCoordinates() {
+      return [this.x, this.y, this.z]; // OK
+    }
+  }
+
+  const p = new Point3D(10, 8, 5);
+  p.x; // Error!
+  p.y; // Error!
+  p.z; // Error!
   ```
 
 instructions: |
