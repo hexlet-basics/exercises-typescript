@@ -101,6 +101,7 @@ theory: |
   ```typescript
   type IntersectionUser = {
     username: string;
+    password: string;
     type: number;
   } & {
       type: string;
