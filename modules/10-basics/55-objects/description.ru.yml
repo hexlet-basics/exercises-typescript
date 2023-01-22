@@ -61,7 +61,7 @@ instructions: |
 
   ```typescript
   // Определите тип исходя из структуры объекта
-  const course = {
+  const course1 = {
     name: 'Java',
     lessons: ['variables', 'functions', 'conditions'],
   };
