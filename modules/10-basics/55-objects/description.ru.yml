@@ -61,11 +61,11 @@ instructions: |
 
   ```typescript
   // Определите тип исходя из структуры объекта
-  const course1 = {
+  const course = {
     name: 'Java',
     lessons: ['variables', 'functions', 'conditions'],
   };
-  isComplete(course1); // false
+  isComplete(course); // false
   ```
 
 # tips:
