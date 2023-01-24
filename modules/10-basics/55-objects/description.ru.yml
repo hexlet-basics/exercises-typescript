@@ -65,7 +65,7 @@ instructions: |
     name: 'Java',
     lessons: ['variables', 'functions', 'conditions'],
   };
-  isComplete(course1); // false
+  isComplete(course); // false
   ```
 
 # tips:
