@@ -22,7 +22,7 @@ theory: |
   ```typescript
   type MyColl = {
     data: Array<number>;
-    forEach(callback: (value: number) => void, index: number, array: Array<number>): void;
+    forEach(callback: (value: number, index: number, array: Array<number>) => void): void;
     at(index: number): number | undefined;
   }
   ```
@@ -33,7 +33,7 @@ theory: |
   // Типы можно не прописывать, так как они указаны в `MyColl`
   const coll: MyColl = {
     data: [1, 3, 8],
-    forEach(callback, index) {
+    forEach(callback) {
       this.data.forEach(callback);
     },
     at(index) {
@@ -44,13 +44,13 @@ theory: |
   coll.at(-1); // 8
   ```
 
-  Теперь попробуем обобщить этот тип, то есть сделать из него дженерик. Для этого нужно сделать одну простую вещь: вместо `number` везде написать `T` (или любое другое имя, начинающееся с большой буквы) и добавить `T` как параметр типа к определению:
+  Теперь попробуем обобщить этот тип, то есть сделать из него дженерик. Для этого нужно сделать одну простую вещь: для элементов коллекции вместо `number` написать `T` (или любое другое имя, начинающееся с большой буквы) и добавить `T` как параметр типа к определению:
 
   ```typescript
   type MyColl<T> = {
     data: Array<T>;
-    forEach(callback: (value: T) => void, index: T, array: Array<T>): void;
-    at(index: T): T | undefined;
+    forEach(callback: (value: T, index: number, array: Array<T>) => void): void;
+    at(index: number): T | undefined;
   }
   ```
 
