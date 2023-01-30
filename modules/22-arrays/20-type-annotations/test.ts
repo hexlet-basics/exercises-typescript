@@ -9,4 +9,5 @@ test('function', () => {
     'it',
     'gets',
   ]);
+  expect(uniq([1, 1, 3, 'oops!'])).toEqual([1, 3, 'oops!']);
 });
