@@ -1,3 +1,5 @@
+import * as ta from 'type-assertions';
+
 import filterAnagrams from './index';
 
 test('function', () => {
@@ -6,4 +8,6 @@ test('function', () => {
   expect(filterAnagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer'])).toEqual(['carer', 'racer']);
 
   expect(filterAnagrams('laser', ['lazing', 'lazy', 'lacer'])).toEqual([]);
+
+  ta.assert<ta.Equal<ReturnType<typeof filterAnagrams>, string[]>>();
 });

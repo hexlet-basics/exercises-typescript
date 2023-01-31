@@ -1,12 +1,9 @@
-// import type { Equal } from 'type-assertions';
-// import { assert } from 'type-assertions';
+import * as ta from 'type-assertions';
 
 import startGame from './index';
 
 test('startTurtleGame', () => {
   const { makeTurn, state } = startGame();
-
-  // assert<Equal<ReturnType<typeof makeTurn>, void>>;
 
   expect(state).toEqual(['turtle', null, null, null, null]);
 
@@ -27,4 +24,6 @@ test('startTurtleGame', () => {
 
   makeTurn('left');
   expect(state).toEqual([null, null, null, 'turtle', null]);
+
+  ta.assert<ta.Equal<ReturnType<typeof makeTurn>, void>>();
 });

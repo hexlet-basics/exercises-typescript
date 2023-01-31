@@ -16,4 +16,5 @@ function getOlderUser(user1: User, user2: User): User | null {
 }
 // END
 
+export type { User };
 export default getOlderUser;

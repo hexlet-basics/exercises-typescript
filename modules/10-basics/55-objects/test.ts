@@ -1,3 +1,5 @@
+import * as ta from 'type-assertions';
+
 import isComplete from './index';
 
 test('function', () => {
@@ -12,4 +14,7 @@ test('function', () => {
     lessons: ['variables', 'functions', 'conditions', 'loops'],
   };
   expect(isComplete(course2)).toBe(true);
+
+  ta.assert<ta.Equal<ReturnType<typeof isComplete>, boolean>>();
+  ta.assert<ta.Equal<Parameters<typeof isComplete>[0], { name: string, lessons: string[] }>>();
 });

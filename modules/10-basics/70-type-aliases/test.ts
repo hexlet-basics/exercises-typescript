@@ -1,4 +1,6 @@
-import getOlderUser from './index';
+import * as ta from 'type-assertions';
+
+import getOlderUser, { User } from './index';
 
 test('function', () => {
   const user1 = {
@@ -20,4 +22,6 @@ test('function', () => {
   expect(getOlderUser(user2, user1)).toEqual(user2);
 
   expect(getOlderUser(user2, user3)).toBeNull();
+
+  ta.assert<ta.Equal<ReturnType<typeof getOlderUser>, User | null>>();
 });
