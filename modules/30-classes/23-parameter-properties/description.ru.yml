@@ -25,7 +25,8 @@ theory: |
         this.one = one;
         this.two = two;
       }
-        get three(): string {
+      
+      get three(): string {
           return `${this.one} ${this.two}`;
       }
     }
