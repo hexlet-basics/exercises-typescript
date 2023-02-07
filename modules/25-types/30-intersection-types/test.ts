@@ -14,14 +14,14 @@ test('reverseDoubleLinkedList', () => {
     value: 2,
     next: null,
     prev: list,
-  }
+  };
   list.next = list2;
 
   const list3: DoubleLinkedList = {
     value: 3,
     prev: list2,
     next: null,
-  }
+  };
   list2.next = list3;
 
   reverseDoubleLinkedList(list);
