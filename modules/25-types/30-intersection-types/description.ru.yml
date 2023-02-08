@@ -29,23 +29,24 @@ theory: |
   Если мы объявим переменную `const StringAndNumber: string & number`, то ей нужно будет присвоить такое значение, которое одновременно принадлежит множествам `string` и `number`, то есть является одновременно и строкой, и числом. Такого значения не существует, поэтому `StringAndNumber` будет иметь тип `never`.
 
 instructions: |
-  Реализуйте функцию `reverseDoubleLinkedList`, которая принимает двусявязный список и разворачивает его. 
+  Реализуйте функцию `reverseDoubleLinkedList`, которая принимает двусвязный список и разворачивает его.
 
   ```typescript
-    const list: DoubleLinkedList = {
-        value: 1,
-        next: null,
-        prev: null,
-    };
-    const list2: DoubleLinkedList = {
-        value: 2,
-        next: null,
-        prev: list
-    }
-    list.next = list2
+  const list: DoubleLinkedList = {
+    value: 1,
+    next: null,
+    prev: null,
+  };
+  const list2: DoubleLinkedList = {
+    value: 2,
+    next: null,
+    prev: list
+  }
+  list.next = list2
 
-    reverseDoubleLinkedList(list);
-    // list.prev === list2
-    // list2.next === list
+  reverseDoubleLinkedList(list);
+  // list.prev === list2
+  // list2.next === list
   ```
-  Для того, чтобы получить тип `DoubleLinkedList` удобно будет расширить его через объедеинение с `SinglyLinkedList`.
+
+  Для того, чтобы получить тип `DoubleLinkedList` удобно будет расширить его через объединение с `SinglyLinkedList`.
