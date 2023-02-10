@@ -1,3 +1,5 @@
+import * as ta from 'type-assertions';
+
 import reverseDoubleLinkedList, { DoubleLinkedList } from './index';
 
 test('reverseDoubleLinkedList', () => {
@@ -30,4 +32,7 @@ test('reverseDoubleLinkedList', () => {
   expect(list.prev).toBe(list2);
   expect(list2.next).toBe(list);
   expect(list2.prev).toBe(list3);
+
+  ta.assert<ta.Equal<ReturnType<typeof reverseDoubleLinkedList>, void>>();
+  ta.assert<ta.Equal<Parameters<typeof reverseDoubleLinkedList>, [DoubleLinkedList]>>();
 });
