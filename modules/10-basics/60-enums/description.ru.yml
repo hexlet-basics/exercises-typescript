@@ -43,6 +43,20 @@ theory: |
   setStatus(status: OrderStatus)
   ```
 
+  Одновременно с этим, перечисления после компиляции превращаются в JavaScript объект, в котором каждому значению соответствует свойство. Это свойство имеет тип `number` и начинается с `0`:
+
+  ```typescript
+  const status = OrderStatus.Created;
+  console.log(status); // 0
+  ```
+
+  Это позволяет в дальнейшем удобно использовать стандартные методы, вроде `Object.keys` и `Object.values`:
+
+  ```typescript
+  const statuses = Object.keys(OrderStatus);
+  console.log(statuses); // ['Created', 'Paid', 'Shipped', 'Delivered']
+  ```
+
 instructions: |
 
   1. Реализуйте перечисление `ModalStatus`, с двумя значениями: Opened и Closed.

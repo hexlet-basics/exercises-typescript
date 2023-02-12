@@ -67,6 +67,6 @@ instructions: |
 
   FIXME: В процессе ...
 
-# tips:
-#   - |
-#     [Перегрузка конструктора](https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors)
+tips:
+  - |
+    [Официальная документация](https://www.typescriptlang.org/docs/handbook/2/classes.html)
