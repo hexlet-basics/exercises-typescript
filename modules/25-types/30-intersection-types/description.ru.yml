@@ -17,16 +17,18 @@ theory: |
   }
 
   const myOrder: OneHundredOrder = {
-      status: 'Created',
-      cost: 100
+    status: 'Created',
+    cost: 100
   }
   ```
 
   Из пересечения объектных типов с полями `status` **И** `cost`, мы получили тип `OneHundredOrder`, который содержит оба этих поля.
 
-  Тип – это множество значений. Когда мы объединяем типы, мы получаем новый тип, который содержит все значения подходящие под ограничения обоих типов.
+  Тип – это множество значений. Когда мы задаем пересечение типов, мы получаем новый тип, который содержит значения подходящие под ограничения обоих типов.
 
-  Если мы объявим переменную `const StringAndNumber: string & number`, то ей нужно будет присвоить такое значение, которое одновременно принадлежит множествам `string` и `number`, то есть является одновременно и строкой, и числом. Такого значения не существует, поэтому `StringAndNumber` будет иметь тип `never`.
+  ![NumberOrString](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/30-intersection-types/assets/one_hundred_order.png)
+
+  Если мы объявим переменную `const StringAndNumber: string & number`, то ей нужно будет присвоить такое значение, которое одновременно принадлежит множествам `string` и `number`, то есть является одновременно и строкой, и числом. Такого значения не существует, поэтому `StringAndNumber` будет иметь тип `never`. `never` соответствует пустому множеству, то есть тип не имеющий ни одного значения.
 
 instructions: |
   Реализуйте функцию `reverseDoubleLinkedList`, которая принимает двусвязный список и разворачивает его.
@@ -45,8 +47,9 @@ instructions: |
   list.next = list2
 
   reverseDoubleLinkedList(list);
-  // list.prev === list2
-  // list2.next === list
+
+  console.log(list.prev === list2) // true
+  console.log(list2.next === list) // true
   ```
 
   Для того, чтобы получить тип `DoubleLinkedList` удобно будет расширить его через объединение с `SinglyLinkedList`.

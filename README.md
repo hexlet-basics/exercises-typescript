@@ -25,13 +25,6 @@ make compose-description-lint
 make compose-schema-validate
 ```
 
-## Designations
-
-We are using the same designations as in the [TypeScript blog](https://devblogs.microsoft.com/typescript/).
-
-* `// ^?` - types inference
-* `// ~~~` - highlight error
-
 ##
 [![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://hexlet.io/?utm_source=github&utm_medium=link&utm_campaign=exercises-typescript)
 

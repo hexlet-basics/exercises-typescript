@@ -11,10 +11,9 @@ theory: |
 
   const arr = [1, 2, 3];
   const comparator = (item1: number, item2: number) => Math.sign(item1 - item2);
-  //    ^? const comparator = (item1: number, item2: number) => number;
+  // (item1: number, item2: number) => number;
 
-  sort(arr, comparator);
-  //        ~~~~~~~~~~ Error: Type 'number' is not assignable to type '0 | 1 | -1'.
+  sort(arr, comparator); // Error: Type 'number' is not assignable to type '0 | 1 | -1'.
   ```
 
   Множество объединения трех литеральных типов `-1 | 0 | 1` является подмножеством `number`, но из ошибки можем понять, что возвращаемый тип должен быть либо таким же, либо более узким. Такое поведение проверки типов называется ковариантностью.
@@ -27,7 +26,7 @@ theory: |
 
   const arr = [1, 2, 3];
   const comparator = (item1: number, item2: number) => {
-  //    ^? const comparator: (item1: number, item2: number) => -1 | 0 | 1;
+  // (item1: number, item2: number) => -1 | 0 | 1;
       if (item1 === item2) {
           return 0;
       }
@@ -44,8 +43,7 @@ theory: |
   type Formatter = (val: string) => string;
 
   const formatToConcrete: Formatter = (_val: string): 'test' => 'test';
-  const formatToNumber: Formatter = (val: string | number): string | number => String(val);
-  //    ~~~~~~~~~~~~~~
+  const formatToNumber: Formatter = (val: string | number): string | number => String(val); // Error!
   ```
 
   Утиная типизация JavaScript привнесла свои особенности в передаваемые аргументы функций. Для того, чтобы код выполнился достаточно проверки на наличие определенных полей или методов в объекте. Любые объекты с дополнительными полями и методами также будут проходить такую проверку типов. Когда проверка требует более широкий тип это называется контрвариантностью.

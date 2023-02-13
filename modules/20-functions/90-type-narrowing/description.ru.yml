@@ -79,8 +79,7 @@ theory: |
 
   function concat(a: any, b: any): string {
     if (typeof a === 'string') {
-      return `${a}${b}`;
-      //        ^? (parameter) a: string
+      return `${a}${b}`; // (parameter) a: string
     } else {
       return `${a.toFixed()}${b.toFixed()}`;
     }
