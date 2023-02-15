@@ -1,30 +1,43 @@
-import * as ta from "type-assertions";
-import applyTransactions, { Transaction, Wallet } from "./index";
+import * as ta from 'type-assertions';
+import applyTransactions, { Transaction, Wallet } from './index';
 
-test("applyTransactions", () => {
+test('applyTransactions', () => {
   const wallet: Wallet = {
     balance: 100,
     transactions: [
-      (amount: number) => amount + 10,
-      (amount: number) => amount - 20,
-      (amount: number) => amount + 30,
+      {
+        apply: (amount: number) => amount + 10,
+      },
+      {
+        apply: (amount: number) => amount - 20,
+      },
+      {
+        apply: (amount: number) => amount + 30,
+      },
     ],
   };
 
-  expect(applyTransactions(wallet)).toBe(110);
+  expect(applyTransactions(wallet)).toBe(120);
+  expect(wallet.balance).toBe(100);
 
   const wallet2: Wallet = {
     balance: 10,
     transactions: [
-      (amount: number) => amount + 10,
-      () => {
-        throw new Error("Error");
+      {
+        apply: (amount: number) => amount + 10,
       },
-      (amount: number) => amount + 30,
+      {
+        apply: () => {
+          throw new Error('Error');
+        },
+      },
+      {
+        apply: (amount: number) => amount + 30,
+      },
     ],
   };
 
   expect(applyTransactions(wallet2)).toBe(10);
 
-  ta.assert<ta.Equal<Parameters<Transaction["apply"]>, [number]>>();
+  ta.assert<ta.Equal<Parameters<Transaction['apply']>, [number]>>();
 });

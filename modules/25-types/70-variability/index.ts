@@ -10,10 +10,11 @@ type Wallet = {
 
 const applyTransactions = (wallet: Wallet) => {
   try {
-    let balance = wallet.balance;
-    for (const transaction of wallet.transactions) {
+    let { balance } = wallet;
+
+    wallet.transactions.forEach((transaction) => {
       balance = transaction.apply(balance);
-    }
+    });
     return balance;
   } catch (e) {
     return wallet.balance;
