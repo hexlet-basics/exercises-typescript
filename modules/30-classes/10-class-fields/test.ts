@@ -1,7 +1,7 @@
 import File from './index';
 
 test('File', () => {
-  const file = new File('foo.txt', 4);
+  const file = new File({ name: 'foo.txt', size: 4 });
 
   expect(file.name).toBe('foo.txt');
   expect(file.size).toBe(4);

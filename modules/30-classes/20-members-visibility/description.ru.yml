@@ -75,4 +75,16 @@ theory: |
 
 instructions: |
 
-  FIXME: В процессе ...
+  Реализуйте класс `ImageFile`, расширяюий (`extends`) класс `File` дополнительными приватными полями: `width`, `height`. Также переопределите метод `toString()`, теперь он должен дополнительно выводить `<width>x<height>`.
+
+  ```typescript
+  const imageFile = new ImageFile({
+    name: 'image.png',
+    size: 100,
+    width: 200,
+    height: 300,
+  });
+  console.log(imageFile.toString()); // image.png (100 bytes) 200x300
+  ```
+
+  Для того, чтобы вызвать метод родительского класса используйте `super.toString()`.
