@@ -2,6 +2,7 @@
   "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "module": "esnext",
+    "target": "esnext",
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
