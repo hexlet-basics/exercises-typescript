@@ -1,5 +1,4 @@
 // BEGIN
-
 class File {
   name: string;
 
