@@ -22,5 +22,6 @@ instructions: |
   console.log(error.message); // Not Found
   ```
 
-tips: |
-  [Наследование классов](https://www.typescriptlang.org/docs/handbook/2/classes.html#extends-clauses)
+tips:
+ - |
+    [Наследование классов](https://www.typescriptlang.org/docs/handbook/2/classes.html#extends-clauses)
