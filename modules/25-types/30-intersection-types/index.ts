@@ -5,24 +5,16 @@ type SinglyLinkedList = {
 
 // BEGIN
 type DoubleLinkedList = SinglyLinkedList & {
-  prev: DoubleLinkedList | null;
   next: DoubleLinkedList | null;
-};
+  prev: DoubleLinkedList | null;
+}
 
-const reverseDoubleLinkedList = (head: DoubleLinkedList): void => {
-  let current: DoubleLinkedList | null = head;
-  let prev = null;
-  let next = null;
-
-  while (current) {
-    next = current.next;
-    prev = current.prev;
-
-    current.next = prev;
-    current.prev = next;
-
-    prev = current;
-    current = next;
+const reverseDoubleLinkedList = (list: DoubleLinkedList): void => {
+  const temp = list.prev;
+  list.prev = list.next;
+  list.next = temp;
+  if (list.prev !== null) {
+    reverseDoubleLinkedList(list.prev)
   }
 };
 // END
