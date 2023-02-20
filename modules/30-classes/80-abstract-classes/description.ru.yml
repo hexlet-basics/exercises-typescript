@@ -9,6 +9,24 @@ theory: |
   1. Решение - обычный класс, но если не предполагается создание его объектов, то абстрактный
   1. Абстрактный класс может требовать от наследников реализации какого-то метода. Типичное использование - шаблонный метод
 
+  Cтатические свойства и методы могут быть переопределены в подклассах, если они помечены как `abstract`:
+
+  ```typescript
+  abstract class File {
+    static readonly maxFileSize = 1000;
+    static isFile(file: File): boolean {
+      return file instanceof File;
+    }
+  }
+
+  class ImageFile extends File {
+    static readonly maxFileSize = 2000; // Ok
+    static isFile(file: File): boolean { // Ok
+      return file instanceof ImageFile;
+    }
+  }
+  ```
+
 instructions: |
 
   FIXME: В процессе ...

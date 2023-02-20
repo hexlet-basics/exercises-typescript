@@ -62,7 +62,7 @@ theory: |
 
 instructions: |
 
-  Реализуйте и экспортируйте классы `HttpError`, `NotFoundError`, `UnauthorizedError`, `ForbiddenError`. Каждый из них должен наследоваться от класса `HttpError` и иметь свойство `status`, которое равно коду ошибки. Коды ошибок: `404`, `401`, `403`.
+  Реализуйте и экспортируйте классы `HttpError`, `NotFoundError`, `UnauthorizedError`, `ForbiddenError`. Каждый из них должен наследоваться от класса `HttpError` и иметь свойство `message` - сообщение передающееся в базовый класс и `status`, которое равно коду ошибки. Коды ошибок: `404`, `401`, `403`. Класс `HttpError` должен наследоваться от встроенного класса `Error`.
 
   ```typescript
   import { NotFoundError } from './errors';

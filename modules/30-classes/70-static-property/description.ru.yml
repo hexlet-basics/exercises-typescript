@@ -3,12 +3,72 @@
 name: Статические методы и свойства
 theory: |
 
-  В процессе...
+  Иногда нам требуется задать свойство или метод класса, который будет общим для всех экземпляров этого класса. В таком случае мы можем использовать ключевое слово `static`:
 
-  1. Проблема - общая логика для разных классов
-  1. Решение - обычный класс, но если не предполагается создание его объектов, то абстрактный
-  1. Абстрактный класс может требовать от наследников реализации какого-то метода. Типичное использование - шаблонный метод
+  ```typescript
+  class File {
+    static readonly maxFileSize = 1000;
+    static isFile(file: File): boolean {
+      return file instanceof File;
+    }
+  }
+  ```
+
+  Статическим методам и свойствам также можно назначить модификаторы доступа `public`, `protected` и `private` и модификатор неизменяемости `readonly`.
+
+  Статические свойства и методы доступны только через имя класса:
+
+  ```typescript
+  File.maxFileSize; // 1000
+  File.isFile(new File('open-world.jpeg', 1000)); // true
+  ```
+
+  Статические свойства и методы не могут использовать `this`:
+
+  ```typescript
+  class File {
+    static readonly maxFileSize = 1000;
+    static isFile(file: File): boolean {
+      return file instanceof File;
+    }
+    static isBigFile(file: File): boolean {
+      return file.size > this.maxFileSize; // Error!
+    }
+  }
+  ```
+
+  Статические свойства и методы не могут быть переопределены в подклассах:
+
+  ```typescript
+  class File {
+    static readonly maxFileSize = 1000;
+    static isFile(file: File): boolean {
+      return file instanceof File;
+    }
+  }
+
+  class ImageFile extends File {
+    static readonly maxFileSize = 2000; // Error!
+    static isFile(file: File): boolean { // Error!
+      return file instanceof ImageFile;
+    }
+  }
+  ```
+
+  При этом остается доступ к статическим свойствам и методам родительского класса:
+
+  ```typescript
+  const file = new ImageFile();
+  console.log(ImageFile.maxFileSize); // 1000
+  console.log(ImageFile.isFile(file)); // true
+  ```
 
 instructions: |
 
-  FIXME: В процессе ...
+  Другое полезное применение статических свойств и методов - создание фабричных методов. Фабричный метод - это статический метод, который возвращает новый экземпляр класса. Реализуйте класс `UserResponse` с полем `users: string` и фабричный метод `fromArray`, который принимает массив и возвращает массив экземпляров класса `UserResponse`:
+
+  ```typescript
+  const response = UserResponse.fromArray(['user1', 'user2', 'user3']);
+  console.log(response[0].users); // user1
+  console.log(response[0] instanceof UserResponse); // true
+  ```
