@@ -55,11 +55,14 @@ theory: |
 
 instructions: |
 
-  Реализуйте функцию `applyTransactions` и типы `Transaction`, `Wallet`. `applyTransactions` должна принимать аргумент типа `Wallet` и возвращать число, после применения всех транзакций к количеству денег на счету. В случае ошибки в одной из транзакций должно вернуться изначальное число.
+  Реализуйте функцию `applyTransactions` и типы `Transaction`, `Wallet`. `applyTransactions` должна принимать аргумент типа `Wallet` и возвращать число, после применения всех транзакций к количеству денег на счету. В случае ошибки в одной из транзакций должно вернуться изначальное число, последующие транзакции не обрабатываютя.
 
   ```typescript
   const wallet: Wallet = {
-    transactions: [(amount) => amount + 1],
+    transactions: [
+      {
+        apply: (amount) => amount + 1]
+      },
     balance: 0
   }
 
