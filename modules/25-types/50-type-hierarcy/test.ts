@@ -1,7 +1,7 @@
 import getUserFriends, { UserResponse } from './index';
 
 test('getUserFriends', () => {
-  const userJson = JSON.stringify({
+  const userJson = JSON.stringify(<UserResponse>{
     users: [
       { id: 1, name: 'John', age: 20 },
       { id: 2, name: 'Mary', age: 21 },
