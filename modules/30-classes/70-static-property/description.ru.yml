@@ -32,14 +32,14 @@ theory: |
 
   ```typescript
   class File {
-    static readonly maxFileSize = 1000;
+    static maxFileSize = 1000;
     static isFile(file: File): boolean {
       return file instanceof File;
     }
   }
 
   class ImageFile extends File {
-    static readonly maxFileSize = 2000; // Error!
+    static maxFileSize = 2000; // Error!
     static isFile(file: File): boolean { // Error!
       return file instanceof ImageFile;
     }
