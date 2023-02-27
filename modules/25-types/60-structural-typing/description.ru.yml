@@ -102,18 +102,6 @@ theory: |
 
   <details>
     <summary>Ответ</summary>
-  ```typescript
-  type IntersectionUser = {
-    username: string;
-    password: string;
-    type: number;
-  } & {
-      type: string;
-  }
-
-  const admin: IntersectionUser = { username: 'test', password: 'test', type: 'admin' } // Error: Type 'string' is not assignable to type 'never'.
-  ```
-
   При объединении объектных типов, если встречаются поля с одинаковыми именами, то они должны быть совместимы. То есть иметь одинаковый тип. Иначе будет ошибка компиляции, так как итоговый тип будет `never`.
   </details>
 
