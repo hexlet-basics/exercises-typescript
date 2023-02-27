@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 import GameObject from './index';
 
-test('function', () => {
+test('GameObject', () => {
   class GameScene {
     private objects: GameObject[] = [];
 

@@ -48,7 +48,7 @@ theory: |
   }
   ```
 
-  Это стало возможным как раз благодаря выделению значений `null` и `undefined` в отдельные типы, а вместе с Narrowing и Union Types не пришлось изобретать дополнительный механизм. И все решение укладывается в концепцию "типы как множества". Благодаря каждой проверке мы отсекаем не подходящее нам множество значений и получаем безопасный вызов метода. Такие проверки также называются отсечением типов (Differentiating Types) и Type Guards.
+  Это стало возможным как раз благодаря выделению значений `null` и `undefined` в отдельные типы. Благодаря каждой проверке мы отсекаем не подходящее нам множество значений и получаем безопасный вызов метода. Такие проверки также называются отсечением типов (Differentiating Types) и Type Guards.
 
 instructions: |
 
@@ -60,3 +60,7 @@ instructions: |
   formatPrice(); // '$0.00'
   formatPrice(null); // '$0.00'
   ```
+
+tips:
+  - |
+    [Type Guards и Differentiating Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types)

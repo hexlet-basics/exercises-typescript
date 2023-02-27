@@ -29,4 +29,10 @@ test('getUserFriends', () => {
     { id: 1, name: 'John', age: 20 },
     { id: 3, name: 'Peter', age: 22 },
   ]);
+
+  const friends3 = getUserFriends(userJson, 3);
+  expect(friends3).toEqual([
+    { id: 1, name: 'John', age: 20 },
+    { id: 2, name: 'Mary', age: 21 },
+  ]);
 });
