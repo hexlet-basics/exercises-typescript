@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 type SinglyLinkedList = {
-  value: unknown;
+  value: number;
   next: SinglyLinkedList | null;
 };
 

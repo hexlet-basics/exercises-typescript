@@ -57,6 +57,7 @@ theory: |
   ```
 
   Стоит также иметь в виду, что `void` также оператор JavaScript и не запутаться с ним. Он вычисляет выражение следующее за ним и возвращает `undefined`:
+
   ```typescript
   void 10 === undefined // true
   ```
@@ -87,4 +88,8 @@ instructions: |
   // 10
   ```
 
-# tips:
+tips:
+  - |
+    [Официальная документация](https://www.typescriptlang.org/docs/handbook/basic-types.html#void)
+  - |
+    [void в TypeScript и JavaScript](https://habr.com/ru/company/ruvds/blog/468229/)
