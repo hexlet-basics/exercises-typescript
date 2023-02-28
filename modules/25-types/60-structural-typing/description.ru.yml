@@ -1,5 +1,4 @@
 ---
-
 name: Структурная типизация
 theory: |
 
@@ -111,7 +110,7 @@ instructions: |
 
   ```typescript
   const loading: DataState = { status: LoadingStatus.loading };
-  console.log(handleData(loading)); // loading
+  console.log(handleData(loading)); // loading...
 
   const error: DataState = { status: LoadingStatus.error, error: new Error('error') };
   console.log(handleData(error)); // error
