@@ -10,13 +10,18 @@ type DoubleLinkedList = SinglyLinkedList & {
   prev: DoubleLinkedList | null;
 };
 
-const reverseDoubleLinkedList = (list: DoubleLinkedList): void => {
+const reverseDoubleLinkedList = (list: DoubleLinkedList, map = new WeakMap<DoubleLinkedList, boolean>()): void => {
+  if (map.get(list)) {
+    return
+  }
+
   const temp = list.prev;
   list.prev = list.next;
   list.next = temp;
 
   if (list.prev !== null) {
-    reverseDoubleLinkedList(list.prev);
+    map.set(list, true)
+    reverseDoubleLinkedList(list.prev, map);
   }
 };
 // END
