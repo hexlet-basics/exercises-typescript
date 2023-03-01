@@ -27,7 +27,7 @@ theory: |
     return `Hello, ${name ? name.toUpperCase() : 'Guest'}!`;
   }
 
-  getGreetingPhrase('Mike'); // Hello, Mike!
+  getGreetingPhrase('Mike'); // Hello, MIKE!
   getGreetingPhrase(); // Hello, Guest!
   ```
 
