@@ -67,7 +67,3 @@ instructions: |
   ```
 
   Тип включает в себя два метода: [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) и [filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) совпадающие по сигнатуре с методами Array. Данные внутри должны храниться в свойстве `items`.
-
-tips:
-  - |
-    [Ограничения дженериков](https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints)
