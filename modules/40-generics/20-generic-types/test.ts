@@ -1,3 +1,5 @@
+import * as ta from 'type-assertions';
+
 import MySet from './index';
 
 test('function', () => {
@@ -15,6 +17,9 @@ test('function', () => {
   expect(s1.has(1)).toBe(false);
   s1.add(1);
   expect(s1.has(1)).toBe(true);
+
+  ta.assert<ta.Equal<Parameters<typeof s1.has>, [number]>>();
+  ta.assert<ta.Equal<Parameters<typeof s1.add>, [number]>>();
 });
 
 test('function', () => {
@@ -32,4 +37,7 @@ test('function', () => {
   expect(s1.has('hexlet')).toBe(false);
   s1.add('hexlet');
   expect(s1.has('hexlet')).toBe(true);
+
+  ta.assert<ta.Equal<Parameters<typeof s1.has>, [string]>>();
+  ta.assert<ta.Equal<Parameters<typeof s1.add>, [string]>>();
 });

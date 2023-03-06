@@ -126,3 +126,7 @@ instructions: |
   makeTurn('right');
   console.log(state); // [null, null, 'turtle', null, null]
   ```
+
+tips:
+  - |
+    [Literal Types](https://basarat.gitbook.io/typescript/type-system/literal-types)

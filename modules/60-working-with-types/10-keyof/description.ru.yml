@@ -9,4 +9,9 @@ instructions: |
 
   FIXME: В процессе ...
 
-# tips:
+
+tips:
+  - |
+    [Официальная документация](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#keyof-and-lookup-types)
+  - |
+    [Understanding "keyof typeof"](https://www.huy.rocks/everyday/04-14-2022-typescript-understanding-keyof-typeof-)

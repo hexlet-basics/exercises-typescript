@@ -57,7 +57,7 @@ instructions: |
   Реализуйте описание обощенного типа `MyArray`, который представляет из себя аналог массива из JavaScript. Пример использования объекта этого типа:
 
   ```typescript
-  const coll: MyArray<number> = ...
+  const coll: MyArray<number> = ...;
   coll.push(1); // 1
   coll.push(10); // 2
   coll.push(99); // 3
@@ -67,3 +67,7 @@ instructions: |
   ```
 
   Тип включает в себя два метода: [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) и [filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) совпадающие по сигнатуре с методами Array. Данные внутри должны храниться в свойстве `items`.
+
+tips:
+  - |
+    [Дженерики в TypeScript: разбираемся вместе](https://habr.com/ru/post/455473/)

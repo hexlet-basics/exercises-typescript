@@ -64,3 +64,5 @@ instructions: |
 tips:
   - |
     [Type Guards и Differentiating Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types)
+  - |
+    [Type Guard](https://basarat.gitbook.io/typescript/type-system/typeguard)
