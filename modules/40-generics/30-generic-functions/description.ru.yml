@@ -71,3 +71,5 @@ instructions: |
 tips:
   - |
     [Дженерики в TypeScript: разбираемся вместе](https://habr.com/ru/post/455473/)
+  - |
+    [Полиморфизм простыми словами](https://medium.com/devschacht/polymorphism-207d9f9cd78)
