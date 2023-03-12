@@ -54,8 +54,8 @@ instructions: |
   ```typescript
   const promisedNumbers = [Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)];
 
-  asyncMap(promisedNumbers, (num) => num * 2).then((result) => {
-    console.log(result); // [2, 4, 6]
+  asyncMap(promisedNumbers, (num, index) => num * index).then((result) => {
+    console.log(result); // [0, 2, 6]
   });
   ```
 
