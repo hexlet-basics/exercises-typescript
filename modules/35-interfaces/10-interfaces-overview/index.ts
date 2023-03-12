@@ -3,13 +3,15 @@ interface IVehicle {
   seats: number;
   colour: string;
   canHavePassengers: boolean;
-  countKilometresTravelled(): number;
+  getKilometresTravelled(): number;
 }
 
 // BEGIN
 class Car implements IVehicle {
+  honkSound = 'beep beep';
+
   honk() {
-    console.log('beep beep!');
+    console.log(this.honkSound);
   }
 
   maxSpeed = '200 km/h';
@@ -20,8 +22,10 @@ class Car implements IVehicle {
 
   canHavePassengers = true;
 
-  countKilometresTravelled() {
-    return 10;
+  kilometresTravelled = 200;
+
+  getKilometresTravelled() {
+    return this.kilometresTravelled;
   }
 }
 // END
