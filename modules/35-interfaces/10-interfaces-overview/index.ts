@@ -1,34 +1,37 @@
 interface IVehicle {
-  honk(): void;
   seats: number;
   colour: string;
   canHavePassengers: boolean;
-  getKilometresTravelled(): number;
+  fuelPer100Kilometers: number;
+  calcFuelNeeded(distance:number): number;
 }
 
 // BEGIN
 class Car implements IVehicle {
-  honkSound = 'beep beep';
+  seats: number;
 
-  honk() {
-    console.log(this.honkSound);
+  colour: string;
+
+  canHavePassengers: boolean;
+
+  fuelPer100Kilometers: number;
+
+  constructor(
+    seats: number,
+    colour: string,
+    canHavePassengers: boolean,
+    fuelPer100Kilometers: number,
+  ) {
+    this.seats = seats;
+    this.colour = colour;
+    this.canHavePassengers = canHavePassengers;
+    this.fuelPer100Kilometers = fuelPer100Kilometers;
   }
 
-  maxSpeed = '200 km/h';
-
-  seats = 4;
-
-  colour = 'black';
-
-  canHavePassengers = true;
-
-  kilometresTravelled = 200;
-
-  getKilometresTravelled() {
-    return this.kilometresTravelled;
+  calcFuelNeeded(distance: number) {
+    return (this.fuelPer100Kilometers / 100) * distance;
   }
 }
-// END
 
-const porche = new Car();
-porche.honk();
+export default Car;
+// END
