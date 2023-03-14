@@ -3,10 +3,42 @@
 name: Использование интерфейсов
 theory: |
 
-  FIXME: В процессе ...
+  Использование интерфейса имеет свои особенности. Создадим простой интерфейс для примера:
 
-  * Название интерфейса всегда будет отображаться в ошибках, в объектных типах такой гарантии нет
-  * interface merging
+  ```typescript
+  interface IStudent {
+    nickname: string;
+    rating: number;
+  }
+  ```
+
+  Также как и при работе с типами в TypeScript, при попытке указания дополнительных свойств в объекте, которые не обозначены в интерфейсе, или при отсутствии в объекте указанных в интерфейсе свойств мы получим ошибку:
+
+  ```typescript
+  const sergey: IStudent = {
+    nickname: 'Sergey',
+    rating: 22,
+    location: 'Moscow',
+  }
+
+  // Type '{ nickname: string; rating: number; location: string; }' is not assignable to type 'IStudent'.
+  // Object literal may only specify known properties, and 'location' does not exist in type 'IStudent'.
+  ```
+
+  В том случае, если интерфейс необходимо расширить дополнительными полями после его инициализации, мы можем просто повторно объявить интерфейс с новыми свойствами:
+
+  ```typescript
+  interface IStudent {
+    group: number;
+  }
+
+  const sergey: IStudent = {
+    nickname: 'Sergey',
+    rating: 22,
+    group: 1102,
+  }
+  ```
+
 
 instructions: |
 
