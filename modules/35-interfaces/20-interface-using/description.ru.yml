@@ -6,42 +6,114 @@ theory: |
   Использование интерфейса имеет свои особенности. Создадим простой интерфейс для примера:
 
   ```typescript
-  interface IStudent {
+  interface IUser {
     nickname: string;
-    rating: number;
+    birthdate: number;
   }
   ```
 
   Также как и при работе с типами в TypeScript, при попытке указания дополнительных свойств в объекте, которые не обозначены в интерфейсе, или при отсутствии в объекте указанных в интерфейсе свойств мы получим ошибку:
 
   ```typescript
-  const sergey: IStudent = {
+  const sergey: IUser = {
     nickname: 'Sergey',
-    rating: 22,
+    birthdate: 1990,
     location: 'Moscow',
   }
 
-  // Type '{ nickname: string; rating: number; location: string; }' is not assignable to type 'IStudent'.
-  // Object literal may only specify known properties, and 'location' does not exist in type 'IStudent'.
+  // Type '{ nickname: string; birthdate: number; location: string; }' is not assignable to type 'IUser'.
+  // Object literal may only specify known properties, and 'location' does not exist in type 'IUser'.
   ```
 
-  В том случае, если интерфейс необходимо расширить дополнительными полями после его инициализации, мы можем просто повторно объявить интерфейс с новыми свойствами:
+  В том случае, если интерфейс необходимо расширить дополнительными полями после его инициализации, мы можем повторно объявить интерфейс с новыми свойствами:
 
   ```typescript
-  interface IStudent {
+  interface IUser {
+    rating: number;
+  }
+
+  const sergey: IUser = {
+    nickname: 'Sergey',
+    birthdate: 1990,
+    rating: 1102,
+  }
+  ```
+
+  Также мы можем расширить интерфейс с помощью создания другого интерфейса, который наследуется от него:
+
+  ```typescript
+  interface IStudent extends IUser {
     group: number;
   }
 
   const sergey: IStudent = {
     nickname: 'Sergey',
-    rating: 22,
+    birthdate: 1990,
     group: 1102,
   }
   ```
 
+  Кроме того, интерфейсы могут расширять сразу несколько других интерфейсов:
+
+  ```typescript
+  interface IUser {
+    nickname: string;
+    rating: number;
+  }
+
+  interface IEditor {
+    courses: [string];
+    canEdit: boolean;
+  }
+
+  interface IAuthor extends IUser, IEditor {
+    team: string;
+  }
+
+  const sergey: IAuthor = {
+    nickname: 'Sergey',
+    rating: 20,
+    courses: ['typescript'],
+    canEdit: true,
+    team: 'Hexlet College'
+  }
+  ```
+
+  Более того, тайпскрипт позволяет нам создавать перекрестные типы (intersection types) из нескольких интерфейсов c помощью литерала &:
+
+  ```typescript
+  interface IOneWay {
+    one: string;
+  }
+
+  interface IOrAnother {
+    another: string;
+  }
+
+  type OneWayOrAnother = IOneWay & IOrAnother;
+
+  const example: OneWayOrAnother = {
+    one: 'one',
+    another: 'two',
+  }
+  ```
+
+  Может случиться так, что мы не знаем наперед всех свойств, которые будут содержаться в нашем интерфейсе, но нам известно их возможное содержание. В таком случае удобно использовать специальную индексную сигнатуру, которая позволяет описать типы возможных значений:
+
+  ```typescript
+  interface IPhoneBook {
+    [index:string]: number;
+  }
+
+  const myNotePad: IPhoneBook = {
+    ivan: 55531311,
+    sergey: 55500110,
+    mom: 55522111,
+  }
+  ```
 
 instructions: |
 
-  FIXME: В процессе ...
+  Вам даны несколько интерфейсов, допишите их таким образом, чтобы компилятор смог обработать код без ошибок
 
 # tips:
