@@ -1,13 +1,9 @@
-import * as path from 'path';
-import * as sinon from 'sinon';
+import * as ta from 'type-assertions';
 
-test('guess who', async () => {
-  const spy = sinon.spy(console, 'log');
-  await import(path.join(__dirname, 'index'));
-  sinon.assert.calledWith(spy, "It's a bird?");
-  sinon.assert.calledWith(spy, 'No!');
-  sinon.assert.calledWith(spy, "It's a plane?");
-  sinon.assert.calledWith(spy, 'No!');
-  sinon.assert.calledWith(spy, "It's a superman?");
-  sinon.assert.calledWith(spy, "It's a superman!");
+import superMan from './index';
+
+test('guess who', () => {
+  expect(superMan.guessWho('bird')).toBe("It's a bird?");
+  expect(superMan.guessWho('plane')).toBe("It's a plane?");
+  expect(superMan.guessWho('SupErMan')).toBe("It's a SupErMan!");
 });

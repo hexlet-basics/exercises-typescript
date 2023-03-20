@@ -114,12 +114,12 @@ theory: |
 
 instructions: |
 
-  Вам даны несколько интерфейсов, допишите их таким образом, чтобы компилятор смог обработать код без ошибок. Ваша задача состоит в том, чтобы дописать существующий код и создать интерфейс ISuperman, который будет иметь метод guessWho, возвращающий в консоли вопрос с указанным аргументом и ответ на него. Если в качестве строки к нам приходит любое значение кроме superman (в любом регистре), то следует ответ "No!", иначе "It's a superman!"
+  Вам даны несколько интерфейсов, допишите их таким образом, чтобы компилятор смог обработать код без ошибок. Задача состоит в том, чтобы дописать существующий код и создать интерфейс ISuperman, который будет иметь метод guessWho, возвращающий строку с указанным аргументом. Если в качестве строки к нам приходит любое значение кроме superman (в любом регистре), то следует вернуть предположение "It's a ${value}?", иначе "It's a ${value}!"
 
   ```typescript
-  superMan.guessWho('bird'); // "It's a bird?", 'No!'
-  superMan.guessWho('plane'); "It's a plane?", 'No!'
-  superMan.guessWho('superman'); "It's a superman?", 'It's a superman!'
+  console.log(superMan.guessWho('bird')); // "It's a bird?";
+  console.log(superMan.guessWho('plane')); "It's a plane?";
+  console.log(superMan.guessWho('superman')); "It's a superman!";
   ```
 
 tips:

@@ -12,7 +12,7 @@ interface IPlane extends IFlying {
 interface ISuperman extends
 // BEGIN
   IBird, IPlane {
-  guessWho: (guess: string) => void;
+  guessWho: (guess: string) => string;
 }
 // END
 
@@ -21,13 +21,8 @@ const superMan: ISuperman = {
   isLiving: true,
   canCarryPeople: true,
   // BEGIN
-  guessWho: (guess) => {
-    console.log(`It's a ${guess}?`);
-    return guess.toLowerCase() !== 'superman' ? console.log('No!') : console.log("It's a superman!");
-  },
+  guessWho: (guess) => (guess.toLowerCase() !== 'superman' ? `It's a ${guess}?` : `It's a ${guess}!`),
   // END
 };
 
-superMan.guessWho('bird');
-superMan.guessWho('plane');
-superMan.guessWho('superman');
+export default superMan;
