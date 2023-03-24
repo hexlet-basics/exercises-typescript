@@ -3,14 +3,65 @@
 name: Дженерики на классах
 theory: |
 
-  Урок еще предстоит написать)
+  Дженерик классы, как и дженерик функции, позволяют создавать классы, которые могут работать с разными типами данных. Например, класс `Pair` может хранить два значения любого типа. В этом случае, вместо того, чтобы создавать классы для каждого типа, можно создать обобщенный класс, который будет работать с любым типом данных.
 
-  FIXME: В процессе ...
+  ```typescript
+  class Pair<T, U> {
+    constructor(private first: T, private second: U) {}
+
+    getFirst(): T {
+      return this.first;
+    }
+
+    getSecond(): U {
+      return this.second;
+    }
+  }
+  ```
+
+  В этом примере класс `Pair` - дженерик класс, в который мы можем поместить любые типы данных. При этом, у нас остаются гарантии безопасности и вывод типов, которые мы получили при использовании обобщенных функций:
+
+  ```typescript
+  const pair = new Pair(1, 'string');
+  const first = pair.getFirst(); // number
+  const second = pair.getSecond(); // string
+  ```
+
+  Как и обычные классы, обобщенные классы также можно использовать в качестве типов параметров функций:
+
+  ```typescript
+  function swap<T, U>(pair: Pair<T, U>): Pair<U, T> {
+    return new Pair(pair.getSecond(), pair.getFirst());
+  }
+  ```
+
+  Также можно наследоваться от обобщенных классов. Например, класс `Triple` может быть наследником класса `Pair`, который хранит три значения любого типа:
+
+  ```typescript
+  class Triple<T, U, V> extends Pair<T, Pair<U, V>> {
+    constructor(first: T, second: U, third: V) {
+      super(first, new Pair(second, third));
+    }
+
+    getSecond(): U {
+      return this.getSecond().getFirst();
+    }
+
+    getThird(): V {
+      return this.getSecond().getSecond();
+    }
+  }
+  ```
+
+  Дженерик классы полезны, когда нам нужно создать какой-нибудь контейнер для хранения данных, как в примере с классом `Pair`. Или встроенный класс `Array` - это дженерик класс, который хранит массив элементов заданного типа.
 
 instructions: |
 
-  FIXME: В процессе ...
+  Реализуйте класс очереди (`Queue`) с методами `enqueue` и `dequeue`. Метод `enqueue` добавляет элемент в конец очереди, а метод `dequeue` удаляет элемент из начала очереди. Если очередь пуста, то при вызове метода `dequeue` должно быть выброшено исключение `Error`.
 
-  Реализовать любой контейнерный класс
-
-# tips:
+  ```typescript
+  const queue = new Queue<number>();
+  queue.enqueue(1);
+  queue.dequeue(); // 1
+  queue.dequeue(); // Error: Queue is empty
+  ```

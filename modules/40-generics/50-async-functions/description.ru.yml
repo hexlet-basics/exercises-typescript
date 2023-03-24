@@ -59,11 +59,10 @@ instructions: |
   });
   ```
 
-
 tips:
  - |
-   [Что такое Promise](https://doka.guide/js/promise/)
+    [Что такое Promise](https://doka.guide/js/promise/)
  - |
     [TypeScript Deep Dive: Promise](https://basarat.gitbook.io/typescript/future-javascript/promise)
  - |
-   [Awaited<Type>](https://www.typescriptlang.org/docs/handbook/utility-types.html#awaitedtype)
+    [Awaited<Type>](https://www.typescriptlang.org/docs/handbook/utility-types.html#awaitedtype)

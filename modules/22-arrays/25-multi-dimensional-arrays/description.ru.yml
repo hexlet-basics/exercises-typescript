@@ -28,9 +28,9 @@ theory: |
   ```typescript
   items1.push(99); // Error: Type 'number' is not assignable
   ```
-  
+
   <!--TODO - автору: нужно пояснить код - на что обратить внимание?-->
-  
+
   Чтобы определить массивы составных типов, нужно использовать скобки:
 
   ```typescript
@@ -58,7 +58,7 @@ theory: |
     links: string[];
   }
   ```
-  
+
   <!--TODO - автору: нужно пояснить код - на что обратить внимание?-->
 
 instructions: |
@@ -74,6 +74,3 @@ instructions: |
   console.log(field2);
   // [[null, null], [null, null]]
   ```
-
-
-# tips:
