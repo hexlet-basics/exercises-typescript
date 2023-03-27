@@ -9,4 +9,7 @@ instructions: |
 
   FIXME: В процессе ...
 
-# tips:
+tips:
+  - |
+    [Understanding "keyof typeof"](https://www.huy.rocks/everyday/04-14-2022-typescript-understanding-keyof-typeof-)
+
