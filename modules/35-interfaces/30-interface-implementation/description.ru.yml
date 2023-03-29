@@ -3,7 +3,80 @@
 name: Реализация интерфейсов классами
 theory: |
 
-  FIXME: В процессе ...
+  В TypeScript классы могут тесно взаимодействовать с интерфейсами. В прошлом уроке мы увидели как интерфейсы могут расширять другие интерфейсы и комбинировать их. Аналогичным образом интерфейсы могут быть расширены классами:
+
+  ```typescript
+  interface Beep {
+    sayBeep: () => string;
+  }
+
+  interface Boop {
+    sayBoop: () => string;
+  }
+
+  class Robo implements Beep, Boop {
+    sayBeep = () => 'beep';
+    sayBoop = () => 'boop';
+  }
+
+  const R2D2 = new Robo;
+  R2D2.sayBeep(); // 'beep'
+  ```
+
+  Мы можем создавать классы на основе интерфейсов точно также как мы создаем интерфейсы на основе интерфейсов. Но есть и отличия,одно из которых заключается в том, что в транспилируемом коде при создании класса создается его реальный образец. В то же время, интерфейсы и типы не переносятся в JavaScript при транспиляции.
+
+  Важно понимать, что создание класса на основе интерфейса не ведет к реализации этого интерфейса в классе. Тайпскрипт просто проверяет удовлетворяют ли свойства и методы нашего класса свойствам, заявленным в интерфейсе, сам же класс мы пишем вручную. Рассмотрим пример:
+
+  ```typescript
+  interface Calculate {
+    sum: (num1: number, num2: number ) => number;
+  }
+
+  class Summator implements Calculate {
+    sum (num1, num2) { return num1 + num2 }
+    // для параметров будет выведено сообщение: Parameter 'num1'/'num2' implicitly has an 'any' type.
+
+    multiply (num1, num2) { return num1 * num2 };
+    // мы добавили новый метод, но TypeScript не ругается
+  }
+
+  let calculator = new Summator;
+    // тем не менее, наш код сработает, как если бы он сработал для аргументов с типом any.
+    // потому что типы параметров, равно как и все остальное, не были унаследованы классом при реализации интерфейса.
+  calculator.sum(2,3) // 5
+  ```
+
+  Таким образом, ошибка в реализации интерфейса классом возможна только тогда, когда мы не реализуем одно из свойств, указанных в интерфейсе, или же реализуем его не так, как указано в интерфейсе:
+
+  ```typescript
+  interface Calculate {
+    sum: (num1: number, num2: number ) => number;
+  }
+
+  class Summator implements Calculate {
+    sum (num1: string, num2: string) { return num1 + num2 };
+    // мы изменили типы аргументов на string, то есть неверно реализовали интерфейс.
+    // в таком случае TypeScript обратит внимание на нашу ошибку и не скопилируется:
+    // Type '(num1: string, num2: string) => string' is not assignable to type '(num1: number, num2: number) => number'.
+  }
+  ```
+
+  По этой же причине, если мы пишем класс, реализующий интерфейс с опциональными свойствами, нам нужно прописывать все самостоятельно, в противном случае эти свойства не попадут в наш класс:
+
+  ```typescript
+  interface Calculate {
+    sum: (num1: number, num2: number ) => number;
+    multiply? : (num1: number, num2: number ) => number;
+  }
+
+  class Summator implements Calculate {
+    sum (num1: number, num2: number) { return num1 + num2 };
+  }
+
+  const calculator = new Summator;
+  calculator.sum(2,3) // 5
+  calculator.multiply(2,3) // Property 'multiply' does not exist on type 'Summator'.
+  ```
 
 instructions: |
 
