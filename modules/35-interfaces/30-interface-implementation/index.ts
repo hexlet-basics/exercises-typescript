@@ -3,14 +3,13 @@ type Entry = {
 };
 
 interface IPhonebook {
-  entries: Entry
   get(key: string): number | null
   set(key: string, value: number): void
 }
 
 // BEGIN
 export default class Phonebook implements IPhonebook {
-  entries: Entry = {};
+  private readonly entries: Entry = {};
 
   get(key: string): number | null {
     return key in this.entries ? this.entries[key] : null;
