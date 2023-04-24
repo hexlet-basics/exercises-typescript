@@ -66,7 +66,7 @@ instructions: |
   console.log(newColl.items); // [10]
   ```
 
-  Тип включает в себя два метода: [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) и [filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) совпадающие по сигнатуре с методами Array. Данные внутри должны храниться в свойстве `items`.
+  Тип включает в себя два метода: [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) и [filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) совпадающие по сигнатуре с методами Array. Данные внутри должны храниться в свойстве `items`. Для `push()` примем соглашение, что метод принимает только один параметр, игнорируйте остальные параметры.
 
 tips:
   - |
