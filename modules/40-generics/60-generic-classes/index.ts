@@ -10,7 +10,7 @@ class Queue<T> {
     if (this.data.length === 0) {
       throw new Error('Queue is empty');
     }
-    return this.data.shift() as T;
+    return this.data.shift()!;
   }
 }
 // END
