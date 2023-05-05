@@ -79,10 +79,10 @@ theory: |
 
   ```kotlin
   // Пример на Kotlin
-  fun sayHello (name:String) = {
+  fun sayHello (name:String):String {
     return "Hi ${name}"
   }
-  fun sayHello (firstName:String, lastName:String) {
+  fun sayHello (firstName:String, lastName:String):String {
     return "Hello ${firstName} ${lastName}"
   }
 
