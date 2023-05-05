@@ -79,13 +79,15 @@ theory: |
 
   ```kotlin
   // Пример на Kotlin
-  fun sayHello (name:String) = println("Hi ${name}")
+  fun sayHello (name:String) = {
+    return "Hi ${name}"
+  }
   fun sayHello (firstName:String, lastName:String) {
-    return println("Hello ${firstName} ${lastName}")
+    return "Hello ${firstName} ${lastName}"
   }
 
-  sayHello("John", "Doe") // Hello John Doe
-  sayHello("Elon") // Hi Elon
+  println(sayHello("John", "Doe")) // Hello John Doe
+  println(sayHello("Elon")) // Hi Elon
   ```
 
   Можно задуматься, зачем в TypeScript такая реализация и какие проблемы она решает. Это как и многое другое в TypeScript попытка учесть все возможные варианты написания кода на JavaScript и покрыть их типами для написания типобезопасного кода. В JavaScript нередко создают функции, которые принимают на вход разные типы данных в разных вариациях. Перегрузка функций позволяет описать подобные функции в TypeScript, иначе пришлось бы использовать `any` и следить за типами самостоятельно.
