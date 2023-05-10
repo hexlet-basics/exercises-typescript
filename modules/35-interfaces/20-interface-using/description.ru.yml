@@ -29,7 +29,8 @@ theory: |
   const sergey: IStudent = {
     nickname: 'Sergey',
     birthdate: 1990,
-    group: 1102,
+    rating: 1102,
+    group: 2,
   }
   ```
 
