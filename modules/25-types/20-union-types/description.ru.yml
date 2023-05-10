@@ -13,7 +13,7 @@ theory: |
   type at = (str: string, position: number) => string | undefined;
   ```
 
-  // TODO - автору: нужно описать код - на что обратить внимание или что сделали
+  <!-- TODO - автору: нужно описать код - на что обратить внимание или что сделали -->
   
   С точки зрения теории множеств операция union обозначает объединение. Когда мы объединяем несколько множеств, получается новое множество, в которое входят все элементы исходных множеств.
 
@@ -27,7 +27,7 @@ theory: |
   val = true; // Type 'boolean' is not assignable to type 'NumberOrString'.
   ```
   
-  // TODO - автору: нужно описать код - на что обратить внимание или что сделали
+  <!-- TODO - автору: нужно описать код - на что обратить внимание или что сделали -->
 
   ![NumberOrString](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/20-union-types/assets/number_or_string.png)
 
@@ -39,7 +39,7 @@ theory: |
   const concat = (base: AllowedToConcatenation, suffix: AllowedToConcatenation): string => `${base}${suffix}`;
   ```
   
-  // TODO - автору: нужно описать код - на что обратить внимание или что сделали
+  <!-- TODO - автору: нужно описать код - на что обратить внимание или что сделали -->
   
   Чтобы описать типы функции `concat()`, нам бы потребовалось написать код для каждого случая отдельно.
 
