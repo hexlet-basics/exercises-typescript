@@ -3,12 +3,87 @@
 name: Динамические ключи (Index Signature)
 theory: |
 
-  https://dmitripavlutin.com/typescript-index-signatures/
+  В JavaScript как ключи в объектах мы можем использовать строки, числа и символы. Ровно такие же ограничения TypeScript накладывает на свои объектные типы, а нам предстоит научиться с ними работать.
 
-  FIXME: В процессе ...
+  В ходе курса мы уже работали с объектными типами и с интерфейсами, в которых имена полей заданы заранее. Давайте теперь познакомимся с синтакисом для динамических ключей:
+
+  ```typescript
+  type dynamicKeysObject = {
+    [key: string | number | symbol]: unknown;
+  };
+  ```
+
+  Здесь мы объявили объектный тип `dynamicKeysObject`, в котором ключем может служить любой тип из доступных типов данных `key: string | number | symbol`. Попробуем указать такой тип для переменной:
+
+  ```typescript
+  const obj: dynamicFieldObject = {
+    name: 'John',
+    age: 30,
+    0: 'zero',
+    [Symbol('secret')]: 'symbol',
+  };
+  ```
+
+  Динамические ключи можно также использовать совместно с указанными явно. Тогда для заданного ключа установится явно указанный тип:
+
+  ```typescript
+  type MyTheme = {
+    palette: {
+      primary: 'red' | 'green' | 'blue';
+      [key: string]: string;
+    },
+    [key: string]: unknown;
+  };
+
+  const theme = {
+    palette: {
+      primary: 'red',
+    },
+    spacing: {
+      small: 8,
+    },
+  } satisfies MyTheme;
+  ```
+
+  В примере мы явно указали тип для поля `colors`, получили кореректную проверку типа с помощью `satisfies` и при этом оставили достаточно свободы для дальнейшего расширения темы.
+
+  Точно такой же синтаксис и поведение у динамических ключей в интерфейсах:
+
+  ```typescript
+  interface MyTheme {
+    colors: {
+      primary: string;
+    };
+    [key: string]: unknown;
+  }
+  ```
+
+  Динамические ключи полезны там, где нам неизвестны все возможные имена полей объекта, но мы хотим ограничить их тип. Или в составнымх типах, например, если мы хотим пометить все поля типа как опциональные:
+
+  ```typescript
+  type Partial<T> = {
+    [P in keyof T]?: T[P];
+  };
+  ```
+
+  Это простой пример имплиментации встроенной в TypeScript утилиты. Здесь мы проходимся по всем ключам типа `T` и через `?` помечаем их как опциональными (`T[P] | undefied` ! тоже самое). Попробуйте вернуться к этому типу после урока `keyof`, а также изучить устройство других Utility Types.
 
 instructions: |
 
-  FIXME: В процессе ...
+  Реализуйте и экспортируйте интерфейс `EmployeeSalary`, где ключом выступает имя (`string`), а значением зарплата (`number`). Также реалтзуйте и экспортируйте функцию `buildSalaryStatistics(eployees: EmployeeSalary): SalaryStatistics`, которая должна возвращать минимальную (поле `min`), среднюю (поле `avg`) и самую высокую (поле `max`) зарплату.
 
-# tips:
+  ```typescript
+  const employees: EmployeeSalary = {
+    mango: 100,
+    poly: 50,
+    ajax: 150,
+  };
+
+  employees.ironMan = 1000;
+
+  buildSalaryStatistics(employees); // { min: 50, max: 1000, avg: 325 }
+  ```
+
+tips:
+  - |
+    [Глава о Index Signature в книге TypeScript Deep Dive](https://basarat.gitbook.io/typescript/type-system/index-signatures)
