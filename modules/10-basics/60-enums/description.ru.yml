@@ -58,7 +58,44 @@ theory: |
 
   ```typescript
   const statuses = Object.keys(OrderStatus);
+  console.log(statuses); // ['0', '1', '2', '3', 'Created', 'Paid', 'Shipped', 'Delivered'] 
+  ```
+
+  Среди ключей мы видим числа `'0', '1', '2', '3'`. Компилятор создает такие числовые ключи автоматически, а созданный объект выглядит так:
+
+  ```typescript
+  console.log(OrderStatus); // =>
+  // {
+  //   '0': 'Created',
+  //   '1': 'Paid',
+  //   '2': 'Shipped',
+  //   '3': 'Delivered',
+  //   'Created': 0,
+  //   'Paid': 1,
+  //   'Shipped': 2,
+  //   'Delivered': 3
+  // }
+  ```
+
+  Но можно избавиться от создания дополнительных ключей, если указать строковые значения:
+
+  ```typescript
+  enum OrderStatus {
+    Created = '0',
+    Paid = '1',
+    Shipped = '2',
+    Delivered = '3',
+  }
+
+  const statuses = Object.keys(OrderStatus);
   console.log(statuses); // ['Created', 'Paid', 'Shipped', 'Delivered']
+
+  console.log(OrderStatus); // =>
+  //   'Created': '0',
+  //   'Paid': '1',
+  //   'Shipped': '2',
+  //   'Delivered': '3'
+  // }
   ```
 
 instructions: |
