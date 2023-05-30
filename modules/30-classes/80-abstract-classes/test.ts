@@ -1,53 +1,34 @@
 /* eslint-disable max-classes-per-file */
-import GameObject from './index';
+import Clock from './index';
 
 test('GameObject', () => {
-  class GameScene {
-    private objects: GameObject[] = [];
 
-    addObject(object: GameObject): void {
-      this.objects.push(object);
-    }
-
-    tick(delta: number): void {
-      this.objects.forEach((object) => object.tick(delta));
-    }
-
+  class Clock12 extends Clock {
     render(): string {
-      return this.objects.map((object) => object.render()).join('\n');
+      const timeType = this.hours * 1000 + this.minutes + this.seconds < 12000 ? 'AM' : 'PM';
+      const currentHour = this.hours % 12;
+      return `${currentHour.toString().padStart(2, '0')} : ${this.minutes.toString().padStart(2, '0')} ${timeType}`;
+    }
+  }
+  
+  class Clock24 extends Clock {
+    render(): string {
+      return `${this.hours.toString().padStart(2, '0')} : ${this.minutes.toString().padStart(2, '0')}`;
     }
   }
 
-  class Player extends GameObject {
-    render(): string {
-      return `Player: ${this.x}, ${this.y}`;
-    }
-  }
+  const clock12 = new Clock12(23, 59, 58);
+  expect(clock12.render()).toBe('11 : 59 PM');
 
-  class Enemy extends GameObject {
-    render(): string {
-      return `Enemy: ${this.x}, ${this.y}`;
-    }
-  }
+  clock12.tick();
+  clock12.tick();
+  
+  const clock24 = new Clock24(23, 59, 58);
+  expect(clock24.render()).toBe('23 : 59');
 
-  const scene = new GameScene();
-  const player = new Player(0, 0);
-  const enemy = new Enemy(20, 20);
-  scene.addObject(player);
-  scene.addObject(enemy);
+  clock24.tick();
+  clock24.tick();
 
-  player.move(10, 10);
-  enemy.move(20, 20);
-  player.move(10, 10);
-
-  scene.tick(1);
-  expect(scene.render()).toBe('Player: 10, 10\nEnemy: 40, 40');
-
-  scene.tick(0.5);
-  expect(scene.render()).toBe('Player: 15, 15\nEnemy: 40, 40');
-
-  enemy.move(-10, 10);
-  player.move(-5, 0);
-  scene.tick(1);
-  expect(scene.render()).toBe('Player: 10, 15\nEnemy: 30, 50');
+  expect(clock12.render()).toBe('00 : 00 AM');
+  expect(clock24.render()).toBe('00 : 00');
 });
