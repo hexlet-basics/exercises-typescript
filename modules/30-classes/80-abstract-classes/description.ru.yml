@@ -45,45 +45,41 @@ theory: |
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
 instructions: |
+  Создайте абстрактный класс `Clock`, который будет содержать общую логику для классов часов с разными форматами вывода времени: 12-часовой и 24-часовой.
 
-  Мы разрабатываем фреймворк для создания игр. Наша задача — создать абстрактный класс `GameObject`, который будет содержать общую логику для всех игровых объектов.
-  
-  Каждый игровой объект должен иметь координаты `x`, `y` на игровом поле. В объекте должны быть методы `move(x, y)`, которые накапливают смещения по осям `x` и `y` и метод `tick(delta)`, который обновляет координаты на основе накопленных смещений умноженных на `delta`.
-  
-  После обновления координаты смещения должны обнуляться. Все игровые объекты должны иметь метод `render()`, который отрисовывает их на игровом поле:
+  В общей логике должно быть хранение данных: часы `hours`, минуты `minutes` и секунды `seconds`. Так же в общую логику входит метод `tick()`, который при каждом вызове увеличивает секунду на единицу. Если секунда увеличивается до значения 60, то увеличивается минута на 1, а секунда сбрасывается до 0. То же самое с минутами и часами: если значение минут увеличивается до 60, то увеличивается значение текущего часа, а минуты сбрасываются до 0. Если значение часа увеличивается до 24, то происходит сброс этого значения до 0.
+
+  Начальное значение времени задается при создании объекта. Первым параметром в конструктор передается текущий час, вторым минуты, третьим секунды.
+
+  Абстрактный класс `Clock` должен требовать от своих наследников реализацию метода `render()`.
 
   ```typescript
-  class Player extends GameObject {
+
+  // 24-часовой формат
+  class Clock24 extends Clock {
     render(): string {
-      return `Player: ${this.x}, ${this.y}`;
+      return `${this.hours.toString().padStart(2, '0')} : ${this.minutes.toString().padStart(2, '0')}`;
     }
   }
 
-  class Enemy extends GameObject {
+  const clock24 = new Clock24(23, 59, 59);
+  console.log(clock24.render()); // => '23 : 59'
+  clock24.tick();
+  console.log(clock24.render()); // => '00 : 00'
+
+  // 12-часовой формат
+  class Clock12 extends Clock {
     render(): string {
-      return `Enemy: ${this.x}, ${this.y}`;
+      const timeType = this.hours * 1000 + this.minutes + this.seconds < 12000 ? 'AM' : 'PM';
+      const currentHour = this.hours % 12;
+      return `${currentHour.toString().padStart(2, '0')} : ${this.minutes.toString().padStart(2, '0')} ${timeType}`;
     }
   }
 
-  const scene = new GameScene();
-  const player = new Player(0, 0);
-  const enemy = new Enemy(20, 20);
-  scene.addObject(player);
-  scene.addObject(enemy);
-
-  player.move(10, 10);
-  enemy.move(20, 20);
-  player.move(10, 10);
-
-  scene.tick(0.5);
-  console.log(scene.render());
-  // Player: 5, 5
-  // Enemy: 30, 30
-
-  scene.tick(1);
-  console.log(scene.render());
-  // Player: 15, 15
-  // Enemy: 30, 30
+  const clock12 = new Clock12(23, 59, 59);
+  console.log(clock12.render()); // => '11 : 59 PM'
+  clock12.tick();
+  console.log(clock12.render()); // => '00 : 00 AM'
   ```
 
 definitions:
