@@ -1,1 +1,1 @@
-console.log('Hello, World!');
+const t: Record<string, unknown> = {}
