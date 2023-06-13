@@ -13,7 +13,7 @@ theory: |
     }
 
     protected static isFileTooBig(size: number): boolean {
-      return file.size > File.maxFileSize;
+      return size > File.maxFileSize;
     }
 
     constructor(private name: string, private size: number) {
@@ -25,9 +25,9 @@ theory: |
 
   File.isFile(new File('open-world.jpeg', 1000)); // true
   ```
-  
+
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
-  
+
   Статическим методам и свойствам также можно назначить модификаторы доступа `public`, `protected` и `private` и модификатор неизменяемости `readonly`. Это позволяет ограничить использование свойств и методов только текущим классом или наследниками.
 
   В отличии от JavaScript в TypeScript статические свойства и методы не могут быть переопределены в подклассах:
@@ -47,7 +47,7 @@ theory: |
     }
   }
   ```
-  
+
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
   Такой код не удастся скомпилировать. При этом остается доступ к статическим свойствам и методам родительского класса:
@@ -57,7 +57,7 @@ theory: |
   console.log(ImageFile.maxFileSize); // 1000
   console.log(ImageFile.isFile(file)); // true
   ```
-  
+
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
 instructions: |
