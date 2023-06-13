@@ -13,7 +13,7 @@ theory: |
     }
 
     protected static isFileTooBig(size: number): boolean {
-      return file.size > File.maxFileSize;
+      return size > File.maxFileSize;
     }
 
     constructor(private name: string, private size: number) {
