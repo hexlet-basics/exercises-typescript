@@ -4,9 +4,12 @@ import Clock from './index';
 test('GameObject', () => {
   class Clock12 extends Clock {
     render(): string {
-      const timeType = this.hours * 1000 + this.minutes + this.seconds < 12000 ? 'AM' : 'PM';
+      const timeType = this.hours >= 12 ? 'PM' : 'AM';
       const currentHour = this.hours % 12;
-      return `${currentHour.toString().padStart(2, '0')} : ${this.minutes.toString().padStart(2, '0')} ${timeType}`;
+
+      const hours = currentHour.toString().padStart(2, '0');
+      const minutes = this.minutes.toString().padStart(2, '0');
+      return `${hours} : ${minutes} ${timeType}`;
     }
   }
 
@@ -15,6 +18,9 @@ test('GameObject', () => {
       return `${this.hours.toString().padStart(2, '0')} : ${this.minutes.toString().padStart(2, '0')}`;
     }
   }
+
+  const clock121 = new Clock12(12, 59, 0);
+  expect(clock121.render()).toBe('00 : 59 PM');
 
   const clock12 = new Clock12(23, 59, 58);
   expect(clock12.render()).toBe('11 : 59 PM');

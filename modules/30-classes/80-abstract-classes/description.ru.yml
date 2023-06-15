@@ -4,7 +4,7 @@ name: Абстрактные классы
 theory: |
 
   Когда нам нужно определить общее поведение для нескольких классов, удобно использовать абстрактные классы, которые мы разберем в этом уроке.
-  
+
   Абстрактные классы хоть и не могут быть созданы напрямую, но могут быть наследованы и указать явно, какой метод должен быть реализован в наследниках:
 
   ```typescript
@@ -27,7 +27,7 @@ theory: |
     }
   }
   ```
-  
+
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
   Чтобы выносить из классов общую часть кода, абстрактные классы активно используются для построения архитектуры приложения и фреймворков. Например, в React есть класс `Component`, который может быть представлен как абстрактный класс. Мы не можем создать его напрямую, но он требует от наследников реализации метода `render`. Это позволяет создавать компоненты, которые будут рендериться при инициализации:
@@ -41,7 +41,7 @@ theory: |
     }
   }
   ```
-  
+
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
 instructions: |
@@ -58,7 +58,10 @@ instructions: |
   // 24-часовой формат
   class Clock24 extends Clock {
     render(): string {
-      return `${this.hours.toString().padStart(2, '0')} : ${this.minutes.toString().padStart(2, '0')}`;
+      const hours = currentHour.toString().padStart(2, '0');
+      const minutes = this.minutes.toString().padStart(2, '0');
+
+      return `${hours} : ${minutes}`;
     }
   }
 
@@ -70,9 +73,12 @@ instructions: |
   // 12-часовой формат
   class Clock12 extends Clock {
     render(): string {
-      const timeType = this.hours * 1000 + this.minutes + this.seconds < 12000 ? 'AM' : 'PM';
+      const timeType = this.hours >= 12 ? 'PM' : 'AM';
       const currentHour = this.hours % 12;
-      return `${currentHour.toString().padStart(2, '0')} : ${this.minutes.toString().padStart(2, '0')} ${timeType}`;
+
+      const hours = currentHour.toString().padStart(2, '0');
+      const minutes = this.minutes.toString().padStart(2, '0');
+      return `${hours} : ${minutes} ${timeType}`;
     }
   }
 
