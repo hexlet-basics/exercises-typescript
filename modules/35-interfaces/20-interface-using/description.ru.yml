@@ -14,7 +14,7 @@ theory: |
     rating: number;
   }
 
-   interface IUser {
+  interface IUser {
     nickname: string;
     birthdate: number;
   }
