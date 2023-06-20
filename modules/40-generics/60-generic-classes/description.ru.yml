@@ -11,12 +11,16 @@ theory: |
   class Triple<T, U, V> {
     constructor(protected first: T, protected second: U, protected third: V) {}
 
+    getFirst(): T {
+      return this.first;
+    }
+
     getSecond(): U {
-      return this.getSecond().getFirst();
+      return this.second;
     }
 
     getThird(): V {
-      return this.getSecond().getSecond();
+      return this.third;
     }
   }
   ```
@@ -40,7 +44,7 @@ theory: |
     }
 
     getFirst(): T {
-      return super.first;
+      return this.first;
     }
 
     getSecond(): U {
