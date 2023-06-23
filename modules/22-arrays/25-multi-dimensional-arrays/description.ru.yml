@@ -12,7 +12,7 @@ theory: |
   const items2: number[][] = []
   // или так Array<number[]>
 
-  // Используя алиас
+  // Используя псевдоним
   type User = {
     name: string;
   }
