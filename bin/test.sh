@@ -1,4 +1,6 @@
 #! /bin/bash
 
-tsc "$(pwd)/index.ts" "$(pwd)/test.ts" --noEmit --pretty --skipLibCheck --strict &&
+set -e
+
+tsc "$(pwd)/index.ts" "$(pwd)/test.ts" --noEmit --pretty --skipLibCheck --strict --lib esnext
 jest --colors "$(pwd)"
