@@ -85,7 +85,7 @@ theory: |
   }
 
   println(newYearCongratulate("John")) // Hi John! Happy New Year!
- 	println(newYearCongratulate(2023, "Elon")) // Hi Elon! Happy New Year 2023!
+  println(newYearCongratulate(2023, "Elon")) // Hi Elon! Happy New Year 2023!
   ```
 
   Зачем в TypeScript такая реализация и какие проблемы она решает? Это как и многое другое в TypeScript — попытка учесть все варианты написания кода на JavaScript и покрыть их типами для написания типобезопасного кода.
