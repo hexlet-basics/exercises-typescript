@@ -1,25 +1,22 @@
-/* eslint-disable no-param-reassign */
-type SinglyLinkedList = {
-  value: number;
-  next: SinglyLinkedList | null;
+enum Permission {
+  READ,
+  WRITE,
+  DELETE,
+}
+
+type User = {
+  login: string,
+};
+
+type AdminPermission = {
+  permission: Permission,
 };
 
 // BEGIN
-type DoubleLinkedList = SinglyLinkedList & {
-  next: DoubleLinkedList | null;
-  prev: DoubleLinkedList | null;
-};
+type Admin = User & AdminPermission;
 
-const reverseDoubleLinkedList = (list: DoubleLinkedList): void => {
-  const temp = list.prev;
-  list.prev = list.next;
-  list.next = temp;
-
-  if (list.prev !== null) {
-    reverseDoubleLinkedList(list.prev);
-  }
-};
+const addUser = (user: User): Admin => ({ ...user, permission: Permission.READ });
 // END
 
-export { DoubleLinkedList };
-export default reverseDoubleLinkedList;
+export { User, Admin, Permission };
+export default addUser;
