@@ -1,13 +1,15 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 // BEGIN
-function sayHello(name: string): string;
-function sayHello(firstName: string, lastName: string): string;
-function sayHello(firstName: string, lastName?: string): string {
-  if (lastName === undefined) {
-    return `Hi ${firstName}`;
+function newYearCongratulate(name: string): string;
+function newYearCongratulate(year: number, name: string): string;
+function newYearCongratulate(data1: string | number, data2?: string): string {
+  if (typeof data1 === 'number') {
+    return `Hi ${data2}! Happy New Year ${data1}!`;
   }
 
-  return `Hello ${firstName} ${lastName}`;
+  return `Hi ${data1}! Happy New Year!`;
 }
 // END
 
-export default sayHello;
+export default newYearCongratulate;

@@ -45,9 +45,9 @@ theory: |
     return obj.toString();
   }
 
-  foo('wow'); // Error!
-  foo(123); // Error!
-  foo({}); // Ok!
+  toString('wow'); // Error!
+  toString(123); // Error!
+  toString({}); // Ok!
   ```
 
   С помощью типа `object` нельзя получить доступ к свойствам объекта. Для такой задачи используются уже другие механизмы.
