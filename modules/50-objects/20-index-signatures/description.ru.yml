@@ -98,7 +98,7 @@ theory: |
 
 instructions: |
 
-  Реализуйте и экспортируйте интерфейс `EmployeeSalary`, где ключом выступает имя (`string`), а значением — зарплата (`number`). Также реализуйте и экспортируйте функцию `buildSalaryStatistics(employees: EmployeeSalary): SalaryStatistics`, которая должна возвращать минимальную (поле `min`), среднюю (поле `avg`) и самую высокую (поле `max`) зарплату.
+  Реализуйте интерфейс `EmployeeSalary`, где ключом выступает имя (`string`), а значением — зарплата (`number`). Также реализуйте функцию `buildSalaryStatistics(employees: EmployeeSalary): SalaryStatistics`, которая должна возвращать минимальную (поле `min`), среднюю (поле `avg`) и самую высокую (поле `max`) зарплату.
 
   ```typescript
   const employees: EmployeeSalary = {
