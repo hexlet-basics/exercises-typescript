@@ -1,22 +1,24 @@
 // BEGIN
+type OpitonName = string;
+type OpitonSize = number;
+type FileOptions = { name: OpitonName, size: OpitonSize };
+
 class File {
-  name: string;
+  name: OpitonName;
 
-  size: number;
+  size: OpitonSize;
 
-  isCopy?: boolean;
+  private isCopy: boolean;
 
-  constructor(options: File) {
+  constructor(options: FileOptions) {
     this.name = options.name;
     this.size = options.size;
-
-    if (options instanceof File) {
-      this.isCopy = true;
-    }
+    this.isCopy = (options instanceof File);
   }
 
-  toString() {
-    return [this.isCopy && '(copy)', this.name, `(${this.size} bytes)`].filter(Boolean).join(' ');
+  toString(): string {
+    const copyString = this.isCopy ? '(copy) ' : '';
+    return `${copyString}${this.name} (${this.size} bytes)`;
   }
 }
 // END
