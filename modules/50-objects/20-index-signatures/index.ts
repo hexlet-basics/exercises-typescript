@@ -5,11 +5,11 @@ interface SalaryStatistics {
 }
 
 // BEGIN
-export interface EmployeeSalary {
+interface EmployeeSalary {
   [name: string]: number;
 }
 
-export const buildSalaryStatistics = (employees: EmployeeSalary): SalaryStatistics => {
+const buildSalaryStatistics = (employees: EmployeeSalary): SalaryStatistics => {
   const salaries = Object.values(employees);
   const min = Math.min(...salaries);
   const max = Math.max(...salaries);
@@ -18,3 +18,8 @@ export const buildSalaryStatistics = (employees: EmployeeSalary): SalaryStatisti
   return { min, max, avg };
 };
 // END
+
+export {
+  EmployeeSalary,
+  buildSalaryStatistics,
+};

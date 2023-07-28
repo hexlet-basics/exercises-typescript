@@ -8,7 +8,7 @@ interface IPhonebook {
 }
 
 // BEGIN
-export default class Phonebook implements IPhonebook {
+class Phonebook implements IPhonebook {
   private readonly entries: Entry = {};
 
   get(key: string): number | null {
@@ -20,3 +20,5 @@ export default class Phonebook implements IPhonebook {
   }
 }
 // END
+
+export default Phonebook;

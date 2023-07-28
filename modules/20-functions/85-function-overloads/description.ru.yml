@@ -100,7 +100,7 @@ theory: |
 
 instructions: |
 
-  Реализуйте и экспортируйте по умолчанию функцию `newYearCongratulate()`, которая аналогична примеру на Kotlin из теории:
+  Реализуйте функцию `newYearCongratulate()`, которая аналогична примеру на Kotlin из теории:
 
   ```typescript
   sayHello('John'); // Hi John! Happy New Year!
