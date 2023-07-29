@@ -12,20 +12,19 @@ export type UserResponse = {
 };
 
 // BEGIN
-const getUserFriends = (userJson: string, userId: number): Array<User> => {
-  const { users, friends } = JSON.parse(userJson) as UserResponse;
+const defaultUser = { id: 0, name: '', age: 0 };
+const getUserFriends = (userResponseJSON: string, userId: number): User[] => {
+  const userResponse: UserResponse = JSON.parse(userResponseJSON) as UserResponse;
 
-  const usersById = users.reduce<Record<number, User>>((acc, user) => {
-    acc[user.id] = user;
+  return userResponse.friends
+    .map(([ownerId, friendId]: Friends): User => {
+      if (!(userId === ownerId || userId === friendId)) return defaultUser;
+      const searchId = (ownerId === userId) ? friendId : ownerId;
+      const friend: User | undefined = userResponse.users.find(({ id }) => id === searchId);
 
-    return acc;
-  }, {});
-
-  const friendIds = friends
-    .filter(([id1, id2]) => id1 === userId || id2 === userId)
-    .map(([id1, id2]) => (id1 === userId ? id2 : id1));
-
-  return friendIds.map((id) => usersById[id]);
+      return friend === undefined ? defaultUser : friend;
+    })
+    .filter((user: User) => user.id > 0);
 };
 // END
 
