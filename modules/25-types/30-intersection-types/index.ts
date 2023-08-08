@@ -15,8 +15,8 @@ type AdminPermission = {
 // BEGIN
 type Admin = User & AdminPermission;
 
-const addUser = (user: User): Admin => ({ ...user, permission: Permission.READ });
+const addAdmin = (user: User): Admin => ({ ...user, permission: Permission.READ });
 // END
 
 export { User, Admin, Permission };
-export default addUser;
+export default addAdmin;
