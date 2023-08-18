@@ -8,6 +8,7 @@ theory: |
   ```typescript
   class File {
     private static readonly maxFileSize = 1000;
+
     static isFile(file: File): boolean {
       return file instanceof File;
     }
@@ -35,6 +36,7 @@ theory: |
   ```typescript
   class File {
     static maxFileSize = 1000;
+
     static isFile(file: File): boolean {
       return file instanceof File;
     }
@@ -42,6 +44,7 @@ theory: |
 
   class ImageFile extends File {
     static maxFileSize = 2000; // Error!
+
     static isFile(file: File): boolean { // Error!
       return file instanceof ImageFile;
     }

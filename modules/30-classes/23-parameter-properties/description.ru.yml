@@ -20,7 +20,9 @@ theory: |
   ```typescript
     class SomeClass {
       public one: number;
+
       private two: string;
+
       constructor(one: number, two: string) {
         this.one = one;
         this.two = two;

@@ -55,12 +55,15 @@ theory: |
     createFile(name: string, size: number): ImageFile { // OK
       return new ImageFile(name, size, 100, 100);
     }
+
     createFile(name: 'file', size: number): File { // OK
       return new ImageFile(name, size, 100, 100);
     }
+
     createFile(name: number, size: number): File { // Error!
       return new ImageFile(name, size, 100, 100);
     }
+
     createFile(name: string, size: number): {} { // Error!
       return new ImageFile(name, size, 100, 100);
     }
