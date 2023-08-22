@@ -6,25 +6,25 @@ theory: |
   Иногда нам требуется задать свойство или метод, который будет общим для всех экземпляров этого класса. Например, чтобы определить, является ли объект экземпляром класса. В таком случае при объявлении метода мы можем указать ключевое слово `static`, и он станет доступен через имя класса:
 
   ```typescript
-  class File {
+  class CustomFile {
     private static readonly maxFileSize = 1000;
 
-    static isFile(file: File): boolean {
-      return file instanceof File;
+    static isCustomFile(file: CustomFile): boolean {
+      return file instanceof CustomFile;
     }
 
-    protected static isFileTooBig(size: number): boolean {
-      return size > File.maxFileSize;
+    protected static isCustomFileTooBig(size: number): boolean {
+      return size > CustomFile.maxCustomFileSize;
     }
 
     constructor(private name: string, private size: number) {
-      if (File.isFileTooBig(size)) {
-        throw new Error('File is too big');
+      if (CustomFile.isCustomFileTooBig(size)) {
+        throw new Error('CustomFile is too big');
       }
     }
   }
 
-  File.isFile(new File('open-world.jpeg', 1000)); // true
+  CustomFile.isCustomFile(new CustomFile('open-world.jpeg', 1000)); // true
   ```
 
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
@@ -34,19 +34,19 @@ theory: |
   В отличии от JavaScript в TypeScript статические свойства и методы не могут быть переопределены в подклассах:
 
   ```typescript
-  class File {
+  class CustomFile {
     static maxFileSize = 1000;
 
-    static isFile(file: File): boolean {
-      return file instanceof File;
+    static isCustomFile(file: CustomFile): boolean {
+      return file instanceof CustomFile;
     }
   }
 
-  class ImageFile extends File {
+  class ImageFile extends CustomFile {
     static maxFileSize = 2000; // Error!
 
-    static isFile(file: File): boolean { // Error!
-      return file instanceof ImageFile;
+    static isCustomFile(file: CustomFile): boolean { // Error!
+      return file instanceof ImageCustomFile;
     }
   }
   ```
@@ -56,9 +56,9 @@ theory: |
   Такой код не удастся скомпилировать. При этом остается доступ к статическим свойствам и методам родительского класса:
 
   ```typescript
-  const file = new ImageFile();
-  console.log(ImageFile.maxFileSize); // 1000
-  console.log(ImageFile.isFile(file)); // true
+  const file = new ImageCustomFile();
+  console.log(ImageCustomFile.maxCustomFileSize); // 1000
+  console.log(ImageCustomFile.isCustomFile(file)); // true
   ```
 
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->

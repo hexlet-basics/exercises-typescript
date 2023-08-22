@@ -8,7 +8,7 @@ theory: |
   Абстрактные классы хоть и не могут быть созданы напрямую, но могут быть наследованы и указать явно, какой метод должен быть реализован в наследниках:
 
   ```typescript
-  abstract class File {
+  abstract class CustomFile {
     protected name: string;
 
     protected size: number;
@@ -23,7 +23,7 @@ theory: |
     }
   }
 
-  class ImageFile extends File {
+  class ImageCustomFile extends CustomFile {
     constructor(name: string, size: number) {
       super(name, size);
     }

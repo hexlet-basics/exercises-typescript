@@ -1,15 +1,15 @@
 // BEGIN
-type FileOptions = {
+type CustomFileOptions = {
   name: string;
   size: number;
 };
 
-class File {
+class CustomFile {
   name: string;
 
   size: number;
 
-  constructor({ name, size }: FileOptions) {
+  constructor({ name, size }: CustomFileOptions) {
     this.name = name;
     this.size = size;
   }
@@ -20,4 +20,4 @@ class File {
 }
 // END
 
-export default File;
+export default CustomFile;

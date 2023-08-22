@@ -1,19 +1,19 @@
 // BEGIN
 type OpitonName = string;
 type OpitonSize = number;
-type FileOptions = { name: OpitonName, size: OpitonSize };
+type CustomFileOptions = { name: OpitonName, size: OpitonSize };
 
-class File {
+class CustomFile {
   name: OpitonName;
 
   size: OpitonSize;
 
   private isCopy: boolean;
 
-  constructor(options: FileOptions) {
+  constructor(options: CustomFileOptions) {
     this.name = options.name;
     this.size = options.size;
-    this.isCopy = (options instanceof File);
+    this.isCopy = (options instanceof CustomFile);
   }
 
   toString(): string {
@@ -23,4 +23,4 @@ class File {
 }
 // END
 
-export default File;
+export default CustomFile;
