@@ -12,6 +12,7 @@ theory: |
   ```typescript
   class Point {
     x: number;
+
     y: number;
 
     constructor(x: number, y: number) {
@@ -45,6 +46,7 @@ theory: |
   ```typescript
   class Point {
     x: number;
+
     y: number;
 
     // Возвращаемый тип не указывается, так как это конструктор
@@ -70,6 +72,7 @@ theory: |
   ```typescript
   class Point {
     x = 0;
+
     y = 0;
   }
 

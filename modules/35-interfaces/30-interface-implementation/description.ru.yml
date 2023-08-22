@@ -16,6 +16,7 @@ theory: |
 
   class Robo implements IBeep, IBoop {
     sayBeep = () => 'beep';
+
     sayBoop = () => 'boop';
   }
 
