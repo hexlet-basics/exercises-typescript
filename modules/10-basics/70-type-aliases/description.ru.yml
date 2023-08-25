@@ -26,7 +26,6 @@ theory: |
 
   Теперь можно провести замену во всех функциях:
 
-
   ```typescript
   function doSomething(user: User) {
     // ...
