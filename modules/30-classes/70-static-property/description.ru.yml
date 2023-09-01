@@ -7,7 +7,7 @@ theory: |
 
   ```typescript
   class CustomFile {
-    private static readonly maxFileSize = 1000;
+    private static readonly maxCustomFileSize = 1000;
 
     static isCustomFile(file: CustomFile): boolean {
       return file instanceof CustomFile;
@@ -35,7 +35,7 @@ theory: |
 
   ```typescript
   class CustomFile {
-    static maxFileSize = 1000;
+    static maxCustomFileSize = 1000;
 
     static isCustomFile(file: CustomFile): boolean {
       return file instanceof CustomFile;
@@ -43,7 +43,7 @@ theory: |
   }
 
   class ImageFile extends CustomFile {
-    static maxFileSize = 2000; // Error!
+    static maxCustomFileSize = 2000; // Error!
 
     static isCustomFile(file: CustomFile): boolean { // Error!
       return file instanceof ImageCustomFile;
