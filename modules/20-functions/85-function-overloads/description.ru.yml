@@ -54,7 +54,7 @@ theory: |
     (a: string, b: string): string;
   }
 
-  const concat: Overloaded = (a, b) {...}
+  const concat: Overloaded = (a, b) => {...}
   ```
 
   В этом случае не обязательно явно указывать типы параметров внутри функции. Это делается в объявлении функции.
