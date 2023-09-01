@@ -10,7 +10,7 @@ type DataState =
   | { status: LoadingStatus.Success; data: number }
   | { status: LoadingStatus.Error; error: Error };
 
-const handleData = (dataState: DataState) => {
+const handleData = (dataState: DataState): string => {
   switch (dataState.status) {
     case LoadingStatus.Loading:
       return 'loading...';
