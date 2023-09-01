@@ -42,7 +42,7 @@ theory: |
     }
   }
 
-  class ImageFile extends CustomFile {
+  class ImageCustomFile extends CustomFile {
     static maxCustomFileSize = 2000; // Error!
 
     static isCustomFile(file: CustomFile): boolean { // Error!
