@@ -6,7 +6,7 @@ theory: |
 
   ```javascript
   const user = {
-    firstName: 'Vassiliy',
+    firstName: 'Vasiliy',
     lastName: 'Kuzenkov',
     type: 'user'
   }
