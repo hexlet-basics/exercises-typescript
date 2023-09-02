@@ -1,12 +1,12 @@
 // BEGIN
-type OpitonName = string;
-type OpitonSize = number;
-type CustomFileOptions = { name: OpitonName, size: OpitonSize };
+type OptionName = string;
+type OptionSize = number;
+type CustomFileOptions = { name: OptionName, size: OptionSize };
 
 class CustomFile {
-  name: OpitonName;
+  name: OptionName;
 
-  size: OpitonSize;
+  size: OptionSize;
 
   private isCopy: boolean;
 
