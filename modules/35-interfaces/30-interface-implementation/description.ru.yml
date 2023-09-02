@@ -73,8 +73,8 @@ theory: |
 
   ```typescript
   interface ICalculate {
-    sum: (num1: number, num2: number ) => number;
-    multiply? : (num1: number, num2: number ) => number;
+    sum: (num1: number, num2: number) => number;
+    multiply? : (num1: number, num2: number) => number;
   }
 
   class Summator implements ICalculate {
