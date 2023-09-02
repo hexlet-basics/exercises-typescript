@@ -60,6 +60,7 @@ instructions: |
   // 24-часовой формат
   class Clock24 extends Clock {
     render(): string {
+      const currentHour = this.hours % 24;
       const hours = currentHour.toString().padStart(2, '0');
       const minutes = this.minutes.toString().padStart(2, '0');
 
