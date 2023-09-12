@@ -20,6 +20,6 @@ test('MyMap', () => {
   expect(map.get('two')).toBe(2);
   expect(map.get('three')).toBe(undefined);
 
-  ta.assert<ta.Equal<Parameters<MyMap<string, string>['set']>, [string, string]>>();
+  ta.assert<ta.Equal<Parameters<MyMap<string, number>['set']>, [string, number]>>();
   ta.assert<ta.Equal<ReturnType<MyMap<string, number>['get']>, number | undefined>>();
 });
