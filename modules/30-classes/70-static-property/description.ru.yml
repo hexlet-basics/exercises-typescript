@@ -31,44 +31,46 @@ theory: |
 
   Статическим методам и свойствам также можно назначить модификаторы доступа `public`, `protected` и `private` и модификатор неизменяемости `readonly`. Это позволяет ограничить использование свойств и методов только текущим классом или наследниками.
 
-  В отличии от JavaScript в TypeScript статические свойства и методы не могут быть переопределены в подклассах:
+# TODO - автору: код ниже успешно компилируется. Похоже, что в случае по умолчанию методы могут быть переопределены
 
-  ```typescript
-  class CustomFile {
-    static maxCustomFileSize = 1000;
+#   В отличии от JavaScript в TypeScript статические свойства и методы не могут быть переопределены в подклассах:
 
-    static isCustomFile(file: CustomFile): boolean {
-      return file instanceof CustomFile;
-    }
-  }
+#   ```typescript
+#   class CustomFile {
+#     static maxCustomFileSize = 1000;
 
-  class ImageCustomFile extends CustomFile {
-    static maxCustomFileSize = 2000; // Error!
+#     static isCustomFile(file: CustomFile): boolean {
+#       return file instanceof CustomFile;
+#     }
+#   }
 
-    static isCustomFile(file: CustomFile): boolean { // Error!
-      return file instanceof ImageCustomFile;
-    }
-  }
-  ```
+#   class ImageCustomFile extends CustomFile {
+#     static maxCustomFileSize = 2000; // Error!
 
-  <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
+#     static isCustomFile(file: CustomFile): boolean { // Error!
+#       return file instanceof ImageCustomFile;
+#     }
+#   }
+#   ```
 
-  Такой код не удастся скомпилировать. При этом остается доступ к статическим свойствам и методам родительского класса:
+#   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
-  ```typescript
-  const file = new ImageCustomFile();
-  console.log(ImageCustomFile.maxCustomFileSize); // 1000
-  console.log(ImageCustomFile.isCustomFile(file)); // true
-  ```
+#   Такой код не удастся скомпилировать. При этом остается доступ к статическим свойствам и методам родительского класса:
 
-  <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
+#   ```typescript
+#   const file = new ImageCustomFile();
+#   console.log(ImageCustomFile.maxCustomFileSize); // 1000
+#   console.log(ImageCustomFile.isCustomFile(file)); // true
+#   ```
 
-instructions: |
+#   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
-  Другое полезное применение статических свойств и методов — создание фабричных методов. Фабричный метод — это статический метод, который возвращает новый экземпляр класса. Реализуйте класс `UserResponse` с полем `user: string` и фабричный метод `fromArray`, который принимает массив и возвращает массив экземпляров класса `UserResponse`:
+# instructions: |
 
-  ```typescript
-  const response = UserResponse.fromArray(['user1', 'user2', 'user3']);
-  console.log(response[0].user); // user1
-  console.log(response[0] instanceof UserResponse); // true
-  ```
+#   Другое полезное применение статических свойств и методов — создание фабричных методов. Фабричный метод — это статический метод, который возвращает новый экземпляр класса. Реализуйте класс `UserResponse` с полем `user: string` и фабричный метод `fromArray`, который принимает массив и возвращает массив экземпляров класса `UserResponse`:
+
+#   ```typescript
+#   const response = UserResponse.fromArray(['user1', 'user2', 'user3']);
+#   console.log(response[0].user); // user1
+#   console.log(response[0] instanceof UserResponse); // true
+#   ```
