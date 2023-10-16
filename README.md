@@ -1,5 +1,4 @@
 # exercises-typescript
-test
 
 [![Github Actions Status](../../workflows/Docker/badge.svg)](../../actions)
 
