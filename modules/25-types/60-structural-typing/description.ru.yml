@@ -22,17 +22,15 @@ theory: |
   formatUser(user); // ok
   formatUser(admin); // ok
   ```
-  
-  <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
-  
+
   В языках как Java нам бы потребовалось определить интерфейс, после отдельно имплементировать его для классов `User` и `Admin`. А в параметрах метода форматирования тип аргумента был бы этим интерфейсом.
-  
+
   Другой вариант — написать метод с перегрузкой для этих двух случаев. Языки с таким поведением используют номинативную типизацию — nominative typing.
 
   Чтобы организовать подход утиной типизации в Java, нужно написать много дополнительного кода.
 
-  Чтобы упростить переход с JavaScript на TypeScript и использовать проверки до выполнения кода, был выбран подход структурной типизации. С ней мы и познакомимся в этой уроке. 
-  
+  Чтобы упростить переход с JavaScript на TypeScript и использовать проверки до выполнения кода, был выбран подход структурной типизации. С ней мы и познакомимся в этой уроке.
+
   С помощью структурной типизации мы можем легко переписать наш пример на TypeScript:
 
   ```typescript
@@ -48,16 +46,22 @@ theory: |
     type: 'admin'
   }
 
-  const formatUser = (user: { type: string, firstName: string, lastName: string }): string =>
+  type User = {
+    type: string,
+    firstName: string,
+    lastName: string
+  }
+
+  const formatUser = (user: User): string =>
     [user.type, ':', user.firstName, user.lastName].join(' ');
 
   formatUser(user); // ok
   formatUser(admin); // ok
   ```
-  
-  <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
-  
-  При этом структурная типизация не защищает нас от наличия дополнительных полей в объекте:
+
+  Мы создали тип `User`, который описывает ожидаемую структуру объекта. При этом в функции `formatUser` мы указали, что ожидаемый аргумент должен соответствовать типу `User`. Таким образом функция `formatUser` принимает только объекты, которые содержат все поля из объектного типа `User`.
+
+  Важно помнить, что структурная типизация не защищает нас от наличия дополнительных полей в объекте:
 
   ```typescript
   const moderator = {
@@ -67,13 +71,20 @@ theory: |
     email: 'danil@polovinkin.com'
   }
 
-  const formatUser = (user: { type: string, firstName: string, lastName: string }): string =>
+  type User = {
+    type: string,
+    firstName: string,
+    lastName: string
+  }
+
+  const formatUser = (user: User): string =>
     [user.type, ':', user.firstName, user.lastName].join(' ');
 
   formatUser(moderator); // ok
   ```
-  <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
-  
+
+  При том что мы не указали поле `email` в типе `User`, TypeScript все равно не выдаст ошибку, так как в объекте `moderator` есть все поля, которые описаны в типе `User`.
+
   В структурной типизации об объектном типе можно думать, как об описании структуры, которое накладывает ограничения на присваиваемые значения. Или как о множестве объектов, которые могут быть присвоены переменной с таким типом.
 
   ![object](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/60-structural-typing/assets/structual_object.png)
@@ -92,7 +103,11 @@ theory: |
       type: string;
   }
 
-  const admin: IntersectionUser = { username: 'test', password: 'test', type: 'admin' } // требуется совпадение c объектным типом и слева и справа от оператора &
+  const admin: IntersectionUser = {  // требуется совпадение c объектным типом и слева и справа от оператора &
+    username: 'test',
+    password: 'test',
+    type: 'admin'
+  }
 
   type UnionUser = {
       username: string;
@@ -103,16 +118,18 @@ theory: |
 
   const user: UnionUser = { username: 'test', type: 'user' } // достаточно совпадения с одним из объектных типов
   ```
-  
-  <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
-  
+
+  Получившийся тип `IntersectionUser` описывает объекты, которые содержат поля `username`, `password` и `type`. А тип `UnionUser` — объекты, которые содержат поля `username` и `password` **ИЛИ** `type`.
+
   ![object intersection](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/60-structural-typing/assets/structual_object.png)
+
+  В алгебре множеств пересечение двух множеств также называют логическим умножением. А для типов используют термин произведение типов. Объединение множеств же называют логическим сложением, а для типов — сумма типов.
 
   Попробуйте ответить, что будет, если использовать в пересечении два объектных типа с одинаковым именем поля, но с отличающимися типами. Это распространенная ошибка по невнимательности или из-за недостаточного понимания типов как множеств.
 
   <details>
     <summary>Ответ</summary>
-  При пересечении объектных типов, если встречаются поля с одинаковыми именами, то они должны быть совместимы — иметь одинаковый тип. Иначе будет ошибка компиляции, так как итоговый тип будет `never`.
+  При пересечении объектных типов, если встречаются поля с одинаковыми именами, то они должны быть совместимы — иметь одинаковый тип. Иначе будет ошибка компиляции, так как итоговый тип будет never.
   </details>
 
   При использовании объединенных типов в функциях нужно учитывать следующий момент. Рассмотрим пример:
@@ -124,7 +141,7 @@ theory: |
     console.log(user.type);
   };
   ```
-  
+
   Компилятор выдаст ошибку, так как тип в переменной `user` может относиться либо к левому типу, либо к правому. В итоге нет гарантии, что в объекте `user` будет любое из свойст.
 
 instructions: |
@@ -147,6 +164,10 @@ tips:
     [Structural typing в официальной документации](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#structural-typing)
   - |
     [Как получить номинативную типизацию в TS](https://spin.atomicobject.com/2018/01/15/typescript-flexible-nominal-typing/)
+  - |
+    [Тип-произведение](https://en.wikipedia.org/wiki/Product_type)
+  - |
+    [Тип-сумма](https://en.wikipedia.org/wiki/Tagged_union)
 
 definitions:
   - name: Структурная типизация
