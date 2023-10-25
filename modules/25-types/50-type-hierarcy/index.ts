@@ -14,7 +14,7 @@ export type UserResponse = {
 // BEGIN
 const defaultUser = { id: 0, name: '', age: 0 };
 const getUserFriends = (userResponseJSON: string, userId: number): User[] => {
-  const userResponse: UserResponse = JSON.parse(userResponseJSON) as UserResponse;
+  const userResponse = JSON.parse(userResponseJSON) as UserResponse;
 
   return userResponse.friends
     .map(([ownerId, friendId]: Friends): User => {
