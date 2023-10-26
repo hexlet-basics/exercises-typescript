@@ -47,8 +47,8 @@ theory: |
   }
 
   const p = new Point(10, 8);
-  p.x; // Error!
-  p.y; // Error!
+  p.x; // Property 'x' is private and only accessible within class 'Point'.
+  p.y; // Property 'y' is private and only accessible within class 'Point'.
   ```
   
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
@@ -83,9 +83,9 @@ theory: |
   }
 
   const p = new Point3D(10, 8, 5);
-  p.x; // Error!
-  p.y; // Error!
-  p.z; // Error!
+  p.x; // Property 'x' is protected and only accessible within class 'Point' and its subclasses.
+  p.y; // Property 'y' is protected and only accessible within class 'Point' and its subclasses.
+  p.z; // Property 'z' is protected and only accessible within class 'Point3D' and its subclasses.
   ```
   
   <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->

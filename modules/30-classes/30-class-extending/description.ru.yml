@@ -52,21 +52,24 @@ theory: |
     }
   }
 
+  # тут что-то не так, на самом деле на каждую строку ругается
+  
   class ImageCustomFileFactory extends CustomFileFactory {
-    createCustomFile(name: string, size: number): ImageCustomFile { // OK
-      return new ImageCustomFile(name, size, 100, 100);
+    
+    createCustomFile(name: string, size: number): ImageCustomFile { // OK # Error: Duplicate function implementation.
+      return new ImageCustomFile(name, size, 100, 100); 
     }
 
-    createCustomFile(name: 'file', size: number): CustomFile { // OK
-      return new ImageFile(name, size, 100, 100);
+    createCustomFile(name: 'file', size: number): CustomFile { // OK # Error: Duplicate function implementation.
+      return new ImageFile(name, size, 100, 100); # Error: Cannot find name 'ImageFile'.
     }
 
-    createCustomFile(name: number, size: number): CustomFile { // Error!
-      return new ImageFile(name, size, 100, 100);
+    createCustomFile(name: number, size: number): CustomFile { // Error! # Error: Duplicate function implementation.
+      return new ImageFile(name, size, 100, 100); # Error: Cannot find name 'ImageFile'.
     }
-
-    createCustomFile(name: string, size: number): {} { // Error!
-      return new ImageFile(name, size, 100, 100);
+ 
+    createCustomFile(name: string, size: number): {} { // Error! # Error: Duplicate function implementation.
+      return new ImageFile(name, size, 100, 100); # Error: Cannot find name 'ImageFile'.
     }
   }
   ```
