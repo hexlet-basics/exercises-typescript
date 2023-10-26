@@ -16,7 +16,7 @@ theory: |
   Здесь мы объявили объектный тип `dynamicKeysObject`, в котором ключом может служить любой тип из доступных типов данных `key: string | number | symbol`. Попробуем указать такой тип для переменной:
 
   ```typescript
-  const obj: dynamicFieldObject = {
+  const obj: dynamicKeysObject = {
     name: 'John',
     age: 30,
     0: 'zero',
@@ -87,7 +87,7 @@ theory: |
   }
 
   const streamListeners: Listeners = {
-    onStart() {}
+    onStart() {},
     onFinished() {}
   }
   ```
