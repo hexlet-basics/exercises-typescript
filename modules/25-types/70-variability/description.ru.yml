@@ -6,7 +6,7 @@ theory: |
   Если мы передадим возвращающую `number` функцию для колбека функции-сортировки, которая ожидает возврата `-1 | 0 | 1`, то получим ошибку `Type 'number' is not assignable to type '0 | 1 | -1'.`:
 
   ```typescript
-  type ComparatorCallback = (item1: number, item2: number, index: number) => -1 | 0 | 1
+  type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
   declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
 
   const arr = [1, 2, 3];
@@ -21,7 +21,7 @@ theory: |
   Чтобы решить проблему с `ComparatorCallback`, нам нужно сузить возвращаемый тип функции `comparator` до `-1 | 0 | 1` или более узкого. Перепишем код без `Math.sign`, чтобы вернуть нужный тип:
 
   ```typescript
-  type ComparatorCallback = (item1: number, item2: number, index: number) => -1 | 0 | 1
+  type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
   declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
 
   const arr = [1, 2, 3];
@@ -42,7 +42,7 @@ theory: |
   Для аргументов функции проверка типов выполняется в обратном порядке. Если мы передадим функцию, которая ожидает литеральный тип `1` вместо `number`, то получим ошибку `Type 'number' is not assignable to type '1'.`:
 
   ```typescript
-  type ComparatorCallback = (item1: number, item2: number, index: number) => -1 | 0 | 1
+  type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
   declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
 
   const arr = [1, 2, 3];
