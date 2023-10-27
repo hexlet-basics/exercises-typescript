@@ -1,6 +1,6 @@
 // BEGIN
 function getField(size: number): null[][] {
-  const field = Array(size).fill(null).map(() => Array(size).fill(null));
+  const field: null[][] = Array(size).fill(null).map(() => Array(size).fill(null));
   return field;
 }
 // END
