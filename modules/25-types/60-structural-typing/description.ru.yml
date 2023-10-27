@@ -17,7 +17,7 @@ theory: |
     type: 'admin'
   }
 
-  const formatUser = (user) => [user.type, ':', user.firstName, user.lastName].join(' ');
+  const formatUser = (user) => [user.type, ':', user.firstName, user.lastName].join(' '); // Error: Parameter 'user' implicitly has an 'any' type.
 
   formatUser(user); // ok
   formatUser(admin); // ok
