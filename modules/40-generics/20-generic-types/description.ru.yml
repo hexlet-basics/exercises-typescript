@@ -41,11 +41,11 @@ theory: |
       this.data.forEach(callback);
     },
     at(index) {
-      return this.data[index];
+      return this.data.at(index); // target >= ES2022
     },
   }
 
-  coll.at(2); // 8
+  coll.at(-1); // 8
   ```
 
   Теперь попробуем обобщить этот тип, то есть сделать из него дженерик. Для этого нужно сделать одну простую вещь: для элементов коллекции вместо `number` написать `T` (или любое другое имя, начинающееся с большой буквы) и добавить `T` как параметр типа к определению:
@@ -85,7 +85,7 @@ theory: |
       this.data.forEach(callback);
     },
     at(index) {
-      return this.data[index];
+      return this.data.at(index); // target >= ES2022
     },
   }
   ```
