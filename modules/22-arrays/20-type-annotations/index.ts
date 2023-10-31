@@ -1,5 +1,5 @@
 // BEGIN
-function uniq(coll: (number | string)[]): (number | string)[] {
+function unique(coll: (number | string)[]): (number | string)[] {
   const init: (number | string)[] = [];
 
   return coll.reduce(
@@ -9,4 +9,4 @@ function uniq(coll: (number | string)[]): (number | string)[] {
 }
 // END
 
-export default uniq;
+export default unique;

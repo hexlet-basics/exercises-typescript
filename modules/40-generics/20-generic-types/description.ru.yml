@@ -41,7 +41,7 @@ theory: |
       this.data.forEach(callback);
     },
     at(index) {
-      return this.data.at(index);
+      return this.data.at(index); // target >= ES2022
     },
   }
 
@@ -69,7 +69,7 @@ theory: |
     id: number;
   }
 
-  type MyColl<T extends HasId> = {
+  type MyColl<T extends HasId | number> = {
     data: Array<T>;
     forEach(callback: (value: T, index: number, array: Array<T>) => void): void;
     at(index: number): T | undefined;
@@ -85,7 +85,7 @@ theory: |
       this.data.forEach(callback);
     },
     at(index) {
-      return this.data.at(index);
+      return this.data.at(index); // target >= ES2022
     },
   }
   ```

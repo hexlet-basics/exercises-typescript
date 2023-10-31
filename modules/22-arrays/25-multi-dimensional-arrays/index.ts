@@ -1,7 +1,7 @@
 // BEGIN
 function getField(size: number): null[][] {
-  const row = Array<null>(size).fill(null);
-  return Array<null[]>(size).fill(row);
+  const field = Array<null>(size).fill(null).map(() => Array<null>(size).fill(null));
+  return field;
 }
 // END
 

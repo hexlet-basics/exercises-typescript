@@ -9,7 +9,7 @@ theory: |
 
   ```typescript
   function last<T>(coll: T[]): T {
-    return coll.at(-1);
+    return coll[coll.length - 1];
   }
   ```
   
@@ -19,11 +19,11 @@ theory: |
 
   ```typescript
   function lastForNumberType(coll: number[]): number {
-    return coll.at(-1);
+    return coll[coll.length - 1];
   }
 
   function lastForStringType(coll: string[]): string {
-    return coll.at(-1);
+    return coll[coll.length - 1];
   }
 
   // Тут определения для всех остальных типов
@@ -41,7 +41,7 @@ theory: |
   // Тут определения для всех остальных типов
 
   function last(coll: any[]): any {
-    return coll.at(-1);
+    return coll[coll.length - 1];
   }
   ```
   

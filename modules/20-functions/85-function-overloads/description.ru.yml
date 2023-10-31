@@ -81,15 +81,17 @@ theory: |
 
   ```kotlin
   // Пример на Kotlin
-  fun newYearCongratulate (name:String):String {
-    return "Hi ${name}! Happy New Year!"
-  }
-  fun newYearCongratulate (year: Number, name:String):String {
-    return "Hi ${name}! Happy New Year ${year}!"
-  }
+  fun main() {
+    fun newYearCongratulate (name:String):String {
+      return "Hi ${name}! Happy New Year!"
+    }
+    fun newYearCongratulate (year: Number, name:String):String {
+      return "Hi ${name}! Happy New Year ${year}!"
+    }
 
-  println(newYearCongratulate("John")) // Hi John! Happy New Year!
-  println(newYearCongratulate(2023, "Elon")) // Hi Elon! Happy New Year 2023!
+    println(newYearCongratulate("John")) // Hi John! Happy New Year!
+    println(newYearCongratulate(2023, "Elon")) // Hi Elon! Happy New Year 2023!
+  }
   ```
 
   Зачем в TypeScript такая реализация и какие проблемы она решает? Это как и многое другое в TypeScript — попытка учесть все варианты написания кода на JavaScript и покрыть их типами для написания типобезопасного кода.
@@ -107,8 +109,8 @@ instructions: |
   Реализуйте функцию `newYearCongratulate()`, которая аналогична примеру на Kotlin из теории:
 
   ```typescript
-  sayHello('John'); // Hi John! Happy New Year!
-  sayHello(2023, 'Mila'); // Hi Mila! Happy New Year 2023!
+  newYearCongratulate('John'); // Hi John! Happy New Year!
+  newYearCongratulate(2023, 'Mila'); // Hi Mila! Happy New Year 2023!
   ```
 
 tips:
