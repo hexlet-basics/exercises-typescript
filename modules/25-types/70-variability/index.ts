@@ -1,7 +1,5 @@
 // BEGIN
-type Transaction = {
-  apply: (amount: number) => number;
-};
+type Transaction = { apply: (amount: number) => number } | { apply: () => never };
 
 type Wallet = {
   transactions: Transaction[];

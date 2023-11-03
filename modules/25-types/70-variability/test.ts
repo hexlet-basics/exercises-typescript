@@ -39,5 +39,5 @@ test('applyTransactions', () => {
 
   expect(applyTransactions(wallet2)).toBe(10);
 
-  ta.assert<ta.Equal<Parameters<Transaction['apply']>, [number]>>();
+  ta.assert<ta.Equal<Parameters<Transaction['apply']>, [number] | []>>();
 });
