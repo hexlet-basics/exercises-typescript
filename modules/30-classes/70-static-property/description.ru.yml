@@ -43,9 +43,9 @@ theory: |
   }
 
   class ImageCustomFile extends CustomFile {
-    static maxCustomFileSize = 2000; // Error! # А тут на самом деле не ругается, компилируется без проблем и никаких ошибок не выдает
+    static maxCustomFileSize = 2000; // Error!
 
-    static isCustomFile(file: CustomFile): boolean { // Error! # А тут на самом деле не ругается, компилируется без проблем и никаких ошибок не выдает
+    static isCustomFile(file: CustomFile): boolean { // Error!
       return file instanceof ImageCustomFile;
     }
   }
