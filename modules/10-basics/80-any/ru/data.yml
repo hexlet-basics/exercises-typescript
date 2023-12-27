@@ -1,0 +1,5 @@
+name: Тип Any
+tips:
+  - >
+    [Официальная документация про
+    any](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any)

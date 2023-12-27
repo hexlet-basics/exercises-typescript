@@ -1,0 +1,7 @@
+name: Сужение типа (Narrowing)
+tips:
+  - >
+    [Официальная
+    документация](https://www.typescriptlang.org/docs/handbook/2/narrowing.html)
+  - |
+    [Type Guard](https://basarat.gitbook.io/typescript/type-system/typeguard)
