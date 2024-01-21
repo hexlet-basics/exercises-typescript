@@ -1,8 +1,6 @@
 // BEGIN
-function reverse(coll: ReadonlyArray<number>): Array<number> {
-  const init: number[] = [];
-
-  return coll.reduceRight((acc, value) => [...acc, value], init);
+function reverse(coll: readonly number[]): number[] {
+  return coll.map((_, index) => coll[coll.length - 1 - index]);
 }
 // END
 

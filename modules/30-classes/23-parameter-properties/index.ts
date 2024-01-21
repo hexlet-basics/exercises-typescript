@@ -1,5 +1,5 @@
 // BEGIN
-class File {
+class CustomFile {
   constructor(private name: string, private size: number) { }
 
   toString() {
@@ -8,4 +8,4 @@ class File {
 }
 // END
 
-export default File;
+export default CustomFile;

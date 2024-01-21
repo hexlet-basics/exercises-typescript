@@ -1,0 +1,8 @@
+name: Динамические ключи (Index Signature)
+tips:
+  - >
+    [Глава о Index Signature в книге TypeScript Deep
+    Dive](https://basarat.gitbook.io/typescript/type-system/index-signatures)
+  - >
+    [Официальная документация про Template Literal
+    Types](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)

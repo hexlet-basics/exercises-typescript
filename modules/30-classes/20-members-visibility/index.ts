@@ -1,16 +1,16 @@
 /* eslint-disable max-classes-per-file */
 
-type FileOptions = {
+type CustomFileOptions = {
   name: string;
   size: number;
 };
 
-class File {
+class CustomFile {
   private name: string;
 
   private size: number;
 
-  constructor(options: FileOptions) {
+  constructor(options: CustomFileOptions) {
     this.name = options.name;
     this.size = options.size;
   }
@@ -21,12 +21,12 @@ class File {
 }
 
 // BEGIN
-class ImageFile extends File {
+class ImageCustomFile extends CustomFile {
   private width: number;
 
   private height: number;
 
-  constructor(options: FileOptions & { width: number; height: number }) {
+  constructor(options: CustomFileOptions & { width: number; height: number }) {
     super(options);
     this.width = options.width;
     this.height = options.height;
@@ -38,4 +38,4 @@ class ImageFile extends File {
 }
 // END
 
-export default ImageFile;
+export default ImageCustomFile;

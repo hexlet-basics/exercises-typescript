@@ -1,0 +1,17 @@
+name: Сопоставление типов (Mapped Types)
+tips:
+  - >
+    [Официальная документация Mapped
+    Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+  - >
+    [Официальная документация
+    keyof](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#keyof-and-lookup-types)
+  - >
+    [Understanding "keyof
+    typeof"](https://www.huy.rocks/everyday/04-14-2022-typescript-understanding-keyof-typeof-)
+  - >
+    [Официальная документация
+    Pick](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys)
+  - >
+    [Официальная документация
+    Omit](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)

@@ -1,0 +1,8 @@
+name: Иерархия типов
+tips:
+  - >
+    [Как устроена система типов в
+    TypeScript](https://ru.hexlet.io/blog/posts/sistema-tipov-v-typescript)
+  - >
+    [Type
+    Assertion](https://basarat.gitbook.io/typescript/type-system/type-assertion)

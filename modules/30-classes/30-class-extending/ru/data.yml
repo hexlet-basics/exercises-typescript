@@ -1,0 +1,9 @@
+name: Наследование
+tips:
+  - >
+    [Наследование
+    классов](https://www.typescriptlang.org/docs/handbook/2/classes.html#extends-clauses)
+  - |
+    [Вариантность](https://habr.com/ru/post/477448/)
+  - |
+    [Mixins](https://basarat.gitbook.io/typescript/type-system/mixins)

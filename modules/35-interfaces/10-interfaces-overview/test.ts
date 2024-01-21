@@ -1,5 +1,3 @@
-import * as ta from 'type-assertions';
-
 import Car from './index';
 
 test('Car', () => {

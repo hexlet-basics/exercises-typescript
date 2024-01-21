@@ -1,21 +1,24 @@
 // BEGIN
-abstract class GameObject {
-  private movements: Array<[x: number, y: number]> = [];
+abstract class Clock {
+  constructor(protected hours: number, protected minutes: number, protected seconds: number) {}
 
-  constructor(protected x: number, protected y: number) {}
-
-  tick(delta: number): void {
-    const [x, y] = this.movements.shift() || [0, 0];
-    this.x += x * delta;
-    this.y += y * delta;
-  }
-
-  move(x: number, y: number): void {
-    this.movements.push([x, y]);
+  tick(): void {
+    this.seconds += 1;
+    if (this.seconds === 60) {
+      this.seconds = 0;
+      this.minutes += 1;
+    }
+    if (this.minutes === 60) {
+      this.minutes = 0;
+      this.hours += 1;
+    }
+    if (this.hours === 24) {
+      this.hours = 0;
+    }
   }
 
   abstract render(): string;
 }
 // END
 
-export default GameObject;
+export default Clock;
