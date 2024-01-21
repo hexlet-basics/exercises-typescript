@@ -1,12 +1,8 @@
 // BEGIN
-const asyncMap = async <T, P>(arr: Promise<T>[], fn: (item: T, index: number) => P) => {
-  const promise = arr.map(async (item, index) => {
-    const result = await item;
-    return fn(result, index);
-  });
-
-  return Promise.all(promise);
-};
+const asyncMap = async <T, P>(
+  arr: Promise<T>[],
+  fn: (item: T, index: number) => P,
+) => Promise.all(arr).then((res) => res.map(fn));
 // END
 
 export default asyncMap;
