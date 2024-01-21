@@ -23,5 +23,4 @@ test('MyMap', () => {
 
   ta.assert<ta.Equal<Parameters<MyMap<string, number>['set']>, [string, number]>>();
   ta.assert<ta.Equal<ReturnType<MyMap<string, number>['get']>, number | undefined>>();
-
 });
