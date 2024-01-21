@@ -19,6 +19,6 @@ class Car implements IVehicle {
     return (this.fuelPer100Kilometers / 100) * distance;
   }
 }
+// END
 
 export default Car;
-// END

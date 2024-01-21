@@ -6,11 +6,11 @@ class Queue<T> {
     this.data.push(element);
   }
 
-  dequeue(): T {
+  dequeue() {
     if (this.data.length === 0) {
       throw new Error('Queue is empty');
     }
-    return this.data.shift() as T;
+    return this.data.shift();
   }
 }
 // END

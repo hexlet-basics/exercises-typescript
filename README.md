@@ -6,6 +6,12 @@
 
 * Discuss the project on Telegram: https://t.me/hexletcommunity/12
 
+### Requirements
+
+* docker
+* docker compose V2
+* make
+
 ## Develop
 
 ```bash

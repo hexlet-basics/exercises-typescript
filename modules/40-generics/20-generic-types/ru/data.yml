@@ -1,0 +1,8 @@
+name: Дженерики (Типы)
+tips:
+  - >
+    [Ограничения
+    дженериков](https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints)
+  - >
+    [Параметры типа - extends (generic
+    constraints)](https://typescript-definitive-guide.ru/book/chapters/Obobshcheniya_(Generics)/#Parametry_tipa_-_extends_(generic_constraints))

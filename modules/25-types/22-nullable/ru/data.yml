@@ -1,0 +1,10 @@
+name: Null и Undefined
+tips:
+  - >
+    [Type Guards и Differentiating
+    Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types)
+  - |
+    [Type Guard](https://basarat.gitbook.io/typescript/type-system/typeguard)
+  - >
+    [Optional
+    chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)

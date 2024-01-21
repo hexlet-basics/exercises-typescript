@@ -1,7 +1,7 @@
-import File from './index';
+import CustomFile from './index';
 
-test('File', () => {
-  const file = new File({ name: 'foo.txt', size: 4 });
+test('CustomFile', () => {
+  const file = new CustomFile({ name: 'foo.txt', size: 4 });
 
   expect(file.name).toBe('foo.txt');
   expect(file.size).toBe(4);

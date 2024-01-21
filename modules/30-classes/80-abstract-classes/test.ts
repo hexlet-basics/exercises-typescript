@@ -1,53 +1,44 @@
 /* eslint-disable max-classes-per-file */
-import GameObject from './index';
+import Clock from './index';
 
 test('GameObject', () => {
-  class GameScene {
-    private objects: GameObject[] = [];
-
-    addObject(object: GameObject): void {
-      this.objects.push(object);
-    }
-
-    tick(delta: number): void {
-      this.objects.forEach((object) => object.tick(delta));
-    }
-
+  class Clock12 extends Clock {
     render(): string {
-      return this.objects.map((object) => object.render()).join('\n');
+      const timeType = this.hours > 12 ? 'PM' : 'AM';
+
+      let currentHour = this.hours > 12 ? this.hours - 12 : this.hours;
+      if (timeType === 'AM' && this.hours === 0) {
+        currentHour = 12;
+      }
+
+      const hours = currentHour.toString().padStart(2, '0');
+      const minutes = this.minutes.toString().padStart(2, '0');
+      return `${hours} : ${minutes} ${timeType}`;
     }
   }
 
-  class Player extends GameObject {
+  class Clock24 extends Clock {
     render(): string {
-      return `Player: ${this.x}, ${this.y}`;
+      return `${this.hours.toString().padStart(2, '0')} : ${this.minutes.toString().padStart(2, '0')}`;
     }
   }
 
-  class Enemy extends GameObject {
-    render(): string {
-      return `Enemy: ${this.x}, ${this.y}`;
-    }
-  }
+  const clock121 = new Clock12(12, 59, 0);
+  expect(clock121.render()).toBe('12 : 59 AM');
 
-  const scene = new GameScene();
-  const player = new Player(0, 0);
-  const enemy = new Enemy(20, 20);
-  scene.addObject(player);
-  scene.addObject(enemy);
+  const clock12 = new Clock12(23, 59, 58);
+  expect(clock12.render()).toBe('11 : 59 PM');
 
-  player.move(10, 10);
-  enemy.move(20, 20);
-  player.move(10, 10);
+  clock12.tick();
+  clock12.tick();
 
-  scene.tick(1);
-  expect(scene.render()).toBe('Player: 10, 10\nEnemy: 40, 40');
+  expect(clock12.render()).toBe('12 : 00 AM');
 
-  scene.tick(0.5);
-  expect(scene.render()).toBe('Player: 15, 15\nEnemy: 40, 40');
+  const clock24 = new Clock24(23, 59, 58);
+  expect(clock24.render()).toBe('23 : 59');
 
-  enemy.move(-10, 10);
-  player.move(-5, 0);
-  scene.tick(1);
-  expect(scene.render()).toBe('Player: 10, 15\nEnemy: 30, 50');
+  clock24.tick();
+  clock24.tick();
+
+  expect(clock24.render()).toBe('00 : 00');
 });

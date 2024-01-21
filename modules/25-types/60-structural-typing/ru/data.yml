@@ -1,0 +1,18 @@
+name: Структурная типизация
+tips:
+  - >
+    [Structural typing в официальной
+    документации](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#structural-typing)
+  - >
+    [Как получить номинативную типизацию в
+    TS](https://spin.atomicobject.com/2018/01/15/typescript-flexible-nominal-typing/)
+  - |
+    [Тип-произведение](https://en.wikipedia.org/wiki/Product_type)
+  - |
+    [Тип-сумма](https://en.wikipedia.org/wiki/Tagged_union)
+definitions:
+  - name: Структурная типизация
+    description: >
+      принцип, который определяет совместимость типов на основе их описания
+      (структуры). Переменная типа `A` также может использоваться в том месте,
+      где ожидается тип `B`, если обладает той же или более широкой структурой.

@@ -1,0 +1,5 @@
+name: Кортежи (Tuples)
+tips:
+  - >
+    [Кортежи в официальной
+    документации](https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types)
