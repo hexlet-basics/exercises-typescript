@@ -1,0 +1,17 @@
+name: Система модулей
+tips:
+  - >
+    [Официальная документация про
+    модули](https://www.typescriptlang.org/docs/handbook/modules.html)
+  - >
+    [Как происходит Module
+    Resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html#how-nodejs-resolves-modules)
+  - >
+    [О модулях в JavaScript на
+    Hexlet](https://ru.hexlet.io/courses/programming-basics/lessons/modules/theory_unit)
+  - >
+    [Официальная документация про
+    Namespaces](https://www.typescriptlang.org/docs/handbook/namespaces.html)
+  - >
+    [Метод
+    includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)

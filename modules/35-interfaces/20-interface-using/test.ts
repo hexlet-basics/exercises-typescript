@@ -1,5 +1,3 @@
-import * as ta from 'type-assertions';
-
 import superMan from './index';
 
 test('guess who', () => {

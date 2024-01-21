@@ -1,24 +1,26 @@
 // BEGIN
-class File {
-  name: string;
+type OptionName = string;
+type OptionSize = number;
+type CustomFileOptions = { name: OptionName, size: OptionSize };
 
-  size: number;
+class CustomFile {
+  name: OptionName;
 
-  isCopy?: boolean;
+  size: OptionSize;
 
-  constructor(options: File) {
+  private isCopy: boolean;
+
+  constructor(options: CustomFileOptions) {
     this.name = options.name;
     this.size = options.size;
-
-    if (options instanceof File) {
-      this.isCopy = true;
-    }
+    this.isCopy = (options instanceof CustomFile);
   }
 
-  toString() {
-    return [this.isCopy && '(copy)', this.name, `(${this.size} bytes)`].filter(Boolean).join(' ');
+  toString(): string {
+    const copyString = this.isCopy ? '(copy) ' : '';
+    return `${copyString}${this.name} (${this.size} bytes)`;
   }
 }
 // END
 
-export default File;
+export default CustomFile;

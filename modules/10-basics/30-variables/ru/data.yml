@@ -1,0 +1,8 @@
+name: Переменные
+tips:
+  - >
+    [Метод
+    String.repeat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+  - >
+    [Официальная
+    документация](https://www.typescriptlang.org/docs/handbook/2/basic-types.html)

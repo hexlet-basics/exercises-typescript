@@ -1,6 +1,6 @@
 import sayHello from './index';
 
 test('function', () => {
-  expect(sayHello('John')).toBe('Hi John');
-  expect(sayHello('Mila', 'Mala')).toBe('Hello Mila Mala');
+  expect(sayHello('John')).toBe('Hi John! Happy New Year!');
+  expect(sayHello(2023, 'Mila')).toBe('Hi Mila! Happy New Year 2023!');
 });

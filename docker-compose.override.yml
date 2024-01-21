@@ -6,3 +6,5 @@ services:
   exercises:
     volumes:
       - .:/exercises-typescript
+    environment:
+      - CHECK_TESTS=1

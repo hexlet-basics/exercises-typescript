@@ -3,60 +3,69 @@
 name: Статические методы и свойства
 theory: |
 
-  Иногда нам требуется задать свойство или метод, который будет общим для всех экземпляров этого класса. Например, чтобы определить является ли объект экземпляром класса. В таком случае при объявлении метода мы можем указать ключевое слово `static` и он станет доступен через имя класса:
+  Иногда нам требуется задать свойство или метод, который будет общим для всех экземпляров этого класса. Например, чтобы определить, является ли объект экземпляром класса. В таком случае при объявлении метода мы можем указать ключевое слово `static`, и он станет доступен через имя класса:
 
   ```typescript
-  class File {
-    private static readonly maxFileSize = 1000;
-    static isFile(file: File): boolean {
-      return file instanceof File;
+  class CustomFile {
+    private static readonly maxCustomFileSize = 1000;
+
+    static isCustomFile(file: CustomFile): boolean {
+      return file instanceof CustomFile;
     }
 
-    protected static isFileTooBig(size: number): boolean {
-      return file.size > File.maxFileSize;
+    protected static isCustomFileTooBig(size: number): boolean {
+      return size > CustomFile.maxCustomFileSize;
     }
 
     constructor(private name: string, private size: number) {
-      if (File.isFileTooBig(size)) {
-        throw new Error('File is too big');
+      if (CustomFile.isCustomFileTooBig(size)) {
+        throw new Error('CustomFile is too big');
       }
     }
   }
 
-  File.isFile(new File('open-world.jpeg', 1000)); // true
+  CustomFile.isCustomFile(new CustomFile('open-world.jpeg', 1000)); // true
   ```
+
+  <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
   Статическим методам и свойствам также можно назначить модификаторы доступа `public`, `protected` и `private` и модификатор неизменяемости `readonly`. Это позволяет ограничить использование свойств и методов только текущим классом или наследниками.
 
-  В отличии от JavaScript в TypeScript Статические свойства и методы не могут быть переопределены в подклассах:
+  В отличии от JavaScript в TypeScript статические свойства и методы не могут быть переопределены в подклассах:
 
   ```typescript
-  class File {
-    static maxFileSize = 1000;
-    static isFile(file: File): boolean {
-      return file instanceof File;
+  class CustomFile {
+    static maxCustomFileSize = 1000;
+
+    static isCustomFile(file: CustomFile): boolean {
+      return file instanceof CustomFile;
     }
   }
 
-  class ImageFile extends File {
-    static maxFileSize = 2000; // Error!
-    static isFile(file: File): boolean { // Error!
-      return file instanceof ImageFile;
+  class ImageCustomFile extends CustomFile {
+    static maxCustomFileSize = 2000; // Error!
+
+    static isCustomFile(file: CustomFile): boolean { // Error!
+      return file instanceof ImageCustomFile;
     }
   }
   ```
+
+  <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
   Такой код не удастся скомпилировать. При этом остается доступ к статическим свойствам и методам родительского класса:
 
   ```typescript
-  const file = new ImageFile();
-  console.log(ImageFile.maxFileSize); // 1000
-  console.log(ImageFile.isFile(file)); // true
+  const file = new ImageCustomFile();
+  console.log(ImageCustomFile.maxCustomFileSize); // 1000
+  console.log(ImageCustomFile.isCustomFile(file)); // true
   ```
+
+  <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
 instructions: |
 
-  Другое полезное применение статических свойств и методов - создание фабричных методов. Фабричный метод - это статический метод, который возвращает новый экземпляр класса. Реализуйте класс `UserResponse` с полем `user: string` и фабричный метод `fromArray`, который принимает массив и возвращает массив экземпляров класса `UserResponse`:
+  Другое полезное применение статических свойств и методов — создание фабричных методов. Фабричный метод — это статический метод, который возвращает новый экземпляр класса. Реализуйте класс `UserResponse` с полем `user: string` и фабричный метод `fromArray`, который принимает массив и возвращает массив экземпляров класса `UserResponse`:
 
   ```typescript
   const response = UserResponse.fromArray(['user1', 'user2', 'user3']);
