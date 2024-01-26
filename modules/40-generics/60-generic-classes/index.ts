@@ -2,7 +2,7 @@
 class Queue<T> {
   private data: T[] = [];
 
-  enqueue(element: T): void {
+  enqueue(element: T) {
     this.data.push(element);
   }
 
