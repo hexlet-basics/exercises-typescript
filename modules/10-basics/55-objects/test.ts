@@ -15,6 +15,12 @@ test('function', () => {
   };
   expect(isComplete(course2)).toBe(true);
 
+    const course3 = {
+    name: 'Java',
+    lessons: ['variables', 'functions', 'conditions', 'loops', 'cringe'],
+  };
+  expect(isComplete(course3)).toBe(true);
+
   ta.assert<ta.Equal<ReturnType<typeof isComplete>, boolean>>();
   ta.assert<ta.Equal<Parameters<typeof isComplete>[0], { name: string, lessons: string[] }>>();
 });
