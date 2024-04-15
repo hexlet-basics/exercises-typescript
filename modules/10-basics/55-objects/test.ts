@@ -15,7 +15,7 @@ test('function', () => {
   };
   expect(isComplete(course2)).toBe(true);
 
-    const course3 = {
+  const course3 = {
     name: 'Java',
     lessons: ['variables', 'functions', 'conditions', 'loops', 'cringe'],
   };
