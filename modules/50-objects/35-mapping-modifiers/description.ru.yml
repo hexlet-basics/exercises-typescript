@@ -1,0 +1,72 @@
+---
+
+name: Модификаторы сопоставления типов (Mapping Modifiers)
+theory: |
+
+  При сопоставлении типов можно менять атрибуты свойств такие как неизменность (immutability) и необязательность (optionality). Делается это с помощью соответствующих модификаторов: `readonly` и `?`.
+
+  Чтобы добавить или удалить эти модификаторы, можно использовать префиксы `+` или `-`. Если не использовать префикс, то подразумевается что модификатор будет добавлен, то есть по умолчанию префикс `+`.
+
+  Примеры использования модификаторов есть в Utility Types:
+
+  ```typescript
+  /**
+   * Делает все свойства типа `T` необязательными,
+   * то есть добавляет атрибут `?`.
+   */
+  type Partial<T> = {
+    [P in keyof T]?: T[P];
+  };
+
+  /**
+   * Делает все свойства типа `T` обязательными,
+   * то есть удаляет атрибут `?`.
+   */
+  type Required<T> = {
+    [P in keyof T]-?: T[P];
+  };
+
+  /**
+   * Делает все свойства типа `T` неизменяемыми,
+   * то есть добавляет атрибут `readonly`.
+   */
+  type Readonly<T> = {
+    readonly [P in keyof T]: T[P];
+  };
+  ```
+
+  Подобным образом можно написать и тип, который делает все свойства типа изменяемыми, то есть удаляет атрибут `readonly`:
+
+  ```typescript
+  type Mutable<T> = {
+    -readonly [P in keyof T]: T[P];
+  };
+  ```
+
+instructions: |
+
+  Реализуйте функцию `deepFreeze()`, которая принимает на вход объект и делает его самого, его поля и все вложенные объекты неизменяемыми и возвращает этот объект.
+
+  ```typescript
+  const user = deepFreeze({
+    name: 'John',
+    password: '1q2w3e',
+    token: 'test',
+  });
+
+  user.name = 'Alex'; // Error: Cannot assign to 'name' because it is a read-only property.
+  ```
+
+  Нужно использовать встроенный в JavaScript метод [Object.freeze()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
+
+tips:
+  - |
+    [Официальная документация Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+  - |
+    [Официальная документация Mapping Modifiers](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#mapping-modifiers)
+  - |
+    [Официальная документация Partial](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)
+  - |
+    [Официальная документация Required](https://www.typescriptlang.org/docs/handbook/utility-types.html#requiredtype)
+  - |
+    [Официальная документация Readonly](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)
