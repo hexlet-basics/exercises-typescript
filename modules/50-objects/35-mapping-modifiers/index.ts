@@ -4,15 +4,15 @@ type DeepReadonly<T> = {
 };
 
 const deepFreeze = <T extends object>(obj: T): DeepReadonly<T> => {
-  Object.freeze(obj);
+  const freezedObj = Object.freeze(obj);
 
-  Object.values(obj).forEach((value) => {
+  Object.values(freezedObj).forEach((value) => {
     if (typeof value === 'object' && value !== null) {
       deepFreeze(value);
     }
   });
 
-  return obj;
+  return freezedObj;
 };
 // END
 

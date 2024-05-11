@@ -15,7 +15,9 @@ test('deepFreeze', () => {
     },
   };
 
-  expect(deepFreeze(obj)).toEqual({
+  const user = deepFreeze(obj);
+
+  expect(user).toEqual({
     name: 'John',
     age: 30,
     location: {
@@ -27,7 +29,15 @@ test('deepFreeze', () => {
     },
   });
 
-  const user = deepFreeze(obj);
+  expect(() => {
+    // @ts-expect-error Cannot assign read-only property.
+    user.age = 20;
+  }).toThrow();
+
+  expect(() => {
+    // @ts-expect-error Cannot assign nested read-only property.
+    user.location.city = 'London';
+  }).toThrow();
 
   ta.assert<ta.Equal<typeof user, Readonly<{
     name: string,
