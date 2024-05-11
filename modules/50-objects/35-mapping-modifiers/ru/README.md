@@ -37,3 +37,22 @@ type Mutable<T> = {
   -readonly [P in keyof T]: T[P];
 };
 ```
+
+Благодаря таким типам легче далеть производные типы из уже имеющихся.
+
+Например, в приложении может быть тип `User` для не авторизованного пользователя у которого все поля не обязательные:
+
+```typescript
+type User = {
+  id?: string;
+  firstName?: string;
+  secondName?: string;
+  email?: string;
+};
+```
+
+Из него можно сделать авторизованного пользователя с помощью типа `Required`:
+
+```typescript
+type AuthorizedUser = Required<DefaultUser>;
+```
