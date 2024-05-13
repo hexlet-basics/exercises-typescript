@@ -139,6 +139,6 @@ tips:
   - |
     [Ликбез по типизации (Habr)](https://habr.com/ru/post/161205/)
   - |
-    [Для чего нужен TypeScript](https://typescript-definitive-guide.ru/book/chapters/Chto_takoe_TypeScript_i_dlya_chego_on_nujen/#Dlya_chego_nujen_TypeScript)
+    [Для чего нужен TypeScript](https://nauchikus.gitlab.io/typescript-definitive-guide/book/contents/%D0%9E%D0%B1%D1%89%D0%B5%D0%B5%20-%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20TypeScript.html)
   - |
     [Playground с возможностью увидеть результат транспиляции TypeScript в JavaScript](https://www.typescriptlang.org/play)
