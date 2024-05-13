@@ -1,0 +1,17 @@
+name: Модификаторы сопоставления типов (Mapping Modifiers)
+tips:
+  - >
+    [Официальная документация Mapped
+    Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+  - >
+    [Официальная документация Mapping
+    Modifiers](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#mapping-modifiers)
+  - >
+    [Официальная документация
+    Partial](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)
+  - >
+    [Официальная документация
+    Required](https://www.typescriptlang.org/docs/handbook/utility-types.html#requiredtype)
+  - >
+    [Официальная документация
+    Readonly](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)
