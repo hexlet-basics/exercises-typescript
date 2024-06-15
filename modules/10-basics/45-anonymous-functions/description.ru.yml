@@ -19,7 +19,7 @@ theory: |
 
   ```typescript
   const toUpper = (name: string): string => name.toUpperCase();
-  const upperFruits = fruits.map(toUpper);
+  const upperFruits = (): string[] => fruits.map(toUpper);
   ```
 
   ## Выводы
