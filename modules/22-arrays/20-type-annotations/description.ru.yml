@@ -39,7 +39,6 @@ theory: |
   ```typescript
   const users: Array<User> = [];
   const users: Array<number> = [];
-  const users: Array<User> = [];
 
   const users: Array<{ name: string }> = [];
   const users: Array<string | null> = [];
