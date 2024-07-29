@@ -27,7 +27,7 @@ console.log(clock24.render()); // => '00 : 00'
 // 12-часовой формат
 class Clock12 extends Clock {
   render(): string {
-    const timeType = this.hours > 12 ? 'PM' : 'AM';
+    const timeType = this.hours >= 12 ? 'PM' : 'AM';
 
     let currentHour = this.hours > 12 ? this.hours - 12 : this.hours;
     if (timeType === 'AM' && this.hours === 0) {

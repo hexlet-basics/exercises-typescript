@@ -4,7 +4,7 @@ import Clock from './index';
 test('GameObject', () => {
   class Clock12 extends Clock {
     render(): string {
-      const timeType = this.hours > 12 ? 'PM' : 'AM';
+      const timeType = this.hours >= 12 ? 'PM' : 'AM';
 
       let currentHour = this.hours > 12 ? this.hours - 12 : this.hours;
       if (timeType === 'AM' && this.hours === 0) {
