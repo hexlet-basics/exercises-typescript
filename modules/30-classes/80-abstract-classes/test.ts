@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 import Clock from './index';
 
-test('GameObject', () => {
+test('Clock', () => {
   class Clock12 extends Clock {
     render(): string {
       const timeType = this.hours >= 12 ? 'PM' : 'AM';
@@ -23,8 +23,8 @@ test('GameObject', () => {
     }
   }
 
-  const clock121 = new Clock12(12, 59, 0);
-  expect(clock121.render()).toBe('12 : 59 AM');
+  const clock121 = new Clock12(11, 59, 0);
+  expect(clock121.render()).toBe('11 : 59 AM');
 
   const clock12 = new Clock12(23, 59, 58);
   expect(clock12.render()).toBe('11 : 59 PM');
