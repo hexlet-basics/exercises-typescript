@@ -2,4 +2,4 @@
 
 set -e
 
-vitest
+vitest --typecheck
