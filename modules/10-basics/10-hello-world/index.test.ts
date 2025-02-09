@@ -1,4 +1,5 @@
-import * as path from 'path';
+import { test } from 'vitest'
+import path from 'path';
 import * as sinon from 'sinon';
 
 test('hello world', async () => {
