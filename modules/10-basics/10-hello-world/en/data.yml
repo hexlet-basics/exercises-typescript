@@ -1,0 +1,11 @@
+---
+name: Hello, World!
+tips:
+  - |
+    [Repl for experimenting with TypeScript](https://www.typescriptlang.org/play)
+  - >
+    [TypeScript installation guide](https://github.com/Hexlet/ru-instructions/blob/main/typescript.md)
+  - |
+    [strict in tsconfig](https://www.typescriptlang.org/tsconfig#strict)
+  - >
+    [TypeScript compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html#compiler-options)
