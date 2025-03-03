@@ -1,16 +1,14 @@
 FROM hexletbasics/base-image:latest
 
-WORKDIR /exercises-typescript
-
-COPY package.json .
-
-COPY package-lock.json .
-
-RUN npm install
-
-COPY . .
-
-ENV PATH /exercises-typescript/bin:/exercises-typescript/node_modules/.bin:$PATH
+ENV PATH=/exercises-typescript/bin:/exercises-typescript/node_modules/.bin:$PATH
 # ENV NODE_OPTIONS --max-old-space-size=4096
 # --experimental-vm-modules
-ENV CI true
+ENV CI=true
+
+WORKDIR /exercises-typescript
+
+RUN npm i -g vitest
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY . .
