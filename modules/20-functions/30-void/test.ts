@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { expect, test } from 'vitest'
 import forEach from './index';
 
 test('forEach', () => {

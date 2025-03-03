@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import sayHello from './index';
 
 test('function', () => {

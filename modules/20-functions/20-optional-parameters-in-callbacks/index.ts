@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ 
 
 // BEGIN
 function map(numbers: number[], callback: (n: number, index: number) => number): number[] {

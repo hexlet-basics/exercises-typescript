@@ -1,4 +1,5 @@
 import * as ta from 'type-assertions';
+import { expect, test } from 'vitest';
 
 import sanitize from './index';
 
@@ -13,6 +14,7 @@ test('sanitize', () => {
     password: '123456',
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const user = sanitize(obj, ['password']);
 
   ta.assert<ta.Equal<typeof user, { name: string; age: number }>>();

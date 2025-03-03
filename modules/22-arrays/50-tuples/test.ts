@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import isTheSamePoint, { Point } from './index';
 
 test('function', () => {

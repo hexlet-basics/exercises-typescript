@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import superMan from './index';
 
 test('guess who', () => {

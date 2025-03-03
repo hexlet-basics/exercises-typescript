@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import getUserFriends, { UserResponse } from './index';
 
 test('getUserFriends', () => {

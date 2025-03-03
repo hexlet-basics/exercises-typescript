@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import addAdmin, { User, Permission } from './index';
 
 test('addAdmin', () => {

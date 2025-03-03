@@ -1,8 +1,9 @@
+import { expect, test, vi } from 'vitest'
 import * as path from 'path';
-import * as sinon from 'sinon';
 
 test('hello world', async () => {
-  const spy = sinon.spy(console, 'log');
+  const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
   await import(path.join(__dirname, 'index'));
-  sinon.assert.calledWith(spy, 'Hello, World!');
+  const firstArg = consoleLogSpy.mock.calls[0]?.[0];
+  expect(firstArg).toBe('Hello, World!')
 });

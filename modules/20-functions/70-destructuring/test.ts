@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import lessonsCount from './index';
 
 test('function', () => {

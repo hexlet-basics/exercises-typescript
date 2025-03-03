@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import map from './index';
 
 test('map', () => {

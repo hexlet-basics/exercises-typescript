@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import type CustomType from './index';
 
 test('CustomType', () => {

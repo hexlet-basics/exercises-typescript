@@ -1,4 +1,4 @@
-/* eslint-disable max-classes-per-file */
+import { expect, test } from 'vitest'
 import Clock from './index';
 
 test('Clock', () => {

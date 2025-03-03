@@ -41,4 +41,4 @@ ci-check:
 	docker compose --file docker-compose.yml up --abort-on-container-exit
 
 test-fast:
-	npx jest
+	npx vitest

@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import ImageCustomFile from './index';
 
 test('ImageCustomFile', () => {

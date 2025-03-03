@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import formatPrice from './index';
 
 test('formatPrice', () => {

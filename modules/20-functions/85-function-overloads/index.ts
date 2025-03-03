@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+ 
 
 // BEGIN
 function newYearCongratulate(name: string): string;
