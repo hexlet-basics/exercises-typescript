@@ -2,9 +2,9 @@
 Представим программу, в которой есть объект пользователя. Этот объект используется повсеместно. В такой ситуации описание типа этого объекта будет повторяться в каждом определении функции:
 
 ```typescript
-function doSomething(user: { firstName: string, lastName: number }) {}
-function doSomethingElse(user: { firstName: string, lastName: number }) {}
-function doSomethingAnother(user: { firstName: string, lastName: number }) {}
+function doSomething(user: { firstName: string, pointsCount: number }) {}
+function doSomethingElse(user: { firstName: string, pointsCount: number }) {}
+function doSomethingAnother(user: { firstName: string, pointsCount: number }) {}
 ````
 
 Во-первых, здесь много дублирования. Во-вторых, значительно усложняется изменение структуры, так как придется руками править все места, где встречается это определение. В этом уроке разберем, как избежать таких проблем.
