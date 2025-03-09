@@ -1,0 +1,15 @@
+---
+name: Modules
+tips:
+  - >
+    [Official documentation
+    about modules](https://www.typescriptlang.org/docs/handbook/modules.html)
+  - >
+    [How module 
+    resolution happens](https://www.typescriptlang.org/docs/handbook/module-resolution.html#how-nodejs-resolves-modules)
+  - >
+    [Official documentation
+    about namespaces](https://www.typescriptlang.org/docs/handbook/namespaces.html)
+  - >
+    [Method
+    includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)

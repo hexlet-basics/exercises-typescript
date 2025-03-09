@@ -1,0 +1,5 @@
+---
+name: TypeScript Fundamentals
+description: |
+  TypeScript is one of the most popular programming languages in the world. It is used to create interactive web pages, mobile applications, and in server-side development.
+  We will learn TS from scratch, from the very basics. The first module is a springboard for writing meaningful programs. In it, we will learn how to write your first code in TS. We will tell you what comments are and why you need them. On the example of checking your decisions, we will consider what testing is and how to read test output.
