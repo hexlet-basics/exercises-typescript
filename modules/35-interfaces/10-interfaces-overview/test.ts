@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import Car from './index';
 
 test('Car', () => {

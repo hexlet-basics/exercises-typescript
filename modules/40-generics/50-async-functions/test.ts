@@ -1,4 +1,5 @@
 import * as ta from 'type-assertions';
+import { expect, test } from 'vitest';
 import asyncMap from './index';
 
 test('asyncMap', async () => {
