@@ -25,7 +25,7 @@ val = true; // Type 'boolean' is not assignable to type 'NumberOrString'.
 
 <!-- TODO - автору: нужно описать код - на что обратить внимание или что сделали -->
 
-![NumberOrString](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/20-union-types/assets/number_or_string.png)
+![NumberOrString](../assets/number_or_string.png)
 
 На практике нередко встречаются случаи, когда нам нужно поддержать работу функции с большим количеством допустимых значений. В JavaScript мы можем соединить строку не только со строкой, но и числом или с `true`. Для решения похожей задачи в прошлых уроках мы познакомились с перегрузкой функции. Опишем тип такой функции с применением объединения:
 
