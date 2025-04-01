@@ -1,5 +1,4 @@
-import * as ta from 'type-assertions';
-import { expect, test } from 'vitest';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import createAccessChecker from './index';
 
@@ -21,5 +20,5 @@ test('function', () => {
   const isUserAllowed = checkUserAccess('user', 'adminPanel');
   expect(isUserAllowed).toBe(false);
 
-  ta.assert<ta.Equal<Parameters<typeof checkUserAccess>, [UserRole, UserResource]>>();
+  expectTypeOf(checkUserAccess).parameters.toMatchTypeOf<[UserRole, UserResource]>();
 });

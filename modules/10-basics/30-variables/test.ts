@@ -1,5 +1,4 @@
-import * as ta from 'type-assertions';
-import { expect, test } from 'vitest';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import repeat from './index';
 
@@ -8,5 +7,5 @@ test('repeat', () => {
   expect(repeat('s', 2)).toBe('ss');
   expect(repeat('s', 0)).toBe('');
 
-  ta.assert<ta.Equal<ReturnType<typeof repeat>, string>>();
+  expectTypeOf(repeat).returns.toMatchTypeOf<string>();
 });

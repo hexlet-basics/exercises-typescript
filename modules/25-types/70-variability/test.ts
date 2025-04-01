@@ -1,6 +1,5 @@
-import * as ta from 'type-assertions';
-import { expect, test } from 'vitest';
-import applyTransactions, { Transaction, Wallet } from './index';
+import { expect, test, expectTypeOf } from 'vitest';
+import applyTransactions, { Wallet } from './index';
 
 test('applyTransactions', () => {
   const wallet: Wallet = {
@@ -40,5 +39,5 @@ test('applyTransactions', () => {
 
   expect(applyTransactions(wallet2)).toBe(10);
 
-  ta.assert<ta.Equal<Parameters<Transaction['apply']>, [number]>>();
+  expectTypeOf(wallet2.transactions[0].apply).returns.toMatchTypeOf<number>();
 });

@@ -1,5 +1,4 @@
-import * as ta from 'type-assertions';
-import { expect, test } from 'vitest';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import MyMap from './index';
 
@@ -21,6 +20,6 @@ test('MyMap', () => {
   expect(map.get('two')).toBe(2);
   expect(map.get('three')).toBe(undefined);
 
-  ta.assert<ta.Equal<Parameters<MyMap<string, number>['set']>, [string, number]>>();
-  ta.assert<ta.Equal<ReturnType<MyMap<string, number>['get']>, number | undefined>>();
+  expectTypeOf(map.set).parameters.toMatchTypeOf<[string, number]>();
+  expectTypeOf(map.get).returns.toMatchTypeOf<number | undefined>();
 });
