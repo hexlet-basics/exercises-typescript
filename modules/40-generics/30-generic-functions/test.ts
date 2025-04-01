@@ -1,5 +1,4 @@
-import * as ta from 'type-assertions';
-import { expect, test } from 'vitest';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import MyArray from './index';
 
@@ -19,6 +18,18 @@ test('MyArray', () => {
   expect(coll.push(2)).toBe(2);
   expect(coll.push(5)).toBe(3);
 
-  ta.assert<ta.Equal<Parameters<MyArray<string>['push']>, [string]>>();
-  ta.assert<ta.Equal<ReturnType<MyArray<string>['push']>, number>>();
+  expectTypeOf(coll.push).parameters.toMatchTypeOf<[number]>();
+
+  const coll1: MyArray<string> = {
+    items: [],
+    push(value) {
+      return this.items.push(value);
+    },
+    filter(callback) {
+      const newItems = this.items.filter(callback);
+      return { ...this, items: newItems };
+    },
+  };
+
+  expectTypeOf(coll1.push).parameters.toMatchTypeOf<[string]>();
 });

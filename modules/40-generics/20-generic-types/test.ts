@@ -1,5 +1,4 @@
-import * as ta from 'type-assertions';
-import { expect, test } from 'vitest';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import MySet from './index';
 
@@ -19,8 +18,8 @@ test('function', () => {
   s1.add(1);
   expect(s1.has(1)).toBe(true);
 
-  ta.assert<ta.Equal<Parameters<typeof s1.has>, [number]>>();
-  ta.assert<ta.Equal<Parameters<typeof s1.add>, [number]>>();
+  expectTypeOf(s1.has).parameters.toMatchTypeOf<[number]>();
+  expectTypeOf(s1.add).parameters.toMatchTypeOf<[number]>();
 });
 
 test('function', () => {
@@ -39,6 +38,6 @@ test('function', () => {
   s1.add('hexlet');
   expect(s1.has('hexlet')).toBe(true);
 
-  ta.assert<ta.Equal<Parameters<typeof s1.has>, [string]>>();
-  ta.assert<ta.Equal<Parameters<typeof s1.add>, [string]>>();
+  expectTypeOf(s1.has).parameters.toMatchTypeOf<[string]>();
+  expectTypeOf(s1.add).parameters.toMatchTypeOf<[string]>();
 });

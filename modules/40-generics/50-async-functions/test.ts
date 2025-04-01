@@ -1,5 +1,4 @@
-import * as ta from 'type-assertions';
-import { expect, test } from 'vitest';
+import { expect, test, expectTypeOf } from 'vitest';
 import asyncMap from './index';
 
 test('asyncMap', async () => {
@@ -15,6 +14,6 @@ test('asyncMap', async () => {
   );
   expect(result3).toEqual([0, 2]);
 
-  ta.assert<ta.Equal<typeof result, number[]>>();
-  ta.assert<ta.Equal<typeof result2, string[]>>();
+  expectTypeOf(result).toMatchTypeOf<number[]>();
+  expectTypeOf(result2).toMatchTypeOf<string[]>();
 });

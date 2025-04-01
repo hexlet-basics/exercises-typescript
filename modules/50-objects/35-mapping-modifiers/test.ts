@@ -1,5 +1,4 @@
-import * as ta from 'type-assertions';
-import { expect, test } from 'vitest';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import deepFreeze from './index';
 
@@ -40,7 +39,7 @@ test('deepFreeze', () => {
     user.location.city = 'London';
   }).toThrow();
 
-  ta.assert<ta.Equal<typeof user, Readonly<{
+  expectTypeOf(user).toMatchTypeOf<Readonly<{
     name: string,
     age: number,
     location: Readonly<{
@@ -50,5 +49,5 @@ test('deepFreeze', () => {
         lon: number,
       }>,
     }>,
-  }>>>();
+  }>>();
 });

@@ -1,5 +1,4 @@
-import * as ta from 'type-assertions';
-import { expect, test } from 'vitest';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import form from './index';
 
@@ -10,6 +9,6 @@ test('form', () => {
   expect(nameValidator(form.name.value)).toBe(true);
   expect(ageValidator(form.age.value)).toBe(false);
 
-  ta.assert<ta.Equal<Parameters<typeof nameValidator>, [string]>>();
-  ta.assert<ta.Equal<Parameters<typeof ageValidator>, [number]>>();
+  expectTypeOf(nameValidator).parameters.toMatchTypeOf<[string]>();
+  expectTypeOf(ageValidator).parameters.toMatchTypeOf<[number]>();
 });
