@@ -1,0 +1,4 @@
+---
+name: More about types
+description: |
+  Combining types using intersection and union, their peculiarities. In this module, we'll cover the basic concepts that allow you to gain a deeper understanding of how typing works in TypeScript and not be afraid of compiler errors.

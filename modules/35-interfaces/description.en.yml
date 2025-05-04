@@ -1,0 +1,4 @@
+---
+name: Interfaces
+description: |
+  Interfaces in TypeScript allow you to describe object types differently in the syntax familiar to OOP languages and extend the semantics - adding useful new uses.
