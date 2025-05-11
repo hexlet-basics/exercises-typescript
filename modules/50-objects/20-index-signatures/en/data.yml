@@ -1,0 +1,9 @@
+---
+name: Index Signature
+tips:
+  - >
+    [The chapter on Index Signature in the book TypeScript Deep
+    Dive](https://basarat.gitbook.io/typescript/type-system/index-signatures)
+  - >
+    [Official Documentation on Template Literal
+    Types](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)

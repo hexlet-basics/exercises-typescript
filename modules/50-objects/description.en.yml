@@ -1,0 +1,5 @@
+---
+
+name: Object Typing
+description: |
+  Objects in TypeScript can be described using interfaces and types. In this section, we will look at the peculiarities of typing objects, obtaining dynamic properties, and the peculiarities of defining object types.
