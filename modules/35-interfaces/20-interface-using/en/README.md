@@ -1,9 +1,9 @@
 
-В этом уроке мы разберем использование интерфейсов. В предыдущем уроке мы рассказывали, что их работа похожа на работу типов в TypeScript. Но у них есть и свои особенности, которые мы затронем сегодня.
+In this lesson, we will look at the use of interfaces. In the previous lesson we told you that their work is similar to the work of types in TypeScript. But they have their own peculiarities, which we will touch upon today.
 
-## Расширение интерфейса дополнительными полями
+## Extending an interface with additional fields
 
-Если интерфейс необходимо расширить дополнительными полями после его инициализации, мы можем повторно объявить интерфейс с новыми свойствами. Такой способ называется **слиянием деклараций**:
+If an interface needs to be extended with additional fields after it has been initialized, we can re-declare the interface with new properties. This method is called **merging declarations**:
 
 ```typescript
 interface IUser {
@@ -22,13 +22,13 @@ const sergey: IUser = {
 }
 ```
 
-Здесь мы создали интерфейс `IUser`, а затем для демонстрационных целей расширили его новыми свойствами. После этого создали на его основе объект `Sergey`.
+Here we created the `IUser` interface and then extended it with new properties for demonstration purposes. After that we created `Sergey` object on its basis.
 
-Рассмотрим другой способ работы с интерфейсом.
+Let's consider another way of working with an interface.
 
-## Расширение интерфейса с помощью другого интерфейса
+## Extending an interface using another interface
 
-Мы можем расширить интерфейс с помощью создания другого интерфейса, который наследуется от него:
+We can extend an interface by creating another interface that inherits from it:
 
 ```typescript
 interface IStudent extends IUser {
@@ -43,13 +43,13 @@ const sergey: IStudent = {
 }
 ```
 
-В этом примере мы создали на основе нашего предыдущего интерфейса `IUser` еще один — `IStudent`, в который добавили свойство `group`. Так интерфейс `IStudent` имеет все свойства `IUser` и все свойства, которые мы указали при его расширении от `IUser`, то есть дополнительно `group`.
+In this example, we have created another one based on our previous interface `IUser` - `IStudent`, to which we have added the `group` property. So the interface `IStudent` has all the properties of `IUser` and all the properties we specified when extending it from `IUser`, i.e. additionally `group`.
 
-Теперь рассмотрим, как работать с несколькими интерфейсами.
+Now let's look at how to work with multiple interfaces.
 
-## Расширение нескольких интерфейсов
+## Extending multiple interfaces
 
-Еще интерфейсы могут расширять сразу несколько других интерфейсов:
+More interfaces can extend several other interfaces at once:
 
 ```typescript
 interface IUser {
@@ -75,11 +75,11 @@ const sergey: IAuthor = {
 }
 ```
 
-В примере выше мы создали экземпляр на основе интерфейса `IAuthor`, который был создан путем расширения интерфейсов `IUser` и `IEditor`. Этот экземпляр взял в себя все свойства данных интерфейсов и свойство, которое мы указали при создании самого интерфейса `IAuthor`.
+In the example above, we created an instance based on the `IAuthor` interface, which was created by extending the `IUser` and `IEditor` interfaces. This instance took all the properties of these interfaces and the property we specified when we created the `IAuthor` interface itself.
 
-## Создание intersection types
+## Creating intersection types
 
-Также TypeScript позволяет нам создавать перекрестные типы (intersection types) из нескольких интерфейсов c помощью литерала `&`:
+TypeScript also allows us to create intersection types from multiple interfaces using the `&` literal:
 
 ```typescript
 interface IOneWay {
@@ -98,11 +98,11 @@ const example: OneWayOrAnother = {
 }
 ```
 
-Здесь мы создали тип `OneWayOrAnother` на основе двух интерфейсов при помощи литерала `&`. Данный тип включил в себя все свойства указанных интерфейсов.
+Here we have created the type `OneWayOrAnother` based on two interfaces using the `&` literal. This type includes all properties of the specified interfaces.
 
-Между созданием перекрестных типов и расширением интерфейсов нет существенных отличий. Почти всегда эти действия будут взаимозаменяемыми, поэтому это скорее вопрос удобства. Но существуют исключения, где [расширение интерфейса ведет себя не так, как создание перекрестного типа](https://stackoverflow.com/questions/52681316/difference-between-extending-and-intersecting-interfaces-in-typescript).
+There are no significant differences between creating cross-types and extending interfaces. Almost always these actions will be interchangeable, so it is more a matter of convenience. But there are exceptions where [interface extension behaves differently from cross-type creation](https://stackoverflow.com/questions/52681316/difference-between-extending-and-intersecting-interfaces-in-typescript).
 
-Может случиться так, что мы не знаем заранее всех свойств, которые будут содержаться в нашем интерфейсе. Но нам известно их возможное содержание. В таком случае удобно использовать специальную индексную сигнатуру, которая позволяет описать типы возможных значений:
+It may happen that we don't know in advance all the properties that our interface will contain. But we know their possible contents. In such a case, it is convenient to use a special index signature, which allows us to describe the types of possible values:
 
 ```typescript
 interface IPhoneBook {
@@ -116,8 +116,8 @@ const myNotePad: IPhoneBook = {
 }
 ```
 
-В примере выше мы решили вопрос создания телефонной книги с помощью индексной сигнатуры. Это позволило нам не указывать множество свойств с именами, но лишь один раз указать тип ключа и тип его значения.
+In the example above, we solved the issue of creating a phonebook by using an index signature. This allowed us not to specify many properties with names, but only once to specify the key type and its value type.
 
-## Выводы
+## Conclusions
 
-Интерфейсы — это еще один мощный инструмент в TypeScript наряду с типами. Он позволяет гибко описать наши данные. Также он удобно поддается расширению и объединению с другими типами или интерфейсами.
+Interfaces are another powerful tool in TypeScript along with types. It allows us to describe our data in a flexible way. It also lends itself conveniently to being extended and combined with other types or interfaces.

@@ -1,3 +1,4 @@
+
 Create an abstract class `Clock`, which will contain common logic for clock classes with different time output formats: 12-hour and 24-hour.
 
 The common logic should store data: hours `hours`, minutes `minutes` and seconds `seconds`. Also included in the common logic is the `tick()` method, which increments the second by one each time it is called. If the second is incremented to a value of 60, the minute is incremented by 1 and the second is reset to 0. The same is true for minutes and hours: if the minutes value is incremented to 60, the current hour is incremented and the minutes are reset to 0. If the hour value is incremented to 24, the hour is reset to 0.

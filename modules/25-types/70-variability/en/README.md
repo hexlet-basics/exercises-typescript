@@ -1,3 +1,4 @@
+
 When we assign a value or pass arguments to a function call, TypeScript checks the types for compatibility. When we pass arguments to a function, the check is performed on both the parameter types and the return types.
 
 If we pass a function that returns a number as a callback to a sorting function that expects a return value of -1 | 0 | 1, we'll get an error: Type 'number' is not assignable to type '0 | 1 | -1':

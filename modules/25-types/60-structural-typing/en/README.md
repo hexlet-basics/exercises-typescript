@@ -1,5 +1,4 @@
 
-
 In JavaScript, it is possible to work with objects and classes in the same way. You don't need to rely on inheritance or interfaces. You only need the expected fields and methods. This approach is called duck typing. What walks like a duck and quacks like a duck is a duck:
 
 ```javascript

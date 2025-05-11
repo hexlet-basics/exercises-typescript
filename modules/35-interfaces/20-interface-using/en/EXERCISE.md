@@ -1,7 +1,7 @@
 
-Вам даны несколько интерфейсов. На их основе создайте интерфейс ISuperman. ISuperMan должен иметь метод guessWho, принимающий и возвращающий строку.
+You are given several interfaces. Based on them, create the ISuperman interface. ISuperMan must have a guessWho method that accepts and returns a string.
 
-На основе интерфейса ISuperMan создайте объект `superMan`. Метод guessWho должен работать следующим образом: если в качестве строки в аргументе приходит любое значение кроме superman (в любом регистре), то следует вернуть предположение "It's a ${value}?", иначе "It's a ${value}!".
+Based on the ISuperMan interface, create a `superMan` object. The guessWho method should work as follows: if any value other than superman (in any case) comes as a string in the argument, it should return the guess ‘It's a ${value}?’, otherwise ‘It's a ${value}!’.
 
 ```typescript
 console.log(superMan.guessWho('bird')); // "It's a bird?";

@@ -2,17 +2,17 @@
 name: Mapping Modifiers
 tips:
   - >
-    [Official Documentation on Mapped
+    [Official documentation on Mapped
     Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
   - >
-    [Official Documentation on Mapping
+    [Official documentation on Mapping
     Modifiers](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#mapping-modifiers)
   - >
-    [Official Documentation on
+    [Official documentation on
     Partial](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)
   - >
-    [Official Documentation on
+    [Official documentation on
     Required](https://www.typescriptlang.org/docs/handbook/utility-types.html#requiredtype)
   - >
-    [Official Documentation on
+    [Official documentation on
     Readonly](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)

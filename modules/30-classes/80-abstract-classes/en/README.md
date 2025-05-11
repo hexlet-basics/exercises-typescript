@@ -1,3 +1,4 @@
+
 When we need to define a common behavior for several classes, it is convenient to use abstract classes, which we will explore in this lesson.
 
 Although abstract classes cannot be created directly, they can be inherited. They can also specify explicitly which method should be implemented in the inheritors:

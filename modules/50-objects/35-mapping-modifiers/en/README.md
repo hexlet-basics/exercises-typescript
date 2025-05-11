@@ -1,3 +1,4 @@
+
 During type matching, you can change property attributes such as immutability and optionality. This is done using the corresponding modifiers: `readonly` and `?`.
 
 To add or remove these modifiers, you can use the prefixes `+` or `-`. If no prefix is used, it is assumed that the modifier will be added, i.e. the default prefix is `+`.
