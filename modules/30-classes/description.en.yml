@@ -1,0 +1,4 @@
+---
+name: Classes
+description: |
+  Classes are used to describe identical objects with state and behavior. Classes in TypeScript extend the standard ones in JavaScript and provide additional tools that are so popular with programmers in "classic" OOP languages.

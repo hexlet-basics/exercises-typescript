@@ -1,0 +1,12 @@
+---
+name: Abstract classes
+definitions:
+  - name: Abstract class
+    description: >
+      is a class that cannot be created directly. 
+      It is intended for inheritance only. 
+      To create an abstract class, the `abstract` keyword is used.
+tips:
+  - >
+    [When to use abstract classes 
+    in TypeScript](https://khalilstemmler.com/blogs/typescript/abstract-class)
