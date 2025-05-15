@@ -7,6 +7,7 @@ test('MyMap', () => {
     values: new Map(),
     set(key, value) {
       this.values.set(key, value);
+      return this.values;
     },
     get(key) {
       return this.values.get(key);
