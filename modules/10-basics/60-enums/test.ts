@@ -1,4 +1,4 @@
-import * as ta from 'type-assertions';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import buildModal, { ModalStatus } from './index';
 
@@ -9,5 +9,5 @@ test('function', () => {
   expect(buildModal('code-basics', ModalStatus.Closed))
     .toEqual({ text: 'code-basics', status: ModalStatus.Closed });
 
-  ta.assert<ta.Equal<ReturnType<typeof buildModal>, { text: string, status: ModalStatus }>>();
+  expectTypeOf(buildModal).returns.toMatchTypeOf<{ text: string, status: ModalStatus }>();
 });

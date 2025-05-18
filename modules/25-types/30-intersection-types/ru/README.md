@@ -24,6 +24,6 @@ const myOrder: OneHundredOrder = {
 
 Тип – это множество значений. Когда мы задаем пересечение типов, мы получаем новый тип, который содержит значения, подходящие под ограничения обоих типов.
 
-![NumberOrString](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/30-intersection-types/assets/one_hundred_order.png)
+![NumberOrString](../assets/one_hundred_order.png)
 
 Если мы объявим переменную `const StringAndNumber: string & number`, то ей нужно будет присвоить значение, которое одновременно принадлежит множествам `string` и `number`. То есть оно является одновременно и строкой, и числом. Такого значения не существует, поэтому `StringAndNumber` будет иметь тип `never`. `never` соответствует пустому множеству — тип, у которого нет ни одного значения.

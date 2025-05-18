@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import Phonebook from './index';
 
 test('myBook', () => {

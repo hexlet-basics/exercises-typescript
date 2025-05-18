@@ -1,4 +1,4 @@
-import * as ta from 'type-assertions';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import lastIndex from './index';
 
@@ -9,5 +9,5 @@ test('lastIndex', () => {
   expect(lastIndex(str, 'e')).toBe(5);
   expect(lastIndex(str, 'p')).toBeNull();
 
-  ta.assert<ta.Equal<ReturnType<typeof lastIndex>, number | null>>();
+  expectTypeOf(lastIndex).returns.toMatchTypeOf<number | null>();
 });

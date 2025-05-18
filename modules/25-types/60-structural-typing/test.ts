@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import handleData, { DataState, LoadingStatus } from './index';
 
 test('handleData', () => {

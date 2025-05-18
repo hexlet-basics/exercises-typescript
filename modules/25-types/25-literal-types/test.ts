@@ -1,4 +1,4 @@
-import * as ta from 'type-assertions';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import startGame from './index';
 
@@ -25,5 +25,5 @@ test('startTurtleGame', () => {
   makeTurn('left');
   expect(state).toEqual([null, null, null, 'turtle', null]);
 
-  ta.assert<ta.Equal<ReturnType<typeof makeTurn>, void>>();
+  expectTypeOf(makeTurn).returns.toMatchTypeOf<void>();
 });

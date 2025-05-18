@@ -1,4 +1,4 @@
-import * as ta from 'type-assertions';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import sanitize from './index';
 
@@ -13,9 +13,10 @@ test('sanitize', () => {
     password: '123456',
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const user = sanitize(obj, ['password']);
 
-  ta.assert<ta.Equal<typeof user, { name: string; age: number }>>();
+  expectTypeOf(user).toMatchTypeOf<{ name: string; age: number }>();
 
   const params = {
     page: 1,
@@ -31,5 +32,5 @@ test('sanitize', () => {
     limit: 10,
   });
 
-  ta.assert<ta.Equal<typeof query, { page: number; limit: number, }>>();
+  expectTypeOf(query).toMatchTypeOf<{ page: number; limit: number, }>();
 });

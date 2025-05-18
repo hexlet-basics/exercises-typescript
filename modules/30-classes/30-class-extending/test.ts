@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest'
 import {
   ForbiddenError, HttpError, NotFoundError, UnauthorizedError,
 } from './index';

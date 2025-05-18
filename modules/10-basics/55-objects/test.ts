@@ -1,4 +1,4 @@
-import * as ta from 'type-assertions';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import isComplete from './index';
 
@@ -21,6 +21,6 @@ test('function', () => {
   };
   expect(isComplete(course3)).toBe(true);
 
-  ta.assert<ta.Equal<ReturnType<typeof isComplete>, boolean>>();
-  ta.assert<ta.Equal<Parameters<typeof isComplete>[0], { name: string, lessons: string[] }>>();
+  expectTypeOf(isComplete).returns.toMatchTypeOf<boolean>();
+  expectTypeOf(isComplete).parameter(0).toMatchTypeOf<{ name: string, lessons: string[] }>();
 });

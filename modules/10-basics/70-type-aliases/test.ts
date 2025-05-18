@@ -1,4 +1,4 @@
-import * as ta from 'type-assertions';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import getOlderUser, { User } from './index';
 
@@ -23,5 +23,5 @@ test('function', () => {
 
   expect(getOlderUser(user2, user3)).toBeNull();
 
-  ta.assert<ta.Equal<ReturnType<typeof getOlderUser>, User | null>>();
+  expectTypeOf(getOlderUser).returns.toMatchTypeOf<User | null>();
 });

@@ -1,4 +1,4 @@
-import * as ta from 'type-assertions';
+import { expect, test, expectTypeOf } from 'vitest';
 
 import filterAnagrams from './index';
 
@@ -9,5 +9,5 @@ test('function', () => {
 
   expect(filterAnagrams('laser', ['lazing', 'lazy', 'lacer'])).toEqual([]);
 
-  ta.assert<ta.Equal<ReturnType<typeof filterAnagrams>, string[]>>();
+  expectTypeOf(filterAnagrams).returns.toMatchTypeOf<string[]>();
 });
