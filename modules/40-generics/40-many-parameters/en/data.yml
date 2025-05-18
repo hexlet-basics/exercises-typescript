@@ -1,0 +1,6 @@
+---
+name: Generics with multiple parameters
+tips:
+  - >
+    [Typescript Generics
+    Explained](https://rossbulat.medium.com/typescript-generics-explained-15c6493b510f)

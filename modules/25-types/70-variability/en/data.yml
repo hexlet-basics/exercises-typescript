@@ -1,0 +1,15 @@
+---
+name: Covariance and contravariance
+tips:
+  - >
+    [Covariance and 
+    contravariance](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science))
+definitions:
+  - name: Covariance
+    description: >
+      type property when the types composing the union are
+      subsets of each other.
+  - name: Contravariance
+    description: >
+      type property, when the types composing a union are
+      supersets of each other.

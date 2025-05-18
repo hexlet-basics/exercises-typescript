@@ -1,0 +1,10 @@
+---
+name: TypeScript
+tips:
+  - |
+    [Telegram Hexlet: JavaScript/TypeScript](https://t.me/hexletcommunity/12)
+  - >
+    [TypeScript boilerplate](https://github.com/hexlet-boilerplates/typescript-package)
+  - >
+    [Playground with the ability 
+    to see the result of TypeScript to JavaScript transpilation](https://www.typescriptlang.org/play)

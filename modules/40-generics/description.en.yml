@@ -1,0 +1,4 @@
+---
+name: Generics
+description: |
+  Generics allow you to write more versatile code that can work with different data types. TypeScript has a powerful generics system that allows you to create flexible yet robust parts of the system.

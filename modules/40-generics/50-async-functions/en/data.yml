@@ -1,0 +1,8 @@
+---
+name: Asynchronous functions
+tips:
+  - >
+    [TypeScript Deep Dive:
+    Promise](https://basarat.gitbook.io/typescript/future-javascript/promise)
+  - >
+    [Awaited<Type>](https://www.typescriptlang.org/docs/handbook/utility-types.html#awaitedtype)

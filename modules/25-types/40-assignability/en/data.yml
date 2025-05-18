@@ -1,0 +1,13 @@
+---
+name: Assignability
+tips:
+  - >
+    [Assignability in the old documentation](https://github.com/microsoft/TypeScript-New-Handbook/blob/master/reference/Assignability.md)
+  - >
+    [Assignability table in the official documentation](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability)
+definitions:
+  - name: Types Compatibility
+    description: >
+      a set of rules on the basis of which, when analysing a data type, 
+      a decision is made about the possibility of replacing one data type 
+      with another in such a way that the replacement does not disrupt program execution.
