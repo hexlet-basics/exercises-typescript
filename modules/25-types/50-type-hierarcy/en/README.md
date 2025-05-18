@@ -34,7 +34,7 @@ num = notTrue; // Type 'boolean' is not assignable to type 'number'.
 
 Here `2` is used as a literal type which represents a set of one element - a double.
 
-The analyser successfully skipped assigning the literal type of number to `number`, but we could not assign the literal `boolean` type anymore. To solve this problem, we can use the union of `number | boolean` types. But if we are not sure what can be assigned, we would have to do the union with a potentially huge number of types.
+The analyzer successfully skipped assigning the literal type of number to `number`, but we could not assign the literal `boolean` type anymore. To solve this problem, we can use the union of `number | boolean` types. But if we are not sure what can be assigned, we would have to do the union with a potentially huge number of types.
 
 In this case, the `unknown` type comes to our rescue.
 

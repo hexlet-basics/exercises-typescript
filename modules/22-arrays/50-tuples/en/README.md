@@ -32,7 +32,7 @@ point.push(10);
 console.log(point); // [4, 3, 10];
 ```
 
-This behaviour persists for [backwards compatibility](https://stackoverflow.com/questions/64069552/typescript-array-push-method-cant-catch-a-tuple-type-of-the-array). And the general recommendation is not to try to change the size of a tuple.
+This behavior persists for [backwards compatibility](https://stackoverflow.com/questions/64069552/typescript-array-push-method-cant-catch-a-tuple-type-of-the-array). And the general recommendation is not to try to change the size of a tuple.
 
 Tuples may consist of elements of different types:
 

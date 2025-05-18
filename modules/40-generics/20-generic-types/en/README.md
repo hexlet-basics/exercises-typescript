@@ -25,7 +25,7 @@ type MyColl = {
 }
 ```
 
-Here we see that the collection data is stored in a numeric array. There are two methods defined in the type, one of which (`forEach`) passes the elements of the collection to the colback, and the other (`at`) returns the elements of the collection at the specified index. One possible implementation of this type might look like this:
+Here we see that the collection data is stored in a numeric array. There are two methods defined in the type, one of which (`forEach`) passes the elements of the collection to the callback, and the other (`at`) returns the elements of the collection at the specified index. One possible implementation of this type might look like this:
 
 ```typescript
 // The types can be omitted as they are specified in `MyColl`

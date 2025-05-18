@@ -56,7 +56,7 @@ formatUser(user); // ok
 formatUser(admin); // ok
 ```
 
-We have created the `User` type, which describes the expected structure of the object. In the `formatUser` function we specified that the expected argument must correspond to the `User` type. Thus the `formatUser` function accepts only objects that contain all fields from the `User` object type.
+We have created the `User` type, which describes the expected structure of the object. In the `formatUser` function we specified that the expected argument must correspond to the `User` type. Thus, the `formatUser` function accepts only objects that contain all fields from the `User` object type.
 
 It is important to remember that structural typing does not protect us from the presence of additional fields in an object:
 

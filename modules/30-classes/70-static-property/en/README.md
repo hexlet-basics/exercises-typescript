@@ -1,5 +1,5 @@
 
-Sometimes we need to set a property or method that is common to all instances of that class. For example, to determine if an object is an instance of a class. In such a case, when declaring a method, we can specify the `static` keyword and it will be available through the class name:
+Sometimes we need to set a property or method that is common to all instances of that class. For example, to determine if an object is an instance of a class. In such a case, when declaring a method, we can specify the `static` keyword, and it will be available through the class name:
 
 ```typescript
 class CustomFile {

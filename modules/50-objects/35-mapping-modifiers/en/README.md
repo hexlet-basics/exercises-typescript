@@ -52,7 +52,7 @@ type User = {
 };
 ```
 
-It can be made into an authorised user using the `Required` type:
+It can be made into an authorized user using the `Required` type:
 
 ```typescript
 type AuthorizedUser = Required<DefaultUser>;

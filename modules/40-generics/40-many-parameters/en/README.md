@@ -37,4 +37,4 @@ join([1, 2], ['one', 'two']); // [1, 2, 'one', 'two']
 
 TypeScript will infer the types for the function parameters itself. This is called type inference from function arguments. In this case, TypeScript will infer the types `number` and `string` for the parameters `T` and `U` respectively.
 
-In the following lessons, we will learn about TypeScript's built-in generics that have two parameters. In real programming, such generics are often found in application code, such as in React.
+We will learn about TypeScript's built-in generics that have two parameters in the following lessons. In real programming, such generics are often found in application code, such as in React.

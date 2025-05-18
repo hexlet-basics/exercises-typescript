@@ -116,7 +116,7 @@ const myNotePad: IPhoneBook = {
 }
 ```
 
-In the example above, we solved the issue of creating a phonebook by using an index signature. This allowed us not to specify many properties with names, but only once to specify the key type and its value type.
+In the example above, we solved the issue of creating a phone book by using an index signature. This allowed us not to specify many properties with names, but only once to specify the key type and its value type.
 
 ## Conclusions
 

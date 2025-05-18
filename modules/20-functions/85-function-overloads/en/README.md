@@ -27,7 +27,7 @@ One function `concat()` is defined here. It has two versions that perform concat
 * The first version accepts two numbers as input. The numbers first have the fractional part discarded, then they are concatenated;
 * Second version takes two strings as input. The strings are concatenated at once.
 
-The implementation of behaviour for both versions is done in a third function with the same name. The description of parameters must be suitable for each version of the function. In the example above, the parameter types are defined as `unknown`. This makes it possible to call the function with both strings and numbers.
+The implementation of behavior for both versions is done in a third function with the same name. The description of parameters must be suitable for each version of the function. In the example above, the parameter types are defined as `unknown`. This makes it possible to call the function with both strings and numbers.
 
 Which branch to follow is determined by type checking. In the example above, it is enough to check the type of the first parameter only, because the second parameter will definitely be a string. This is provided by the type system and the compiler.
 
@@ -74,7 +74,7 @@ function add(a: unknown, b: unknown, c?: number): unknown {
 }
 ```
 
-Function overloading is used quite often in static languages, but in most of them it is not organised like in TypeScript. In these languages, several different functions are created, which from the programmer's point of view have the same name. Therefore, there is no need for a common function there. The logic of each variant is described internally. This saves the code from having to implement conditional logic.
+Function overloading is used quite often in static languages, but in most of them it is not organized like in TypeScript. In these languages, several different functions are created, which from the programmer's point of view have the same name. Therefore, there is no need for a common function there. The logic of each variant is described internally. This saves the code from having to implement conditional logic.
 
 ```kotlin
 // Example from Kotlin

@@ -1,6 +1,6 @@
 # exercises-typescript
 
-[![Github Actions Status](../../workflows/Docker/badge.svg)](../../actions)
+[![GitHub Actions Status](../../workflows/Docker/badge.svg)](../../actions)
 
 ## How to contribute
 

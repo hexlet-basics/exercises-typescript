@@ -1,7 +1,7 @@
 
 In this lesson, we'll break down the special type `any` that is added to TypeScript.
 
-## The usefulness of the `any' type
+## The usefulness of the `any` type
 
 The `any` type is used where type checking is not needed, or when TypeScript cannot derive the data type automatically:
 

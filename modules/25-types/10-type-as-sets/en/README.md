@@ -32,4 +32,4 @@ Here we have defined a type `SomeType`, which can take values of type `number` o
 
 ![SomeType](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/10-type-as-sets/assets/some_type.png)
 
-You can build intersection and extension types and do other things with types in roughly the same way. We'll cover some of them in the course, but some things will be left out. The main thing is that you need to reframe your thinking about operations with types. This will make it easier to understand the principles of TypeScript and remember certain behaviours.
+You can build intersection and extension types and do other things with types in roughly the same way. We'll cover some of them in the course, but some things will be left out. The main thing is that you need to reframe your thinking about operations with types. This will make it easier to understand the principles of TypeScript and remember certain behaviors.

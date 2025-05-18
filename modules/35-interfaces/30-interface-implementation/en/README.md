@@ -57,7 +57,7 @@ let calculator = new Summator();
 calculator.sum(2,3) // 5
 ```
 
-An error in the implementation of an interface by a class is possible only when we do not implement one of the properties specified in the interface. Or we implement it in a different way than specified in the interface:
+An error in the implementation of an interface by a class is possible only when we do not implement one of the properties specified in the interface. Or we implement it differently than specified in the interface:
 
 ```typescript
 interface ICalculate {

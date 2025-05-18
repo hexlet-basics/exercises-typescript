@@ -19,7 +19,7 @@ const order = {
 };
 ```
 
-The most common use case for enums is storing different statuses. But there are other cases as well. For example, they are used to store various reference data and get rid of magic values:
+The most common use case for enums is storing different statuses. But there are other cases as well. For example, they are used to storing various reference data and get rid of magic values:
 
 * Movement directions
 * Sides of the world

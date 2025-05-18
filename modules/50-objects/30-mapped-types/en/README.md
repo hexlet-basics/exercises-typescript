@@ -69,7 +69,7 @@ const details2: Omit<Person, 'location'> = {
 
 In this example, the type resulting from `Pick<Person, “name” | “age”>` and `Omit<Person, “location”>` will be the same.
 
-All Utility Types in TypeScript are written using inline constructs. We have already learnt enough TypeScript concepts to start dealing with them. So we may wonder how they are implemented.
+All Utility Types in TypeScript are written using inline constructs. We have already learned enough TypeScript concepts to start dealing with them. So we may wonder how they are implemented.
 
 Let's look at how the `Pick` type is implemented:
 

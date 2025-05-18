@@ -43,7 +43,7 @@ const coll: Array<Array<string | number>> = [];
 coll.push(['hexlet', 5])
 ```
 
-Arrays themselves can be part of an object. Technically it allows to create infinite nesting of objects and arrays:
+Arrays themselves can be part of an object. Technically it allows creating infinite nesting of objects and arrays:
 
 ```typescript
 type Course = {

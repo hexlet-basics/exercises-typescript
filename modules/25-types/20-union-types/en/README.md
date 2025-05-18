@@ -23,7 +23,7 @@ val = true; // Type 'boolean' is not assignable to type 'NumberOrString'.
 
 ![NumberOrString](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/20-union-types/assets/number_or_string.png)
 
-In practice, there are often cases where we need to support a function with a large number of valid values. In JavaScript, we can connect a string not only with a string, but also with a number or with `true`. To solve a similar problem, we learnt about function overloading in the past lessons. Let's describe the type of such a function using union:
+In practice, there are often cases where we need to support a function with many valid values. In JavaScript, we can connect a string not only with a string, but also with a number or with `true`. To solve a similar problem, we learned about function overloading in the past lessons. Let's describe the type of such a function using union:
 
 ```typescript
 type AllowedToConcatenation = number | string | null | undefined | boolean;
