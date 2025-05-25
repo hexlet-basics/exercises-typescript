@@ -38,7 +38,7 @@ We can define the type of the function that returns `void` and use it to type th
 ```typescript
 type VoidFunc = () => void;
 
-// The type of a function is defined through the context
+// The type of function is defined through the context
 // of assigning it to a variable with the VoidFunc type
 const f: VoidFunc = () => true;
 

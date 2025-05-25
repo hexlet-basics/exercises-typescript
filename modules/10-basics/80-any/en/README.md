@@ -18,11 +18,11 @@ items.push('code-basics');
 `any` turns TypeScript into JavaScript, since data with that type is no longer validated:
 
 ```typescript
-// The error will occur only when the js code is running
+// The error will occur only when the JS code is running
 let value: any = 5;
 value.toString(); // ok
-value(); // ok, but will be an error if the js code is executed
-value.trim(); // ok, but will be an error if the js code is executed
+value(); // ok, but will be an error if the JS code is executed
+value.trim(); // ok, but will be an error if the JS code is executed
 value = 'wow'; // ok
 ```
 

@@ -91,7 +91,7 @@ fun main() {
 }
 ```
 
-Why does TypeScript have this implementation and what problems does it solve? It's like many other things in TypeScript - it's an attempt to account for all variants of writing JavaScript code and cover them with types to write type-safe code.
+Why does TypeScript have this implementation and what problems do it solve? It's like many other things in TypeScript - it's an attempt to account for all variants of writing JavaScript code and cover them with types to write type-safe code.
 
 In JavaScript, it is not uncommon to create functions that take different data types as input in different variations. Function overloading allows such functions to be described in TypeScript, otherwise you would have to use `any` and keep track of the types yourself.
 
