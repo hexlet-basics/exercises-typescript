@@ -1,16 +1,9 @@
 ---
-name: TypeScript
+name: О языке
 tips:
   - |
     [Telegram Hexlet: JavaScript/TypeScript](https://t.me/hexletcommunity/12)
-  - >
-    [TypeScript
-    бойлерплейт](https://github.com/hexlet-boilerplates/typescript-package)
   - |
-    [Ликбез по типизации (Habr)](https://habr.com/ru/post/161205/)
-  - >
-    [Для чего нужен
-    TypeScript](https://typescript-definitive-guide.ru/book/chapters/Chto_takoe_TypeScript_i_dlya_chego_on_nujen/#Dlya_chego_nujen_TypeScript)
-  - >
-    [Playground с возможностью увидеть результат транспиляции TypeScript в
-    JavaScript](https://www.typescriptlang.org/play)
+    [TypeScript бойлерплейт](https://github.com/hexlet-boilerplates/typescript-package)
+  - |
+    [Playground с возможностью увидеть результат транспиляции TypeScript в JavaScript](https://www.typescriptlang.org/play)
