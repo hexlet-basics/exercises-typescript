@@ -3,5 +3,5 @@
 
 ```typescript
 const file = new CustomFile('open-world.jpeg', 1000);
-console.log(file); // open-world.jpeg (1000 bytes)
+console.log(file.toString()); // open-world.jpeg (1000 bytes)
 ```
