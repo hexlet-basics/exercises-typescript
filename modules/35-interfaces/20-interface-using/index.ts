@@ -24,4 +24,4 @@ const superMan: ISuperman = {
 };
 // END
 
-export default superMan;
+export { superMan, ISuperman, IBird, IPlane };
