@@ -1,0 +1,9 @@
+---
+name: Type Void
+tips:
+  - >
+    [Official 
+    documentation](https://www.typescriptlang.org/docs/handbook/basic-types.html#void)
+  - >
+    [void in TypeScript and
+    JavaScript](https://fettblog.eu/void-in-javascript-and-typescript/)

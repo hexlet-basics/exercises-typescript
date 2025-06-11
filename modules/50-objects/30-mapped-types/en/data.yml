@@ -1,0 +1,18 @@
+---
+name: Mapped Types
+tips:
+  - >
+    [Official documentation on Mapped
+    Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+  - >
+    [Official documentation on
+    keyof](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#keyof-and-lookup-types)
+  - >
+    [Understanding "keyof
+    typeof"](https://www.huy.rocks/everyday/04-14-2022-typescript-understanding-keyof-typeof-)
+  - >
+    [Official documentation on
+    Pick](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys)
+  - >
+    [Official documentation on
+    Omit](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)

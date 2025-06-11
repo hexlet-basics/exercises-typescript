@@ -1,0 +1,4 @@
+---
+name: Function typing
+description: |
+  Most of the tasks of function typing are related to the correct description of input parameters and return values, which can be quite complex.  This also includes peculiarities of working with rest and destructuring.

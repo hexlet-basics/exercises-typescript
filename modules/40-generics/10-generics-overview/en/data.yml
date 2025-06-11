@@ -1,0 +1,13 @@
+---
+name: Introductions into generics
+definitions:
+  - name: Generic type
+    description: >
+      an abstract type that can be replaced by a concrete type. 
+      When we write code, we can describe the behavior of generalized types 
+      or their relationship with other generalized types without knowing 
+      which type will be used in the place where they are used.
+tips:
+  - >
+    [Parametric 
+    polymorphism](https://en.wikipedia.org/wiki/Parametric_polymorphism)

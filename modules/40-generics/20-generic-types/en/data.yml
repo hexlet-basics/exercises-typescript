@@ -1,0 +1,6 @@
+---
+name: Generics (Types)
+tips:
+  - >
+    [Generic
+    constraints](https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints)
