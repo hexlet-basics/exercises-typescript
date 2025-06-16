@@ -79,7 +79,7 @@ const sergey: IAuthor = {
 
 ## Создание intersection types
 
-Также TypeScript позволяет нам создавать перекрестные типы (intersection types) из нескольких интерфейсов c помощью литерала `&`:
+Также TypeScript позволяет нам создавать перекрестные типы (intersection types) из нескольких интерфейсов с помощью литерала `&`:
 
 ```typescript
 interface IOneWay {

@@ -1,0 +1,4 @@
+---
+name: Array typing
+description: |
+  Working with arrays in some cases requires more precise typing. In this module, we will look at the features of array typing: arrays containing elements of different types, multidimensional arrays, and fixed-length arrays.

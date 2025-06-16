@@ -1,0 +1,420 @@
+README.md:28:43:14
+....  ##  See most active contributors on [hexlet-friends](https://friends.hexlet.io/).
+Possible spelling mistake found.
+Предлагаемые варианты:
+hex let-friends
+------------------------
+modules/35-interfaces/30-interface-implementation/en/README.md:16:43:11
+...we create an interface or type and then transpilate TypeScript into JavaScript, there will ...
+Possible spelling mistake found.
+Предлагаемые варианты:
+translate
+------------------------
+modules/35-interfaces/30-interface-implementation/en/README.md:16:43:10
+...we create a class, its sample is always transpiled into JavaScript.  It turns out that the...
+Possible spelling mistake found.
+Предлагаемые варианты:
+transpired
+------------------------
+modules/35-interfaces/20-interface-using/en/EXERCISE.md:1:43:9
+...l interfaces. Based on them, create the ISuperman interface. ISuperMan must have a guessW...
+Possible spelling mistake found.
+Предлагаемые варианты:
+Superman, I Superman
+------------------------
+modules/35-interfaces/20-interface-using/en/EXERCISE.md:1:43:9
+...n them, create the ISuperman interface. ISuperMan must have a guessWho method that accept...
+Possible spelling mistake found.
+Предлагаемые варианты:
+Superman
+------------------------
+modules/35-interfaces/20-interface-using/en/EXERCISE.md:1:43:8
+...perman interface. ISuperMan must have a guessWho method that accepts and returns a strin...
+Possible spelling mistake found.
+Предлагаемые варианты:
+guess Who
+------------------------
+modules/35-interfaces/20-interface-using/en/EXERCISE.md:3:43:9
+...pts and returns a string.  Based on the ISuperMan interface, create a `` object. The gues...
+Possible spelling mistake found.
+Предлагаемые варианты:
+Superman
+------------------------
+modules/35-interfaces/20-interface-using/en/EXERCISE.md:3:43:8
+...rMan interface, create a `` object. The guessWho method should work as follows: if any v...
+Possible spelling mistake found.
+Предлагаемые варианты:
+guess Who
+------------------------
+modules/35-interfaces/10-interfaces-overview/ru/EXERCISE.md:1:43:19
+...станцию. Также у класса Car должна быть функция-конструктор, которая принимает и реализует свойства...
+Возможно найдена орфографическая ошибка.
+------------------------
+modules/35-interfaces/10-interfaces-overview/en/README.md:37:43:9
+...eature is called subtype polymorphism ([Subtyping](https://en.wikipedia.org/wiki/Subtypin...
+Possible spelling mistake found.
+------------------------
+modules/35-interfaces/10-interfaces-overview/en/EXERCISE.md:1:18:8
+You are given the IVehicle interface. The task is to implement a C...
+Possible spelling mistake found.
+Предлагаемые варианты:
+Vehicle, I Vehicle
+------------------------
+modules/35-interfaces/10-interfaces-overview/en/EXERCISE.md:1:43:14
+...ed on this interface, which will have a calcFuelNeeded method that accepts the distance in kil...
+Possible spelling mistake found.
+------------------------
+modules/50-objects/20-index-signatures/ru/README.md:13:43:9
+...ния кода: на что обратить внимание, что сделали-->  Динамические ключи можно также исполь...
+Возможно найдена орфографическая ошибка.
+Предлагаемые варианты:
+сделали, сделались
+------------------------
+modules/50-objects/20-index-signatures/ru/README.md:27:43:9
+...ния кода: на что обратить внимание, что сделали-->  В классах index signature можно испол...
+Возможно найдена орфографическая ошибка.
+Предлагаемые варианты:
+сделали, сделались
+------------------------
+modules/50-objects/15-object/ru/README.md:17:43:14
+...ащать строку.  Если мы хотим работать с непримитивными значениями, то для этого существует еще...
+Возможно найдена орфографическая ошибка.
+Предлагаемые варианты:
+не примитивными
+------------------------
+modules/40-generics/60-generic-classes/ru/README.md:1:0:15
+Дженерик-классы, как и дженерик функции, позволяют созд...
+Возможно найдена орфографическая ошибка.
+------------------------
+modules/40-generics/60-generic-classes/ru/README.md:8:43:14
+...pescript ```  В этом примере класс `` — дженерик-класс, в который мы можем поместить любые тип...
+Возможно найдена орфографическая ошибка.
+------------------------
+modules/40-generics/60-generic-classes/ru/README.md:29:43:15
+...тить внимание, или что тут сделали -->  Дженерик-классы полезны, когда нам нужно создать какой-...
+Возможно найдена орфографическая ошибка.
+------------------------
+modules/40-generics/60-generic-classes/ru/README.md:29:43:15
+... примере с классом ``. ``, ``, `` — это дженерик-классы, которые хранят элементы заданного типа...
+Возможно найдена орфографическая ошибка.
+------------------------
+modules/40-generics/40-many-parameters/ru/EXERCISE.md:6:43:18
+...ода `` и ``. Первый метод принимает два дженерик-параметра: ключ и значение. Второй метод принимае...
+Возможно найдена орфографическая ошибка.
+------------------------
+modules/40-generics/50-async-functions/ru/README.md:10:43:16
+...и, которые принимают callback, мы можем промисифцировать их. Для этого нам нужно обернуть функци...
+Возможно найдена орфографическая ошибка.
+------------------------
+modules/40-generics/20-generic-types/en/README.md:12:43:4
+...res. Such collections are often made in ORMs to work with data loaded from a databas...
+Possible spelling mistake found.
+Предлагаемые варианты:
+Arms, Forms, Norms, Worms, RMS, Ores, Dorms, Ohms, Orbs, Orcs, Corms, Oms, DRMs, HRMS, ODMs, OEMs, OMMS, OMS, ORM, ORMA, ORS, ORUs, ROMs, OR Ms
+------------------------
+modules/30-classes/30-class-extending/en/README.md:17:43:9
+...eter types of the overridden method are bivariant * The return type of the overridden met...
+Possible spelling mistake found.
+------------------------
+modules/25-types/70-variability/ru/README.md:3:43:18
+...дим возвращающую `` функцию для колбека функции-сортировки, которая ожидает возврата ``, то получи...
+Возможно найдена орфографическая ошибка.
+------------------------
+modules/25-types/70-variability/ru/README.md:34:43:2
+...может быть шире, а тип на выходе — уже.   В примере formatToConcrete не принимает ...
+Повтор пробела
+Предлагаемые варианты:
+
+------------------------
+modules/25-types/70-variability/en/README.md:24:43:14
+...This type checking behavior is called **contravariance**.  Try to explain the behavior of type...
+Possible spelling mistake found.
+Предлагаемые варианты:
+contra variance
+------------------------
+modules/25-types/70-variability/en/README.md:34:43:2
+...er and the output type can be narrower.   In the example, formatToConcrete takes n...
+Possible typo: you repeated a whitespace
+Предлагаемые варианты:
+
+------------------------
+modules/25-types/70-variability/en/README.md:34:43:16
+...type can be narrower.   In the example, formatToConcrete takes no parameters. This gives a wider...
+Possible spelling mistake found.
+------------------------
+modules/25-types/70-variability/en/README.md:34:43:14
+...And it returns a narrower literal type. formatToNumber expects a narrower type on the input, t...
+Possible spelling mistake found.
+------------------------
+modules/25-types/60-structural-typing/ru/README.md:12:43:10
+...ой типизации. С ней мы и познакомимся в этой уроке.  С помощью структурной типизации мы мо...
+Притяжательное прилагательное (местоимение) не согласуется с существительным по роду.
+Предлагаемые варианты:
+этом уроке
+------------------------
+modules/25-types/60-structural-typing/ru/README.md:32:43:23
+...еньше полей в объектном типе, тем менее специфичное ограничений накладывается на присваиваемое значение...
+Прилагательное не согласуется с существительным по падежу.
+Предлагаемые варианты:
+специфичного ограничений
+------------------------
+modules/25-types/60-structural-typing/ru/EXERCISE.md:1:43:2
+...троку в зависимости от состояния: `` при  ``, `` при ``, строку из числового поля ...
+Повтор пробела
+Предлагаемые варианты:
+
+------------------------
+modules/25-types/50-type-hierarcy/en/README.md:63:43:14
+...g picture of TypeScript's type sets:  ![NumberOrString](https://raw.githubusercontent.com/hexl...
+Possible spelling mistake found.
+------------------------
+modules/25-types/50-type-hierarcy/en/README.md:70:43:9
+... called a subtype, and the set itself a supertype.  The relationships between subtypes an...
+Possible spelling mistake found.
+Предлагаемые варианты:
+super type
+------------------------
+modules/25-types/50-type-hierarcy/en/README.md:72:43:10
+... The relationships between subtypes and supertypes are a key concept of any statically typ...
+Possible spelling mistake found.
+Предлагаемые варианты:
+super types
+------------------------
+modules/25-types/40-assignability/ru/README.md:3:43:16
+... передача аргументом в функцию называют присваиваемостью(**Assignability**):  ```typescript ``` ...
+Возможно найдена орфографическая ошибка.
+Предлагаемые варианты:
+присваиваем остью
+------------------------
+modules/25-types/40-assignability/ru/README.md:10:43:15
+... о типах, как о множествах значений, то присваиваемость — это проверка, что множество значений ...
+Возможно найдена орфографическая ошибка.
+Предлагаемые варианты:
+присваиваем ость
+------------------------
+modules/25-types/30-intersection-types/en/README.md:14:43:14
+...t fit the constraints of both types.  ![NumberOrString](https://raw.githubusercontent.com/hexl...
+Possible spelling mistake found.
+------------------------
+modules/25-types/25-literal-types/ru/EXERCISE.md:1:43:12
+...строку `` или `` и перемещает черепашку вперед-назад по одномерному массиву фиксированного р...
+Возможно найдена орфографическая ошибка.
+------------------------
+modules/25-types/25-literal-types/en/README.md:37:43:5
+...ll under:  ```typescript ```  ## String enums  The problem described in this tutorial...
+Possible spelling mistake found.
+Предлагаемые варианты:
+ends, enemy, genus, drums, venues, Venus, exams, nuns, nuts, sums, ensues, menus, slums, gums, plums, elms, numb, onus, Enos, alums, bums, emus, enema, enema
+s, chums, hums, rums, snubs, nubs, nus, serums, arums, denims, ecus, ems, numbs, plenums, Tums, begums, gnus, scums, snugs, benumb, endues, tums, EN3S, ENIM,
+ ENM, ENS, ENSM, ENSMA, ENSMM, ENSMN, ENSMSE, ENSPS, EOMs, ERTMS, ETFMS, EUS, Edams, Equus, NUMA, NUS, UMS, anus, benumbs, cums, ens, fums, écus, étuis
+------------------------
+modules/25-types/25-literal-types/en/README.md:48:43:4
+...uage itself.  This is not the case with Enum. Enums are a language construct that re...
+Possible spelling mistake found.
+Предлагаемые варианты:
+ENIM, ENM, ENSM
+------------------------
+modules/25-types/25-literal-types/en/README.md:48:43:5
+...tself.  This is not the case with Enum. Enums are a language construct that remains t...
+Possible spelling mistake found.
+Предлагаемые варианты:
+Ends, Enemy, Genus, Drums, Venues, Venus, Exams, Nuns, Nuts, Sums, Ensues, Menus, Slums, Gums, Plums, Elms, Numb, Onus, Enos, Alums, Bums, Emus, Enema, Enema
+s, Chums, Hums, Rums, Snubs, Nubs, Nus, Serums, Arums, Denims, Ecus, Ems, Numbs, Plenums, Tums, Begums, Gnus, Scums, Snugs, Benumb, Endues, EN3S, ENIM, ENM, ENS, ENSM, ENSMA, ENSMM, ENSMN, ENSMSE, ENSPS, EOMs, ERTMS, ETFMS, EUS, Edams, Equus, NUMA, NUS, UMS, Anus, Benumbs, Cums, Ens, Fums, Écus, Étuis
+------------------------
+modules/25-types/25-literal-types/en/README.md:52:43:4
+...However, it is still recommended to use Enum in application code, as it provides add...
+Possible spelling mistake found.
+Предлагаемые варианты:
+ENIM, ENM, ENSM
+------------------------
+modules/25-types/10-type-as-sets/ru/README.md:12:43:10
+...жество всех значений конкретного типа * Определить операции, которые возможно выполнить с ...
+Пропущена точка или слово ошибочно написано с прописной буквы.
+------------------------
+modules/25-types/10-type-as-sets/en/README.md:29:43:8
+...the sets of all numbers and strings.  ![SomeType](https://raw.githubusercontent.com/hexl...
+Possible spelling mistake found.
+Предлагаемые варианты:
+Some Type
+------------------------
+modules/25-types/20-union-types/en/README.md:17:43:14
+...OR** of a number:  ```typescript ```  ![NumberOrString](https://raw.githubusercontent.com/hexl...
+Possible spelling mistake found.
+------------------------
+modules/22-arrays/50-tuples/en/README.md:16:43:9
+...ements, it would make sense if the same behaviour applied to `` or ``. After all, if we h...
+Possible spelling mistake. ‘behaviour’ is British English.
+Предлагаемые варианты:
+behavior
+------------------------
+modules/22-arrays/25-multi-dimensional-arrays/ru/README.md:10:43:10
+...escript ```  Добавление в такие массивы немассивов приведет к ошибке типизации:  ```typesc...
+Возможно найдена орфографическая ошибка.
+Предлагаемые варианты:
+не массивов
+------------------------
+modules/10-basics/90-modules/en/README.md:3:43:8
+...dule, while still validating the use of CommonJS modules.  For the example, let's create...
+Possible spelling mistake found.
+Предлагаемые варианты:
+Commons, Common JS
+------------------------
+modules/10-basics/90-modules/en/README.md:17:43:3
+...pt ```  ## Type import  TypeScript uses npm packages for dependencies just like Jav...
+Possible spelling mistake found.
+Предлагаемые варианты:
+NPM, PM, pm, rpm, NP, NPC, NPR, RPM, ppm, NPA, NPS, Nam, APM, BPM, CPM, NPD, TPM, LPM, GPM, wpm, EPM, FPM, IPM, MPM, NAM, NCM, NEM, NKM, NM, NMM, NP0, NPF, N
+PG, NPI, NPL, NPN, NPO, NPP, NPV, NRM, NSM, NVM, Np, OPM, PPM, Pm, QPM, SPM, XPM, bpm, nm, n pm, not, him, new, name, no, now, up, km, non, FM, NFL, am, arm,
+ cm, com, mm, nor, IBM, Jim, PA, PC, Tom, mph, net, sum, CPU, NSW, Sam, gym, neo, norm, rim, spy, ups, GPS, HP, MP3, NFC, NGO, NHS, NRL, NYC, PR, PT, RAM, RP
+G, dam, gum, nun, nut, opt, pH, ram, spa, ACM, APA, APC, ATM, BNP, CPA, CPC, CPI, CPR, DM, DRM, DSM, EPs, GPA, GPL, Ham, IPA, IPO, JP, LPs, NAD, NBL, NEC, NG
+C, NMR, NSA, NYPD, Nov, OEM, PD, PPP, PV, SAM, SNP, SPD, VP, WPA, amp, ape, apt, cam, dim, elm, gem, ham, mom, nod, nu, pa, pi, rum, spam, APG, APS, BPA, CPP
+, DTM, EPP, FP, GNP, GPO, GPU, HPV, IPC, IPS, KLM, KTM, LPG, MPA, MPH, MPP, NAC, NCA, NCO, NCR, NDA, NEA, NLP, NPCs, NRA, NRC, NSF, Napa, Nat, PCM, PJ, PNP,
+PPD, PPI, Pa, Pam, REM, RPC, RPF, SPL, UPC, UPI, UPS, VM, VPN, hum, mum, nape, nee, nil, ops, um, yam, ABM, AFM, APD, Apr, BPD, BRM, CBM, CPE, CPO, CTM, DCM,
+ DPI, DWM, EAM, EPG, ERM, FSM, GPC, ICM, IOM, IPN, IPP, IPR, JDM, JM, JVM, LSM, MPR, MPV, NBS, NCI, NDC, NEP, NFPA, NFS, NIR, NIV, NLS, NRG, NRI, NTP, NWT, N
+Y, Nome, PMA, PMC, PMI, PMR, PMS, PSM, PW, RCM, RPA, RPI, RPO, RPR, RSM, SNPs, SPF, SRM, SSM, TCM, TPA, TPC, Ulm, bum, hem, imp, mpg, nap, nay, numb, ohm, pp
+b, pt, rem, tam, APB, APN, Adm, BIM, CPF, DLM, DPD, DPT, EPL, FAM, FPA, GAM, GBM, IPI, KVM, LCM, LPO, LPP, MDM, MNP, NAL, NDB, NFF, Noe, PNM, PX, Qom, RPN, R
+PT, SDM, SGM, Spam, aim, fem, fps, gm, mp, nag, nip, nth, tum, yum, DPN, DPs, DVM, EPF, FPO, GPV, LPN, MPE, NLR, NVR, Nev, RMM, TPL, TPN, UAM, WLM, bam, bps,
+ dBm, nab, nae, naps, nit, nix, nub, pk, PMs, app, fum, kph, mam, neg, nips, nus, opp, vim, Jpn, nob, nope, GM, IP, Kim, MPs, NBA, NBC, NDP, NHL, Ned, PS, RO
+M, Tim, chm, cpl, dpt, jam, née, op, rps, cpd, ppr, 2RM, A&M, A6M, AAM, ADM, AEM, AGM, AGPM, AHM, AIM, AKM, ALM, AM, AMM, ANM, ANP, ANPE, ANPN, ANPS, ANSM, A
+OM, AP, APE, APF, APH, API, APJ, APK, APL, APO, APP, APQ, APR, APT, APU, APV, APW, APX, APY, APZ, APs, AQM, ARM, ASM, AUM, AVM, AWM, AXM, Am, B2M, BAM, BBM,
+BCM, BDM, BEM, BFM, BGM, BHM, BIPM, BJM, BKM, BLM, BM, BMM, BNM, BOM, BP, BPB, BPC, BPF, BPG, BPH, BPI, BPK, BPL, BPMG, BPMs, BPN, BPO, BPP, BPR, BPS, BPT, B
+PU, BPY, BSM, BTM, BUM, BVM, BWM, BXM, BYM, CAM, CCM, CDM, CEM, CFM, CGM, CHM, CIM, CKM, CLM, CM, CMM, CNAM, CNM, CNP, CNPC, CNPE, CNPN, CNPS, COM, CP, CPAM,
+ CPD, CPG, CPH, CPJ, CPL, CPMs, CPN, CPQ, CPS, CPT, CPV, CQM, CRM, CSM, CUM, CVM, CWM, CXM, CYM, CZM, Cm, Com, Cpl, DDM, DEM, DFM, DHM, DMM, DNP, DOM, DP, DP
+A, DPB, DPC, DPE, DPH, DPMI, DPO, DPS, DPU, DPW, DXM, Dem, ECM, EDM, EEM, EM, EMM, ENIM, ENM, ENP, ENPC, ENSM, ENSPM, EOM, EP, EPA, EPCM, EPI, EPO, EPR, EPS,
+ EPSM, EPT, EPU, EPV, EQM, ESM, ETM, EVM, FBM, FCM, FDM, FEM, FFM, FFPM, FGM, FHM, FIM, FKM, FLM, FMM, FNPC, FNPF, FPD, FPF, FPH, FPJ, FPP, FPR, FPS, FPT, FP
+U, FPV, FPs, FRM, FTM, Fm, GCM, GDM, GEM, GHM, GLM, GP, GPE, GPG, GPP, GPR, GPT, GPX, GPZ, GQM, GSM, GTM, GUM, H&M, HBM, HDM, HLM, HM, HOM, HPA, HPC, HPD, HP
+E, HPL, HPR, HPS, HRM, HSM, IDM, IEM, IFM, IGM, IIM, IJM, ILM, IM, INM, INP, INPP, INPT, IPAM, IPB, IPD, IPE, IPF, IPG, IPJ, IPT, IPY, IPs, IRM, ISM, JIM, JL
+M, JMM, JPA, JPF, JPG, JPN, JPO, JPP, JPR, JPX, JPY, Jem, KEM, KFM, KGM, KHM, KM, KNM, KP, KPD, KPF, KPI, KPL, KPMG, KPN, KPU, KPW, KSM, LBM, LEM, LFM, LGM,
+LIM, LKM, LNPA, LP, LPC, LPD, LPE, LPF, LPI, LPJ, LPQ, LPR, LPS, LRM, Lim, M, M&M, M2M, MAM, MCM, MFM, MGM, MIM, MKM, MLM, MM, MMM, MOM, MP, MP4, MPC, MPD, M
+PI, MPL, MPN, MPS, MPT, MPX, MSM, MZM, N, N10, N11, N12, N13, N14, N15, N16, N17, N18, N19, N20, N21, N22, N23, N24, N25, N26, N27, N28, N29, N30, N31, N32,
+N33, N34, N35, N40, N41, N42, N43, N44, N45, N48, N49, N50, N51, N52, N53, N61, N62, N63, N64, N70, N71, N72, N73, N74, N75, N76, N77, N78, N79, N80, N81, N8
+2, N85, N86, N90, N91, N92, N93, N95, N96, N97, N99, NAB, NAF, NAG, NAH, NAK, NAMC, NAO, NAP, NAS, NAU, NB, NBB, NBF, NBG, NBN, NBR, NBT, NC, NCB, NCC, NCD,
+NCE, NCL, NCP, NCQ, NCS, NCT, NCW, NCY, ND, NDF, NDH, NDK, NDMP, NDR, NDS, NDT, NE, NED, NEE, NEH, NEN, NER, NF, NF3, NFT, NG, NGA, NGE, NGN, NGS, NH, NHA, N
+HC, NHD, NHF, NHK, NHN, NI, NIA, NIB, NIC, NID, NIF, NIG, NIH, NIN, NIO, NIU, NJ, NJG, NJP, NK, NL, NLB, NLD, NLG, NLH, NLO, NLT, NLU, NMA, NMC, NMF, NMI, NM
+PP, NMT, NNI, NNN, NO, NOA, NOE, NOI, NOK, NON, NOPD, NOR, NOS, NOU, NOW, NOX, NPAG, NPAI, NPHC, NPNS, NPOV, NQY, NR, NRF, NRH, NRN, NRO, NRP, NRS, NRT, NRU,
+ NRW, NS, NSB, NSBM, NSC, NSS, NST, NSU, NT, NTC, NTD, NTI, NTL, NTPs, NTR, NTS, NTV, NTW, NU, NUI, NUMA, NUS, NUT, NV, NVA, NVMe, NVP, NVT, NW, NWD, NYH, NY
+K, NYS, NYT, NYU, NYX, NZ, NZD, NZL, Na, Nan, Nb, Nd, Ne, Neb, Nemo, Neo, Ni, No, Nos, Nye, O&M, OAM, ODM, OGM, OHM, OIM, OM, OMM, ONEM, ONM, ONP, OOM, OPA,
+OPG, OPI, OPK, OPL, OPML, OPO, OPQ, OPT, ORM, OSM, OVPM, P, PAM, PB, PE, PEM, PG, PGM, PH, PIM, PK, PL, PLM, PMB, PMD, PME, PMF, PMG, PMH, PML, PMN, PMO, PMP
+, PMT, PMU, PMV, PO, POM, PP, PP1, PP2, PP3, PP4, PP7, PPA, PPB, PPC, PPCM, PPE, PPH, PPK, PPL, PPN, PPO, PPQ, PPR, PPS, PPT, PPU, PPV, PQ, PRM, PTM, PU, PUM
+, PVM, PWM, Pb, Pd, Pl, Po, Pr, Pt, Pu, Pym, QCM, QM, QPC, QPO, QPV, RBM, RDM, RFM, RIM, RM, RP, RPB, RPD, RPE, RPK, RPP, RPS, RPU, RPV, RPX, RTM, RVM, Rom,
+SBM, SCM, SEM, SFM, SHM, SIM, SJM, SM, SMM, SNCM, SNIM, SNSM, SP, SP1, SPA, SPB, SPC, SPE, SPG, SPH, SPI, SPP, SPR, SPS, SPT, SPV, SPW, STM, SVM, SXM, Sm, Sp
+, TAM, TBM, TDM, TEM, THM, TKM, TLM, TM, TNM, TNP, TOM, TP, TPE, TPF, TPG, TPI, TPJ, TPO, TPP, TPR, TPS, TPT, TPV, TPX, TQM, TRM, TSM, TVM, Tm, UCM, UDM, UEM
+, UGM, UIM, UJM, ULM, UMM, UNAM, UNM, UNPO, UP, UP1, UPA, UPB, UPD, UPE, UPF, UPK, UPMC, UPN, UPP, UPR, UPU, UPV, UTM, UVM, VAM, VCM, VDM, VGM, VLM, VMM, VNM
+, VPC, VPE, VPH, VPI, VPP, VPS, VPs, VSM, WAM, WDM, WFM, WHM, WIM, WP, WPC, WPF, WPP, WPS, WSM, Wm, XP, XPF, XPS, YEM, YM, YP, YQM, YUM, ZAM, ZIM, ZNP, ZPE,
+ZPP, cps, cum, dm, dpi, em, hm, hmm, hp, ism, lam, m, n, nah, nav, nib, nos, né, om, p, pc, pd, pf, pg, pj, pl, pms, pom, pp, ppl, pr, rm, sim, tmp, tnpk, tom, uhm, umm, ump, vm, µm, 3M, LVM, NTT, NXP, TPU
+------------------------
+modules/10-basics/70-type-aliases/ru/EXERCISE.md:1:23:71
+Реализуйте функцию ``, которая принимает на вход двух пользователей и возвращает того, который старше. Если пользователи являются рове...
+Избыточные определения. В правильно составленном предложении не должно быть больше одного придаточного определения.
+------------------------
+modules/10-basics/60-enums/ru/EXERCISE.md:4:43:72
+...ьное окно. Параметры функции:  * Текст, который должен быть внутри окна после инициализации; * Статус, с которым надо создать объект окна.  Функция возв...
+Избыточные определения. В правильно составленном предложении не должно быть больше одного придаточного определения.
+------------------------
+modules/10-basics/60-enums/en/README.md:1:9:5
+## Using enums  In this lesson, we will learn about en...
+Possible spelling mistake found.
+Предлагаемые варианты:
+ends, enemy, genus, drums, venues, Venus, exams, nuns, nuts, sums, ensues, menus, slums, gums, plums, elms, numb, onus, Enos, alums, bums, emus, enema, enema
+s, chums, hums, rums, snubs, nubs, nus, serums, arums, denims, ecus, ems, numbs, plenums, Tums, begums, gnus, scums, snugs, benumb, endues, tums, EN3S, ENIM,
+ ENM, ENS, ENSM, ENSMA, ENSMM, ENSMN, ENSMSE, ENSPS, EOMs, ERTMS, ETFMS, EUS, Edams, Equus, NUMA, NUS, UMS, anus, benumbs, cums, ens, fums, écus, étuis
+------------------------
+modules/10-basics/60-enums/en/README.md:3:43:5
+...n about enumerations (commonly known as enums). This language construct allows you to...
+Possible spelling mistake found.
+Предлагаемые варианты:
+ends, enemy, genus, drums, venues, Venus, exams, nuns, nuts, sums, ensues, menus, slums, gums, plums, elms, numb, onus, Enos, alums, bums, emus, enema, enema
+s, chums, hums, rums, snubs, nubs, nus, serums, arums, denims, ecus, ems, numbs, plenums, Tums, begums, gnus, scums, snugs, benumb, endues, tums, EN3S, ENIM,
+ ENM, ENS, ENSM, ENSMA, ENSMM, ENSMN, ENSMSE, ENSPS, EOMs, ERTMS, ETFMS, EUS, Edams, Equus, NUMA, NUS, UMS, anus, benumbs, cums, ens, fums, écus, étuis
+------------------------
+modules/10-basics/60-enums/en/README.md:5:43:5
+...a set of names and then refer to them.  Enums are used in place of strings for consta...
+Possible spelling mistake found.
+Предлагаемые варианты:
+Ends, Enemy, Genus, Drums, Venues, Venus, Exams, Nuns, Nuts, Sums, Ensues, Menus, Slums, Gums, Plums, Elms, Numb, Onus, Enos, Alums, Bums, Emus, Enema, Enema
+s, Chums, Hums, Rums, Snubs, Nubs, Nus, Serums, Arums, Denims, Ecus, Ems, Numbs, Plenums, Tums, Begums, Gnus, Scums, Snugs, Benumb, Endues, EN3S, ENIM, ENM, ENS, ENSM, ENSMA, ENSMM, ENSMN, ENSMSE, ENSPS, EOMs, ERTMS, ETFMS, EUS, Edams, Equus, NUMA, NUS, UMS, Anus, Benumbs, Cums, Ens, Fums, Écus, Étuis
+------------------------
+modules/10-basics/60-enums/en/README.md:10:43:5
+...cript ```  The most common use case for enums is storing different statuses. But ther...
+Possible spelling mistake found.
+Предлагаемые варианты:
+ends, enemy, genus, drums, venues, Venus, exams, nuns, nuts, sums, ensues, menus, slums, gums, plums, elms, numb, onus, Enos, alums, bums, emus, enema, enema
+s, chums, hums, rums, snubs, nubs, nus, serums, arums, denims, ecus, ems, numbs, plenums, Tums, begums, gnus, scums, snugs, benumb, endues, tums, EN3S, ENIM,
+ ENM, ENS, ENSM, ENSMA, ENSMM, ENSMN, ENSMSE, ENSPS, EOMs, ERTMS, ETFMS, EUS, Edams, Equus, NUMA, NUS, UMS, anus, benumbs, cums, ens, fums, écus, étuis
+------------------------
+modules/10-basics/60-enums/en/README.md:20:43:4
+...he week * Months  ```typescript ```  An enum is both a value and a type. It can be s...
+Possible spelling mistake found.
+Предлагаемые варианты:
+ENIM, ENM, ENSM
+------------------------
+modules/10-basics/60-enums/en/README.md:25:43:5
+...n parameters:  ```typescript ```  Also, enums are turned into a JavaScript object aft...
+Possible spelling mistake found.
+Предлагаемые варианты:
+ends, enemy, genus, drums, venues, Venus, exams, nuns, nuts, sums, ensues, menus, slums, gums, plums, elms, numb, onus, Enos, alums, bums, emus, enema, enema
+s, chums, hums, rums, snubs, nubs, nus, serums, arums, denims, ecus, ems, numbs, plenums, Tums, begums, gnus, scums, snugs, benumb, endues, tums, EN3S, ENIM,
+ ENM, ENS, ENSM, ENSMA, ENSMM, ENSMN, ENSMSE, ENSPS, EOMs, ERTMS, ETFMS, EUS, Edams, Equus, NUMA, NUS, UMS, anus, benumbs, cums, ens, fums, écus, étuis
+------------------------
+modules/10-basics/20-typescript-as-a-second-language/ru/README.md:51:43:13
+...pt. Этот процесс еще принято называть **транспиляцией** * Разработчик TypeScript — Microsoft ...
+Возможно найдена орфографическая ошибка.
+Предлагаемые варианты:
+трансляцией, транспирацией
+------------------------
+modules/10-basics/20-typescript-as-a-second-language/ru/README.md:84:43:4
+...яцию и запуск. Этот пакет предоставляет репл для экспериментов с TypeScript.  ## Выв...
+Возможно найдена орфографическая ошибка.
+Предлагаемые варианты:
+реал, репа, реп, репе, репс, репу, репы, реял, риал, рил, рип, рипа, рипе, рипп, рипу, рипы, сипл, ре пл, реп л
+------------------------
+modules/10-basics/20-typescript-as-a-second-language/en/README.md:55:43:13
+...t code. This process is also known as **transpilation**. * The developer of TypeScript is Mic...
+Possible spelling mistake found.
+Предлагаемые варианты:
+transpiration
+------------------------
+modules/10-basics/20-typescript-as-a-second-language/en/README.md:74:43:10
+...is written in TypeScript, which is then transpiled into JavaScript and distributed as a no...
+Possible spelling mistake found.
+Предлагаемые варианты:
+transpired
+------------------------
+modules/10-basics/20-typescript-as-a-second-language/en/README.md:74:43:3
+... JavaScript and distributed as a normal npm package. The installation of TypeScript...
+Possible spelling mistake found.
+Предлагаемые варианты:
+NPM, PM, pm, rpm, NP, NPC, NPR, RPM, ppm, NPA, NPS, Nam, APM, BPM, CPM, NPD, TPM, LPM, GPM, wpm, EPM, FPM, IPM, MPM, NAM, NCM, NEM, NKM, NM, NMM, NP0, NPF, N
+PG, NPI, NPL, NPN, NPO, NPP, NPV, NRM, NSM, NVM, Np, OPM, PPM, Pm, QPM, SPM, XPM, bpm, nm, n pm, not, him, new, name, no, now, up, km, non, FM, NFL, am, arm,
+ cm, com, mm, nor, IBM, Jim, PA, PC, Tom, mph, net, sum, CPU, NSW, Sam, gym, neo, norm, rim, spy, ups, GPS, HP, MP3, NFC, NGO, NHS, NRL, NYC, PR, PT, RAM, RP
+G, dam, gum, nun, nut, opt, pH, ram, spa, ACM, APA, APC, ATM, BNP, CPA, CPC, CPI, CPR, DM, DRM, DSM, EPs, GPA, GPL, Ham, IPA, IPO, JP, LPs, NAD, NBL, NEC, NG
+C, NMR, NSA, NYPD, Nov, OEM, PD, PPP, PV, SAM, SNP, SPD, VP, WPA, amp, ape, apt, cam, dim, elm, gem, ham, mom, nod, nu, pa, pi, rum, spam, APG, APS, BPA, CPP
+, DTM, EPP, FP, GNP, GPO, GPU, HPV, IPC, IPS, KLM, KTM, LPG, MPA, MPH, MPP, NAC, NCA, NCO, NCR, NDA, NEA, NLP, NPCs, NRA, NRC, NSF, Napa, Nat, PCM, PJ, PNP,
+PPD, PPI, Pa, Pam, REM, RPC, RPF, SPL, UPC, UPI, UPS, VM, VPN, hum, mum, nape, nee, nil, ops, um, yam, ABM, AFM, APD, Apr, BPD, BRM, CBM, CPE, CPO, CTM, DCM,
+ DPI, DWM, EAM, EPG, ERM, FSM, GPC, ICM, IOM, IPN, IPP, IPR, JDM, JM, JVM, LSM, MPR, MPV, NBS, NCI, NDC, NEP, NFPA, NFS, NIR, NIV, NLS, NRG, NRI, NTP, NWT, N
+Y, Nome, PMA, PMC, PMI, PMR, PMS, PSM, PW, RCM, RPA, RPI, RPO, RPR, RSM, SNPs, SPF, SRM, SSM, TCM, TPA, TPC, Ulm, bum, hem, imp, mpg, nap, nay, numb, ohm, pp
+b, pt, rem, tam, APB, APN, Adm, BIM, CPF, DLM, DPD, DPT, EPL, FAM, FPA, GAM, GBM, IPI, KVM, LCM, LPO, LPP, MDM, MNP, NAL, NDB, NFF, Noe, PNM, PX, Qom, RPN, R
+PT, SDM, SGM, Spam, aim, fem, fps, gm, mp, nag, nip, nth, tum, yum, DPN, DPs, DVM, EPF, FPO, GPV, LPN, MPE, NLR, NVR, Nev, RMM, TPL, TPN, UAM, WLM, bam, bps,
+ dBm, nab, nae, naps, nit, nix, nub, pk, PMs, app, fum, kph, mam, neg, nips, nus, opp, vim, Jpn, nob, nope, GM, IP, Kim, MPs, NBA, NBC, NDP, NHL, Ned, PS, RO
+M, Tim, chm, cpl, dpt, jam, née, op, rps, cpd, ppr, 2RM, A&M, A6M, AAM, ADM, AEM, AGM, AGPM, AHM, AIM, AKM, ALM, AM, AMM, ANM, ANP, ANPE, ANPN, ANPS, ANSM, A
+OM, AP, APE, APF, APH, API, APJ, APK, APL, APO, APP, APQ, APR, APT, APU, APV, APW, APX, APY, APZ, APs, AQM, ARM, ASM, AUM, AVM, AWM, AXM, Am, B2M, BAM, BBM,
+BCM, BDM, BEM, BFM, BGM, BHM, BIPM, BJM, BKM, BLM, BM, BMM, BNM, BOM, BP, BPB, BPC, BPF, BPG, BPH, BPI, BPK, BPL, BPMG, BPMs, BPN, BPO, BPP, BPR, BPS, BPT, B
+PU, BPY, BSM, BTM, BUM, BVM, BWM, BXM, BYM, CAM, CCM, CDM, CEM, CFM, CGM, CHM, CIM, CKM, CLM, CM, CMM, CNAM, CNM, CNP, CNPC, CNPE, CNPN, CNPS, COM, CP, CPAM,
+ CPD, CPG, CPH, CPJ, CPL, CPMs, CPN, CPQ, CPS, CPT, CPV, CQM, CRM, CSM, CUM, CVM, CWM, CXM, CYM, CZM, Cm, Com, Cpl, DDM, DEM, DFM, DHM, DMM, DNP, DOM, DP, DP
+A, DPB, DPC, DPE, DPH, DPMI, DPO, DPS, DPU, DPW, DXM, Dem, ECM, EDM, EEM, EM, EMM, ENIM, ENM, ENP, ENPC, ENSM, ENSPM, EOM, EP, EPA, EPCM, EPI, EPO, EPR, EPS,
+ EPSM, EPT, EPU, EPV, EQM, ESM, ETM, EVM, FBM, FCM, FDM, FEM, FFM, FFPM, FGM, FHM, FIM, FKM, FLM, FMM, FNPC, FNPF, FPD, FPF, FPH, FPJ, FPP, FPR, FPS, FPT, FP
+U, FPV, FPs, FRM, FTM, Fm, GCM, GDM, GEM, GHM, GLM, GP, GPE, GPG, GPP, GPR, GPT, GPX, GPZ, GQM, GSM, GTM, GUM, H&M, HBM, HDM, HLM, HM, HOM, HPA, HPC, HPD, HP
+E, HPL, HPR, HPS, HRM, HSM, IDM, IEM, IFM, IGM, IIM, IJM, ILM, IM, INM, INP, INPP, INPT, IPAM, IPB, IPD, IPE, IPF, IPG, IPJ, IPT, IPY, IPs, IRM, ISM, JIM, JL
+M, JMM, JPA, JPF, JPG, JPN, JPO, JPP, JPR, JPX, JPY, Jem, KEM, KFM, KGM, KHM, KM, KNM, KP, KPD, KPF, KPI, KPL, KPMG, KPN, KPU, KPW, KSM, LBM, LEM, LFM, LGM,
+LIM, LKM, LNPA, LP, LPC, LPD, LPE, LPF, LPI, LPJ, LPQ, LPR, LPS, LRM, Lim, M, M&M, M2M, MAM, MCM, MFM, MGM, MIM, MKM, MLM, MM, MMM, MOM, MP, MP4, MPC, MPD, M
+PI, MPL, MPN, MPS, MPT, MPX, MSM, MZM, N, N10, N11, N12, N13, N14, N15, N16, N17, N18, N19, N20, N21, N22, N23, N24, N25, N26, N27, N28, N29, N30, N31, N32,
+N33, N34, N35, N40, N41, N42, N43, N44, N45, N48, N49, N50, N51, N52, N53, N61, N62, N63, N64, N70, N71, N72, N73, N74, N75, N76, N77, N78, N79, N80, N81, N8
+2, N85, N86, N90, N91, N92, N93, N95, N96, N97, N99, NAB, NAF, NAG, NAH, NAK, NAMC, NAO, NAP, NAS, NAU, NB, NBB, NBF, NBG, NBN, NBR, NBT, NC, NCB, NCC, NCD,
+NCE, NCL, NCP, NCQ, NCS, NCT, NCW, NCY, ND, NDF, NDH, NDK, NDMP, NDR, NDS, NDT, NE, NED, NEE, NEH, NEN, NER, NF, NF3, NFT, NG, NGA, NGE, NGN, NGS, NH, NHA, N
+HC, NHD, NHF, NHK, NHN, NI, NIA, NIB, NIC, NID, NIF, NIG, NIH, NIN, NIO, NIU, NJ, NJG, NJP, NK, NL, NLB, NLD, NLG, NLH, NLO, NLT, NLU, NMA, NMC, NMF, NMI, NM
+PP, NMT, NNI, NNN, NO, NOA, NOE, NOI, NOK, NON, NOPD, NOR, NOS, NOU, NOW, NOX, NPAG, NPAI, NPHC, NPNS, NPOV, NQY, NR, NRF, NRH, NRN, NRO, NRP, NRS, NRT, NRU,
+ NRW, NS, NSB, NSBM, NSC, NSS, NST, NSU, NT, NTC, NTD, NTI, NTL, NTPs, NTR, NTS, NTV, NTW, NU, NUI, NUMA, NUS, NUT, NV, NVA, NVMe, NVP, NVT, NW, NWD, NYH, NY
+K, NYS, NYT, NYU, NYX, NZ, NZD, NZL, Na, Nan, Nb, Nd, Ne, Neb, Nemo, Neo, Ni, No, Nos, Nye, O&M, OAM, ODM, OGM, OHM, OIM, OM, OMM, ONEM, ONM, ONP, OOM, OPA,
+OPG, OPI, OPK, OPL, OPML, OPO, OPQ, OPT, ORM, OSM, OVPM, P, PAM, PB, PE, PEM, PG, PGM, PH, PIM, PK, PL, PLM, PMB, PMD, PME, PMF, PMG, PMH, PML, PMN, PMO, PMP
+, PMT, PMU, PMV, PO, POM, PP, PP1, PP2, PP3, PP4, PP7, PPA, PPB, PPC, PPCM, PPE, PPH, PPK, PPL, PPN, PPO, PPQ, PPR, PPS, PPT, PPU, PPV, PQ, PRM, PTM, PU, PUM
+, PVM, PWM, Pb, Pd, Pl, Po, Pr, Pt, Pu, Pym, QCM, QM, QPC, QPO, QPV, RBM, RDM, RFM, RIM, RM, RP, RPB, RPD, RPE, RPK, RPP, RPS, RPU, RPV, RPX, RTM, RVM, Rom, SBM, SCM, SEM
