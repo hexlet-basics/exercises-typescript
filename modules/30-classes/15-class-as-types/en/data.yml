@@ -1,0 +1,6 @@
+---
+name: Classes as types
+tips:
+  - >
+    [Constructor
+    overload](https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors)

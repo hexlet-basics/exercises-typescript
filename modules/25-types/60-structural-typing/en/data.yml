@@ -1,0 +1,18 @@
+---
+name: Structural typing
+tips:
+  - >
+    [Structural typing 
+    in official documentation](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#structural-typing)
+  - >
+    [Nominal typing in TS](https://spin.atomicobject.com/2018/01/15/typescript-flexible-nominal-typing/)
+  - |
+    [Product Type](https://en.wikipedia.org/wiki/Product_type)
+  - |
+    [Tagged Union](https://en.wikipedia.org/wiki/Tagged_union)
+definitions:
+  - name: Structural typing
+    description: >
+      a principle that defines compatibility of types based on their description (structure). 
+      A variable of type `A` may also be used where type `B` is expected, 
+      if it has the same or broader structure.
