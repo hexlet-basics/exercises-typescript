@@ -3,5 +3,4 @@
 services:
   exercises:
     build: .
-    image: hexletbasics/exercises-typescript
     command: make check
