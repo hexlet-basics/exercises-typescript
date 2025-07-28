@@ -1,9 +1,7 @@
 ---
 name: Parameter properties
 tips:
-  - >
-    [Constructor 
-    overload](https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors)
-  - >
-    [Typescript Constructor
-    Shorthand](https://dev.to/satansdeer/typescript-constructor-shorthand-3ibd)
+  - |
+    [Constructor overload](https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors)
+  - |
+    [Typescript Constructor Shorthand](https://dev.to/satansdeer/typescript-constructor-shorthand-3ibd)

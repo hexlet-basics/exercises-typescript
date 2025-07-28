@@ -1,8 +1,7 @@
 ---
 name: Inheritance
 tips:
-  - >
-    [Class 
-    inheritance](https://www.typescriptlang.org/docs/handbook/2/classes.html#extends-clauses)
+  - |
+    [Class inheritance](https://www.typescriptlang.org/docs/handbook/2/classes.html#extends-clauses)
   - |
     [Mixins](https://basarat.gitbook.io/typescript/type-system/mixins)

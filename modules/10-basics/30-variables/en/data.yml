@@ -1,9 +1,7 @@
 ---
 name: Variables
 tips:
-  - >
-    [Method
-    String.repeat()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
-  - >
-    [Official 
-    documentation](https://www.typescriptlang.org/docs/handbook/2/basic-types.html)
+  - |
+    [Method String.repeat()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+  - |
+    [Official documentation](https://www.typescriptlang.org/docs/handbook/2/basic-types.html)

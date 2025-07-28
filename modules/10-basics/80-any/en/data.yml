@@ -1,6 +1,5 @@
 ---
 name: Type Any
 tips:
-  - >
-    [Official documentation about 
-    any](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any)
+  - |
+    [Official documentation about any](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any)

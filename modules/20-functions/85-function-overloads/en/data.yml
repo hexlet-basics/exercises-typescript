@@ -1,6 +1,5 @@
 ---
 name: Function Overloads
 tips:
-  - >
-    [Official 
-    documentation](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads)
+  - |
+    [Official documentation](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads)

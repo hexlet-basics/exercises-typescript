@@ -1,6 +1,5 @@
 ---
 name: Readonly arrays
 tips:
-  - >
-    [Read-Only Array and 
-    Tuple Types in TypeScript](https://mariusschulz.com/blog/read-only-array-and-tuple-types-in-typescript/)
+  - |
+    [Read-Only Array and Tuple Types in TypeScript](https://mariusschulz.com/blog/read-only-array-and-tuple-types-in-typescript/)

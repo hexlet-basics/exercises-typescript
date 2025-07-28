@@ -1,6 +1,5 @@
 ---
 name: Arrays
 tips:
-  - >
-    [Official 
-    documentation](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#arrays)
+  - |
+    [Official documentation](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#arrays)

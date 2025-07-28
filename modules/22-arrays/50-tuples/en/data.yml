@@ -1,6 +1,5 @@
 ---
 name: Tuples
 tips:
-  - >
-    [Official documentation 
-    about tuples](https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types)
+  - |
+    [Official documentation about tuples](https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types)
