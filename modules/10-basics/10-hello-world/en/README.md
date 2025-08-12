@@ -1,9 +1,9 @@
 
 As is tradition, we'll start by writing a 'Hello, World!' program. The program will print the following text:
 
-<pre class='hexlet-basics-output'>
-  Hello, World!
-</pre>
+```text
+Hello, World!
+```
 
 To print something, you need to give computer a special command. In TypeScript, we use console.log().
 

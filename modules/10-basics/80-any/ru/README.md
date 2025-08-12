@@ -50,7 +50,7 @@ const result = words.reduce((acc, word) => {
 
 Компилятор TypeScript такой код не пропустит. Он укажет, что объект, который находится в константе `initial`, не содержит ключей со строковым типом:
 
-```
+```text
 No index signature with a parameter of type 'string' was found on type '{}'.
 4 acc[word] = Object.hasOwn(acc, word) ? acc[word] + 1 : 1;
 ```

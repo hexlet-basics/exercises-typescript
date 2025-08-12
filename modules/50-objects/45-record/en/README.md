@@ -13,7 +13,7 @@ The `Key` key will accept all values from `K` by brute force. In turn, `K` is a 
 
 This kind of construction, where we do not additionally define any specific fields with dynamic keys, is quite common. The built-in Utility Types provide a ready solution for this - `Record<Keys, Type>`. This generalized type takes a key type as its first argument and a value type as its second. Inside, everything is organized similarly as in our `Context` type:
 
-```
+```typescript
 type Rating = 0 | 1 | 2 | 3 | 4 | 5;
 type SongsRating = Record<string, Rating>;
 
