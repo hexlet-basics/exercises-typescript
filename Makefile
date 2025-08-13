@@ -16,7 +16,10 @@ compose-update:
 	docker compose run --rm exercises npx ncu -u
 
 code-lint:
-	npx eslint .
+	npx @biomejs/biome check
+
+code-lint-fix:
+	npx @biomejs/biome check --fix
 
 # compile:
 #	@(for i in $$(find . -type f -name Main.java); do javac $$(dirname $$i)/*.java ; done)

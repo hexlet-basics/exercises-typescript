@@ -1,5 +1,5 @@
 // BEGIN
-function isComplete(course: { name: string, lessons: string[] }): boolean {
+function isComplete(course: { name: string; lessons: string[] }): boolean {
   return course.lessons.length >= 4;
 }
 // END

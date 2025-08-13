@@ -1,4 +1,4 @@
-import { expect, test, expectTypeOf } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 
 import createAccessChecker from './index';
 
@@ -12,7 +12,9 @@ test('function', () => {
     guest: ['document'],
   };
 
-  const checkUserAccess = createAccessChecker<UserRole, UserResource>(userRolePermissions);
+  const checkUserAccess = createAccessChecker<UserRole, UserResource>(
+    userRolePermissions,
+  );
 
   const isAdminAllowed = checkUserAccess('admin', 'adminPanel');
   expect(isAdminAllowed).toBe(true);
@@ -20,5 +22,7 @@ test('function', () => {
   const isUserAllowed = checkUserAccess('user', 'adminPanel');
   expect(isUserAllowed).toBe(false);
 
-  expectTypeOf(checkUserAccess).parameters.toMatchTypeOf<[UserRole, UserResource]>();
+  expectTypeOf(checkUserAccess).parameters.toMatchTypeOf<
+    [UserRole, UserResource]
+  >();
 });

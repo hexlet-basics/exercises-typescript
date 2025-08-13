@@ -3,7 +3,7 @@ interface IVehicle {
   colour: string;
   canHavePassengers: boolean;
   fuelPer100Kilometers: number;
-  calcFuelNeeded(distance:number): number;
+  calcFuelNeeded(distance: number): number;
 }
 
 // BEGIN

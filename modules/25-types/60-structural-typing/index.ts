@@ -24,5 +24,5 @@ const handleData = (dataState: DataState): string => {
 };
 // END
 
-export { DataState, LoadingStatus };
+export { type DataState, LoadingStatus };
 export default handleData;

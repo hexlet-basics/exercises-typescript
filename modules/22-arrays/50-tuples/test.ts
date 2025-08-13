@@ -1,5 +1,5 @@
-import { expect, test } from 'vitest'
-import isTheSamePoint, { Point } from './index';
+import { expect, test } from 'vitest';
+import isTheSamePoint, { type Point } from './index';
 
 test('function', () => {
   const p1: Point = [1, 2, 3];

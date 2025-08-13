@@ -11,8 +11,7 @@ interface IPlane extends IFlying {
 }
 
 // BEGIN
-interface ISuperman extends
-  IBird, IPlane {
+interface ISuperman extends IBird, IPlane {
   guessWho: (guess: string) => string;
 }
 
@@ -20,8 +19,11 @@ const superMan: ISuperman = {
   canFly: true,
   isLiving: true,
   canCarryPeople: true,
-  guessWho: (guess) => (guess.toLowerCase() !== 'superman' ? `It's a ${guess}?` : `It's a ${guess}!`),
+  guessWho: (guess) =>
+    guess.toLowerCase() !== 'superman'
+      ? `It's a ${guess}?`
+      : `It's a ${guess}!`,
 };
 // END
 
-export { superMan, ISuperman, IBird, IPlane };
+export { superMan, type ISuperman, type IBird, type IPlane };

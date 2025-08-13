@@ -1,8 +1,9 @@
- 
-
 // BEGIN
 class HttpError extends Error {
-  constructor(public status: number, message: string) {
+  constructor(
+    public status: number,
+    message: string,
+  ) {
     super(message);
   }
 }
@@ -26,9 +27,4 @@ class ForbiddenError extends HttpError {
 }
 // END
 
-export {
-  HttpError,
-  NotFoundError,
-  UnauthorizedError,
-  ForbiddenError,
-};
+export { HttpError, NotFoundError, UnauthorizedError, ForbiddenError };

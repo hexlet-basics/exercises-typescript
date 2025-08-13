@@ -1,6 +1,6 @@
-import { expect, test, expectTypeOf } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 
-import MyArray from './index';
+import type MyArray from './index';
 
 test('MyArray', () => {
   const coll: MyArray<number> = {

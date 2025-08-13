@@ -1,4 +1,4 @@
-import { expect, test, expectTypeOf } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 
 import sanitize from './index';
 
@@ -32,5 +32,5 @@ test('sanitize', () => {
     limit: 10,
   });
 
-  expectTypeOf(query).toMatchTypeOf<{ page: number; limit: number, }>();
+  expectTypeOf(query).toMatchTypeOf<{ page: number; limit: number }>();
 });

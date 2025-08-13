@@ -1,5 +1,3 @@
- 
-
 // BEGIN
 function newYearCongratulate(name: string): string;
 function newYearCongratulate(year: number, name: string): string;

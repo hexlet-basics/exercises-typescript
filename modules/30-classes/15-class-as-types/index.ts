@@ -1,7 +1,7 @@
 // BEGIN
 type OptionName = string;
 type OptionSize = number;
-type CustomFileOptions = { name: OptionName, size: OptionSize };
+type CustomFileOptions = { name: OptionName; size: OptionSize };
 
 class CustomFile {
   name: OptionName;
@@ -13,7 +13,7 @@ class CustomFile {
   constructor(options: CustomFileOptions) {
     this.name = options.name;
     this.size = options.size;
-    this.isCopy = (options instanceof CustomFile);
+    this.isCopy = options instanceof CustomFile;
   }
 
   toString(): string {

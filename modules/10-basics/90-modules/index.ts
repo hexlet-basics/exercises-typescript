@@ -8,7 +8,7 @@ namespace Company {
 // END
 
 type User = {
-  email: string
+  email: string;
 };
 
 function authorize(user: User | null): boolean {

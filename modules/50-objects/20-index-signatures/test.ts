@@ -1,5 +1,5 @@
-import { expect, test } from 'vitest'
-import { buildSalaryStatistics, EmployeeSalary } from '.';
+import { expect, test } from 'vitest';
+import { buildSalaryStatistics, type EmployeeSalary } from '.';
 
 test('buildSalaryStatistics', () => {
   const employees: EmployeeSalary = {

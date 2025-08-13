@@ -1,5 +1,3 @@
- 
-
 function repeat(text: string, count: number) {
   // BEGIN
   let result = '';

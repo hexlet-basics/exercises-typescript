@@ -1,4 +1,4 @@
-import { expect, test, expectTypeOf } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 
 import deepFreeze from './index';
 
@@ -39,15 +39,17 @@ test('deepFreeze', () => {
     user.location.city = 'London';
   }).toThrow();
 
-  expectTypeOf(user).toMatchTypeOf<Readonly<{
-    name: string,
-    age: number,
-    location: Readonly<{
-      city: string,
-      coordinates: Readonly<{
-        lat: number,
-        lon: number,
-      }>,
-    }>,
-  }>>();
+  expectTypeOf(user).toMatchTypeOf<
+    Readonly<{
+      name: string;
+      age: number;
+      location: Readonly<{
+        city: string;
+        coordinates: Readonly<{
+          lat: number;
+          lon: number;
+        }>;
+      }>;
+    }>
+  >();
 });

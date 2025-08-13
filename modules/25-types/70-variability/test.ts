@@ -1,5 +1,5 @@
-import { expect, test, expectTypeOf } from 'vitest';
-import applyTransactions, { Wallet } from './index';
+import { expect, expectTypeOf, test } from 'vitest';
+import applyTransactions, { type Wallet } from './index';
 
 test('applyTransactions', () => {
   const wallet: Wallet = {

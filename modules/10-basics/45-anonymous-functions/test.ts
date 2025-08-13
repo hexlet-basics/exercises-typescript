@@ -1,4 +1,4 @@
-import { expect, test, expectTypeOf } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 
 import getEvenNumbers from './index';
 

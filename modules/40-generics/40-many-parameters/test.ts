@@ -1,6 +1,6 @@
-import { expect, test, expectTypeOf } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 
-import MyMap from './index';
+import type MyMap from './index';
 
 test('MyMap', () => {
   const map: MyMap<string, number> = {

@@ -1,6 +1,6 @@
-import { expect, test, expectTypeOf } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 
-import MySet from './index';
+import type MySet from './index';
 
 test('function', () => {
   const s1: MySet<number> = {

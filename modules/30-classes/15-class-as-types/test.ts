@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, test } from 'vitest';
 import CustomFile from './index';
 
 test('CustomFile', () => {

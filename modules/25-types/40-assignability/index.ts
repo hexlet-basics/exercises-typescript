@@ -1,12 +1,12 @@
 type Form = {
   age: {
-    value: number,
-    validator: (val: number) => boolean
-  },
+    value: number;
+    validator: (val: number) => boolean;
+  };
   name: {
-    value: string,
-    validator: (val: string) => boolean
-  }
+    value: string;
+    validator: (val: string) => boolean;
+  };
 };
 
 const form: Form = {

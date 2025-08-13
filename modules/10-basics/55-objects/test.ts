@@ -1,4 +1,4 @@
-import { expect, test, expectTypeOf } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 
 import isComplete from './index';
 
@@ -22,5 +22,7 @@ test('function', () => {
   expect(isComplete(course3)).toBe(true);
 
   expectTypeOf(isComplete).returns.toMatchTypeOf<boolean>();
-  expectTypeOf(isComplete).parameter(0).toMatchTypeOf<{ name: string, lessons: string[] }>();
+  expectTypeOf(isComplete)
+    .parameter(0)
+    .toMatchTypeOf<{ name: string; lessons: string[] }>();
 });

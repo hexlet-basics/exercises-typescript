@@ -1,14 +1,14 @@
 type User = {
-  id: number,
-  name: string,
-  age: number,
+  id: number;
+  name: string;
+  age: number;
 };
 
 type Friends = [number, number];
 
 export type UserResponse = {
-  users: User[],
-  friends: Friends[]
+  users: User[];
+  friends: Friends[];
 };
 
 // BEGIN
@@ -19,8 +19,10 @@ const getUserFriends = (userResponseJSON: string, userId: number): User[] => {
   return userResponse.friends
     .map(([ownerId, friendId]: Friends): User => {
       if (!(userId === ownerId || userId === friendId)) return defaultUser;
-      const searchId = (ownerId === userId) ? friendId : ownerId;
-      const friend: User | undefined = userResponse.users.find(({ id }) => id === searchId);
+      const searchId = ownerId === userId ? friendId : ownerId;
+      const friend: User | undefined = userResponse.users.find(
+        ({ id }) => id === searchId,
+      );
 
       return friend === undefined ? defaultUser : friend;
     })

@@ -1,6 +1,9 @@
-import { expect, test } from 'vitest'
+import { expect, test } from 'vitest';
 import {
-  ForbiddenError, HttpError, NotFoundError, UnauthorizedError,
+  ForbiddenError,
+  HttpError,
+  NotFoundError,
+  UnauthorizedError,
 } from './index';
 
 test('HttpError', () => {

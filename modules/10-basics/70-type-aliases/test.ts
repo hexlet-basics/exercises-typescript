@@ -1,6 +1,6 @@
-import { expect, test, expectTypeOf } from 'vitest';
+import { expect, expectTypeOf, test } from 'vitest';
 
-import getOlderUser, { User } from './index';
+import getOlderUser, { type User } from './index';
 
 test('function', () => {
   const user1 = {

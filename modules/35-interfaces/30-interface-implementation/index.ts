@@ -1,10 +1,10 @@
 type Entry = {
-  [key: string]: number
+  [key: string]: number;
 };
 
 interface IPhonebook {
-  get(key: string): number | null
-  set(key: string, value: number): void
+  get(key: string): number | null;
+  set(key: string, value: number): void;
 }
 
 // BEGIN

@@ -1,5 +1,5 @@
-import { expect, test } from 'vitest'
-import handleData, { DataState, LoadingStatus } from './index';
+import { expect, test } from 'vitest';
+import handleData, { type DataState, LoadingStatus } from './index';
 
 test('handleData', () => {
   const loading: DataState = { status: LoadingStatus.Loading };
@@ -8,7 +8,10 @@ test('handleData', () => {
   const success: DataState = { status: LoadingStatus.Success, data: 42 };
   expect(handleData(success)).toBe('42');
 
-  const error: DataState = { status: LoadingStatus.Error, error: new Error('error') };
+  const error: DataState = {
+    status: LoadingStatus.Error,
+    error: new Error('error'),
+  };
   expect(handleData(error)).toBe('error');
 
   const unknown = { status: 'unknown' };

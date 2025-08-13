@@ -1,6 +1,10 @@
 // BEGIN
 abstract class Clock {
-  constructor(protected hours: number, protected minutes: number, protected seconds: number) {}
+  constructor(
+    protected hours: number,
+    protected minutes: number,
+    protected seconds: number,
+  ) {}
 
   tick(): void {
     this.seconds += 1;

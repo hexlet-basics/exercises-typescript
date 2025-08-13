@@ -1,5 +1,5 @@
-import { expect, test, expectTypeOf } from 'vitest'
-import { superMan, ISuperman, IBird, IPlane } from './index';
+import { expect, expectTypeOf, test } from 'vitest';
+import { type IBird, type IPlane, type ISuperman, superMan } from './index';
 
 test('guess who', () => {
   expect(superMan.guessWho('bird')).toBe("It's a bird?");

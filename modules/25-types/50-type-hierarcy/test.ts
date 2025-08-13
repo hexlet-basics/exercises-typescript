@@ -1,5 +1,5 @@
-import { expect, test } from 'vitest'
-import getUserFriends, { UserResponse } from './index';
+import { expect, test } from 'vitest';
+import getUserFriends, { type UserResponse } from './index';
 
 test('getUserFriends', () => {
   const userJson = JSON.stringify(<UserResponse>{

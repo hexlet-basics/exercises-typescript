@@ -2,10 +2,12 @@
 function unique(coll: (number | string)[]): (number | string)[] {
   const init: (number | string)[] = [];
 
-  return coll.reduce(
-    (acc, curr) => (acc.includes(curr) ? acc : [...acc, curr]),
-    init,
-  );
+  return coll.reduce((acc, curr) => {
+    if (!acc.includes(curr)) {
+      acc.push(curr);
+    }
+    return acc;
+  }, init);
 }
 // END
 

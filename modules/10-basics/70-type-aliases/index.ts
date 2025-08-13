@@ -1,7 +1,7 @@
 // BEGIN
 type User = {
-  name: string,
-  age: number,
+  name: string;
+  age: number;
 };
 
 function getOlderUser(user1: User, user2: User): User | null {

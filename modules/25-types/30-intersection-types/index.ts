@@ -5,18 +5,21 @@ enum Permission {
 }
 
 type User = {
-  login: string,
+  login: string;
 };
 
 type AdminPermission = {
-  permission: Permission,
+  permission: Permission;
 };
 
 // BEGIN
 type Admin = User & AdminPermission;
 
-const addAdmin = (user: User): Admin => ({ ...user, permission: Permission.READ });
+const addAdmin = (user: User): Admin => ({
+  ...user,
+  permission: Permission.READ,
+});
 // END
 
-export { User, Admin, Permission };
+export { type User, type Admin, Permission };
 export default addAdmin;

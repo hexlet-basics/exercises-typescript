@@ -1,5 +1,3 @@
- 
-
 type CustomFileOptions = {
   name: string;
   size: number;
