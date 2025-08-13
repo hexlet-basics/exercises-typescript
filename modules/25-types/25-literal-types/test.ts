@@ -25,5 +25,5 @@ test('startTurtleGame', () => {
   makeTurn('left');
   expect(state).toEqual([null, null, null, 'turtle', null]);
 
-  expectTypeOf(makeTurn).returns.toMatchTypeOf<void>();
+  expectTypeOf(makeTurn).returns.toExtend<void>();
 });

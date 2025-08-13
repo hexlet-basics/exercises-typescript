@@ -8,5 +8,5 @@ test('getHiddenCard', () => {
   expect(getHiddenCard('1234123412344321', 2)).toEqual('**4321');
   expect(getHiddenCard('1234123412341234', 12)).toEqual('************1234');
 
-  expectTypeOf(getHiddenCard).returns.toMatchTypeOf<string>();
+  expectTypeOf(getHiddenCard).returns.toExtend<string>();
 });

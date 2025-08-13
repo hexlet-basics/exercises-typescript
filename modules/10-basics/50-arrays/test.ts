@@ -14,5 +14,5 @@ test('function', () => {
 
   expect(filterAnagrams('laser', ['lazing', 'lazy', 'lacer'])).toEqual([]);
 
-  expectTypeOf(filterAnagrams).returns.toMatchTypeOf<string[]>();
+  expectTypeOf(filterAnagrams).returns.toExtend<string[]>();
 });

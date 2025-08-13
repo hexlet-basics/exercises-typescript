@@ -18,7 +18,7 @@ test('MyArray', () => {
   expect(coll.push(2)).toBe(2);
   expect(coll.push(5)).toBe(3);
 
-  expectTypeOf(coll.push).parameters.toMatchTypeOf<[number]>();
+  expectTypeOf(coll.push).parameters.toExtend<[number]>();
 
   const coll1: MyArray<string> = {
     items: [],
@@ -31,5 +31,5 @@ test('MyArray', () => {
     },
   };
 
-  expectTypeOf(coll1.push).parameters.toMatchTypeOf<[string]>();
+  expectTypeOf(coll1.push).parameters.toExtend<[string]>();
 });

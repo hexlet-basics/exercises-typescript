@@ -7,5 +7,5 @@ test('repeat', () => {
   expect(repeat('s', 2)).toBe('ss');
   expect(repeat('s', 0)).toBe('');
 
-  expectTypeOf(repeat).returns.toMatchTypeOf<string>();
+  expectTypeOf(repeat).returns.toExtend<string>();
 });

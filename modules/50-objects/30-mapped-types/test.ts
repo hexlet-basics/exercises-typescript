@@ -16,7 +16,7 @@ test('sanitize', () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const user = sanitize(obj, ['password']);
 
-  expectTypeOf(user).toMatchTypeOf<{ name: string; age: number }>();
+  expectTypeOf(user).toExtend<{ name: string; age: number }>();
 
   const params = {
     page: 1,
@@ -32,5 +32,5 @@ test('sanitize', () => {
     limit: 10,
   });
 
-  expectTypeOf(query).toMatchTypeOf<{ page: number; limit: number }>();
+  expectTypeOf(query).toExtend<{ page: number; limit: number }>();
 });

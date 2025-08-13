@@ -8,9 +8,9 @@ test('guess who', () => {
 });
 
 test('Types check', () => {
-  expectTypeOf<ISuperman>().toMatchTypeOf<IBird>();
-  expectTypeOf<ISuperman>().toMatchTypeOf<IPlane>();
-  expectTypeOf(superMan).toMatchTypeOf<ISuperman>();
+  expectTypeOf<ISuperman>().toExtend<IBird>();
+  expectTypeOf<ISuperman>().toExtend<IPlane>();
+  expectTypeOf(superMan).toExtend<ISuperman>();
 
   expect(superMan).toHaveProperty('canFly');
   expect(superMan).toHaveProperty('isLiving');

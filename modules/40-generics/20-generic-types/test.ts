@@ -18,8 +18,8 @@ test('function', () => {
   s1.add(1);
   expect(s1.has(1)).toBe(true);
 
-  expectTypeOf(s1.has).parameters.toMatchTypeOf<[number]>();
-  expectTypeOf(s1.add).parameters.toMatchTypeOf<[number]>();
+  expectTypeOf(s1.has).parameters.toExtend<[number]>();
+  expectTypeOf(s1.add).parameters.toExtend<[number]>();
 });
 
 test('function', () => {
@@ -38,6 +38,6 @@ test('function', () => {
   s1.add('hexlet');
   expect(s1.has('hexlet')).toBe(true);
 
-  expectTypeOf(s1.has).parameters.toMatchTypeOf<[string]>();
-  expectTypeOf(s1.add).parameters.toMatchTypeOf<[string]>();
+  expectTypeOf(s1.has).parameters.toExtend<[string]>();
+  expectTypeOf(s1.add).parameters.toExtend<[string]>();
 });

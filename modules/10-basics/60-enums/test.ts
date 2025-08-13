@@ -13,7 +13,7 @@ test('function', () => {
     status: ModalStatus.Closed,
   });
 
-  expectTypeOf(buildModal).returns.toMatchTypeOf<{
+  expectTypeOf(buildModal).returns.toExtend<{
     text: string;
     status: ModalStatus;
   }>();

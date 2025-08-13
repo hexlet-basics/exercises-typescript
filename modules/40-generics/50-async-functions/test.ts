@@ -20,6 +20,6 @@ test('asyncMap', async () => {
   );
   expect(result3).toEqual([0, 2]);
 
-  expectTypeOf(result).toMatchTypeOf<number[]>();
-  expectTypeOf(result2).toMatchTypeOf<string[]>();
+  expectTypeOf(result).toExtend<number[]>();
+  expectTypeOf(result2).toExtend<string[]>();
 });

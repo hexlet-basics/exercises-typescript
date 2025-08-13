@@ -23,5 +23,5 @@ test('function', () => {
 
   expect(getOlderUser(user2, user3)).toBeNull();
 
-  expectTypeOf(getOlderUser).returns.toMatchTypeOf<User | null>();
+  expectTypeOf(getOlderUser).returns.toExtend<User | null>();
 });

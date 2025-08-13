@@ -39,5 +39,5 @@ test('applyTransactions', () => {
 
   expect(applyTransactions(wallet2)).toBe(10);
 
-  expectTypeOf(wallet2.transactions[0].apply).returns.toMatchTypeOf<number>();
+  expectTypeOf(wallet2.transactions[0].apply).returns.toExtend<number>();
 });

@@ -9,6 +9,6 @@ test('form', () => {
   expect(nameValidator(form.name.value)).toBe(true);
   expect(ageValidator(form.age.value)).toBe(false);
 
-  expectTypeOf(nameValidator).parameters.toMatchTypeOf<[string]>();
-  expectTypeOf(ageValidator).parameters.toMatchTypeOf<[number]>();
+  expectTypeOf(nameValidator).parameters.toExtend<[string]>();
+  expectTypeOf(ageValidator).parameters.toExtend<[number]>();
 });

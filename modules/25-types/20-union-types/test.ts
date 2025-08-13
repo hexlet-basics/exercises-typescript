@@ -9,5 +9,5 @@ test('lastIndex', () => {
   expect(lastIndex(str, 'e')).toBe(5);
   expect(lastIndex(str, 'p')).toBeNull();
 
-  expectTypeOf(lastIndex).returns.toMatchTypeOf<number | null>();
+  expectTypeOf(lastIndex).returns.toExtend<number | null>();
 });

@@ -39,7 +39,7 @@ test('deepFreeze', () => {
     user.location.city = 'London';
   }).toThrow();
 
-  expectTypeOf(user).toMatchTypeOf<
+  expectTypeOf(user).toExtend<
     Readonly<{
       name: string;
       age: number;

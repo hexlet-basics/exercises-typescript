@@ -7,5 +7,5 @@ test('function', () => {
   expect(last([3, 4])).toBe(4);
   expect(last(['cat', 'dog'])).toBe('dog');
 
-  expectTypeOf(last<number>).returns.toMatchTypeOf<number | null>();
+  expectTypeOf(last<number>).returns.toExtend<number | null>();
 });

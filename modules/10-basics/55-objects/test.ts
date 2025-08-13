@@ -21,8 +21,8 @@ test('function', () => {
   };
   expect(isComplete(course3)).toBe(true);
 
-  expectTypeOf(isComplete).returns.toMatchTypeOf<boolean>();
+  expectTypeOf(isComplete).returns.toExtend<boolean>();
   expectTypeOf(isComplete)
     .parameter(0)
-    .toMatchTypeOf<{ name: string; lessons: string[] }>();
+    .toExtend<{ name: string; lessons: string[] }>();
 });

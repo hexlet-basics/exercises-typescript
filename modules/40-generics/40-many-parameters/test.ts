@@ -20,6 +20,6 @@ test('MyMap', () => {
   expect(map.get('two')).toBe(2);
   expect(map.get('three')).toBe(undefined);
 
-  expectTypeOf(map.set).parameters.toMatchTypeOf<[string, number]>();
-  expectTypeOf(map.get).returns.toMatchTypeOf<number | undefined>();
+  expectTypeOf(map.set).parameters.toExtend<[string, number]>();
+  expectTypeOf(map.get).returns.toExtend<number | undefined>();
 });
