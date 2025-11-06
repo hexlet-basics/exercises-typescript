@@ -43,10 +43,10 @@ Using type union, we can get a type that takes only the values we need:
 type OrderStatus = 'Created' | 'Paid' | 'Shipped' | 'Delivered';
 ```
 
-Literal types can be also combined with any other types. In this way we can get the restriction that all numbers and `false` fall under:
+Literal types can be also combined with any other types. In this way we can get the restriction that all statuses and `false` fall under:
 
 ```typescript
-type NumberFalse = number | false;
+type OrderStatusFalse = number | false;
 ```
 
 ## String enums
