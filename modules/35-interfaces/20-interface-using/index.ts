@@ -11,11 +11,11 @@ interface IPlane extends IFlying {
 }
 
 // BEGIN
-interface ISuperman extends IBird, IPlane {
+interface ISuperMan extends IBird, IPlane {
   guessWho: (guess: string) => string;
 }
 
-const superMan: ISuperman = {
+const superMan: ISuperMan = {
   canFly: true,
   isLiving: true,
   canCarryPeople: true,
@@ -26,4 +26,4 @@ const superMan: ISuperman = {
 };
 // END
 
-export { superMan, type ISuperman, type IBird, type IPlane };
+export { superMan, type ISuperMan, type IBird, type IPlane };
