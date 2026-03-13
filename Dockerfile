@@ -7,8 +7,8 @@ ENV CI=true
 
 WORKDIR /exercises-typescript
 
-RUN npm i -g vitest
-COPY package.json package-lock.json ./
-RUN npm ci
+# RUN npm i -g vitest
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install
 
 COPY . .
