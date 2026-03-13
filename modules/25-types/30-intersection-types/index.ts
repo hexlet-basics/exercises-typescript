@@ -19,7 +19,8 @@ const addAdmin = (user: User): Admin => ({
   ...user,
   permission: Permission.READ,
 });
+
 // END
 
-export { type User, type Admin, Permission };
+export { type Admin, Permission, type User };
 export default addAdmin;

@@ -25,6 +25,7 @@ class ForbiddenError extends HttpError {
     super(403, message);
   }
 }
+
 // END
 
-export { HttpError, NotFoundError, UnauthorizedError, ForbiddenError };
+export { ForbiddenError, HttpError, NotFoundError, UnauthorizedError };
