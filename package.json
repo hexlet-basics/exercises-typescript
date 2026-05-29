@@ -5,11 +5,11 @@
   },
   "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "2.4.7",
-    "@types/node": "^25.5.0",
-    "npm-check-updates": "^19.6.3",
-    "typescript": "^5.9.3",
-    "vite": "^8.0.0",
-    "vitest": "^4.1.0"
+    "@biomejs/biome": "2.4.16",
+    "@types/node": "^25.9.1",
+    "npm-check-updates": "^22.2.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14",
+    "vitest": "^4.1.7"
   }
 }
