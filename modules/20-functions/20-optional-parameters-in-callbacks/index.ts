@@ -4,7 +4,9 @@ function map(
   callback: (n: number, index: number) => number,
 ): number[] {
   const result: number[] = [];
-  numbers.forEach((n, index) => result.push(callback(n, index)));
+  numbers.forEach((n, index) => {
+    result.push(callback(n, index));
+  });
   return result;
 }
 // END

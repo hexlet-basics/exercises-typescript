@@ -13,6 +13,7 @@ function buildModal(
     status,
   };
 }
+
 // END
 
 export { ModalStatus };

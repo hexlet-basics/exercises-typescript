@@ -24,6 +24,7 @@ const superMan: ISuperman = {
       ? `It's a ${guess}?`
       : `It's a ${guess}!`,
 };
+
 // END
 
-export { superMan, type ISuperman, type IBird, type IPlane };
+export { type IBird, type IPlane, type ISuperman, superMan };

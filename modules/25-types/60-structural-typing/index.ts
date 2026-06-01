@@ -22,6 +22,7 @@ const handleData = (dataState: DataState): string => {
       return 'unknown';
   }
 };
+
 // END
 
 export { type DataState, LoadingStatus };

@@ -18,6 +18,7 @@ const buildSalaryStatistics = (employees: EmployeeSalary): SalaryStatistics => {
 
   return { min, max, avg };
 };
+
 // END
 
-export { type EmployeeSalary, buildSalaryStatistics };
+export { buildSalaryStatistics, type EmployeeSalary };

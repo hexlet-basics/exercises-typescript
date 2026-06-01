@@ -14,6 +14,7 @@ function getOlderUser(user1: User, user2: User): User | null {
 
   return null;
 }
+
 // END
 
 export type { User };

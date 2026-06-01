@@ -21,6 +21,7 @@ const applyTransactions = (wallet: Wallet) => {
     return wallet.balance;
   }
 };
+
 // END
 
 export type { Transaction, Wallet };
