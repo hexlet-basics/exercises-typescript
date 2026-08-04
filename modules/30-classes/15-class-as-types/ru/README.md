@@ -50,6 +50,6 @@ class Point {
 const point = new Point(1, 2);
 point.isEqual(new Point(1, 2)); // OK
 point.isEqual({ x: 1, y: 2}); // Error: Argument of type '{ x: number; y: number; }' is not assignable to parameter of type 'Point'.
-````
+```
 
 <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->

@@ -5,7 +5,7 @@ Let's imagine a program that has a user object. This object is used everywhere. 
 function doSomething(user: { firstName: string, lastName: number }) {}
 function doSomethingElse(user: { firstName: string, lastName: number }) {}
 function doSomethingAnother(user: { firstName: string, lastName: number }) {}
-````
+```
 
 First, there is a lot of duplication. Secondly, it is much more difficult to change the structure, because you will have to edit all the places where this definition appears. In this lesson, let's learn how to avoid such problems.
 

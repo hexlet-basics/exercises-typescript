@@ -65,7 +65,7 @@ unknownValue.toUpperCase(); // Error: Property 'toUpperCase' does not exist on t
 
 ```typescript
 type UnionWithUnknown = unknown | number | boolean;
-````
+```
 
 Такое поведение объясняется тем, что `unknown` — это надмножество всех типов, поэтому любое объединение с ним дает его само. Исключением тут является `any`, который и в этом случае отключает проверку типов и не подчиняется модели типов как множеств.
 
