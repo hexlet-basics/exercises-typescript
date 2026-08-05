@@ -118,7 +118,7 @@ const user: UnionUser = { username: 'test', type: 'user' } // достаточн
 
 Получившийся тип `IntersectionUser` описывает объекты, которые содержат поля `username`, `password` и `type`. А тип `UnionUser` — объекты, которые содержат поля `username` и `password` **ИЛИ** `type`.
 
-![object intersection](../assets/structual_object.png)
+![object intersection](../assets/object_intersection.png)
 
 В алгебре множеств пересечение двух множеств также называют логическим умножением. А для типов используют термин произведение типов. Объединение множеств же называют логическим сложением, а для типов — сумма типов.
 
