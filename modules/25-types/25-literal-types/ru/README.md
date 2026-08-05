@@ -43,10 +43,10 @@ test = 'string'; // Error: Type '"string"' is not assignable to type '"test"'.
 type OrderStatus = 'Created' | 'Paid' | 'Shipped' | 'Delivered';
 ```
 
-Также литеральные типы могут комбинироваться с любыми другими типами. Так мы можем получить ограничение, под которое попадают все числа и `false`:
+Также литеральные типы могут комбинироваться с любыми другими типами. Так мы можем получить ограничение, под которое попадают все статусы и `false`:
 
 ```typescript
-type NumberFalse = number | false;
+type OrderStatusFalse = OrderStatus | false;
 ```
 
 ## Строковые перечисления (String enums)
