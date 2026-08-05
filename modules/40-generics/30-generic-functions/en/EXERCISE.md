@@ -11,4 +11,6 @@ const newColl = coll.filter((value) => value % 2 == 0);
 console.log(newColl.items); // [10]
 ```
 
-The type includes two methods: [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) and [filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), matching the signature of Array methods. The data inside should be stored in the `items` property. For `push()`, accept the convention that the method takes only one parameter. Ignore the other parameters.
+The type includes two methods: [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) and [filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter). `push()` takes a value of the same type as the collection elements — unlike the `Array` method, accept the convention that there is only one parameter. `filter()` takes a callback with the same parameters as the method of the same name in `Array`: `value`, `index`, and `array`. The data inside should be stored in the `items` property.
+
+The return values, however, do not match completely. `push()`, just like in `Array`, returns the new length of the collection. But `filter()` returns not an array — it returns a new collection of the `MyArray<T>` type. That is why the result of filtering in the example above has the `items` property.
