@@ -79,20 +79,23 @@ function foo(value: number | string) {
 
 Внутри каждого блока `case` тип значения сужается до того, что было в самом `case`.
 
-Перегрузка функций в TypeScript — это тоже пример работы сужения типов:
+Сужение типа нужно и при перегрузке функций. Важно понимать, что сама перегрузка типы не сужает: сигнатуры перегрузок описывают, как функцию можно вызвать снаружи, но внутри реализации параметры остаются широкими. Поэтому в теле функции нужны защитники типа:
 
 ```typescript
 function concat(a: number, b: number): string;
 function concat(a: string, b: string): string;
 
-function concat(a: any, b: any): string {
-  if (typeof a === 'string') {
-    return `${a}${b}`; // (parameter) a: string
-  } else {
+function concat(a: unknown, b: unknown): string {
+  if (typeof a === 'number' && typeof b === 'number') {
+    // здесь a и b сужены до number
     return `${a.toFixed()}${b.toFixed()}`;
   }
+
+  return `${a}${b}`;
 }
 ```
+
+Компилятор не переносит типы из сигнатур перегрузок в тело функции. Даже если все перегрузки описывают одинаковые типы параметров, внутри реализации мы получим широкий тип и сузить его придётся самостоятельно.
 
 ## Защитники типа (Type Guard)
 
