@@ -79,20 +79,23 @@ function foo(value: number | string) {
 
 Within each `case` block, the type of the value is narrowed down to what was in the `case` itself.
 
-Function overloading in TypeScript is also an example of how type narrowing works:
+Type narrowing is also needed for function overloading. It is important to understand that overloading itself does not narrow types: overload signatures describe how the function can be called from the outside, but inside the implementation the parameters stay wide. That is why the function body needs type guards:
 
 ```typescript
 function concat(a: number, b: number): string;
 function concat(a: string, b: string): string;
 
-function concat(a: any, b: any): string {
-  if (typeof a === 'string') {
-    return `${a}${b}`; // (parameter) a: string
-  } else {
+function concat(a: unknown, b: unknown): string {
+  if (typeof a === 'number' && typeof b === 'number') {
+    // here a and b are narrowed down to number
     return `${a.toFixed()}${b.toFixed()}`;
   }
+
+  return `${a}${b}`;
 }
 ```
+
+The compiler does not transfer types from the overload signatures into the function body. Even if all overloads describe the same parameter types, inside the implementation we get the wide type and have to narrow it ourselves.
 
 ## Type Guard
 
