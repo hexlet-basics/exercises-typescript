@@ -27,9 +27,24 @@ make compose-test
 
 # run linters and validators
 make code-lint
+make type-check
 make compose-description-lint
 make compose-schema-validate
 ```
+
+### Type checking
+
+Type checking is a separate step from the tests, in two places:
+
+* `make type-check` runs `tsc --noEmit` over the whole course. It is a
+  prerequisite of `make test`, so `make check` and CI pick it up.
+* `bin/test2.sh` type-checks a single lesson alongside its tests. This script —
+  not `make check` — is what the platform runs against a student's solution, so
+  a wrongly typed solution has to be rejected here.
+
+Both are needed because vitest strips types with esbuild and never checks them:
+without a compiler step, `expectTypeOf(...)` assertions and `@ts-expect-error`
+directives in lesson tests silently pass no matter what the lesson exports.
 
 ##
 [![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://hexlet.io/?utm_source=github&utm_medium=link&utm_campaign=exercises-typescript)

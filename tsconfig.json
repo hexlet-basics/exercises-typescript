@@ -6,7 +6,11 @@
     "lib": [
       "ES2022",
     ],
-    "moduleResolution": "node",
+    "types": [
+      "node",
+    ],
+    "moduleResolution": "bundler",
+    "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

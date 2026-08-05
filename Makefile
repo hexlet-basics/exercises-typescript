@@ -21,6 +21,21 @@ code-lint:
 code-lint-fix:
 	npx @biomejs/biome check --fix
 
+# Type checking is a separate step because expectTypeOf() assertions and
+# @ts-expect-error directives in lesson tests are enforced by the compiler, not
+# by vitest. This checks the whole course at once; bin/test2.sh additionally
+# checks a single lesson, because that is the script the platform runs against
+# a student's solution.
+type-check:
+	npx tsc --noEmit
+
+# common.mk defines `test` with a recipe and `check` without one, so appending a
+# prerequisite here is legal and puts the fast aggregate type report before the
+# per-lesson runs. `check` picks it up through `test`.
+test: type-check
+
+.PHONY: type-check
+
 # compile:
 #	@(for i in $$(find . -type f -name Main.java); do javac $$(dirname $$i)/*.java ; done)
 
