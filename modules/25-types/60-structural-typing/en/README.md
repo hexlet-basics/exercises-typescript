@@ -118,7 +118,7 @@ const user: UnionUser = { username: 'test', type: 'user' } // a match with one o
 
 The resulting type `IntersectionUser` describes objects that contain the fields `username`, `password` and `type`. And `UnionUser` type describes objects that contain `username` and `password` **OR** `type` fields.
 
-![object intersection](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/60-structural-typing/assets/structual_object.png)
+![object intersection](https://raw.githubusercontent.com/hexlet-basics/exercises-typescript/main/modules/25-types/60-structural-typing/assets/object_intersection.png)
 
 In set algebra, the intersection of two sets is also called logical multiplication. For types, the term 'product type' is used. The union of sets is also called logical addition, and for types, the 'tagged union'.
 
