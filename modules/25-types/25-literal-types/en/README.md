@@ -46,7 +46,7 @@ type OrderStatus = 'Created' | 'Paid' | 'Shipped' | 'Delivered';
 Literal types can be also combined with any other types. In this way we can get the restriction that all statuses and `false` fall under:
 
 ```typescript
-type OrderStatusFalse = number | false;
+type OrderStatusFalse = OrderStatus | false;
 ```
 
 ## String enums
