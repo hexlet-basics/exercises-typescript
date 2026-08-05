@@ -21,11 +21,7 @@ code-lint:
 code-lint-fix:
 	npx @biomejs/biome check --fix
 
-# Type checking is a separate step because expectTypeOf() assertions and
-# @ts-expect-error directives in lesson tests are enforced by the compiler, not
-# by vitest. This checks the whole course at once; bin/test2.sh additionally
-# checks a single lesson, because that is the script the platform runs against
-# a student's solution.
+# Checks the whole course at once. See "Type checking" in README.md.
 type-check:
 	npx tsc --noEmit
 
@@ -53,6 +49,9 @@ compose-description-lint:
 
 compose-schema-validate:
 	docker compose run --rm exercises make schema-validate
+
+compose-type-check:
+	docker compose run --rm exercises make type-check
 
 ci-check:
 	docker compose --file docker-compose.yml build
