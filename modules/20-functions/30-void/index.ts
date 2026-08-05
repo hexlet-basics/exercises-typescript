@@ -4,9 +4,9 @@ function forEach(
   numbers: number[],
   callback: (n: number, index: number) => void,
 ): void {
-  numbers.forEach((n, index) => {
+  for (const [index, n] of numbers.entries()) {
     callback(n, index);
-  });
+  }
 }
 // END
 
