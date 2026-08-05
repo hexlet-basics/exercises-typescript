@@ -1,5 +1,5 @@
 
-Describe the `DataState` state type and the `LoadingStatus` enumeration. Then implement a `handleData()` function that takes `DataState` as input and returns a string depending on the state: `loading...` at `LoadingStatus.loading`, `error` at `LoadingStatus.error`, a string from the numeric field `data` at `LoadingStatus.success`. If the status is not included in the enumeration, the function returns `unknown`.
+Describe the `DataState` state type and the `LoadingStatus` enumeration. Then implement a `handleData()` function that takes `DataState` as input and returns a string depending on the state: `loading...` at `LoadingStatus.Loading`, `error` at `LoadingStatus.Error`, a string from the numeric field `data` at `LoadingStatus.Success`. If the status is not included in the enumeration, the function returns `unknown`.
 
 ```typescript
 const loading: DataState = { status: LoadingStatus.Loading };
