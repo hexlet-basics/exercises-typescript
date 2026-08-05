@@ -20,7 +20,9 @@ const obj: dynamicKeysObject = {
 };
 ```
 
-Dynamic keys can also be used in conjunction with explicitly specified fields. In this case, the restrictions of dynamic fields will also apply to them:
+Dynamic keys can also be used in conjunction with explicitly specified fields. In this case, the restrictions of dynamic fields will also apply to them.
+
+In the example below we will need the [satisfies](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator) operator. It checks that a value conforms to a type, but it does not replace the type that TypeScript inferred on its own. The two ways we already know cannot do that. An annotation like `const theme: MyTheme = { ... }` replaces the inferred type with the declared one: the `palette.primary` field would become `'red' | 'green' | 'blue'`, and `spacing` would become `unknown`. The `as MyTheme` assertion replaces the type in exactly the same way, only instead of a full check it takes our word for it. But `satisfies` both performs the check and keeps the precise inferred types: `palette.primary` stays `'red'`, and `spacing.small` stays a number:
 
 ```typescript
 type MyTheme = {
