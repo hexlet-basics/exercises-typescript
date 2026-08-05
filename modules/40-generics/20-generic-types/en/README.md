@@ -63,7 +63,7 @@ interface HasId {
   id: number;
 }
 
-type MyColl<T extends HasId | number> = {
+type MyColl<T extends HasId> = {
   data: Array<T>;
   forEach(callback: (value: T, index: number, array: Array<T>) => void): void;
   at(index: number): T | undefined;
@@ -73,6 +73,7 @@ type MyColl<T extends HasId | number> = {
 This allows us to use the `MyColl` type only with types that implement the `HasId` interface. For example, such code will not work:
 
 ```typescript
+// Error: Type 'number' does not satisfy the constraint 'HasId'.
 const coll: MyColl<number> = {
   data: [1, 3, 8],
   forEach(callback) {
