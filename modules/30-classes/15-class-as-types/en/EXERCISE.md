@@ -1,5 +1,7 @@
 
-Implement the `CustomFile` class, which constructor is passed a file name and size in bytes or another file. Within the class, define an `toString()` method that should return a formatted string in the format `(copy) <file-name> (<size> bytes)`. `(copy)` should only be output if the file is a copy of another file.
+Implement the `CustomFile` class, which constructor is passed an object with a file name and size in bytes, or another file. As in the previous lesson, `name` and `size` stay public fields and are accessible from the outside, but the copy flag should not be exposed — keep it in a private field.
+
+Within the class, define an `toString()` method that should return a formatted string in the format `(copy) <file-name> (<size> bytes)`. `(copy)` should only be output if the file is a copy of another file.
 
 ```typescript
 const file = new CustomFile({ name: 'open-world.jpeg', size: 1000 });
