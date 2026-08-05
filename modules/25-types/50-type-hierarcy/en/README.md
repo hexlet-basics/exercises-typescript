@@ -65,7 +65,7 @@ Another important property is that when we combine any type with `unknown` we al
 
 ```typescript
 type UnionWithUnknown = unknown | number | boolean;
-````
+```
 
 This behavior is explained by the fact that `unknown` is a superset of all types, so any union with it gives it itself. The exception here is `any`, which even in this case disables type checking and does not obey the model of types as sets.
 

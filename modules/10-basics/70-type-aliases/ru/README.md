@@ -5,7 +5,7 @@
 function doSomething(user: { firstName: string, pointsCount: number }) {}
 function doSomethingElse(user: { firstName: string, pointsCount: number }) {}
 function doSomethingAnother(user: { firstName: string, pointsCount: number }) {}
-````
+```
 
 Во-первых, здесь много дублирования. Во-вторых, значительно усложняется изменение структуры, так как придется руками править все места, где встречается это определение. В этом уроке разберем, как избежать таких проблем.
 
