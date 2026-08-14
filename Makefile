@@ -21,6 +21,17 @@ code-lint:
 code-lint-fix:
 	npx @biomejs/biome check --fix
 
+# Checks the whole course at once. See "Type checking" in README.md.
+type-check:
+	npx tsc --noEmit
+
+# common.mk defines `test` with a recipe and `check` without one, so appending a
+# prerequisite here is legal and puts the fast aggregate type report before the
+# per-lesson runs. `check` picks it up through `test`.
+test: type-check
+
+.PHONY: type-check
+
 # compile:
 #	@(for i in $$(find . -type f -name Main.java); do javac $$(dirname $$i)/*.java ; done)
 
@@ -38,6 +49,9 @@ compose-description-lint:
 
 compose-schema-validate:
 	docker compose run --rm exercises make schema-validate
+
+compose-type-check:
+	docker compose run --rm exercises make type-check
 
 ci-check:
 	docker compose --file docker-compose.yml build
