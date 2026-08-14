@@ -18,8 +18,10 @@ test('function', () => {
   s1.add(1);
   expect(s1.has(1)).toBe(true);
 
-  expectTypeOf(s1.has).parameters.toExtend<[number]>();
-  expectTypeOf(s1.add).parameters.toExtend<[number]>();
+  expectTypeOf(s1.has).parameters.toEqualTypeOf<[number]>();
+  expectTypeOf(s1.has).returns.toEqualTypeOf<boolean>();
+  expectTypeOf(s1.add).parameters.toEqualTypeOf<[number]>();
+  expectTypeOf(s1.add).returns.toEqualTypeOf<number>();
 });
 
 test('function', () => {
@@ -38,6 +40,8 @@ test('function', () => {
   s1.add('hexlet');
   expect(s1.has('hexlet')).toBe(true);
 
-  expectTypeOf(s1.has).parameters.toExtend<[string]>();
-  expectTypeOf(s1.add).parameters.toExtend<[string]>();
+  expectTypeOf(s1.has).parameters.toEqualTypeOf<[string]>();
+  expectTypeOf(s1.has).returns.toEqualTypeOf<boolean>();
+  expectTypeOf(s1.add).parameters.toEqualTypeOf<[string]>();
+  expectTypeOf(s1.add).returns.toEqualTypeOf<number>();
 });
