@@ -1,4 +1,3 @@
-
 В этом уроке мы рассмотрим многомерные массивы.
 
 ## Работа с многомерными массивами
@@ -13,18 +12,18 @@ const items1 = [
 ];
 
 const items2: number[][] = [];
-// или так Array<number[]>
+// Или так — Array<number[]>
 
-// Используя псевдоним
+// Используем псевдоним
 type User = {
   name: string;
 };
 
-// или так Array<User[]>
+// Или так — Array<User[]>
 const users: User[][] = [[{ name: "Eva" }, { name: "Adam" }]];
 ```
 
-Добавление в такие массивы немассивов приведет к ошибке типизации:
+Добавление не массивов в такие массивы приведет к ошибке типизации:
 
 ```typescript
 items1.push(99); // Error: Type 'number' is not assignable

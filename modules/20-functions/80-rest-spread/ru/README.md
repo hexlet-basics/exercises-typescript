@@ -1,6 +1,4 @@
-
-
-Сегодня разберем rest- и spread-операторы.
+В этом уроке разберем rest- и spread-операторы.
 
 ## Rest-оператор
 
@@ -12,11 +10,11 @@ function max(...numbers: number[]): number {
 }
 ```
 
-Этот массив является обычным параметром функции, поэтому ему задается тип в соответствии с тем, какие значения ожидаются внутри этого массива. Пример с двумя параметрами:
+Этот массив является обычным параметром функции, поэтому ему задается тип в соответствии с ожидаемыми значениями внутри этого массива. Пример с двумя параметрами:
 
 ```typescript
-function do(operation: string, ...numbers: number[]) {
-  // выполняем операцию operation для всех numbers
+function calculate(operation: string, ...numbers: number[]) {
+  // Выполняем операцию operation для всех numbers
 }
 ```
 
@@ -38,8 +36,8 @@ function sum(a: number, b: number): number {
   return a + b;
 }
 
-// Выведенный тип number[] — "ноль или больше чисел",
-// а не "массив из двух чисел"
+// Выведенный тип number[] — ноль или больше чисел,
+// а не массив из двух чисел
 const args = [1, 2];
 sum(...args);
 // A spread argument must either have a tuple type

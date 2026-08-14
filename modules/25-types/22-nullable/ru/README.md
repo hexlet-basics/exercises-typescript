@@ -1,4 +1,3 @@
-
 В TypeScript `null` и `undefined` не просто значения. Это два типа, которые состоят из одного значения. Представим, если бы TypeScript работал так же, как JavaScript. Тогда эти значения можно было бы передавать в любом месте. И неважно, что там ожидается: строка, массив и тому подобное.
 
 Все было бы хорошо, пока не пришло время выполнения кода. В этот момент мы бы получили ошибку, потому что внутри функции ожидался бы массив, а пришел `null` или `undefined`. Такая проблема, например, существует в JavaScript:
@@ -6,7 +5,7 @@
 ```javascript
 function foo(value) {
   const upperValue = value.toUpperCase();
-  // остальная логика
+  // Остальная логика
 }
 
 foo(null); // Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')
@@ -31,7 +30,7 @@ doSomething(null);
 ```typescript
 function foo(value?: string | null) {
   const upperValue = value.toUpperCase(); // Object is possibly 'null' or 'undefined'.
-  // остальная логика
+  // Остальная логика
 }
 ```
 
@@ -44,8 +43,8 @@ function foo(value?: string | null) {
   if (value !== null && value !== undefined) {
     const upperValue = value.toUpperCase(); // (parameter) value: string
   }
-  // остальная логика
+  // Остальная логика
 }
 ```
 
-Это стало возможным благодаря выделению значений `null` и `undefined` в отдельные типы. Благодаря каждой проверке мы отсекаем не подходящее нам множество значений и получаем безопасный вызов метода. Такие проверки также называются отсечением типов (Differentiating Types) и Type Guards.
+Это стало возможным благодаря выделению значений `null` и `undefined` в отдельные типы. Благодаря каждой проверке мы отсекаем не подходящее нам множество значений и получаем безопасный вызов метода. Такие проверки также называются _Type Guards_ или отсечением типов (_Differentiating Types_).
