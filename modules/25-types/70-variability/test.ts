@@ -39,5 +39,10 @@ test('applyTransactions', () => {
 
   expect(applyTransactions(wallet2)).toBe(10);
 
-  expectTypeOf(wallet2.transactions[0].apply).returns.toExtend<number>();
+  expectTypeOf(wallet2.transactions[0].apply).parameters.toEqualTypeOf<
+    [number]
+  >();
+  expectTypeOf(wallet2.transactions[0].apply).returns.toEqualTypeOf<number>();
+  expectTypeOf(wallet2.balance).toEqualTypeOf<number>();
+  expectTypeOf(applyTransactions).returns.toEqualTypeOf<number>();
 });

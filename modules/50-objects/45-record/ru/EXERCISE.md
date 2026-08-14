@@ -19,3 +19,5 @@ console.log(isAdminAllowed); // => true
 const isUserAllowed = checkUserAccess('user', 'adminPanel');
 console.log(isUserAllowed); // => false
 ```
+
+Возвращаемая функция принимает ровно два аргумента — роль и ресурс — и возвращает `boolean`. Типы аргументов задаются параметрами `createAccessChecker()`: в примере выше это `UserRole` и `UserResource`.

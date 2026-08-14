@@ -11,4 +11,4 @@ s.has(1); // true
 s.has(8); // false
 ```
 
-The type includes two methods: `add()` and `has()`. The data inside must be stored in the `items` property.
+The type includes two methods: `add()` and `has()`. Both take a single value of the same type as the elements of the set. `add()` returns a number, `has()` returns a `boolean`. The data inside must be stored in the `items` property.
