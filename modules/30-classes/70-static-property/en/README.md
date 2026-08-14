@@ -25,7 +25,7 @@ CustomFile.isCustomFile(new CustomFile('open-world.jpeg', 1000)); // true
 
 Static methods and properties can also be assigned the `public`, `protected` and `private` access modifiers and the `readonly` immutability modifier. This allows you to restrict the use of properties and methods to the current class or descendants only.
 
-Unlike JavaScript, in TypeScript static properties and methods cannot be overridden in subclasses:
+Static properties and methods are inherited, and a subclass can override them — just like in JavaScript:
 
 ```typescript
 class CustomFile {
@@ -37,17 +37,35 @@ class CustomFile {
 }
 
 class ImageCustomFile extends CustomFile {
-  static maxCustomFileSize = 2000; // Error!
+  static maxCustomFileSize = 2000;
 
-  static isCustomFile(file: CustomFile): boolean { // Error!
+  static isCustomFile(file: CustomFile): boolean {
     return file instanceof ImageCustomFile;
   }
 }
+
+const file = new ImageCustomFile();
+
+console.log(ImageCustomFile.maxCustomFileSize); // 2000
+console.log(ImageCustomFile.isCustomFile(file)); // true
 ```
-Such code cannot be compiled. The access to static properties and methods of the parent class remains:
+
+Here `ImageCustomFile` declared its own `maxCustomFileSize` and `isCustomFile`, and accessing them through the subclass name gives exactly those.
+
+TypeScript adds one requirement on top: the type of an overridden property or method has to stay compatible with the parent one. Replace the number with a string and the code will not compile:
 
 ```typescript
-const file = new ImageCustomFile();
-console.log(ImageCustomFile.maxCustomFileSize); // 1000
-console.log(ImageCustomFile.isCustomFile(file)); // true
+class TextCustomFile extends CustomFile {
+  static maxCustomFileSize = 'unlimited'; // Error!
+}
+```
+
+The compiler says `Class static side 'typeof TextCustomFile' incorrectly extends base class static side 'typeof CustomFile'`: the static side of the subclass no longer fits the static side of the parent.
+
+A subclass that overrides nothing uses the static properties and methods of its parent:
+
+```typescript
+class VideoCustomFile extends CustomFile {}
+
+console.log(VideoCustomFile.maxCustomFileSize); // 1000
 ```

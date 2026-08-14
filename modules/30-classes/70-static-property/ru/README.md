@@ -27,7 +27,7 @@ CustomFile.isCustomFile(new CustomFile('open-world.jpeg', 1000)); // true
 
 Статическим методам и свойствам также можно назначить модификаторы доступа `public`, `protected` и `private` и модификатор неизменяемости `readonly`. Это позволяет ограничить использование свойств и методов только текущим классом или наследниками.
 
-В отличие от JavaScript в TypeScript статические свойства и методы не могут быть переопределены в подклассах:
+Статические свойства и методы наследуются, и подкласс может их переопределить — так же, как в JavaScript:
 
 ```typescript
 class CustomFile {
@@ -39,22 +39,35 @@ class CustomFile {
 }
 
 class ImageCustomFile extends CustomFile {
-  static maxCustomFileSize = 2000; // Error!
+  static maxCustomFileSize = 2000;
 
-  static isCustomFile(file: CustomFile): boolean { // Error!
+  static isCustomFile(file: CustomFile): boolean {
     return file instanceof ImageCustomFile;
   }
 }
-```
 
-<!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
-
-Такой код не удастся скомпилировать. При этом остается доступ к статическим свойствам и методам родительского класса:
-
-```typescript
 const file = new ImageCustomFile();
-console.log(ImageCustomFile.maxCustomFileSize); // 1000
+
+console.log(ImageCustomFile.maxCustomFileSize); // 2000
 console.log(ImageCustomFile.isCustomFile(file)); // true
 ```
 
-<!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
+Здесь `ImageCustomFile` объявил свои `maxCustomFileSize` и `isCustomFile`, и обращение по имени подкласса даёт именно их.
+
+TypeScript добавляет к этому одно требование: тип переопределённого свойства или метода должен остаться совместимым с родительским. Если вместо числа подставить строку, код не скомпилируется:
+
+```typescript
+class TextCustomFile extends CustomFile {
+  static maxCustomFileSize = 'unlimited'; // Error!
+}
+```
+
+Компилятор скажет `Class static side 'typeof TextCustomFile' incorrectly extends base class static side 'typeof CustomFile'`: статическая часть подкласса перестала подходить под статическую часть родителя.
+
+Подкласс, который ничего не переопределяет, пользуется статическими свойствами и методами родителя:
+
+```typescript
+class VideoCustomFile extends CustomFile {}
+
+console.log(VideoCustomFile.maxCustomFileSize); // 1000
+```
