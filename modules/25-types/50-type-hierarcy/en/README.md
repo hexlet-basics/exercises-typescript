@@ -135,12 +135,28 @@ console.log(angle);
 
 Here, the compiler defines the `args` variable as the `number[]` type - an array with any number of numeric elements. The compiler has expanded the possible values in the array despite the fact that we have specified only two elements in the array. This is the implicit upward type conversion, where the compiler casts to a more general type.
 
-For this reason, an error occurs because the `Math.atan2()` method expects two arguments, and the type of the `args` variable can contain any number of elements. Let's fix this by using the `as` keyword:
+For this reason, an error occurs because the `Math.atan2()` method expects two arguments, and the type of the `args` variable can contain any number of elements. No type conversion is needed here: it is enough to name the type as a tuple right away, and the compiler will have nothing to widen:
 
 ```typescript
-const args = [8, 5] as const; // readonly [8, 5]
+const args: [number, number] = [8, 5];
 const angle = Math.atan2(...args); // okay
 console.log(angle);
 ```
 
-Now the compiler defines the type for the `args` variable as the literal type `[8, 5]`. Although it is a set of type `number[]`, it is already a stricter type, which is an array of two concrete numbers, so there will be no error. Such a conversion is called a ‘top-down’ conversion, because we cast from a broader type to a narrower type containing fewer possible values.
+A tuple fixes the number of elements, but it does not forbid changing them, and the type of each element stays `number`:
+
+```typescript
+args[0] = 100; // okay
+```
+
+When the values must not change at all, the downward conversion `as const` is used:
+
+```typescript
+const args = [8, 5] as const; // readonly [8, 5]
+
+args[0] = 100; // Error: Cannot assign to '0' because it is a read-only property.
+```
+
+Now the type of the variable is not "two numbers", but "an eight and a five that cannot be rewritten". This set is smaller than `number[]`, which is why the conversion is called downward: we moved from a broader type to a narrower one containing fewer possible values.
+
+A tuple annotation and `as const` solve different problems. The first one names the type we need. The second one forbids the compiler to widen what is already written in the code.
