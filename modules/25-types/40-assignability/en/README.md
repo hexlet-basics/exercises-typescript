@@ -14,11 +14,13 @@ function len(str: string): number {
 len(false); // Error!
 ```
 
-When assigning `x = y;` and passing the argument `f(false);`, one first checks whether the variable can contain the type being passed - whether the type `x` is compatible with the type `y`.
+Both the assignment `x = y;` and the call `len(false);` check the same thing: whether the receiving side can contain the type being passed.
 
-If we think of types as sets of values, assignability is a check that the set of values of `x` is included in the set of values of `y`. For example, the literal type `‘one’` is included in the set of values of `string`, but the set of values of `number` is not.
+If we think of types as sets of values, assignability is a check that the set of values of the source is included in the set of values of the target. In `x = y` the source is `y` and the target is `x`, and `number` is included in `number`, so the line compiles. In the call `len(false)` the source is `false` and the target is the `str` parameter, and `boolean` is not included in `string` — hence the error.
 
-A variable of type `x` is assigned to a variable of type `y` if the set of values of `x` is included in the set of values of `y`. Or in other words - if the set of `x` values is a subset of the set of `y` values.
+For example, the literal type `'one'` is included in the set of values of `string`, so `const s: string = 'one'` compiles. The set of values of `number` is not included in `string`, so `const s: string = 10` is an error.
+
+A value of type `A` can be assigned to a variable of type `B` if the set of values of `A` is a subset of the set of values of `B`.
 
 So the next time you encounter the error `Type X is not assignable to type Y.`, don't immediately reduce everything to the most general type through `as any`. After all, in this case you completely disable type checking for this variable.
 
