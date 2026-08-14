@@ -16,10 +16,12 @@ compose-update:
 	docker compose run --rm exercises npx ncu -u
 
 code-lint:
-	npx @biomejs/biome check
+	npx oxlint
+	npx oxfmt --check .
 
 code-lint-fix:
-	npx @biomejs/biome check --fix
+	npx oxfmt .
+	npx oxlint --fix
 
 # Checks the whole course at once. See "Type checking" in README.md.
 type-check:
