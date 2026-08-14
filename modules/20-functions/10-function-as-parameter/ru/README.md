@@ -41,9 +41,9 @@ process(Math.round);
 Рассмотрим еще несколько примеров для закрепления:
 
 ```typescript
-function process(callback: () => number)
-function process(callback: () => string[])
-function process(callback: () => { firstName: string; })
+function process(callback: () => number);
+function process(callback: () => string[]);
+function process(callback: () => { firstName: string });
 ```
 
 Параметры синтаксически указываются так же, как и для стрелочных функций:

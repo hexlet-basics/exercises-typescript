@@ -16,7 +16,7 @@ const f = ({ firstName, age }) => {
   console.log(firstName, age);
 };
 
-const user = { firstName: 'Smith', age: 30 };
+const user = { firstName: "Smith", age: 30 };
 f(user); // => 'Smith', 30
 ```
 
@@ -24,12 +24,12 @@ A destructured object is visually similar to function parameters. However, it is
 
 ```typescript
 // Usual definition
-function f(user: { firstName: string, age: number }) {
+function f(user: { firstName: string; age: number }) {
   console.log(user.firstName, user.age);
 }
 
 // Destructured object
-function f({ firstName, age }: { firstName: string, age: number }) {
+function f({ firstName, age }: { firstName: string; age: number }) {
   console.log(firstName, age);
 }
 ```
@@ -42,7 +42,7 @@ If we put the type definition into an alias, you can make the code shorter:
 type User = {
   firstName: string;
   age: number;
-}
+};
 
 function foo({ firstName, age }: User) {
   console.log(firstName, age);

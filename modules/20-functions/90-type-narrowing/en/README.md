@@ -13,8 +13,8 @@ function isPresence(value: unknown): boolean {
     return false;
   }
   // empty string
-  if (typeof value === 'string') {
-    if (value === '') {
+  if (typeof value === "string") {
+    if (value === "") {
       return false;
     }
   }
@@ -34,7 +34,7 @@ function isPresence(value: unknown): boolean {
   return true;
 }
 
-isPresence(''); // false
+isPresence(""); // false
 isPresence({}); // false
 isPresence([]); // false
 isPresence([1, 3]); // true
@@ -53,10 +53,10 @@ Type narrowing doesn't just work for the `unknown` type. It is a universal mecha
 
 ```typescript
 function foo(value: number | string) {
-  if (typeof value === 'number') {
+  if (typeof value === "number") {
     // Processed like a number
   }
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     // Processed like a string
   }
 }
@@ -67,10 +67,10 @@ function foo(value: number | string) {
 ```typescript
 function foo(value: number | string) {
   switch (typeof value) {
-    case 'number':
+    case "number":
       // some kind of logic
       break;
-    case 'string':
+    case "string":
       // some kind of logic
       break;
   }
@@ -86,7 +86,7 @@ function concat(a: number, b: number): string;
 function concat(a: string, b: string): string;
 
 function concat(a: unknown, b: unknown): string {
-  if (typeof a === 'number' && typeof b === 'number') {
+  if (typeof a === "number" && typeof b === "number") {
     // here a and b are narrowed down to number
     return `${a.toFixed()}${b.toFixed()}`;
   }
@@ -105,7 +105,7 @@ We can also define our own type guards using a function and the `is` keyword. Le
 
 ```typescript
 function isObject(value: unknown): value is object {
-  return typeof value === 'object' && value !== null;
+  return typeof value === "object" && value !== null;
 }
 ```
 
@@ -113,7 +113,7 @@ Here we use the `is` keyword to indicate that the passed value is an object. Ins
 
 ```typescript
 function isObject(value: unknown): value is object {
-  return typeof value === 'object' && value !== null;
+  return typeof value === "object" && value !== null;
 }
 
 function foo(value: unknown) {

@@ -16,7 +16,7 @@ const f = ({ firstName, age }) => {
   console.log(firstName, age);
 };
 
-const user = { firstName: 'Smith', age: 30 };
+const user = { firstName: "Smith", age: 30 };
 f(user); // => 'Smith', 30
 ```
 
@@ -24,12 +24,12 @@ f(user); // => 'Smith', 30
 
 ```typescript
 // Обычное определение
-function f(user: { firstName: string, age: number }) {
+function f(user: { firstName: string; age: number }) {
   console.log(user.firstName, user.age);
 }
 
 // Деструктурированный объект
-function f({ firstName, age }: { firstName: string, age: number }) {
+function f({ firstName, age }: { firstName: string; age: number }) {
   console.log(firstName, age);
 }
 ```
@@ -42,7 +42,7 @@ function f({ firstName, age }: { firstName: string, age: number }) {
 type User = {
   firstName: string;
   age: number;
-}
+};
 
 function foo({ firstName, age }: User) {
   console.log(firstName, age);

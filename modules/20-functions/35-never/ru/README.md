@@ -36,7 +36,7 @@ function exit(code: number = 0): never {
 ```typescript
 // A function returning 'never' cannot have a reachable end point.
 function printSomething(): never {
-  console.log('hexlet');
+  console.log("hexlet");
 }
 ```
 
@@ -45,7 +45,8 @@ function printSomething(): never {
 `never` автоматически выводится даже там, где прописан явный возврат. Но компилятор видит, что этот возврат невозможен:
 
 ```typescript
-function fail() { // Автоматически выводится never
+function fail() {
+  // Автоматически выводится never
   // функция exit, определенная выше, имеет возвращаемый тип never
   return exit(1);
 }

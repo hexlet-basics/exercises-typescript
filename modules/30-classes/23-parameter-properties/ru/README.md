@@ -3,7 +3,10 @@
 
 ```typescript
 class SomeClass {
-  constructor(public one: number, private two: string) {}
+  constructor(
+    public one: number,
+    private two: string,
+  ) {}
 
   get three(): string {
     return `${this.one} ${this.two}`;
@@ -14,20 +17,20 @@ class SomeClass {
 Этот код делает то же самое, что и этот:
 
 ```typescript
-  class SomeClass {
-    public one: number;
+class SomeClass {
+  public one: number;
 
-    private two: string;
+  private two: string;
 
-    constructor(one: number, two: string) {
-      this.one = one;
-      this.two = two;
-    }
-
-    get three(): string {
-        return `${this.one} ${this.two}`;
-    }
+  constructor(one: number, two: string) {
+    this.one = one;
+    this.two = two;
   }
+
+  get three(): string {
+    return `${this.one} ${this.two}`;
+  }
+}
 ```
 
 <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->

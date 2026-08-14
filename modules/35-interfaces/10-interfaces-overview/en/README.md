@@ -14,7 +14,7 @@ interface IUser {
 }
 
 const user: IUser = {
-  firstName: 'Mark',
+  firstName: "Mark",
   pointsCount: 100,
 };
 ```
@@ -27,10 +27,10 @@ The interface looks like a definition of an object type. Object types and interf
 type User = {
   firstName: string;
   pointsCount: number;
-}
+};
 
 const user: User = {
-  firstName: 'Mark',
+  firstName: "Mark",
   pointsCount: 100,
 };
 ```

@@ -8,6 +8,6 @@ Using the provided `IPhonebook` interface and the `Entry` type, implement the `P
 Examples:
 ```typescript
 const myNote = new Phonebook();
-myNote.set('help', 911);
-myNote.get('help'); // 911
+myNote.set("help", 911);
+myNote.get("help"); // 911
 ```

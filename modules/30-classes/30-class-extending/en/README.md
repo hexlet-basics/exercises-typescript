@@ -6,11 +6,19 @@ In TypeScript, inheritance is implemented using the `extends` keyword:
 ```typescript
 // TypeScript already includes a File class, so let's define our own file class named CustomFile
 class CustomFile {
-  constructor(public name: string, public size: number) {}
+  constructor(
+    public name: string,
+    public size: number,
+  ) {}
 }
 
 class ImageCustomFile extends CustomFile {
-  constructor(name: string, size: number, public width: number, public height: number) {
+  constructor(
+    name: string,
+    size: number,
+    public width: number,
+    public height: number,
+  ) {
     super(name, size);
   }
 }
@@ -45,26 +53,29 @@ class CustomFileFactory {
 }
 
 class ImageCustomFileFactory1 extends CustomFileFactory {
-  createCustomFile(name: string, size: number): ImageCustomFile { // OK
+  createCustomFile(name: string, size: number): ImageCustomFile {
+    // OK
     return new ImageCustomFile(name, size, 100, 100);
   }
 }
 
 class ImageCustomFileFactory2 extends CustomFileFactory {
-  createCustomFile(name: 'file', size: number): CustomFile { // OK
-    return new ImageCustomFile(name, size, 100, 100);
-  }
-}  
-
-class ImageCustomFileFactory3 extends CustomFileFactory {
-  createCustomFile(name: number, size: number): CustomFile { // Error!
+  createCustomFile(name: "file", size: number): CustomFile {
+    // OK
     return new ImageCustomFile(name, size, 100, 100);
   }
 }
 
+class ImageCustomFileFactory3 extends CustomFileFactory {
+  createCustomFile(name: number, size: number): CustomFile {
+    // Error!
+    return new ImageCustomFile(name, size, 100, 100);
+  }
+}
 
 class ImageCustomFileFactory3 extends CustomFileFactory {
-  createCustomFile(name: string, size: number): {} { // Error!
+  createCustomFile(name: string, size: number): {} {
+    // Error!
     return new ImageCustomFile(name, size, 100, 100);
   }
 }

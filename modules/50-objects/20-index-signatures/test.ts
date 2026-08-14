@@ -1,7 +1,7 @@
-import { expect, test } from 'vitest';
-import { buildSalaryStatistics, type EmployeeSalary } from '.';
+import { expect, test } from "vitest";
+import { buildSalaryStatistics, type EmployeeSalary } from ".";
 
-test('buildSalaryStatistics', () => {
+test("buildSalaryStatistics", () => {
   const employees: EmployeeSalary = {
     mango: 100,
     poly: 50,

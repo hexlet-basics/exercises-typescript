@@ -8,7 +8,7 @@ At the same time, there are situations when a type is unknown, but you need to w
 The main difference between `unknown` and `any` has to do with type checking. `unknown` prohibits performing any operations:
 
 ```typescript
-let value: unknown = 'code-basics';
+let value: unknown = "code-basics";
 
 value.toUpperCase(); // Error!
 value.trim(); // Error!
@@ -20,21 +20,21 @@ The `unknown` type variable is rarely needed - when we need to specify the type 
 
 ```typescript
 // Example from lodash
-_.isError(new Error); // true
+_.isError(new Error()); // true
 _.isError(Error); // false
-_.isError('code-basics'); // false
+_.isError("code-basics"); // false
 ```
 
 Such a function can be implemented with `any`, but then we will disable type checking:
 
 ```typescript
-function isError(value: any)
+function isError(value: any);
 ```
 
 It is better to use `unknown`, then TypeScript will protect us against potential type errors:
 
 ```typescript
-function isError(value: unknown)
+function isError(value: unknown);
 ```
 
 Then within the function body, we can do the necessary checking to see what we are working with:

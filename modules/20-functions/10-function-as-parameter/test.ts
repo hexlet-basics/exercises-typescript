@@ -1,7 +1,7 @@
-import { expect, test } from 'vitest';
-import filter from './index';
+import { expect, test } from "vitest";
+import filter from "./index";
 
-test('function', () => {
+test("function", () => {
   const result = filter([], (n) => n > 3);
   expect(result).toEqual([]);
 

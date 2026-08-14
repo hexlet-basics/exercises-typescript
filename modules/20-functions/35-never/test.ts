@@ -1,6 +1,6 @@
-import { expect, test } from 'vitest';
-import fail from './index';
+import { expect, test } from "vitest";
+import fail from "./index";
 
-test('function', () => {
+test("function", () => {
   expect(fail).toThrow();
 });

@@ -1,7 +1,7 @@
-import { expect, test } from 'vitest';
-import type CustomType from './index';
+import { expect, test } from "vitest";
+import type CustomType from "./index";
 
-test('CustomType', () => {
+test("CustomType", () => {
   const numberValue: CustomType = 1;
   expect(numberValue).toBe(1);
 

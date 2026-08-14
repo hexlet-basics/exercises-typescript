@@ -10,14 +10,14 @@ function concat(a: number, b: number): string;
 function concat(a: string, b: string): string;
 
 function concat(a: unknown, b: unknown): string {
-  if (typeof a === 'number' && typeof b === 'number') {
+  if (typeof a === "number" && typeof b === "number") {
     return `${a.toFixed()}${b.toFixed()}`;
   }
 
   return `${a}${b}`;
 }
 
-concat('one', 'two'); // onetwo
+concat("one", "two"); // onetwo
 concat(3, 5.34); // 35
 concat(1.33, 10); // 110
 ```
@@ -79,15 +79,15 @@ Function overloading is used quite often in static languages, but in most of the
 ```kotlin
 // Example from Kotlin
 fun main() {
-  fun newYearCongratulate (name:String):String {
-    return "Hi ${name}! Happy New Year!"
-  }
-  fun newYearCongratulate (year: Number, name:String):String {
-    return "Hi ${name}! Happy New Year ${year}!"
-  }
+    fun newYearCongratulate(name: String): String = "Hi $name! Happy New Year!"
 
-  println(newYearCongratulate("John")) // Hi John! Happy New Year!
-  println(newYearCongratulate(2023, "Elon")) // Hi Elon! Happy New Year 2023!
+    fun newYearCongratulate(
+        year: Number,
+        name: String,
+    ): String = "Hi $name! Happy New Year $year!"
+
+    println(newYearCongratulate("John")) // Hi John! Happy New Year!
+    println(newYearCongratulate(2023, "Elon")) // Hi Elon! Happy New Year 2023!
 }
 ```
 

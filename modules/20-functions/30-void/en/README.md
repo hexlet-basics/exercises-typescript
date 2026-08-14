@@ -54,7 +54,7 @@ function foo(): void {
   return true; // Error!
 }
 
-const bar = function(): void {
+const bar = function (): void {
   return true; // Error!
 };
 ```
@@ -64,5 +64,5 @@ In this case, returning any value will result in a compilation error.
 Also, `void` is a JavaScript operator, so it's important not to get confused with it. It evaluates the expression that follows it and returns `undefined`:
 
 ```typescript
-void 10 === undefined // true
+void 10 === undefined; // true
 ```

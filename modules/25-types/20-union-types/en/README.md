@@ -17,7 +17,7 @@ In TypeScript, this means that we end up with a type that promises to contain a 
 type NumberOrString = number | string;
 
 let val: NumberOrString = 10; // OK
-val = 'My string'; // OK
+val = "My string"; // OK
 val = true; // Type 'boolean' is not assignable to type 'NumberOrString'.
 ```
 
@@ -28,7 +28,8 @@ In practice, there are often cases where we need to support a function with many
 ```typescript
 type AllowedToConcatenation = number | string | null | undefined | boolean;
 
-const concat = (base: AllowedToConcatenation, suffix: AllowedToConcatenation): string => `${base}${suffix}`;
+const concat = (base: AllowedToConcatenation, suffix: AllowedToConcatenation): string =>
+  `${base}${suffix}`;
 ```
 
 To describe all allowed values of the `concat()` function through overloading, we would need to write code for each case separately. Here we have described the `AllowedToConcatenation` type through union once and applied it in two places.

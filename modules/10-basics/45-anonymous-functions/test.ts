@@ -1,8 +1,8 @@
-import { expect, expectTypeOf, test } from 'vitest';
+import { expect, expectTypeOf, test } from "vitest";
 
-import getEvenNumbers from './index';
+import getEvenNumbers from "./index";
 
-test('function', () => {
+test("function", () => {
   expect(getEvenNumbers()).toEqual([8, 100, 34]);
 
   expectTypeOf(getEvenNumbers).returns.toExtend<number[]>();

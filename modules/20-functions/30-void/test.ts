@@ -1,7 +1,7 @@
-import { expect, test } from 'vitest';
-import forEach from './index';
+import { expect, test } from "vitest";
+import forEach from "./index";
 
-test('forEach', () => {
+test("forEach", () => {
   const result: number[] = [];
   forEach([], (n: number) => result.push(n));
   expect(result).toEqual([]);

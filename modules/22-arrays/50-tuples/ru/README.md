@@ -40,7 +40,7 @@ console.log(point); // [4, 3, 10];
 type HTTPResponse = [number, string];
 
 // Порядок определения важен
-const response: HTTPResponse = [404, 'Page is not found'];
+const response: HTTPResponse = [404, "Page is not found"];
 // Так не сработает ['Page is not found', 404]
 ```
 
@@ -50,7 +50,7 @@ const response: HTTPResponse = [404, 'Page is not found'];
 type HTTPResponse = [number, string?];
 
 const response1: HTTPResponse = [500];
-const response2: HTTPResponse = [201, 'Created'];
+const response2: HTTPResponse = [201, "Created"];
 ```
 
 В примере выше первый элемент массива всегда должен быть числом, а второй — строкой или может отсутствовать.
@@ -59,5 +59,5 @@ const response2: HTTPResponse = [201, 'Created'];
 
 ```typescript
 // Будет иметь тип (string | number)[]
-const response = [201, 'Created'];
+const response = [201, "Created"];
 ```

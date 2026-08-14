@@ -12,7 +12,7 @@ export default function helloWorld() {
 }
 
 // @file main.ts
-import helloWorld from './helloWorld';
+import helloWorld from "./helloWorld";
 ```
 
 В системе модулей TypeScript также поддерживается именованный экспорт/импорт и импорт всего экспортированного через `import * as`:
@@ -23,10 +23,10 @@ export function helloWorld() {}
 export function helloWorldAgain() {}
 
 // @file main
-import { helloWorld, helloWorldAgain } from './helloWorld';
+import { helloWorld, helloWorldAgain } from "./helloWorld";
 
 // @file next
-import * as hw from './helloWorld';
+import * as hw from "./helloWorld";
 hw.helloWorld();
 ```
 
@@ -43,7 +43,7 @@ TypeScript так же как и JavaScript использует npm-пакет�
 export type User = { name: string };
 
 // @file main.ts
-import type { User } from './user.types';
+import type { User } from "./user.types";
 ```
 
 ## Пространство имен (Namespace)
@@ -53,7 +53,7 @@ import type { User } from './user.types';
 ```typescript
 namespace Hello {
   export function helloWorld() {
-      console.log("Hello, world!");
+    console.log("Hello, world!");
   }
 }
 

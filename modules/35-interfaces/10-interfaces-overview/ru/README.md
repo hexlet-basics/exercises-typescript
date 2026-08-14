@@ -14,7 +14,7 @@ interface IUser {
 }
 
 const user: IUser = {
-  firstName: 'Mark',
+  firstName: "Mark",
   pointsCount: 100,
 };
 ```
@@ -27,10 +27,10 @@ const user: IUser = {
 type User = {
   firstName: string;
   pointsCount: number;
-}
+};
 
 const user: User = {
-  firstName: 'Mark',
+  firstName: "Mark",
   pointsCount: 100,
 };
 ```

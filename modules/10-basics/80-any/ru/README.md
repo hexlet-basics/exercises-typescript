@@ -12,7 +12,7 @@
 const items = [];
 // Можно добавлять все что угодно
 items.push(1);
-items.push('code-basics');
+items.push("code-basics");
 ```
 
 `any` превращает TypeScript в JavaScript, так как данные с таким типом перестают проверяться:
@@ -23,7 +23,7 @@ let value: any = 5;
 value.toString(); // ok
 value(); // ok, но будет ошибка при запуске JS-кода
 value.trim(); // ok, но будет ошибка при запуске JS-кода
-value = 'wow'; // ok
+value = "wow"; // ok
 ```
 
 Тем не менее `any` полезен во многих случаях. Например, когда нужно перевести проект из JavaScript в TypeScript. В этом случае сначала все типы объявляются как `any`, а затем переписываются на нужные.
@@ -37,9 +37,9 @@ value = 'wow'; // ok
 Возьмем для примера код, который считает количество слов в предложении:
 
 ```javascript
-const sentence = 'table cat table dog dog apple table';
+const sentence = "table cat table dog dog apple table";
 
-const words = sentence.split(' ');
+const words = sentence.split(" ");
 const initial = {};
 const result = words.reduce((acc, word) => {
   acc[word] = Object.hasOwn(acc, word) ? acc[word] + 1 : 1;
@@ -60,9 +60,9 @@ No index signature with a parameter of type 'string' was found on type '{}'.
 Правильно задавать тип в ситуации с динамическими ключами мы научимся позже. А пока сделаем код рабочим с помощью `any`. Для этого нужно определить объект с явным указанием типа:
 
 ```typescript
-const sentence = 'table cat table dog dog apple table';
+const sentence = "table cat table dog dog apple table";
 
-const words = sentence.split(' ');
+const words = sentence.split(" ");
 const initial: any = {}; // Указали тип как any
 const result = words.reduce((acc, word) => {
   acc[word] = Object.hasOwn(acc, word) ? acc[word] + 1 : 1;

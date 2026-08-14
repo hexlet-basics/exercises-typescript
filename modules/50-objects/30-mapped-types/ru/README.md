@@ -12,7 +12,7 @@ interface Person {
 }
 
 interface PersonDetails {
-  location: Person['location'];
+  location: Person["location"];
 }
 ```
 
@@ -25,9 +25,9 @@ type User = {
   id: number;
   name: string;
   email: string;
-}
+};
 
-type UserFields = User['id' | 'name' | 'email']; // string | number
+type UserFields = User["id" | "name" | "email"]; // string | number
 ```
 
 Чтобы получить объединение всех ключей из объекта, мы можем использовать оператор `keyof`.
@@ -39,7 +39,7 @@ type User = {
   id: number;
   name: string;
   email: string;
-}
+};
 
 type UserFields = User[keyof User]; // string | number
 ```
@@ -56,13 +56,13 @@ interface Person {
   location?: string;
 }
 
-const details: Pick<Person, 'name' | 'age'> = {
-  name: 'John',
+const details: Pick<Person, "name" | "age"> = {
+  name: "John",
   age: 42,
 };
 
-const details2: Omit<Person, 'location'> = {
-  name: 'John',
+const details2: Omit<Person, "location"> = {
+  name: "John",
   age: 42,
 };
 ```

@@ -12,7 +12,7 @@ type Form = {
 const form: Form = {
   // BEGIN
   name: {
-    value: 'Kirill',
+    value: "Kirill",
     validator: (val: string) => val.length > 1,
   },
   age: {

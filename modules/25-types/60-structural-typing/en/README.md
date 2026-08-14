@@ -3,18 +3,18 @@ In JavaScript, it is possible to work with objects and classes in the same way. 
 
 ```javascript
 const user = {
-  firstName: 'Vasiliy',
-  lastName: 'Kuzenkov',
-  type: 'user'
-}
+  firstName: "Vasiliy",
+  lastName: "Kuzenkov",
+  type: "user",
+};
 
 const admin = {
-  firstName: 'Kirill',
-  lastName: 'Mokevnin',
-  type: 'admin'
-}
+  firstName: "Kirill",
+  lastName: "Mokevnin",
+  type: "admin",
+};
 
-const formatUser = (user) => [user.type, ':', user.firstName, user.lastName].join(' ');
+const formatUser = (user) => [user.type, ":", user.firstName, user.lastName].join(" ");
 
 formatUser(user); // ok
 formatUser(admin); // ok
@@ -32,25 +32,25 @@ With structural typing, we can easily rewrite our example in TypeScript:
 
 ```typescript
 const user = {
-  firstName: 'Vassiliy',
-  lastName: 'Kuzenkov',
-  type: 'user'
-}
+  firstName: "Vassiliy",
+  lastName: "Kuzenkov",
+  type: "user",
+};
 
 const admin = {
-  firstName: 'Kirill',
-  lastName: 'Mokevnin',
-  type: 'admin'
-}
+  firstName: "Kirill",
+  lastName: "Mokevnin",
+  type: "admin",
+};
 
 type User = {
-  type: string,
-  firstName: string,
-  lastName: string
-}
+  type: string;
+  firstName: string;
+  lastName: string;
+};
 
 const formatUser = (user: User): string =>
-  [user.type, ':', user.firstName, user.lastName].join(' ');
+  [user.type, ":", user.firstName, user.lastName].join(" ");
 
 formatUser(user); // ok
 formatUser(admin); // ok
@@ -62,20 +62,20 @@ It is important to remember that structural typing does not protect us from the 
 
 ```typescript
 const moderator = {
-  firstName: 'Danil',
-  lastName: 'Polovinkin',
-  type: 'moderator',
-  email: 'danil@polovinkin.com'
-}
+  firstName: "Danil",
+  lastName: "Polovinkin",
+  type: "moderator",
+  email: "danil@polovinkin.com",
+};
 
 type User = {
-  type: string,
-  firstName: string,
-  lastName: string
-}
+  type: string;
+  firstName: string;
+  lastName: string;
+};
 
 const formatUser = (user: User): string =>
-  [user.type, ':', user.firstName, user.lastName].join(' ');
+  [user.type, ":", user.firstName, user.lastName].join(" ");
 
 formatUser(moderator); // ok
 ```
@@ -97,23 +97,26 @@ type IntersectionUser = {
   username: string;
   password: string;
 } & {
-    type: string;
-}
+  type: string;
+};
 
-const admin: IntersectionUser = {  // a match with an object type is required both to the left and to the right of the & operator
-  username: 'test',
-  password: 'test',
-  type: 'admin'
-}
+const admin: IntersectionUser = {
+  // a match with an object type is required both to the left and to the right of the & operator
+  username: "test",
+  password: "test",
+  type: "admin",
+};
 
-type UnionUser = {
-    username: string;
-    password: string;
-} | {
-    type: string;
-}
+type UnionUser =
+  | {
+      username: string;
+      password: string;
+    }
+  | {
+      type: string;
+    };
 
-const user: UnionUser = { username: 'test', type: 'user' } // a match with one of the object types is sufficient
+const user: UnionUser = { username: "test", type: "user" }; // a match with one of the object types is sufficient
 ```
 
 The resulting type `IntersectionUser` describes objects that contain the fields `username`, `password` and `type`. And `UnionUser` type describes objects that contain `username` and `password` **OR** `type` fields.
@@ -132,7 +135,7 @@ When fields with the same names are encountered when intersecting object types, 
 When using unified types in functions, the following point should be taken into account. Let's consider an example:
 
 ```typescript
-const user: UnionUser = { username: 'test', type: 'user' };
+const user: UnionUser = { username: "test", type: "user" };
 
 const func = (user: UnionUser) => {
   console.log(user.type);

@@ -4,6 +4,6 @@ Define the `max()` function, which differs from the example in the lesson only i
 For example:
 
 ```typescript
-max(1,2,3);
+max(1, 2, 3);
 max(234);
 ```

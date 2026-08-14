@@ -1,6 +1,6 @@
 // BEGIN
 function fail(): never {
-  throw new Error('wow');
+  throw new Error("wow");
 }
 // END
 

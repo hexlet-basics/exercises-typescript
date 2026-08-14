@@ -13,10 +13,10 @@ Here we have declared an object type `dynamicKeysObject`, where the key can be a
 
 ```typescript
 const obj: dynamicKeysObject = {
-  name: 'John',
+  name: "John",
   age: 30,
-  0: 'zero',
-  [Symbol('secret')]: 'symbol',
+  0: "zero",
+  [Symbol("secret")]: "symbol",
 };
 ```
 
@@ -27,15 +27,15 @@ In the example below we will need the [satisfies](https://www.typescriptlang.org
 ```typescript
 type MyTheme = {
   palette: {
-    primary: 'red' | 'green' | 'blue';
+    primary: "red" | "green" | "blue";
     [key: string]: string;
-  },
+  };
   [key: string]: unknown;
 };
 
 const theme = {
   palette: {
-    primary: 'red',
+    primary: "red",
   },
   spacing: {
     small: 8,
@@ -65,10 +65,10 @@ class Template {
   [key: string]: string;
 }
 
-Template.test = 'test';
+Template.test = "test";
 
 const template = new Template();
-template.test = 'test';
+template.test = "test";
 ```
 
 ## Template String Literal
@@ -77,13 +77,13 @@ Dynamic keys are useful where we don't know all the possible field names of an o
 
 ```typescript
 type Listeners = {
-  [key: `on${string}`]: (value: unknown) => void
-}
+  [key: `on${string}`]: (value: unknown) => void;
+};
 
 const streamListeners: Listeners = {
   onStart() {},
-  onFinished() {}
-}
+  onFinished() {},
+};
 ```
 
 The ``on${string}`` literal type tells us that we expect a string based on the pattern ‘starts with `on` and any string thereafter’. This technique is called Template String Literal and is used to impose constraints when typing strings.

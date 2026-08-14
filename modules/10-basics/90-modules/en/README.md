@@ -12,7 +12,7 @@ export default function helloWorld() {
 }
 
 // @file main.ts
-import helloWorld from './helloWorld';
+import helloWorld from "./helloWorld";
 ```
 
 The TypeScript module system also supports named export/import and importing everything exported via `import * as`:
@@ -23,10 +23,10 @@ export function helloWorld() {}
 export function helloWorldAgain() {}
 
 // @file main
-import { helloWorld, helloWorldAgain } from './helloWorld';
+import { helloWorld, helloWorldAgain } from "./helloWorld";
 
 // @file next
-import * as hw from './helloWorld';
+import * as hw from "./helloWorld";
 hw.helloWorld();
 ```
 
@@ -43,7 +43,7 @@ But the opposite is also true, for example, the `type-fest` package contains onl
 export type User = { name: string };
 
 // @file main.ts
-import type { User } from './user.types';
+import type { User } from "./user.types";
 ```
 
 ## Namespace
@@ -53,7 +53,7 @@ The modules solve the problem of heterogeneous entities and collisions by spread
 ```typescript
 namespace Hello {
   export function helloWorld() {
-      console.log("Hello, world!");
+    console.log("Hello, world!");
   }
 }
 

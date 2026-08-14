@@ -2,7 +2,7 @@
 В этом уроке мы поговорим про массивы. TypeScript умеет выводить их тип, как и в случае с примитивными типами данных:
 
 ```typescript
-const fruits = ['banana', 'mango', 'apple'];
+const fruits = ["banana", "mango", "apple"];
 // Все работает
 const upperFruits = fruits.map((name) => name.toUpperCase());
 
@@ -18,7 +18,7 @@ const upperFruits = fruits.map((name) => name.key);
 Определение массива выше можно было бы записать так:
 
 ```typescript
-const fruits: string[] = ['banana', 'mango', 'apple'];
+const fruits: string[] = ["banana", "mango", "apple"];
 ```
 
 Так же описываются типы в определении функций:

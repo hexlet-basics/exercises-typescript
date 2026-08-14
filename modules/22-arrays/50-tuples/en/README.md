@@ -40,7 +40,7 @@ Tuples may consist of elements of different types:
 type HTTPResponse = [number, string];
 
 // The order of definition is important
-const response: HTTPResponse = [404, 'Page is not found'];
+const response: HTTPResponse = [404, "Page is not found"];
 // This won't work ['Page is not found', 404]
 ```
 
@@ -50,7 +50,7 @@ Some of them may be optional. In this case, the optional elements must be at the
 type HTTPResponse = [number, string?];
 
 const response1: HTTPResponse = [500];
-const response2: HTTPResponse = [201, 'Created'];
+const response2: HTTPResponse = [201, "Created"];
 ```
 
 In the example above, the first element of the array must always be a number and the second element must always be a string or may be missing.
@@ -59,5 +59,5 @@ If you create variables for tuples and use an alias, you must specify it explici
 
 ```typescript
 // Will have (string | number)[] type
-const response = [201, 'Created'];
+const response = [201, "Created"];
 ```

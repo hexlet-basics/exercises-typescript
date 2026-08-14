@@ -4,7 +4,7 @@
 Также внутри класса определите метод `toString()`, который должен вернуть форматированную строку в формате `<file-name> (<size> bytes)`.
 
 ```typescript
-const file = new CustomFile({ name: 'open-world.jpeg', size: 1000 });
+const file = new CustomFile({ name: "open-world.jpeg", size: 1000 });
 
 console.log(file.name); // open-world.jpeg
 console.log(file.size); // 1000

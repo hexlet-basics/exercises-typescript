@@ -7,17 +7,17 @@
 
 ```typescript
 type Order = {
-  status: 'Created',
-}
+  status: "Created";
+};
 
 type OneHundredOrder = Order & {
-  cost: 100
-}
+  cost: 100;
+};
 
 const myOrder: OneHundredOrder = {
-  status: 'Created',
-  cost: 100
-}
+  status: "Created",
+  cost: 100,
+};
 ```
 
 Из пересечения объектных типов с полями `status` **И** `cost` мы получили тип `OneHundredOrder`, который содержит оба этих поля.

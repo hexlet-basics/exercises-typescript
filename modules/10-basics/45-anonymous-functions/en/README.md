@@ -4,7 +4,7 @@ In this lesson, we will learn about anonymous functions. Together with arrow fun
 To define anonymous functions, the type indication is omitted:
 
 ```typescript
-const fruits = ['banana', 'mango', 'apple'];
+const fruits = ["banana", "mango", "apple"];
 const upperFruits = fruits.map((name) => name.toUpperCase());
 // ['BANANA', 'MANGO', 'APPLE']
 ```

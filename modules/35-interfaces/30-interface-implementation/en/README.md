@@ -15,9 +15,9 @@ interface IBoop {
 }
 
 class Robo implements IBeep, IBoop {
-  sayBeep = () => 'beep';
+  sayBeep = () => "beep";
 
-  sayBoop = () => 'boop';
+  sayBoop = () => "boop";
 }
 
 const R2D2 = new Robo();
@@ -40,32 +40,38 @@ Let's look at an example:
 
 ```typescript
 interface ICalculate {
-  sum: (num1: number, num2: number ) => number;
+  sum: (num1: number, num2: number) => number;
 }
 
 class Summator implements ICalculate {
-  sum(num1, num2) { return num1 + num2; }
-    // For parameters the following message will be displayed: Parameter 'num1'/'num2' implicitly has an 'any' type,
-    // because TypeScript only checks the class against the interface, but does not fully inherit from it.
-  multiply(num1: number, num2: number) { return num1 * num2; }
-    // We added a new method, but TypeScript doesn't complain
+  sum(num1, num2) {
+    return num1 + num2;
+  }
+  // For parameters the following message will be displayed: Parameter 'num1'/'num2' implicitly has an 'any' type,
+  // because TypeScript only checks the class against the interface, but does not fully inherit from it.
+  multiply(num1: number, num2: number) {
+    return num1 * num2;
+  }
+  // We added a new method, but TypeScript doesn't complain
 }
 
 let calculator = new Summator();
-    // Our code will work as if it worked for arguments with type any,
-    // because parameter types, as well as everything else, were not inherited by the class when the interface was implemented
-calculator.sum(2,3) // 5
+// Our code will work as if it worked for arguments with type any,
+// because parameter types, as well as everything else, were not inherited by the class when the interface was implemented
+calculator.sum(2, 3); // 5
 ```
 
 An error in the implementation of an interface by a class is possible only when we do not implement one of the properties specified in the interface. Or we implement it differently than specified in the interface:
 
 ```typescript
 interface ICalculate {
-  sum: (num1: number, num2: number ) => number;
+  sum: (num1: number, num2: number) => number;
 }
 
 class Summator implements ICalculate {
-  sum (num1: string, num2: string) { return num1 + num2 };
+  sum(num1: string, num2: string) {
+    return num1 + num2;
+  }
   // We changed the argument types to string, i.e. we implemented the interface incorrectly
   // In this case TypeScript will notice our error and will not compile:
   // Type '(num1: string, num2: string) => string' is not assignable to type '(num1: number, num2: number) => number'.
@@ -77,16 +83,18 @@ For the same reason, if we write a class that implements an interface with optio
 ```typescript
 interface ICalculate {
   sum: (num1: number, num2: number) => number;
-  multiply? : (num1: number, num2: number) => number;
+  multiply?: (num1: number, num2: number) => number;
 }
 
 class Summator implements ICalculate {
-  sum (num1: number, num2: number) { return num1 + num2; }
+  sum(num1: number, num2: number) {
+    return num1 + num2;
+  }
 }
 
 const calculator = new Summator();
-calculator.sum(2,3) // 5
-calculator.multiply(2,3) // Property 'multiply' does not exist on type 'Summator'.
+calculator.sum(2, 3); // 5
+calculator.multiply(2, 3); // Property 'multiply' does not exist on type 'Summator'.
 ```
 
 In the example above, we specified only the `sum` method when implementing the interface with the `Summator` class. As a result, the code compiled successfully because the `multiply` method was specified as optional. At the same time, we cannot address this method in an instance of our class.

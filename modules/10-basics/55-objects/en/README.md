@@ -6,7 +6,7 @@ The types are inferred automatically:
 ```typescript
 // Тип: { firstName: string, pointsCount: number }
 const user = {
-  firstName: 'Mike',
+  firstName: "Mike",
   pointsCount: 1000,
 };
 
@@ -26,7 +26,7 @@ To accept such an object into a function as a parameter, you must specify its st
 
 ```typescript
 // Properties in the type description are separated by commas (,)
-function doSomething(user: { firstName: string, pointsCount: number }) {
+function doSomething(user: { firstName: string; pointsCount: number }) {
   // ...
 }
 ```
@@ -34,13 +34,13 @@ function doSomething(user: { firstName: string, pointsCount: number }) {
 Now any object that matches properties can be passed to the function:
 
 ```typescript
-doSomething({ firstName: 'Alice', pointsCount: 2000 });
-doSomething({ firstName: 'Bob', pointsCount: 1800 });
+doSomething({ firstName: "Alice", pointsCount: 2000 });
+doSomething({ firstName: "Bob", pointsCount: 1800 });
 
 // Is not allowed
-doSomething({ firstName: 'Bob' });
+doSomething({ firstName: "Bob" });
 // Not allowed as well
-doSomething({ firstName: 'Bob', pointsCount: 1800, key: 'another' });
+doSomething({ firstName: "Bob", pointsCount: 1800, key: "another" });
 ```
 
 As with primitive data types, neither null nor undefined is allowed by default. To change this behavior, you need to add an optionality:
@@ -48,7 +48,7 @@ As with primitive data types, neither null nor undefined is allowed by default. 
 ```typescript
 // firstName can be undefined
 // pointsCount can be null
-function doSomething(user: { firstName?: string, pointsCount: number | null }) {
+function doSomething(user: { firstName?: string; pointsCount: number | null }) {
   // ...
 }
 ```

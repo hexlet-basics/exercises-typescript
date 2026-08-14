@@ -15,9 +15,9 @@ interface IBoop {
 }
 
 class Robo implements IBeep, IBoop {
-  sayBeep = () => 'beep';
+  sayBeep = () => "beep";
 
-  sayBoop = () => 'boop';
+  sayBoop = () => "boop";
 }
 
 const R2D2 = new Robo();
@@ -40,33 +40,39 @@ R2D2.sayBeep(); // 'beep'
 
 ```typescript
 interface ICalculate {
-  sum: (num1: number, num2: number ) => number;
+  sum: (num1: number, num2: number) => number;
 }
 
 class Summator implements ICalculate {
-  sum(num1, num2) { return num1 + num2; }
+  sum(num1, num2) {
+    return num1 + num2;
+  }
   // Для параметров будет выведено сообщение: Parameter 'num1'/'num2' implicitly has an 'any' type,
   // потому что TypeScript только проверяет класс на соответствие интерфейсу, но не наследуется от него полноценно
 
-  multiply(num1: number, num2: number) { return num1 * num2; }
+  multiply(num1: number, num2: number) {
+    return num1 * num2;
+  }
   // Мы добавили новый метод, но TypeScript не ругается
 }
 
 let calculator = new Summator();
-  // Наш код сработает, как если бы он сработал для аргументов с типом any,
-  // потому что типы параметров, равно как и все остальное, не были унаследованы классом при реализации интерфейса
-calculator.sum(2,3) // 5
+// Наш код сработает, как если бы он сработал для аргументов с типом any,
+// потому что типы параметров, равно как и все остальное, не были унаследованы классом при реализации интерфейса
+calculator.sum(2, 3); // 5
 ```
 
 Ошибка в реализации интерфейса классом возможна только тогда, когда мы не реализуем одно из свойств, указанных в интерфейсе. Или мы реализуем его не так, как указано в интерфейсе:
 
 ```typescript
 interface ICalculate {
-  sum: (num1: number, num2: number ) => number;
+  sum: (num1: number, num2: number) => number;
 }
 
 class Summator implements ICalculate {
-  sum (num1: string, num2: string) { return num1 + num2 };
+  sum(num1: string, num2: string) {
+    return num1 + num2;
+  }
   // Мы изменили типы аргументов на string, то есть неверно реализовали интерфейс
   // В таком случае TypeScript обратит внимание на нашу ошибку и не скомпилируется:
   // Type '(num1: string, num2: string) => string' is not assignable to type '(num1: number, num2: number) => number'.
@@ -78,16 +84,18 @@ class Summator implements ICalculate {
 ```typescript
 interface ICalculate {
   sum: (num1: number, num2: number) => number;
-  multiply? : (num1: number, num2: number) => number;
+  multiply?: (num1: number, num2: number) => number;
 }
 
 class Summator implements ICalculate {
-  sum (num1: number, num2: number) { return num1 + num2; }
+  sum(num1: number, num2: number) {
+    return num1 + num2;
+  }
 }
 
 const calculator = new Summator();
-calculator.sum(2,3) // 5
-calculator.multiply(2,3) // Property 'multiply' does not exist on type 'Summator'.
+calculator.sum(2, 3); // 5
+calculator.multiply(2, 3); // Property 'multiply' does not exist on type 'Summator'.
 ```
 
 В примере выше мы указали только метод `sum` при реализации интерфейса классом `Summator`. В результате код успешно скомпилировался, ведь метод `multiply` был указан как опциональный. В то же время в экземпляре нашего класса мы не можем обратиться к этому методу.

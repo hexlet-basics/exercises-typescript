@@ -12,7 +12,7 @@ const merge = (coll1, coll2) => {
 };
 
 merge([1, 2], [3, 4]); // [1, 2, 3, 4]
-merge(['one', 'two'], ['three']); // ['one', 'two', 'three']
+merge(["one", "two"], ["three"]); // ['one', 'two', 'three']
 ```
 
 The convenience of dynamic typing here is that this function automatically works for any arrays, no matter what is stored in them.
@@ -59,7 +59,7 @@ function merge<T>(coll1: Array<T>, coll2: Array<T>): Array<T> {
 // Works with any array types
 // The arrays themselves must have a matching type
 merge([1, 2], [3, 4]); // [1, 2, 3, 4]
-merge(['one', 'two'], ['three']); // ['one', 'two', 'three']
+merge(["one", "two"], ["three"]); // ['one', 'two', 'three']
 ```
 
 Here we see a new syntax that we need to get used to. If we don't go into details, the `<T>` entry after the function name indicates that we have a generic in front of us, which is parameterized by type T. T is a designation that we could have used any other capital letter, such as X.
@@ -81,13 +81,13 @@ The `Array<T>` record describes a generalized array - also a generic one, but fo
 The name of the parameter of type T has an important role here. If we used a different letter, it would have to be changed for all the parts inside:
 
 ```typescript
-function merge<X>(coll1: Array<X>, coll2: Array<X>): Array<X>
+function merge<X>(coll1: Array<X>, coll2: Array<X>): Array<X>;
 ```
 
 This is how TypeScript understands that the types of the input arrays and the resulting array are the same. That is, you can't call this function by passing an array of numbers and strings at the same time.
 
 ```typescript
-const result = merge([1, 2], ['wow']); // Error!
+const result = merge([1, 2], ["wow"]); // Error!
 ```
 
 But the types may not be the same. Below is an example of a generic that returns the first element of any array and null if it is empty:
@@ -99,7 +99,7 @@ function first<T>(coll: Array<T>): T | null {
 
 first([]); // null
 first([3, 2]); // 3
-first(['code-basics', 'hexlet']); // code-basics
+first(["code-basics", "hexlet"]); // code-basics
 ```
 
 Generics is a big topic that will be covered in the next lessons. Now our task is to familiarize ourselves with the general concept and gradually start using it.

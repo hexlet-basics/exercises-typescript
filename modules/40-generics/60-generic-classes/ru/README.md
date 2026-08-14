@@ -5,7 +5,11 @@
 
 ```typescript
 class Triple<T, U, V> {
-  constructor(protected first: T, protected second: U, protected third: V) {}
+  constructor(
+    protected first: T,
+    protected second: U,
+    protected third: V,
+  ) {}
 
   getFirst(): T {
     return this.first;
@@ -24,7 +28,7 @@ class Triple<T, U, V> {
 В этом примере класс `Triple` — дженерик-класс, в который мы можем поместить любые типы данных. При этом у нас остаются гарантии безопасности и вывод типов, которые мы получили при использовании обобщенных функций:
 
 ```typescript
-const triple = new Triple(1, 'string', null);
+const triple = new Triple(1, "string", null);
 const first = triple.getFirst(); // number
 const second = triple.getSecond(); // string
 ```

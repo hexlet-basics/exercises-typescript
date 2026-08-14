@@ -10,7 +10,7 @@ const numbers: Array<number> = [];
 numbers.push(1);
 
 const strings: Array<string> = [];
-numbers.push('hexlet');
+numbers.push("hexlet");
 ```
 
 The type that is specified inside the angle brackets is called **type parameter**. This name was chosen for a reason - specifying a parameter looks like a function call. Below we will see that this way of looking at generics helps us to better understand how they work.
@@ -22,7 +22,7 @@ type MyColl = {
   data: Array<number>;
   forEach(callback: (value: number, index: number, array: Array<number>) => void): void;
   at(index: number): number | undefined;
-}
+};
 ```
 
 Here we see that the collection data is stored in a numeric array. There are two methods defined in the type, one of which (`forEach`) passes the elements of the collection to the callback, and the other (`at`) returns the elements of the collection at the specified index. One possible implementation of this type might look like this:
@@ -37,7 +37,7 @@ const coll: MyColl = {
   at(index) {
     return this.data.at(index); // target >= ES2022
   },
-}
+};
 
 coll.at(-1); // 8
 ```
@@ -49,7 +49,7 @@ type MyColl<T> = {
   data: Array<T>;
   forEach(callback: (value: T, index: number, array: Array<T>) => void): void;
   at(index: number): T | undefined;
-}
+};
 ```
 
 This type definition can be viewed as a kind of function definition. When a specific type is specified, for example, `MyColl<string>`, then `T` in this situation is replaced by `string` inside the type definition. And if other generics are used inside the type, they "call" the type further. That is, it all works like nested function calls.
@@ -67,7 +67,7 @@ type MyColl<T extends HasId> = {
   data: Array<T>;
   forEach(callback: (value: T, index: number, array: Array<T>) => void): void;
   at(index: number): T | undefined;
-}
+};
 ```
 
 This allows us to use the `MyColl` type only with types that implement the `HasId` interface. For example, such code will not work:
@@ -82,7 +82,7 @@ const coll: MyColl<number> = {
   at(index) {
     return this.data.at(index); // target >= ES2022
   },
-}
+};
 ```
 
 Generics themselves are found everywhere in the code of libraries and frameworks. For example, in `React` component types are wrapped in generics so that you can specify props types. Generics can be used to create more generic types that can work with different data types, which we will explore in the next lessons.

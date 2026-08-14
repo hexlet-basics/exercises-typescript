@@ -1,13 +1,13 @@
-import { expect, expectTypeOf, test } from 'vitest';
+import { expect, expectTypeOf, test } from "vitest";
 
-import deepFreeze from './index';
+import deepFreeze from "./index";
 
-test('deepFreeze', () => {
+test("deepFreeze", () => {
   const obj = {
-    name: 'John',
+    name: "John",
     age: 30,
     location: {
-      city: 'York',
+      city: "York",
       coordinates: {
         lat: 53.958,
         lon: -1.093,
@@ -18,10 +18,10 @@ test('deepFreeze', () => {
   const user = deepFreeze(obj);
 
   expect(user).toEqual({
-    name: 'John',
+    name: "John",
     age: 30,
     location: {
-      city: 'York',
+      city: "York",
       coordinates: {
         lat: 53.958,
         lon: -1.093,
@@ -36,7 +36,7 @@ test('deepFreeze', () => {
 
   expect(() => {
     // @ts-expect-error Cannot assign nested read-only property.
-    user.location.city = 'London';
+    user.location.city = "London";
   }).toThrow();
 
   expectTypeOf(user).toEqualTypeOf<

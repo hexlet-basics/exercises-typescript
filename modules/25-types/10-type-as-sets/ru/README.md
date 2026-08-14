@@ -25,7 +25,7 @@
 ```typescript
 type SomeType = number | string;
 const v1: SomeType = 1;
-const v2: SomeType = 'hexlet';
+const v2: SomeType = "hexlet";
 ```
 
 Здесь мы определили тип `SomeType`, который может принимать значения типа `number` или `string`, а значит является объединением множеств всех чисел и строк.

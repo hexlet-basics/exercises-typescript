@@ -2,7 +2,7 @@
 Реализуйте функцию `lessonsCount()`, которая принимает на вход курс и возвращает количество лекций внутри него:
 
 ```typescript
-const course = { lessons: ['intro', 'lala'] };
+const course = { lessons: ["intro", "lala"] };
 lessonsCount(course); // 2
 ```
 

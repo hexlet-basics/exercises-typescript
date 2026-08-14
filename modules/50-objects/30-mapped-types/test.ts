@@ -1,20 +1,20 @@
-import { expect, expectTypeOf, test } from 'vitest';
+import { expect, expectTypeOf, test } from "vitest";
 
-import sanitize from './index';
+import sanitize from "./index";
 
-test('sanitize', () => {
+test("sanitize", () => {
   const obj = {
-    name: 'John',
+    name: "John",
     age: 30,
-    password: '123456',
+    password: "123456",
   };
 
-  expect(sanitize(obj, ['name', 'age'])).toEqual({
-    password: '123456',
+  expect(sanitize(obj, ["name", "age"])).toEqual({
+    password: "123456",
   });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const user = sanitize(obj, ['password']);
+  const user = sanitize(obj, ["password"]);
 
   expectTypeOf(user).toEqualTypeOf<{ name: string; age: number }>();
 
@@ -22,11 +22,11 @@ test('sanitize', () => {
     page: 1,
     limit: 10,
     filter: {
-      name: 'John',
+      name: "John",
     },
   };
 
-  const query = sanitize(params, ['filter']);
+  const query = sanitize(params, ["filter"]);
   expect(query).toEqual({
     page: 1,
     limit: 10,

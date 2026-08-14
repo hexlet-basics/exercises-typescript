@@ -26,10 +26,10 @@ To make a parameter optional, you must add a “?” after the variable name:
 
 ```typescript
 function getGreetingPhrase(name?: string) {
-  return `Hello, ${name ? name.toUpperCase() : 'Guest'}!`;
+  return `Hello, ${name ? name.toUpperCase() : "Guest"}!`;
 }
 
-getGreetingPhrase('Mike'); // Hello, MIKE!
+getGreetingPhrase("Mike"); // Hello, MIKE!
 getGreetingPhrase(); // Hello, Guest!
 ```
 
@@ -39,7 +39,7 @@ An optional parameter can be `undefined` but not `null`. To add `null`, you need
 
 ```typescript
 function getGreetingPhrase(name?: string | null) {
-  return `Hello, ${name ? name.toUpperCase() : 'Guest'}!`;
+  return `Hello, ${name ? name.toUpperCase() : "Guest"}!`;
 }
 ```
 
@@ -50,11 +50,11 @@ Here we have extended the type definition of the variable `name` to `string | un
 With the default value, you do not need to specify anything additional. The value is set as in JavaScript. The variable itself automatically becomes optional, and the type is inferred based on the passed value:
 
 ```typescript
-function getGreetingPhrase(name = 'Guest') {
+function getGreetingPhrase(name = "Guest") {
   return `Hello, ${name.toUpperCase()}!`;
 }
 
-getGreetingPhrase() // Hello, GUEST!
+getGreetingPhrase(); // Hello, GUEST!
 ```
 
 ## Return value type

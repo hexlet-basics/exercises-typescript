@@ -7,12 +7,12 @@ The `any` type is used where type checking is not needed, or when TypeScript can
 
 ```typescript
 // In this case the type will be any[]
-// because TypeScript cannot infer its content 
+// because TypeScript cannot infer its content
 // as it does not yet exist
 const items = [];
 // We can add anything we want
 items.push(1);
-items.push('code-basics');
+items.push("code-basics");
 ```
 
 `any` turns TypeScript into JavaScript, since data with that type is no longer validated:
@@ -23,7 +23,7 @@ let value: any = 5;
 value.toString(); // ok
 value(); // ok, but will be an error if the JS code is executed
 value.trim(); // ok, but will be an error if the JS code is executed
-value = 'wow'; // ok
+value = "wow"; // ok
 ```
 
 However, `any` is useful in many cases. For example, when you need to translate a project from JavaScript to TypeScript. In this case, all types are first declared as `any` and then rewritten to the required types.
@@ -37,9 +37,9 @@ Let's consider the first case in more detail.
 Let's take the code that counts the number of words in a sentence as an example:
 
 ```javascript
-const sentence = 'table cat table dog dog apple table';
+const sentence = "table cat table dog dog apple table";
 
-const words = sentence.split(' ');
+const words = sentence.split(" ");
 const initial = {};
 const result = words.reduce((acc, word) => {
   acc[word] = Object.hasOwn(acc, word) ? acc[word] + 1 : 1;
@@ -60,9 +60,9 @@ This is so because the structure of an object specifies its type at definition t
 We will learn how to set the correct type in a situation with dynamic keys later. For now, let's make the code work using `any`. To do this, we need to define an object with an explicit type specification:
 
 ```typescript
-const sentence = 'table cat table dog dog apple table';
+const sentence = "table cat table dog dog apple table";
 
-const words = sentence.split(' ');
+const words = sentence.split(" ");
 const initial: any = {}; // Set type as any
 const result = words.reduce((acc, word) => {
   acc[word] = Object.hasOwn(acc, word) ? acc[word] + 1 : 1;

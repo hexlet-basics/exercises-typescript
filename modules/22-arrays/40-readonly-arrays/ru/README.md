@@ -18,8 +18,8 @@ function process(numbers: readonly number[]) {
 Модификатор `readonly` запрещает изменение массива, но не запрещает изменение объектов, которые находятся внутри массива:
 
 ```typescript
-const items: readonly ({ key: string })[] = [{ key: 'value'}];
-items[0].key = 'another value'; // ok!
+const items: readonly { key: string }[] = [{ key: "value" }];
+items[0].key = "another value"; // ok!
 ```
 
 Мы успешно изменили значение свойства `key` в объекте, который находится внутри массива.
@@ -29,5 +29,5 @@ items[0].key = 'another value'; // ok!
 Код выше можно было бы записать так:
 
 ```typescript
-const items: ReadonlyArray<{ key: string }> = [{ key: 'value'}];
+const items: ReadonlyArray<{ key: string }> = [{ key: "value" }];
 ```

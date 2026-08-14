@@ -7,17 +7,17 @@ Let's define the type of the object with the order status, and then a stricter t
 
 ```typescript
 type Order = {
-  status: 'Created',
-}
+  status: "Created";
+};
 
 type OneHundredOrder = Order & {
-  cost: 100
-}
+  cost: 100;
+};
 
 const myOrder: OneHundredOrder = {
-  status: 'Created',
-  cost: 100
-}
+  status: "Created",
+  cost: 100,
+};
 ```
 
 From the intersection of object types with the fields `status` **And** `cost` we get the type `OneHundredOrder`, which contains both of these fields.

@@ -9,7 +9,7 @@ function toString(obj: {}) {
   return obj.toString();
 }
 
-toString('wow'); // Ok!
+toString("wow"); // Ok!
 toString(123); // Ok!
 toString({}); // Ok!
 ```
@@ -21,14 +21,14 @@ The `Object` type is an object type. It works just like the `{}` type with some 
 ```typescript
 const foo: {} = {
   toString() {
-   return 1; // Ok!
-  }
+    return 1; // Ok!
+  },
 };
 
 const bar: Object = {
   toString() {
     return 1; // Error!
-  }
+  },
 };
 ```
 
@@ -41,7 +41,7 @@ function toString(obj: object) {
   return obj.toString();
 }
 
-toString('wow'); // Error!
+toString("wow"); // Error!
 toString(123); // Error!
 toString({}); // Ok!
 ```

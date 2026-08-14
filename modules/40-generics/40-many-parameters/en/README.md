@@ -7,12 +7,12 @@ The principle of generics does not change from the number of parameters. The onl
 type Double<T, U> = {
   first: T;
   second: U;
-}
+};
 
 const value: Double<string, number> = {
-  first: 'code-basics',
+  first: "code-basics",
   second: 1,
-}
+};
 ```
 
 ## Type inference from function arguments
@@ -24,15 +24,15 @@ For example, the function `join()` can be described as follows:
 ```typescript
 function join<T, U>(coll1: (T | U)[], coll2: U[]): (T | U)[] {
   return coll1.concat(coll2);
-};
+}
 
-join<number, string>([1, 2], ['one', 'two']); // [1, 2, 'one', 'two']
+join<number, string>([1, 2], ["one", "two"]); // [1, 2, 'one', 'two']
 ```
 
 But TypeScript allows us to do this more easily and not have to specify types for all parameters:
 
 ```typescript
-join([1, 2], ['one', 'two']); // [1, 2, 'one', 'two']
+join([1, 2], ["one", "two"]); // [1, 2, 'one', 'two']
 ```
 
 TypeScript will infer the types for the function parameters itself. This is called type inference from function arguments. In this case, TypeScript will infer the types `number` and `string` for the parameters `T` and `U` respectively.

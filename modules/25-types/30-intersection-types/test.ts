@@ -1,9 +1,9 @@
-import { expect, test } from 'vitest';
-import addAdmin, { Permission, type User } from './index';
+import { expect, test } from "vitest";
+import addAdmin, { Permission, type User } from "./index";
 
-test('addAdmin', () => {
+test("addAdmin", () => {
   const user: User = {
-    login: 'login1',
+    login: "login1",
   };
 
   const admin = addAdmin(user);

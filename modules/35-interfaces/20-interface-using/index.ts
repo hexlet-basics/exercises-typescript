@@ -20,9 +20,7 @@ const superMan: ISuperman = {
   isLiving: true,
   canCarryPeople: true,
   guessWho: (guess) =>
-    guess.toLowerCase() !== 'superman'
-      ? `It's a ${guess}?`
-      : `It's a ${guess}!`,
+    guess.toLowerCase() !== "superman" ? `It's a ${guess}?` : `It's a ${guess}!`,
 };
 
 // END

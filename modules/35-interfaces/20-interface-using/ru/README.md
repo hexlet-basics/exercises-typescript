@@ -16,10 +16,10 @@ interface IUser {
 }
 
 const sergey: IUser = {
-  nickname: 'Sergey',
+  nickname: "Sergey",
   birthdate: 1990,
   rating: 1102,
-}
+};
 ```
 
 Здесь мы создали интерфейс `IUser`, а затем для демонстрационных целей расширили его новыми свойствами. После этого создали на его основе объект `Sergey`.
@@ -36,11 +36,11 @@ interface IStudent extends IUser {
 }
 
 const sergey: IStudent = {
-  nickname: 'Sergey',
+  nickname: "Sergey",
   birthdate: 1990,
   rating: 1102,
   group: 2,
-}
+};
 ```
 
 В этом примере мы создали на основе нашего предыдущего интерфейса `IUser` еще один — `IStudent`, в который добавили свойство `group`. Так интерфейс `IStudent` имеет все свойства `IUser` и все свойства, которые мы указали при его расширении от `IUser`, то есть дополнительно `group`.
@@ -67,12 +67,12 @@ interface IAuthor extends IUser, IEditor {
 }
 
 const sergey: IAuthor = {
-  nickname: 'Sergey',
+  nickname: "Sergey",
   rating: 20,
-  courses: ['typescript'],
+  courses: ["typescript"],
   canEdit: true,
-  team: 'Hexlet College'
-}
+  team: "Hexlet College",
+};
 ```
 
 В примере выше мы создали экземпляр на основе интерфейса `IAuthor`, который был создан путем расширения интерфейсов `IUser` и `IEditor`. Этот экземпляр взял в себя все свойства данных интерфейсов и свойство, которое мы указали при создании самого интерфейса `IAuthor`.
@@ -93,9 +93,9 @@ interface IOrAnother {
 type OneWayOrAnother = IOneWay & IOrAnother;
 
 const example: OneWayOrAnother = {
-  one: 'A',
-  another: 'B',
-}
+  one: "A",
+  another: "B",
+};
 ```
 
 Здесь мы создали тип `OneWayOrAnother` на основе двух интерфейсов при помощи литерала `&`. Данный тип включил в себя все свойства указанных интерфейсов.
@@ -106,14 +106,14 @@ const example: OneWayOrAnother = {
 
 ```typescript
 interface IPhoneBook {
-  [index:string]: number;
+  [index: string]: number;
 }
 
 const myNotePad: IPhoneBook = {
   ivan: 55531311,
   sergey: 55500110,
   mom: 55522111,
-}
+};
 ```
 
 В примере выше мы решили вопрос создания телефонной книги с помощью индексной сигнатуры. Это позволило нам не указывать множество свойств с именами, но лишь один раз указать тип ключа и тип его значения.

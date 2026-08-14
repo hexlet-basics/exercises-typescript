@@ -1,18 +1,18 @@
-import { expect, expectTypeOf, test } from 'vitest';
-import { type IBird, type IPlane, type ISuperman, superMan } from './index';
+import { expect, expectTypeOf, test } from "vitest";
+import { type IBird, type IPlane, type ISuperman, superMan } from "./index";
 
-test('guess who', () => {
-  expect(superMan.guessWho('bird')).toBe("It's a bird?");
-  expect(superMan.guessWho('plane')).toBe("It's a plane?");
-  expect(superMan.guessWho('SupErMan')).toBe("It's a SupErMan!");
+test("guess who", () => {
+  expect(superMan.guessWho("bird")).toBe("It's a bird?");
+  expect(superMan.guessWho("plane")).toBe("It's a plane?");
+  expect(superMan.guessWho("SupErMan")).toBe("It's a SupErMan!");
 });
 
-test('Types check', () => {
+test("Types check", () => {
   expectTypeOf<ISuperman>().toExtend<IBird>();
   expectTypeOf<ISuperman>().toExtend<IPlane>();
   expectTypeOf(superMan).toExtend<ISuperman>();
 
-  expect(superMan).toHaveProperty('canFly');
-  expect(superMan).toHaveProperty('isLiving');
-  expect(superMan).toHaveProperty('canCarryPeople');
+  expect(superMan).toHaveProperty("canFly");
+  expect(superMan).toHaveProperty("isLiving");
+  expect(superMan).toHaveProperty("canCarryPeople");
 });

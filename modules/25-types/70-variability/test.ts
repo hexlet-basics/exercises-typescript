@@ -1,7 +1,7 @@
-import { expect, expectTypeOf, test } from 'vitest';
-import applyTransactions, { type Wallet } from './index';
+import { expect, expectTypeOf, test } from "vitest";
+import applyTransactions, { type Wallet } from "./index";
 
-test('applyTransactions', () => {
+test("applyTransactions", () => {
   const wallet: Wallet = {
     balance: 100,
     transactions: [
@@ -28,7 +28,7 @@ test('applyTransactions', () => {
       },
       {
         apply: () => {
-          throw new Error('Error');
+          throw new Error("Error");
         },
       },
       {
@@ -39,9 +39,7 @@ test('applyTransactions', () => {
 
   expect(applyTransactions(wallet2)).toBe(10);
 
-  expectTypeOf(wallet2.transactions[0].apply).parameters.toEqualTypeOf<
-    [number]
-  >();
+  expectTypeOf(wallet2.transactions[0].apply).parameters.toEqualTypeOf<[number]>();
   expectTypeOf(wallet2.transactions[0].apply).returns.toEqualTypeOf<number>();
   expectTypeOf(wallet2.balance).toEqualTypeOf<number>();
   expectTypeOf(applyTransactions).returns.toEqualTypeOf<number>();

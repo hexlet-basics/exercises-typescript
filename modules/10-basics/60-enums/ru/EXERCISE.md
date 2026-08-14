@@ -8,6 +8,6 @@
   Функция возвращает объект с двумя полями: `text` (здесь хранится переданный текст) и `status` (здесь хранится переданный статус)
 
 ```typescript
-const modal = buildModal('hexlet forever', ModalStatus.Opened);
+const modal = buildModal("hexlet forever", ModalStatus.Opened);
 // { text: 'hexlet forever', status: ModalStatus.Opened }
 ```

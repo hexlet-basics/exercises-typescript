@@ -4,7 +4,7 @@ Objects with dynamic structure, when we add fields to them at runtime, are often
 ```typescript
 type Context<K extends string, V> = {
   [Key in K]: V;
-}
+};
 
 const runApp = <C extends Context<string, unknown>>(ctx: C) => {};
 ```
@@ -19,7 +19,7 @@ type SongsRating = Record<string, Rating>;
 
 const songsRating: SongsRating = {
   ratata: 4,
-}
+};
 ```
 
 With this type `SongsRating` we can specify an object type with an arbitrary key (song name) and a rating - a number from zero to five.

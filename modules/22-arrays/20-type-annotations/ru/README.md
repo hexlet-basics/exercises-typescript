@@ -7,7 +7,7 @@
 
 ```typescript
 type User = {
-  name: string
+  name: string;
 };
 
 // При определении констант и переменных
@@ -24,7 +24,7 @@ function foo(users: User[]) {
 В случае составных типов, например, если мы хотим использовать объединение или описание объекта, добавляются круглые скобки — `(Type)[]`:
 
 ```typescript
-const users: ({ name: string })[] = [];
+const users: { name: string }[] = [];
 const users: (string | null)[] = [];
 const users: (User | null | { name: string })[] = [];
 ```
@@ -51,8 +51,8 @@ const users: Array<string | null> = [];
 ```typescript
 const items = [];
 items.push(1);
-items.push('wow');
-items.push(['code-basics', 'hexlet']);
+items.push("wow");
+items.push(["code-basics", "hexlet"]);
 ```
 
 Код с `any` будет работать всегда, но он выключает проверку типов. Чтобы этого не происходило, нужно всегда явно типизировать пустой массив:

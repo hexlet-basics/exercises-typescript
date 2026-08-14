@@ -19,7 +19,7 @@ type at = (str: string, position: number) => string | undefined;
 type NumberOrString = number | string;
 
 let val: NumberOrString = 10; // OK
-val = 'My string'; // OK
+val = "My string"; // OK
 val = true; // Type 'boolean' is not assignable to type 'NumberOrString'.
 ```
 
@@ -32,7 +32,8 @@ val = true; // Type 'boolean' is not assignable to type 'NumberOrString'.
 ```typescript
 type AllowedToConcatenation = number | string | null | undefined | boolean;
 
-const concat = (base: AllowedToConcatenation, suffix: AllowedToConcatenation): string => `${base}${suffix}`;
+const concat = (base: AllowedToConcatenation, suffix: AllowedToConcatenation): string =>
+  `${base}${suffix}`;
 ```
 
 Чтобы описать все допустимые значения функции `concat()` через перегрузку, нам бы потребовалось написать код для каждого случая отдельно. Здесь же мы описали тип `AllowedToConcatenation` через объединение один раз и применили его в двух местах.

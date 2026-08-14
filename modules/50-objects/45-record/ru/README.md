@@ -4,7 +4,7 @@
 ```typescript
 type Context<K extends string, V> = {
   [Key in K]: V;
-}
+};
 
 const runApp = <C extends Context<string, unknown>>(ctx: C) => {};
 ```
@@ -19,7 +19,7 @@ type SongsRating = Record<string, Rating>;
 
 const songsRating: SongsRating = {
   ratata: 4,
-}
+};
 ```
 
 Таким типом `SongsRating` мы можем задать тип объекта с произвольным ключом (именем песни) и рейтингом — числом от нуля до пяти.

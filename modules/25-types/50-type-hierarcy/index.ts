@@ -12,7 +12,7 @@ export type UserResponse = {
 };
 
 // BEGIN
-const defaultUser = { id: 0, name: '', age: 0 };
+const defaultUser = { id: 0, name: "", age: 0 };
 const getUserFriends = (userResponseJSON: string, userId: number): User[] => {
   const userResponse = JSON.parse(userResponseJSON) as UserResponse;
 
@@ -20,9 +20,7 @@ const getUserFriends = (userResponseJSON: string, userId: number): User[] => {
     .map(([ownerId, friendId]: Friends): User => {
       if (!(userId === ownerId || userId === friendId)) return defaultUser;
       const searchId = ownerId === userId ? friendId : ownerId;
-      const friend: User | undefined = userResponse.users.find(
-        ({ id }) => id === searchId,
-      );
+      const friend: User | undefined = userResponse.users.find(({ id }) => id === searchId);
 
       return friend === undefined ? defaultUser : friend;
     })

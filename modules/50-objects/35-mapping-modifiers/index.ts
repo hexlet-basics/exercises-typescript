@@ -7,7 +7,7 @@ const deepFreeze = <T extends object>(obj: T): DeepReadonly<T> => {
   const freezedObj = Object.freeze(obj);
 
   Object.values(freezedObj).forEach((value) => {
-    if (typeof value === 'object' && value !== null) {
+    if (typeof value === "object" && value !== null) {
       deepFreeze(value);
     }
   });

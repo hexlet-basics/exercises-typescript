@@ -2,9 +2,9 @@
 Let's imagine a program that has a user object. This object is used everywhere. In such a situation, the description of the type of this object will be repeated in each function definition:
 
 ```typescript
-function doSomething(user: { firstName: string, lastName: number }) {}
-function doSomethingElse(user: { firstName: string, lastName: number }) {}
-function doSomethingAnother(user: { firstName: string, lastName: number }) {}
+function doSomething(user: { firstName: string; lastName: number }) {}
+function doSomethingElse(user: { firstName: string; lastName: number }) {}
+function doSomethingAnother(user: { firstName: string; lastName: number }) {}
 ```
 
 First, there is a lot of duplication. Secondly, it is much more difficult to change the structure, because you will have to edit all the places where this definition appears. In this lesson, let's learn how to avoid such problems.
@@ -32,13 +32,13 @@ An alias is not the creation of a new data type. It is a way to abbreviate the t
 
 ```typescript
 const user = {
-  firstName: 'Mike',
+  firstName: "Mike",
   pointsCount: 1000,
 };
 
 // Both type calls work
 doSomething(user);
-doSomething({ firstName: 'Bob', pointsCount: 1800 });
+doSomething({ firstName: "Bob", pointsCount: 1800 });
 ```
 
 That said, TypeScript developers say “created a type” rather than “created a type alias”. So in this course we will stick to the commonly used format.
@@ -56,7 +56,7 @@ And also for composite:
 type SomeType = string | number | null;
 
 // Function
-type Countable = (coll: number[]) => number
+type Countable = (coll: number[]) => number;
 ```
 
 ## Objects and functions
@@ -64,7 +64,7 @@ type Countable = (coll: number[]) => number
 The description of the function type outside the object and inside is different. When the function is written independently, the arrow function format is used:
 
 ```typescript
-type Countable = (coll: number[]) => number
+type Countable = (coll: number[]) => number;
 ```
 
 Inside a type that describes an object, the format changes to that used for normal properties:
@@ -74,7 +74,7 @@ type User = {
   firstName: string;
   pointsCount: number;
   count(coll: number[]): number;
-}
+};
 ```
 
 But that doesn't apply to the callbacks that can be used inside:
@@ -85,7 +85,7 @@ type User = {
   pointsCount: number;
   // Types are used as an example here
   count(coll: (v: string) => string): number;
-}
+};
 ```
 
 In this lesson we learned how to use type aliases. We also learned how to set an alias for compound types.

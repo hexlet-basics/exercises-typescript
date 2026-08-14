@@ -6,7 +6,7 @@
 ```typescript
 // Тип: { firstName: string, pointsCount: number }
 const user = {
-  firstName: 'Mike',
+  firstName: "Mike",
   pointsCount: 1000,
 };
 
@@ -26,7 +26,7 @@ user.age = 100;
 
 ```typescript
 // Свойства в описании типа разделяются через запятую (,)
-function doSomething(user: { firstName: string, pointsCount: number }) {
+function doSomething(user: { firstName: string; pointsCount: number }) {
   // ...
 }
 ```
@@ -34,13 +34,13 @@ function doSomething(user: { firstName: string, pointsCount: number }) {
 Теперь внутрь можно передавать любой объект, который совпадает по свойствам:
 
 ```typescript
-doSomething({ firstName: 'Alice', pointsCount: 2000 });
-doSomething({ firstName: 'Bob', pointsCount: 1800 });
+doSomething({ firstName: "Alice", pointsCount: 2000 });
+doSomething({ firstName: "Bob", pointsCount: 1800 });
 
 // Так нельзя
-doSomething({ firstName: 'Bob' });
+doSomething({ firstName: "Bob" });
 // И так тоже
-doSomething({ firstName: 'Bob', pointsCount: 1800, key: 'another' });
+doSomething({ firstName: "Bob", pointsCount: 1800, key: "another" });
 ```
 
 Как и в случае примитивных типов данных, ни null, ни undefined по умолчанию не разрешены. Чтобы изменить это поведение, нужно добавить опциональность:
@@ -48,7 +48,7 @@ doSomething({ firstName: 'Bob', pointsCount: 1800, key: 'another' });
 ```typescript
 // firstName может быть undefined
 // pointsCount может быть null
-function doSomething(user: { firstName?: string, pointsCount: number | null }) {
+function doSomething(user: { firstName?: string; pointsCount: number | null }) {
   // ...
 }
 ```

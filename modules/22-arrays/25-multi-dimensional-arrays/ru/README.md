@@ -7,20 +7,21 @@
 
 ```typescript
 // Тип number[][] выводится автоматически
-const items1 = [[3, 8], [10, 4, 8]];
+const items1 = [
+  [3, 8],
+  [10, 4, 8],
+];
 
-const items2: number[][] = []
+const items2: number[][] = [];
 // или так Array<number[]>
 
 // Используя псевдоним
 type User = {
   name: string;
-}
+};
 
 // или так Array<User[]>
-const users: User[][] = [
-  [{ name: 'Eva'}, { name: 'Adam' }],
-];
+const users: User[][] = [[{ name: "Eva" }, { name: "Adam" }]];
 ```
 
 Добавление в такие массивы немассивов приведет к ошибке типизации:
@@ -33,14 +34,14 @@ items1.push(99); // Error: Type 'number' is not assignable
 
 ```typescript
 const coll: (string | number)[][] = [];
-coll.push(['hexlet', 5])
+coll.push(["hexlet", 5]);
 ```
 
 Также можно использовать синтаксис `Array<Array<Type>>`. В примере ниже массив, внутри которого находятся массивы, содержащие значения типа `Type`:
 
 ```typescript
 const coll: Array<Array<string | number>> = [];
-coll.push(['hexlet', 5])
+coll.push(["hexlet", 5]);
 ```
 
 Сами массивы при этом могут быть частью объекта. Технически это позволяет создавать бесконечную вложенность из объектов и массивов:
@@ -49,12 +50,12 @@ coll.push(['hexlet', 5])
 type Course = {
   name: string;
   lessons: Lesson[];
-}
+};
 
 type Lesson = {
   name: string;
   links: string[];
-}
+};
 ```
 
 Здесь мы определяем тип `Course`, который содержит массив `lessons`. Каждый элемент этого массива — это объект типа `Lesson`, который содержит массив `links`. Каждый элемент этого массива — это строка. Такая структура данных может быть полезна, например, для хранения информации о курсах на сайте.
@@ -77,7 +78,9 @@ console.log(empty.map(() => 0)); // [<3 empty items>]
 Чтобы этого не происходило, массив сначала заполняют методом [fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill), и только потом вызывают `map()`:
 
 ```typescript
-const zeros = Array<null>(3).fill(null).map(() => 0);
+const zeros = Array<null>(3)
+  .fill(null)
+  .map(() => 0);
 console.log(zeros); // [0, 0, 0]
 ```
 

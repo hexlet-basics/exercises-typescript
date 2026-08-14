@@ -3,7 +3,11 @@ Generic classes, like generic functions, allow you to create classes that can ha
 
 ```typescript
 class Triple<T, U, V> {
-  constructor(protected first: T, protected second: U, protected third: V) {}
+  constructor(
+    protected first: T,
+    protected second: U,
+    protected third: V,
+  ) {}
 
   getFirst(): T {
     return this.first;
@@ -22,7 +26,7 @@ class Triple<T, U, V> {
 In this example, the `Triple` class is a generic class into which we can put any data types. In doing so, we still have the type safety guarantees and type inference that we got when using generalized functions:
 
 ```typescript
-const triple = new Triple(1, 'string', null);
+const triple = new Triple(1, "string", null);
 const first = triple.getFirst(); // number
 const second = triple.getSecond(); // string
 ```

@@ -8,10 +8,10 @@
 Например, функция `split()` разбивает строку на массив строк по разделителю:
 
 ```typescript
-function split(str: string, separator?: string)
+function split(str: string, separator?: string);
 
-split('hexlet');
-split('hexlet,code-basics', ',');
+split("hexlet");
+split("hexlet,code-basics", ",");
 ```
 
 В таком случае реальный тип переменной `separator` будет `string | undefined` (`string` или `undefined`).
@@ -20,12 +20,12 @@ split('hexlet,code-basics', ',');
 
 ```typescript
 // Знака вопроса больше нет, так как есть значение по умолчанию
-function split(str: string, separator: string = ',') {
+function split(str: string, separator: string = ",") {
   // ...
 }
 
-split('hexlet');
-split('hexlet,code-basics', ',');
+split("hexlet");
+split("hexlet,code-basics", ",");
 ```
 
 Разработчики пытаются применять эту логику к колбекам, но сталкиваются с ошибками. Разберем, почему так происходит.

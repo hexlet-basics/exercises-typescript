@@ -45,7 +45,7 @@ class Point {
   }
 
   get inspect(): string {
-    return `(${this.x}, ${this.y})`
+    return `(${this.x}, ${this.y})`;
   }
 }
 

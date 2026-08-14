@@ -8,10 +8,10 @@ Optional parameters in functions are used in JavaScript built-in functions when 
 For example, the `split()` function splits a string into an array of strings by delimiter:
 
 ```typescript
-function split(str: string, separator?: string)
+function split(str: string, separator?: string);
 
-split('hexlet');
-split('hexlet,code-basics', ',');
+split("hexlet");
+split("hexlet,code-basics", ",");
 ```
 
 In this case, the real type of the `separator` variable will be `string | undefined` (`string` or `undefined`).
@@ -20,12 +20,12 @@ Another option to set an optional parameter is to assign a default value:
 
 ```typescript
 // The question mark is no longer there, as there is a default value
-function split(str: string, separator: string = ',') {
+function split(str: string, separator: string = ",") {
   // ...
 }
 
-split('hexlet');
-split('hexlet,code-basics', ',');
+split("hexlet");
+split("hexlet,code-basics", ",");
 ```
 
 Developers try to apply this logic to the callbacks, but encounter errors. Let's analyze why this happens.

@@ -3,7 +3,7 @@ Implement the `ImageCustomFile` class, which extends (`extends`) the `CustomFile
 
 ```typescript
 const imageCustomFile = new ImageCustomFile({
-  name: 'image.png',
+  name: "image.png",
   size: 100,
   width: 200,
   height: 300,

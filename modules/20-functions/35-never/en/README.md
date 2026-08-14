@@ -36,7 +36,7 @@ An important condition for `never` is that there is no normal termination of the
 ```typescript
 // A function returning 'never' cannot have a reachable end point.
 function printSomething(): never {
-  console.log('hexlet');
+  console.log("hexlet");
 }
 ```
 
@@ -45,7 +45,8 @@ The `printSomething()` function returns nothing explicitly. But since it termina
 `never` is automatically output even where an explicit return is specified. But the compiler sees that this return is impossible:
 
 ```typescript
-function fail() { // Automatically inferres never
+function fail() {
+  // Automatically inferres never
   // function exit, declared above, have never return type
   return exit(1);
 }

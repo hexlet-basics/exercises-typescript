@@ -7,11 +7,11 @@
 ```typescript
 let age = 10;
 
-let company = 'Hexlet';
+let company = "Hexlet";
 let user = {
-  firstName: 'Miro',
+  firstName: "Miro",
 };
-let fruits = ['apple', 'banana'];
+let fruits = ["apple", "banana"];
 ```
 
 При этом TypeScript выполняет дополнительную работу на фоне. Он автоматически связывает переменную или константу с типом данных начального значения. В программировании такой процесс называется **выводом типов**.
@@ -24,7 +24,7 @@ let age = 10;
 age = 11.1;
 
 // Type 'string' is not assignable to type 'number'.
-age = 'some string'; // Error!
+age = "some string"; // Error!
 ```
 
 Если мы попытаемся передать эту переменную в метод, который ожидает другой тип, то это тоже приведет к ошибке:
@@ -32,7 +32,7 @@ age = 'some string'; // Error!
 ```typescript
 // Argument of type 'number' is not assignable to parameter
 // of type '(substring: string, ...args: any[])
-'hexlet'.replace('xl', age);
+"hexlet".replace("xl", age);
 ```
 
 Статическая типизация накладывает ограничение на массивы. Внутри могут храниться данные только одного типа:
@@ -42,18 +42,18 @@ let items = [1, 2, 3];
 items.push(4); // Все хорошо
 
 // Argument of type 'string' is not assignable to parameter of type 'number'.
-items.push('code-basics'); // Error!
+items.push("code-basics"); // Error!
 ```
 
 С объектами ситуация еще строже. В TypeScript нельзя не только менять тип свойств внутри объекта, но и добавлять новые свойства динамически:
 
 ```typescript
 let user = {
-  firstName: 'Miro',
+  firstName: "Miro",
 };
 
 // Property 'lastName' does not exist on type '{ firstName: string; }'.
-user.lastName = 'Smith';
+user.lastName = "Smith";
 ```
 
 ## Явное указание типа
@@ -61,7 +61,7 @@ user.lastName = 'Smith';
 TypeScript позволяет явно указывать тип переменных. Но на практике это редко нужно делать вручную, так как вывод типов работает автоматически:
 
 ```typescript
-let name: string = 'Alice';
+let name: string = "Alice";
 const count: number = 100;
 let canPlay: boolean = true;
 ```

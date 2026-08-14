@@ -4,7 +4,7 @@ Implement the `last()` function that extracts the last element from the passed v
 ```typescript
 // Pass a string as a parameter
 // The function returns a string
-last('hexlet'); // t
+last("hexlet"); // t
 
 // Pass a number as a parameter
 // The function returns a number

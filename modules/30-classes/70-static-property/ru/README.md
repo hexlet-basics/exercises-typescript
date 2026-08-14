@@ -13,14 +13,17 @@ class CustomFile {
     return size > CustomFile.maxCustomFileSize;
   }
 
-  constructor(private name: string, private size: number) {
+  constructor(
+    private name: string,
+    private size: number,
+  ) {
     if (CustomFile.isCustomFileTooBig(size)) {
-      throw new Error('CustomFile is too big');
+      throw new Error("CustomFile is too big");
     }
   }
 }
 
-CustomFile.isCustomFile(new CustomFile('open-world.jpeg', 1000)); // true
+CustomFile.isCustomFile(new CustomFile("open-world.jpeg", 1000)); // true
 ```
 
 <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
@@ -58,7 +61,7 @@ TypeScript добавляет к этому одно требование: ти�
 
 ```typescript
 class TextCustomFile extends CustomFile {
-  static maxCustomFileSize = 'unlimited'; // Error!
+  static maxCustomFileSize = "unlimited"; // Error!
 }
 ```
 

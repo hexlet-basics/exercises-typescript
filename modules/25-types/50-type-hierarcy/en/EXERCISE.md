@@ -6,12 +6,10 @@ If the user with the specified ID is not found, the function should return an em
 ```typescript
 const userJson = JSON.stringify({
   users: [
-    { id: 1, name: 'John', age: 20 },
-    { id: 2, name: 'Mary', age: 21 },
+    { id: 1, name: "John", age: 20 },
+    { id: 2, name: "Mary", age: 21 },
   ],
-  friends: [
-    [1, 2],
-  ],
+  friends: [[1, 2]],
 });
 
 getUserFriends(userJson, 1); // [{ id: 2, name: 'Mary', age: 21 }]

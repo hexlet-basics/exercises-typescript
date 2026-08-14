@@ -13,8 +13,8 @@ function isPresence(value: unknown): boolean {
     return false;
   }
   // пустая строка
-  if (typeof value === 'string') {
-    if (value === '') {
+  if (typeof value === "string") {
+    if (value === "") {
       return false;
     }
   }
@@ -34,7 +34,7 @@ function isPresence(value: unknown): boolean {
   return true;
 }
 
-isPresence(''); // false
+isPresence(""); // false
 isPresence({}); // false
 isPresence([]); // false
 isPresence([1, 3]); // true
@@ -53,10 +53,10 @@ isPresence(10); // true
 
 ```typescript
 function foo(value: number | string) {
-  if (typeof value === 'number') {
+  if (typeof value === "number") {
     // Работаем как с числом
   }
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     // Работаем как со строкой
   }
 }
@@ -67,10 +67,10 @@ function foo(value: number | string) {
 ```typescript
 function foo(value: number | string) {
   switch (typeof value) {
-    case 'number':
+    case "number":
       // какая-то логика
       break;
-    case 'string':
+    case "string":
       // какая-то логика
       break;
   }
@@ -86,7 +86,7 @@ function concat(a: number, b: number): string;
 function concat(a: string, b: string): string;
 
 function concat(a: unknown, b: unknown): string {
-  if (typeof a === 'number' && typeof b === 'number') {
+  if (typeof a === "number" && typeof b === "number") {
     // здесь a и b сужены до number
     return `${a.toFixed()}${b.toFixed()}`;
   }
@@ -105,7 +105,7 @@ function concat(a: unknown, b: unknown): string {
 
 ```typescript
 function isObject(value: unknown): value is object {
-  return typeof value === 'object' && value !== null;
+  return typeof value === "object" && value !== null;
 }
 ```
 
@@ -113,7 +113,7 @@ function isObject(value: unknown): value is object {
 
 ```typescript
 function isObject(value: unknown): value is object {
-  return typeof value === 'object' && value !== null;
+  return typeof value === "object" && value !== null;
 }
 
 function foo(value: unknown) {

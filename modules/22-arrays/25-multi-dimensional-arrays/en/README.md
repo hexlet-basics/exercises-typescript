@@ -7,20 +7,21 @@ To define multidimensional arrays, we need to use the `Type[][]` syntax. Literal
 
 ```typescript
 // Type number[][] will be inferred automatically
-const items1 = [[3, 8], [10, 4, 8]];
+const items1 = [
+  [3, 8],
+  [10, 4, 8],
+];
 
-const items2: number[][] = []
+const items2: number[][] = [];
 // or with Array<number[]>
 
 // Using type alias
 type User = {
   name: string;
-}
+};
 
 // or with Array<User[]>
-const users: User[][] = [
-  [{ name: 'Eva'}, { name: 'Adam' }],
-];
+const users: User[][] = [[{ name: "Eva" }, { name: "Adam" }]];
 ```
 
 Adding non-arrays to such arrays will cause a typing error:
@@ -33,14 +34,14 @@ To define arrays of composite types, you must use parentheses:
 
 ```typescript
 const coll: (string | number)[][] = [];
-coll.push(['hexlet', 5])
+coll.push(["hexlet", 5]);
 ```
 
 You can also use the `Array<Array<Array<Type>>` syntax. The example below is an array with arrays containing values of type `Type` inside:
 
 ```typescript
 const coll: Array<Array<string | number>> = [];
-coll.push(['hexlet', 5])
+coll.push(["hexlet", 5]);
 ```
 
 Arrays themselves can be part of an object. Technically it allows creating infinite nesting of objects and arrays:
@@ -49,12 +50,12 @@ Arrays themselves can be part of an object. Technically it allows creating infin
 type Course = {
   name: string;
   lessons: Lesson[];
-}
+};
 
 type Lesson = {
   name: string;
   links: string[];
-}
+};
 ```
 
 Here we define the `Course` type, which contains an array of `lessons`. Each element of this array is an object of type `Lesson`, which contains an array of `links`. Each element of this array is a string. This data structure can be useful, for example, for storing information about courses on the website.
@@ -77,7 +78,9 @@ console.log(empty.map(() => 0)); // [<3 empty items>]
 To avoid this, the array is first filled with the [fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill) method, and only then is `map()` called:
 
 ```typescript
-const zeros = Array<null>(3).fill(null).map(() => 0);
+const zeros = Array<null>(3)
+  .fill(null)
+  .map(() => 0);
 console.log(zeros); // [0, 0, 0]
 ```
 

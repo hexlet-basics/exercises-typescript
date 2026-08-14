@@ -8,7 +8,7 @@ class Queue<T> {
 
   dequeue() {
     if (this.data.length === 0) {
-      throw new Error('Queue is empty');
+      throw new Error("Queue is empty");
     }
     return this.data.shift();
   }

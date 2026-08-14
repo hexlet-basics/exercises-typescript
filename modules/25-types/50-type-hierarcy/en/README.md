@@ -6,13 +6,13 @@ In this lesson, we'll break down the relationship between types that builds a hi
 Let's look at an example of `Type X is not assignable to type Y` error in a function for sorting items. Suppose we have already written a function `sort`. And to describe only its types, let's use the `declare` keyword:
 
 ```typescript
-type ComparatorCallback = (item1: number, item2: number, index: number) => -1 | 0 | 1
-declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
+type ComparatorCallback = (item1: number, item2: number, index: number) => -1 | 0 | 1;
+declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>;
 
 const arr = [1, 2, 3];
 const comparator = (item1: number, item2: number) => Math.sign(item1 - item2);
 
-sort(arr, comparator) // Error: Type 'number' is not assignable to type '0 | 1 | -1'.
+sort(arr, comparator); // Error: Type 'number' is not assignable to type '0 | 1 | -1'.
 ```
 
 The type checker generated an error: the union of literal types `0 | 1 | -1` is not compatible with the type `number`. One might think that the type system is wrong, and we should use `any`. But if we think of literal numeric types as subsets of `number`, everything falls into place.
@@ -47,7 +47,7 @@ let unknownValue: unknown = 1;
 
 unknownValue = 2; // OK
 unknownValue = false; // OK
-unknownValue = 'string'; // OK
+unknownValue = "string"; // OK
 ```
 
 It may seem that the `unknown` type works in the same way as `any`. However, there is a fundamental difference between them. The `any` type disables type checking and allows you to perform any operations with a value, for example, to access the properties of a variable. The `unknown` type prohibits this and requires a preliminary check of the variable's type or conversion to the necessary type. Let's look at it by example:
@@ -55,7 +55,7 @@ It may seem that the `unknown` type works in the same way as `any`. However, the
 ```typescript
 let unknownValue: unknown;
 
-unknownValue = 'string';
+unknownValue = "string";
 unknownValue.toUpperCase(); // Error: Property 'toUpperCase' does not exist on type 'unknown'.
 ```
 
@@ -93,14 +93,14 @@ From our current knowledge, we can draw the following picture of TypeScript's ty
 The `number` set also includes all unions of literal number types, and the `string` set includes all unions of literal strings:
 
 ```typescript
-type NumberUnion = -2 | -1 | 1 | 2
+type NumberUnion = -2 | -1 | 1 | 2;
 
 const one: NumberUnion = 1;
 const num: number = one;
 
-type StringUnion = 'a' | 'b' | 'c' | 'd'
+type StringUnion = "a" | "b" | "c" | "d";
 
-const aChar: StringUnion = 'a';
+const aChar: StringUnion = "a";
 const str: string = aChar;
 ```
 

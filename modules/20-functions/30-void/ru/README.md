@@ -55,7 +55,7 @@ function foo(): void {
   return true; // Error!
 }
 
-const bar = function(): void {
+const bar = function (): void {
   return true; // Error!
 };
 ```
@@ -65,5 +65,5 @@ const bar = function(): void {
 Также `void` является оператором JavaScript, поэтому важно не запутаться с ним. Он вычисляет выражение, которое следует за ним и возвращает `undefined`:
 
 ```typescript
-void 10 === undefined // true
+void 10 === undefined; // true
 ```

@@ -1,8 +1,8 @@
-import { expect, expectTypeOf, test } from 'vitest';
+import { expect, expectTypeOf, test } from "vitest";
 
-import form from './index';
+import form from "./index";
 
-test('form', () => {
+test("form", () => {
   const nameValidator = form.name.validator;
   const ageValidator = form.age.validator;
 

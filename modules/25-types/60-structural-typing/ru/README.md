@@ -3,18 +3,18 @@
 
 ```javascript
 const user = {
-  firstName: 'Vasiliy',
-  lastName: 'Kuzenkov',
-  type: 'user'
-}
+  firstName: "Vasiliy",
+  lastName: "Kuzenkov",
+  type: "user",
+};
 
 const admin = {
-  firstName: 'Kirill',
-  lastName: 'Mokevnin',
-  type: 'admin'
-}
+  firstName: "Kirill",
+  lastName: "Mokevnin",
+  type: "admin",
+};
 
-const formatUser = (user) => [user.type, ':', user.firstName, user.lastName].join(' ');
+const formatUser = (user) => [user.type, ":", user.firstName, user.lastName].join(" ");
 
 formatUser(user); // ok
 formatUser(admin); // ok
@@ -32,25 +32,25 @@ formatUser(admin); // ok
 
 ```typescript
 const user = {
-  firstName: 'Vassiliy',
-  lastName: 'Kuzenkov',
-  type: 'user'
-}
+  firstName: "Vassiliy",
+  lastName: "Kuzenkov",
+  type: "user",
+};
 
 const admin = {
-  firstName: 'Kirill',
-  lastName: 'Mokevnin',
-  type: 'admin'
-}
+  firstName: "Kirill",
+  lastName: "Mokevnin",
+  type: "admin",
+};
 
 type User = {
-  type: string,
-  firstName: string,
-  lastName: string
-}
+  type: string;
+  firstName: string;
+  lastName: string;
+};
 
 const formatUser = (user: User): string =>
-  [user.type, ':', user.firstName, user.lastName].join(' ');
+  [user.type, ":", user.firstName, user.lastName].join(" ");
 
 formatUser(user); // ok
 formatUser(admin); // ok
@@ -62,20 +62,20 @@ formatUser(admin); // ok
 
 ```typescript
 const moderator = {
-  firstName: 'Danil',
-  lastName: 'Polovinkin',
-  type: 'moderator',
-  email: 'danil@polovinkin.com'
-}
+  firstName: "Danil",
+  lastName: "Polovinkin",
+  type: "moderator",
+  email: "danil@polovinkin.com",
+};
 
 type User = {
-  type: string,
-  firstName: string,
-  lastName: string
-}
+  type: string;
+  firstName: string;
+  lastName: string;
+};
 
 const formatUser = (user: User): string =>
-  [user.type, ':', user.firstName, user.lastName].join(' ');
+  [user.type, ":", user.firstName, user.lastName].join(" ");
 
 formatUser(moderator); // ok
 ```
@@ -97,23 +97,26 @@ type IntersectionUser = {
   username: string;
   password: string;
 } & {
-    type: string;
-}
+  type: string;
+};
 
-const admin: IntersectionUser = {  // требуется совпадение c объектным типом и слева и справа от оператора &
-  username: 'test',
-  password: 'test',
-  type: 'admin'
-}
+const admin: IntersectionUser = {
+  // требуется совпадение c объектным типом и слева и справа от оператора &
+  username: "test",
+  password: "test",
+  type: "admin",
+};
 
-type UnionUser = {
-    username: string;
-    password: string;
-} | {
-    type: string;
-}
+type UnionUser =
+  | {
+      username: string;
+      password: string;
+    }
+  | {
+      type: string;
+    };
 
-const user: UnionUser = { username: 'test', type: 'user' } // достаточно совпадения с одним из объектных типов
+const user: UnionUser = { username: "test", type: "user" }; // достаточно совпадения с одним из объектных типов
 ```
 
 Получившийся тип `IntersectionUser` описывает объекты, которые содержат поля `username`, `password` и `type`. А тип `UnionUser` — объекты, которые содержат поля `username` и `password` **ИЛИ** `type`.
@@ -132,7 +135,7 @@ const user: UnionUser = { username: 'test', type: 'user' } // достаточн
 При использовании объединенных типов в функциях нужно учитывать следующий момент. Рассмотрим пример:
 
 ```typescript
-const user: UnionUser = { username: 'test', type: 'user' };
+const user: UnionUser = { username: "test", type: "user" };
 
 const func = (user: UnionUser) => {
   console.log(user.type);

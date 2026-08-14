@@ -7,12 +7,12 @@
 type Double<T, U> = {
   first: T;
   second: U;
-}
+};
 
 const value: Double<string, number> = {
-  first: 'code-basics',
+  first: "code-basics",
   second: 1,
-}
+};
 ```
 
 <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
@@ -26,9 +26,9 @@ const value: Double<string, number> = {
 ```typescript
 function join<T, U>(coll1: (T | U)[], coll2: U[]): (T | U)[] {
   return coll1.concat(coll2);
-};
+}
 
-join<number, string>([1, 2], ['one', 'two']); // [1, 2, 'one', 'two']
+join<number, string>([1, 2], ["one", "two"]); // [1, 2, 'one', 'two']
 ```
 
 <!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
@@ -36,7 +36,7 @@ join<number, string>([1, 2], ['one', 'two']); // [1, 2, 'one', 'two']
 Но TypeScript позволяет нам сделать это проще и не указывать типы для всех параметров:
 
 ```typescript
-join([1, 2], ['one', 'two']); // [1, 2, 'one', 'two']
+join([1, 2], ["one", "two"]); // [1, 2, 'one', 'two']
 ```
 
 TypeScript сам выведет типы для параметров функции. Это называется выводом типа из аргументов функции. В данном случае TypeScript выведет типы `number` и `string` для параметров `T` и `U` соответственно.

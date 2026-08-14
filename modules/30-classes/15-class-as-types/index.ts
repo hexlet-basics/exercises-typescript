@@ -17,7 +17,7 @@ class CustomFile {
   }
 
   toString(): string {
-    const copyString = this.isCopy ? '(copy) ' : '';
+    const copyString = this.isCopy ? "(copy) " : "";
     return `${copyString}${this.name} (${this.size} bytes)`;
   }
 }

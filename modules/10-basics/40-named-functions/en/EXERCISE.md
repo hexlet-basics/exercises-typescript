@@ -5,8 +5,8 @@ The function replaces the first 12 characters with asterisks. The number of aste
 
 ```typescript
 // The credit card is passed as a string
-getHiddenCard('1234567812345678', 2) // "**5678"
-getHiddenCard('1234567812345678', 3) // "***5678"
-getHiddenCard('1234567812345678')    // "****5678"
-getHiddenCard('2034399002121100', 1) // "*1100"
+getHiddenCard("1234567812345678", 2); // "**5678"
+getHiddenCard("1234567812345678", 3); // "***5678"
+getHiddenCard("1234567812345678"); // "****5678"
+getHiddenCard("2034399002121100", 1); // "*1100"
 ```

@@ -13,14 +13,17 @@ class CustomFile {
     return size > CustomFile.maxCustomFileSize;
   }
 
-  constructor(private name: string, private size: number) {
+  constructor(
+    private name: string,
+    private size: number,
+  ) {
     if (CustomFile.isCustomFileTooBig(size)) {
-      throw new Error('CustomFile is too big');
+      throw new Error("CustomFile is too big");
     }
   }
 }
 
-CustomFile.isCustomFile(new CustomFile('open-world.jpeg', 1000)); // true
+CustomFile.isCustomFile(new CustomFile("open-world.jpeg", 1000)); // true
 ```
 
 Static methods and properties can also be assigned the `public`, `protected` and `private` access modifiers and the `readonly` immutability modifier. This allows you to restrict the use of properties and methods to the current class or descendants only.
@@ -56,7 +59,7 @@ TypeScript adds one requirement on top: the type of an overridden property or me
 
 ```typescript
 class TextCustomFile extends CustomFile {
-  static maxCustomFileSize = 'unlimited'; // Error!
+  static maxCustomFileSize = "unlimited"; // Error!
 }
 ```
 

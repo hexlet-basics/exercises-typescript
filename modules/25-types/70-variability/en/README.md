@@ -4,8 +4,8 @@ When we assign a value or pass arguments to a function call, TypeScript checks t
 If we pass a function that returns a number as a callback to a sorting function that expects a return value of -1 | 0 | 1, we'll get an error: Type 'number' is not assignable to type '0 | 1 | -1':
 
 ```typescript
-type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
-declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
+type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1;
+declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>;
 
 const arr = [1, 2, 3];
 const comparator = (item1: number, item2: number) => Math.sign(item1 - item2);
@@ -19,17 +19,17 @@ The set of values from the union of three literal types `-1 | 0 | 1` is a subset
 To solve the problem with `ComparatorCallback`, we need to narrow the return type of the `comparator` function to `-1 | 0 | 1` or narrower. Let's rewrite the code without `Math.sign` to return the required type:
 
 ```typescript
-type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
-declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
+type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1;
+declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>;
 
 const arr = [1, 2, 3];
 const comparator = (item1: number, item2: number) => {
-// (item1: number, item2: number) => -1 | 0 | 1;
-    if (item1 === item2) {
-        return 0;
-    }
+  // (item1: number, item2: number) => -1 | 0 | 1;
+  if (item1 === item2) {
+    return 0;
+  }
 
-    return item1 > item2 ? 1 : -1;
+  return item1 > item2 ? 1 : -1;
 };
 
 sort(arr, comparator);
@@ -40,8 +40,8 @@ The code now passes type checking. The `comparator` return type has become narro
 For function arguments, the type checking is done in reverse order. If we pass a function that expects literal type `1` instead of `number`, we get the error `Type 'number' is not assignable to type '1'.`:
 
 ```typescript
-type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
-declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
+type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1;
+declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>;
 
 const arr = [1, 2, 3];
 const comparator = (item1: 1, item2: number) => Math.sign(item1 - item2) as -1 | 0 | 1;
@@ -58,8 +58,8 @@ Try to explain the behavior of type checking through variability yourself in the
 ```typescript
 type Formatter = (val: string) => string;
 
-const formatToConcrete: Formatter = (): 'test' => 'test';
-const formatToNumber: Formatter = (val: '1') => val; // Error!
+const formatToConcrete: Formatter = (): "test" => "test";
+const formatToNumber: Formatter = (val: "1") => val; // Error!
 ```
 
 <details>

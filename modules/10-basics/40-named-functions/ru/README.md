@@ -26,10 +26,10 @@ getGreetingPhrase();
 
 ```typescript
 function getGreetingPhrase(name?: string) {
-  return `Hello, ${name ? name.toUpperCase() : 'Guest'}!`;
+  return `Hello, ${name ? name.toUpperCase() : "Guest"}!`;
 }
 
-getGreetingPhrase('Mike'); // Hello, MIKE!
+getGreetingPhrase("Mike"); // Hello, MIKE!
 getGreetingPhrase(); // Hello, Guest!
 ```
 
@@ -39,7 +39,7 @@ getGreetingPhrase(); // Hello, Guest!
 
 ```typescript
 function getGreetingPhrase(name?: string | null) {
-  return `Hello, ${name ? name.toUpperCase() : 'Guest'}!`;
+  return `Hello, ${name ? name.toUpperCase() : "Guest"}!`;
 }
 ```
 
@@ -50,11 +50,11 @@ function getGreetingPhrase(name?: string | null) {
 Со значением по умолчанию не нужно ничего указывать дополнительно. Значение задается как в JavaScript. Сама переменная автоматически становится необязательной, и тип выводится, исходя из переданного значения:
 
 ```typescript
-function getGreetingPhrase(name = 'Guest') {
+function getGreetingPhrase(name = "Guest") {
   return `Hello, ${name.toUpperCase()}!`;
 }
 
-getGreetingPhrase() // Hello, GUEST!
+getGreetingPhrase(); // Hello, GUEST!
 ```
 
 ## Тип возвращаемого значения

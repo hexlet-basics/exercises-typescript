@@ -2,7 +2,7 @@
 In this lesson, we'll talk about arrays. TypeScript knows how to output their type, just as it does with primitive data types:
 
 ```typescript
-const fruits = ['banana', 'mango', 'apple'];
+const fruits = ["banana", "mango", "apple"];
 // Everything works
 const upperFruits = fruits.map((name) => name.toUpperCase());
 
@@ -18,7 +18,7 @@ To denote such a type, square brackets are used: `number[]`, `string[]`.
 The definition of an array above could be written as follows:
 
 ```typescript
-const fruits: string[] = ['banana', 'mango', 'apple'];
+const fruits: string[] = ["banana", "mango", "apple"];
 ```
 
 This is also how types are described in function definitions:

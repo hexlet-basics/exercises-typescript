@@ -7,7 +7,7 @@ In simple cases, the array type is defined as the type name and square brackets 
 
 ```typescript
 type User = {
-  name: string
+  name: string;
 };
 
 // When defining constants and variables
@@ -24,7 +24,7 @@ Here, we define an array whose elements are objects of `User` type. In such an a
 In case of composite types, for example, if we want to use union or description of an object, we add parentheses - `(Type)[]`:
 
 ```typescript
-const users: ({ name: string })[] = [];
+const users: { name: string }[] = [];
 const users: (string | null)[] = [];
 const users: (User | null | { name: string })[] = [];
 ```
@@ -51,8 +51,8 @@ If you define an empty array and do not specify a type, its type will automatica
 ```typescript
 const items = [];
 items.push(1);
-items.push('wow');
-items.push(['code-basics', 'hexlet']);
+items.push("wow");
+items.push(["code-basics", "hexlet"]);
 ```
 
 The code with `any` will always work, but it turns off type checking. To avoid this, you should always explicitly type an empty array:

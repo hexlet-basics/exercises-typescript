@@ -25,7 +25,7 @@ Looking at types as sets plays an important role. This is because TypeScript's t
 ```typescript
 type SomeType = number | string;
 const v1: SomeType = 1;
-const v2: SomeType = 'hexlet';
+const v2: SomeType = "hexlet";
 ```
 
 Here we have defined a type `SomeType`, which can take values of type `number` or `string`, and hence is the union of the sets of all numbers and strings.

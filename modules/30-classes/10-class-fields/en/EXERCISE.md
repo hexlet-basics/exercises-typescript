@@ -4,7 +4,7 @@ Implement the `CustomFile` class, which constructor is passed an object with the
 Also, inside the class, define the `toString()` method, which should return a formatted string in the format `<file-name> (<size> bytes)`.
 
 ```typescript
-const file = new CustomFile({ name: 'open-world.jpeg', size: 1000 });
+const file = new CustomFile({ name: "open-world.jpeg", size: 1000 });
 
 console.log(file.name); // open-world.jpeg
 console.log(file.size); // 1000

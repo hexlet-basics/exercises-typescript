@@ -4,7 +4,7 @@
 Внутри класса определите метод `toString()`, который должен вернуть форматированную строку в формате `(copy) <file-name> (<size> bytes)`. `(copy)` должно выводиться только в том случае, если файл является копией другого файла.
 
 ```typescript
-const file = new CustomFile({ name: 'open-world.jpeg', size: 1000 });
+const file = new CustomFile({ name: "open-world.jpeg", size: 1000 });
 console.log(file.toString()); // open-world.jpeg (1000 bytes)
 
 const file2 = new CustomFile(file);

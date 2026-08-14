@@ -1,8 +1,8 @@
 // BEGIN
 enum LoadingStatus {
-  Loading = 'Loading',
-  Success = 'Success',
-  Error = 'Error',
+  Loading = "Loading",
+  Success = "Success",
+  Error = "Error",
 }
 
 type DataState =
@@ -13,13 +13,13 @@ type DataState =
 const handleData = (dataState: DataState): string => {
   switch (dataState.status) {
     case LoadingStatus.Loading:
-      return 'loading...';
+      return "loading...";
     case LoadingStatus.Success:
       return String(dataState.data);
     case LoadingStatus.Error:
       return dataState.error.message;
     default:
-      return 'unknown';
+      return "unknown";
   }
 };
 

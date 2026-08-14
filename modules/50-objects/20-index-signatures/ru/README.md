@@ -13,10 +13,10 @@ type dynamicKeysObject = {
 
 ```typescript
 const obj: dynamicKeysObject = {
-  name: 'John',
+  name: "John",
   age: 30,
-  0: 'zero',
-  [Symbol('secret')]: 'symbol',
+  0: "zero",
+  [Symbol("secret")]: "symbol",
 };
 ```
 
@@ -29,15 +29,15 @@ const obj: dynamicKeysObject = {
 ```typescript
 type MyTheme = {
   palette: {
-    primary: 'red' | 'green' | 'blue';
+    primary: "red" | "green" | "blue";
     [key: string]: string;
-  },
+  };
   [key: string]: unknown;
 };
 
 const theme = {
   palette: {
-    primary: 'red',
+    primary: "red",
   },
   spacing: {
     small: 8,
@@ -69,10 +69,10 @@ class Template {
   [key: string]: string;
 }
 
-Template.test = 'test';
+Template.test = "test";
 
 const template = new Template();
-template.test = 'test';
+template.test = "test";
 ```
 
 ## Template String Literal
@@ -81,13 +81,13 @@ template.test = 'test';
 
 ```typescript
 type Listeners = {
-  [key: `on${string}`]: (value: unknown) => void
-}
+  [key: `on${string}`]: (value: unknown) => void;
+};
 
 const streamListeners: Listeners = {
   onStart() {},
-  onFinished() {}
-}
+  onFinished() {},
+};
 ```
 
 Литеральный тип ``on${string}`` нам говорит, что мы ожидаем строку по шаблону «начинается с `on` и дальше любая строка». Такая техника называется Template String Literal и используется, чтобы наложить ограничения при типизации строк.

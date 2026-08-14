@@ -20,7 +20,7 @@ Delivered
 Для решения этой задачи TypeScript поддерживает литеральный тип. Они представляют множество, состоящее только из одного элемента. Они доступны только для следующих типов: `string`, `boolean`, `number` и `BigInt`:
 
 ```typescript
-type Hexlet = 'hexlet';
+type Hexlet = "hexlet";
 type One = 1;
 type False = false;
 type BigN = 100n;
@@ -29,10 +29,10 @@ type BigN = 100n;
 С точки зрения теории множеств такой тип представляет собой множество, которое состоит из одного элемента. А для системы типов это ограничение — переменной не может быть присвоено ничего, кроме указанного значения:
 
 ```typescript
-type TestValue = 'test';
-let test: TestValue = 'test';
+type TestValue = "test";
+let test: TestValue = "test";
 
-test = 'string'; // Error: Type '"string"' is not assignable to type '"test"'.
+test = "string"; // Error: Type '"string"' is not assignable to type '"test"'.
 ```
 
 ## Объединение литеральных типов
@@ -40,7 +40,7 @@ test = 'string'; // Error: Type '"string"' is not assignable to type '"test"'.
 Используя объединение типов, мы можем получить тип, который принимает только нужные нам значения:
 
 ```typescript
-type OrderStatus = 'Created' | 'Paid' | 'Shipped' | 'Delivered';
+type OrderStatus = "Created" | "Paid" | "Shipped" | "Delivered";
 ```
 
 Также литеральные типы могут комбинироваться с любыми другими типами. Так мы можем получить ограничение, под которое попадают все статусы и `false`:
@@ -55,10 +55,10 @@ type OrderStatusFalse = OrderStatus | false;
 
 ```typescript
 enum OrderStatus {
-  Created = 'Created',
-  Paid = 'Paid',
-  Shipped = 'Shipped',
-  Delivered = 'Delivered',
+  Created = "Created",
+  Paid = "Paid",
+  Shipped = "Shipped",
+  Delivered = "Delivered",
 }
 ```
 
@@ -78,22 +78,22 @@ TypeScript — это надстройка над JavaScript, которая д�
 
 ```typescript
 const dataSourceConfig = {
-  type: 'postgre', // может также быть mysql
-  host: 'localhost',
+  type: "postgre", // может также быть mysql
+  host: "localhost",
   port: 5432,
 };
 
-const AppDataSource = new DataSource(dataSourceConfig)
+const AppDataSource = new DataSource(dataSourceConfig);
 ```
 
 Для описания таких объектов используется тип объектных литералов, где поля инициализируются одним литеральным типом или их пересечением:
 
 ```typescript
 type DataSourceOption = {
-  type: 'postgre' | 'mysql';
+  type: "postgre" | "mysql";
   host: string;
   port: number;
-}
+};
 ```
 
 С помощью такого типа мы можем гарантировать, что передаваемый объект будет содержать только одно из двух значений в поле `type`, что выступает одновременно и документацией, и ограничением.
@@ -106,8 +106,8 @@ type DataSourceOption = {
 
 ```typescript
 const ormConfig = {
-  type: 'mysql',
-  host: 'localhost',
+  type: "mysql",
+  host: "localhost",
   port: 5432,
 } as const;
 ```
@@ -115,7 +115,7 @@ const ormConfig = {
 На выходе мы получаем тип с неизменяемыми (`readonly`) полями и литеральными типами в значении. Такая техника также применима к массивам. Она превращает их в кортежи — массивы фиксированной длины, также защищенные от изменений. И также применима к простым типам, например, `string`:
 
 ```typescript
-const str = 'test' as const;
+const str = "test" as const;
 
 type Str = typeof str; // 'test'
 ```

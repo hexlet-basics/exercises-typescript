@@ -4,12 +4,12 @@ Assume that the fields of the object and the fields of the nested objects do not
 
 ```typescript
 const user = deepFreeze({
-  name: 'John',
-  password: '1q2w3e',
-  token: 'test',
+  name: "John",
+  password: "1q2w3e",
+  token: "test",
 });
 
-user.name = 'Alex'; // Error: Cannot assign to 'name' because it is a read-only property.
+user.name = "Alex"; // Error: Cannot assign to 'name' because it is a read-only property.
 ```
 
 You need to use JavaScript's built-in [Object.freeze()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) method.

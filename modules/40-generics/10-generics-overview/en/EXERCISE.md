@@ -4,5 +4,5 @@ Implement a generic `last()` that retrieves the last element from the array if t
 ```typescript
 last([]); // null
 last([3, 2]); // 2
-last(['code-basics', 'hexlet']); // hexlet
+last(["code-basics", "hexlet"]); // hexlet
 ```

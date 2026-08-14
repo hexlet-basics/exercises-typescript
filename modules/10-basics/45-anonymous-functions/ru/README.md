@@ -4,7 +4,7 @@
 Чтобы определить анонимные функции, указание типов опускают:
 
 ```typescript
-const fruits = ['banana', 'mango', 'apple'];
+const fruits = ["banana", "mango", "apple"];
 const upperFruits = fruits.map((name) => name.toUpperCase());
 // ['BANANA', 'MANGO', 'APPLE']
 ```

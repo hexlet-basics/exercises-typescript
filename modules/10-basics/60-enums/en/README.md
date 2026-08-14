@@ -77,10 +77,10 @@ But we can get rid of creating additional keys by specifying string values:
 
 ```typescript
 enum OrderStatus {
-  Created = '0',
-  Paid = '1',
-  Shipped = '2',
-  Delivered = '3',
+  Created = "0",
+  Paid = "1",
+  Shipped = "2",
+  Delivered = "3",
 }
 
 const statuses = Object.keys(OrderStatus);

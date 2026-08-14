@@ -77,10 +77,10 @@ console.log(OrderStatus); // =>
 
 ```typescript
 enum OrderStatus {
-  Created = '0',
-  Paid = '1',
-  Shipped = '2',
-  Delivered = '3',
+  Created = "0",
+  Paid = "1",
+  Shipped = "2",
+  Delivered = "3",
 }
 
 const statuses = Object.keys(OrderStatus);

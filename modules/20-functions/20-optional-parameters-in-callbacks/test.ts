@@ -1,7 +1,7 @@
-import { expect, test } from 'vitest';
-import map from './index';
+import { expect, test } from "vitest";
+import map from "./index";
 
-test('map', () => {
+test("map", () => {
   const result = map([], (n: number) => n + 3);
   expect(result).toEqual([]);
 

@@ -12,9 +12,9 @@ type User = {
 };
 
 function authorize(user: User | null): boolean {
-  const companyDomain = 'hexlet.io';
+  const companyDomain = "hexlet.io";
 
-  const email = user?.email ?? '';
+  const email = user?.email ?? "";
 
   return Company.isEmployeeEmail(email, companyDomain);
 }

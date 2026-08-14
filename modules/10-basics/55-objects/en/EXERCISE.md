@@ -4,8 +4,8 @@ Implement the `isComplete()` function that takes a course as input and determine
 ```typescript
 // Determine the type based on the structure of the object
 const course = {
-  name: 'Java',
-  lessons: ['variables', 'functions', 'conditions'],
+  name: "Java",
+  lessons: ["variables", "functions", "conditions"],
 };
 isComplete(course); // false
 ```

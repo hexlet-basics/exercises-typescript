@@ -6,13 +6,13 @@
 Рассмотрим пример ошибки `Type X is not assignable to type Y` в функции для сортировки элементов. Допустим, у нас уже написана функция `sort`. И чтобы описать только ее типы, воспользуемся ключевым словом `declare`:
 
 ```typescript
-type ComparatorCallback = (item1: number, item2: number, index: number) => -1 | 0 | 1
-declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
+type ComparatorCallback = (item1: number, item2: number, index: number) => -1 | 0 | 1;
+declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>;
 
 const arr = [1, 2, 3];
 const comparator = (item1: number, item2: number) => Math.sign(item1 - item2);
 
-sort(arr, comparator) // Error: Type 'number' is not assignable to type '0 | 1 | -1'.
+sort(arr, comparator); // Error: Type 'number' is not assignable to type '0 | 1 | -1'.
 ```
 
 Проверка типов выдала ошибку: объединение литеральных типов `0 | 1 | -1` не совместимо с типом `number`. Можно подумать, что система типов ошибается, и стоит использовать `any`. Но если мы подумаем о литеральных числовых типах как о подмножествах `number`, все становится на свои места.
@@ -47,7 +47,7 @@ let unknownValue: unknown = 1;
 
 unknownValue = 2; // OK
 unknownValue = false; // OK
-unknownValue = 'string'; // OK
+unknownValue = "string"; // OK
 ```
 
 Может показаться, что тип `unknown` работает так же, как `any`. Однако между ними есть принципиальное различие. Тип `any` отключает проверку типов и позволяет выполнять любые операции со значением, например, обращаться к свойствам переменной. Тип `unknown` запрещает это и требует предварительной проверки типа переменной, либо приведения к нужному типу. Давайте рассмотрим это на примере:
@@ -55,7 +55,7 @@ unknownValue = 'string'; // OK
 ```typescript
 let unknownValue: unknown;
 
-unknownValue = 'string';
+unknownValue = "string";
 unknownValue.toUpperCase(); // Error: Property 'toUpperCase' does not exist on type 'unknown'.
 ```
 
@@ -93,14 +93,14 @@ neverValue = two; // Type 'number' is not assignable to type 'never'
 В множество `number` также входят все объединения литеральных типов чисел, а в множество `string` — литеральных строк:
 
 ```typescript
-type NumberUnion = -2 | -1 | 1 | 2
+type NumberUnion = -2 | -1 | 1 | 2;
 
 const one: NumberUnion = 1;
 const num: number = one;
 
-type StringUnion = 'a' | 'b' | 'c' | 'd'
+type StringUnion = "a" | "b" | "c" | "d";
 
-const aChar: StringUnion = 'a';
+const aChar: StringUnion = "a";
 const str: string = aChar;
 ```
 

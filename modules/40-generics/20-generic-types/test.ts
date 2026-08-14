@@ -1,8 +1,8 @@
-import { expect, expectTypeOf, test } from 'vitest';
+import { expect, expectTypeOf, test } from "vitest";
 
-import type MySet from './index';
+import type MySet from "./index";
 
-test('function', () => {
+test("function", () => {
   const s1: MySet<number> = {
     items: [],
     has(value) {
@@ -24,7 +24,7 @@ test('function', () => {
   expectTypeOf(s1.add).returns.toEqualTypeOf<number>();
 });
 
-test('function', () => {
+test("function", () => {
   const s1: MySet<string> = {
     items: [],
     has(value) {
@@ -36,9 +36,9 @@ test('function', () => {
     },
   };
 
-  expect(s1.has('hexlet')).toBe(false);
-  s1.add('hexlet');
-  expect(s1.has('hexlet')).toBe(true);
+  expect(s1.has("hexlet")).toBe(false);
+  s1.add("hexlet");
+  expect(s1.has("hexlet")).toBe(true);
 
   expectTypeOf(s1.has).parameters.toEqualTypeOf<[string]>();
   expectTypeOf(s1.has).returns.toEqualTypeOf<boolean>();

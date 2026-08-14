@@ -3,8 +3,8 @@
 Если мы передадим возвращающую `number` функцию для колбека функции-сортировки, которая ожидает возврата `-1 | 0 | 1`, то получим ошибку `Type 'number' is not assignable to type '0 | 1 | -1'.`:
 
 ```typescript
-type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
-declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
+type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1;
+declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>;
 
 const arr = [1, 2, 3];
 const comparator = (item1: number, item2: number) => Math.sign(item1 - item2);
@@ -18,17 +18,17 @@ sort(arr, comparator); // Error: Type 'number' is not assignable to type '0 | 1 
 Чтобы решить проблему с `ComparatorCallback`, нам нужно сузить возвращаемый тип функции `comparator` до `-1 | 0 | 1` или более узкого. Перепишем код без `Math.sign`, чтобы вернуть нужный тип:
 
 ```typescript
-type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
-declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
+type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1;
+declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>;
 
 const arr = [1, 2, 3];
 const comparator = (item1: number, item2: number) => {
-// (item1: number, item2: number) => -1 | 0 | 1;
-    if (item1 === item2) {
-        return 0;
-    }
+  // (item1: number, item2: number) => -1 | 0 | 1;
+  if (item1 === item2) {
+    return 0;
+  }
 
-    return item1 > item2 ? 1 : -1;
+  return item1 > item2 ? 1 : -1;
 };
 
 sort(arr, comparator);
@@ -39,8 +39,8 @@ sort(arr, comparator);
 Для аргументов функции проверка типов выполняется в обратном порядке. Если мы передадим функцию, которая ожидает литеральный тип `1` вместо `number`, то получим ошибку `Type 'number' is not assignable to type '1'.`:
 
 ```typescript
-type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
-declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
+type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1;
+declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>;
 
 const arr = [1, 2, 3];
 const comparator = (item1: 1, item2: number) => Math.sign(item1 - item2) as -1 | 0 | 1;
@@ -57,8 +57,8 @@ sort(arr, comparator); // Type 'number' is not assignable to type '1'.
 ```typescript
 type Formatter = (val: string) => string;
 
-const formatToConcrete: Formatter = (): 'test' => 'test';
-const formatToNumber: Formatter = (val: '1') => val; // Error!
+const formatToConcrete: Formatter = (): "test" => "test";
+const formatToNumber: Formatter = (val: "1") => val; // Error!
 ```
 
 <details>

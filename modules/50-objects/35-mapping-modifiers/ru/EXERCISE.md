@@ -3,12 +3,12 @@
 
 ```typescript
 const user = deepFreeze({
-  name: 'John',
-  password: '1q2w3e',
-  token: 'test',
+  name: "John",
+  password: "1q2w3e",
+  token: "test",
 });
 
-user.name = 'Alex'; // Error: Cannot assign to 'name' because it is a read-only property.
+user.name = "Alex"; // Error: Cannot assign to 'name' because it is a read-only property.
 ```
 
 Нужно использовать встроенный в JavaScript метод [Object.freeze()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).

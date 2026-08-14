@@ -8,11 +8,11 @@ Variables and constants in TypeScript are defined in the same way as in JavaScri
 ```typescript
 let age = 10;
 
-let company = 'Hexlet';
+let company = "Hexlet";
 let user = {
-  firstName: 'Miro',
+  firstName: "Miro",
 };
-let fruits = ['apple', 'banana'];
+let fruits = ["apple", "banana"];
 ```
 
 In doing so, TypeScript does some extra work in the background. It automatically associates a variable or constant with the data type of the initial value. In programming, this process is called **type inference**.
@@ -25,7 +25,7 @@ let age = 10;
 age = 11.1;
 
 // Type 'string' is not assignable to type 'number'.
-age = 'some string'; // Error!
+age = "some string"; // Error!
 ```
 
 If we try to pass this variable to a method that expects a different type, that too will result in an error:
@@ -33,7 +33,7 @@ If we try to pass this variable to a method that expects a different type, that 
 ```typescript
 // Argument of type 'number' is not assignable to parameter
 // of type '(substring: string, ...args: any[])
-'hexlet'.replace('xl', age);
+"hexlet".replace("xl", age);
 ```
 
 Static typing imposes a restriction on arrays. Only data of one type can be stored inside:
@@ -43,18 +43,18 @@ let items = [1, 2, 3];
 items.push(4); // OK
 
 // Argument of type 'string' is not assignable to parameter of type 'number'.
-items.push('code-basics'); // Error!
+items.push("code-basics"); // Error!
 ```
 
 With objects, the situation is even stricter. In TypeScript, you cannot not only change the type of properties inside an object, but also add new properties dynamically:
 
 ```typescript
 let user = {
-  firstName: 'Miro',
+  firstName: "Miro",
 };
 
 // Property 'lastName' does not exist on type '{ firstName: string; }'.
-user.lastName = 'Smith';
+user.lastName = "Smith";
 ```
 
 ## Explicit type indication
@@ -62,7 +62,7 @@ user.lastName = 'Smith';
 TypeScript allows you to explicitly specify the type of variables. In practice, however, you rarely need to do this manually, since type inference works automatically:
 
 ```typescript
-let name: string = 'Alice';
+let name: string = "Alice";
 const count: number = 100;
 let canPlay: boolean = true;
 ```

@@ -18,8 +18,8 @@ In this case, TypeScript returns the error that the `readonly number[]` type doe
 The `readonly` modifier prohibits modification of an array, but does not prohibit modification of objects that are inside the array:
 
 ```typescript
-const items: readonly ({ key: string })[] = [{ key: 'value'}];
-items[0].key = 'another value'; // ok!
+const items: readonly { key: string }[] = [{ key: "value" }];
+items[0].key = "another value"; // ok!
 ```
 
 We have successfully modified the value of the `key` property in an object that is inside an array.
@@ -29,5 +29,5 @@ The `readonly` modifier is syntactic sugar. In the case of an array, `readonly` 
 The code above could be written like this:
 
 ```typescript
-const items: ReadonlyArray<{ key: string }> = [{ key: 'value'}];
+const items: ReadonlyArray<{ key: string }> = [{ key: "value" }];
 ```

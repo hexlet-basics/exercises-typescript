@@ -41,9 +41,9 @@ The definition of an arrow function is similar to the real one, but it is import
 Let's look at a few more examples to reinforce the knowledge:
 
 ```typescript
-function process(callback: () => number)
-function process(callback: () => string[])
-function process(callback: () => { firstName: string; })
+function process(callback: () => number);
+function process(callback: () => string[]);
+function process(callback: () => { firstName: string });
 ```
 
 Parameters are syntactically specified in the same way as for arrow functions:

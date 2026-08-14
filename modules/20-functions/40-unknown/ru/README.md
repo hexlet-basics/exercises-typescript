@@ -8,7 +8,7 @@
 Главное отличие `unknown` от `any` связано с проверкой типов. `unknown` запрещает выполнять любые операции:
 
 ```typescript
-let value: unknown = 'code-basics';
+let value: unknown = "code-basics";
 
 value.toUpperCase(); // Error!
 value.trim(); // Error!
@@ -20,21 +20,21 @@ value.trim(); // Error!
 
 ```typescript
 // Пример из lodash
-_.isError(new Error); // true
+_.isError(new Error()); // true
 _.isError(Error); // false
-_.isError('code-basics'); // false
+_.isError("code-basics"); // false
 ```
 
 Такую функцию можно реализовать с помощью `any`, но тогда мы отключим проверку типов:
 
 ```typescript
-function isError(value: any)
+function isError(value: any);
 ```
 
 Лучше использовать `unknown`, тогда TypeScript защитит от потенциальных ошибок типов:
 
 ```typescript
-function isError(value: unknown)
+function isError(value: unknown);
 ```
 
 Затем внутри тела можно выполнить нужную проверку, чтобы узнать, с чем мы работаем:

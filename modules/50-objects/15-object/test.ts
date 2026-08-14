@@ -1,22 +1,22 @@
-import { expect, test } from 'vitest';
-import extract from './index';
+import { expect, test } from "vitest";
+import extract from "./index";
 
-test('extract', () => {
+test("extract", () => {
   const obj = {
-    name: 'John',
+    name: "John",
     age: 30,
     address: {
-      street: 'Main Street',
+      street: "Main Street",
       number: 123,
     },
   };
 
-  expect(extract(obj, ['name', 'address'])).toEqual({
-    name: 'John',
+  expect(extract(obj, ["name", "address"])).toEqual({
+    name: "John",
     address: obj.address,
   });
 
-  expect(extract(obj, ['name', 'lastName'])).toEqual({
-    name: 'John',
+  expect(extract(obj, ["name", "lastName"])).toEqual({
+    name: "John",
   });
 });

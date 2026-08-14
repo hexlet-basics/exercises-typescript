@@ -1,20 +1,20 @@
-import { expect, expectTypeOf, test } from 'vitest';
+import { expect, expectTypeOf, test } from "vitest";
 
-import getOlderUser, { type User } from './index';
+import getOlderUser, { type User } from "./index";
 
-test('function', () => {
+test("function", () => {
   const user1 = {
-    name: 'sem',
+    name: "sem",
     age: 3,
   };
 
   const user2 = {
-    name: 'inna',
+    name: "inna",
     age: 5,
   };
 
   const user3 = {
-    name: 'mika',
+    name: "mika",
     age: 5,
   };
 

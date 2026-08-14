@@ -16,10 +16,10 @@ interface IUser {
 }
 
 const sergey: IUser = {
-  nickname: 'Sergey',
+  nickname: "Sergey",
   birthdate: 1990,
   rating: 1102,
-}
+};
 ```
 
 Here we created the `IUser` interface and then extended it with new properties for demonstration purposes. After that we created `Sergey` object on its basis.
@@ -36,11 +36,11 @@ interface IStudent extends IUser {
 }
 
 const sergey: IStudent = {
-  nickname: 'Sergey',
+  nickname: "Sergey",
   birthdate: 1990,
   rating: 1102,
   group: 2,
-}
+};
 ```
 
 In this example, we have created another one based on our previous interface `IUser` - `IStudent`, to which we have added the `group` property. So the interface `IStudent` has all the properties of `IUser` and all the properties we specified when extending it from `IUser`, i.e. additionally `group`.
@@ -67,12 +67,12 @@ interface IAuthor extends IUser, IEditor {
 }
 
 const sergey: IAuthor = {
-  nickname: 'Sergey',
+  nickname: "Sergey",
   rating: 20,
-  courses: ['typescript'],
+  courses: ["typescript"],
   canEdit: true,
-  team: 'Hexlet College'
-}
+  team: "Hexlet College",
+};
 ```
 
 In the example above, we created an instance based on the `IAuthor` interface, which was created by extending the `IUser` and `IEditor` interfaces. This instance took all the properties of these interfaces and the property we specified when we created the `IAuthor` interface itself.
@@ -93,9 +93,9 @@ interface IOrAnother {
 type OneWayOrAnother = IOneWay & IOrAnother;
 
 const example: OneWayOrAnother = {
-  one: 'A',
-  another: 'B',
-}
+  one: "A",
+  another: "B",
+};
 ```
 
 Here we have created the type `OneWayOrAnother` based on two interfaces using the `&` literal. This type includes all properties of the specified interfaces.
@@ -106,14 +106,14 @@ It may happen that we don't know in advance all the properties that our interfac
 
 ```typescript
 interface IPhoneBook {
-  [index:string]: number;
+  [index: string]: number;
 }
 
 const myNotePad: IPhoneBook = {
   ivan: 55531311,
   sergey: 55500110,
   mom: 55522111,
-}
+};
 ```
 
 In the example above, we solved the issue of creating a phone book by using an index signature. This allowed us not to specify many properties with names, but only once to specify the key type and its value type.

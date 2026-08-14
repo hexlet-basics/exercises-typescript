@@ -1,8 +1,8 @@
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
-    include: ['**/*.test.ts', '**/*.spec.ts', '**/test.ts'],
+    include: ["**/*.test.ts", "**/*.spec.ts", "**/test.ts"],
   },
   // cacheDir: false
 });
