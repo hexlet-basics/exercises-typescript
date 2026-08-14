@@ -41,10 +41,10 @@ type Mutable<T> = {
 
 Thanks to such types it is easier to create derived types from existing ones.
 
-For example, an application may have a `User` type for an unauthorized user with all fields not required:
+For example, an application may have a `DefaultUser` type for an unauthorized user with all fields not required:
 
 ```typescript
-type User = {
+type DefaultUser = {
   id?: string;
   firstName?: string;
   secondName?: string;
