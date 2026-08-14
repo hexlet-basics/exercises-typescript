@@ -18,7 +18,12 @@ test('MyArray', () => {
   expect(coll.push(2)).toBe(2);
   expect(coll.push(5)).toBe(3);
 
-  expectTypeOf(coll.push).parameters.toExtend<[number]>();
+  expectTypeOf(coll.push).parameters.toEqualTypeOf<[number]>();
+  expectTypeOf(coll.push).returns.toEqualTypeOf<number>();
+  expectTypeOf(coll.filter).parameters.toEqualTypeOf<
+    [(value: number, index: number, array: Array<number>) => boolean]
+  >();
+  expectTypeOf(coll.filter).returns.toEqualTypeOf<MyArray<number>>();
 
   const coll1: MyArray<string> = {
     items: [],
@@ -31,5 +36,6 @@ test('MyArray', () => {
     },
   };
 
-  expectTypeOf(coll1.push).parameters.toExtend<[string]>();
+  expectTypeOf(coll1.push).parameters.toEqualTypeOf<[string]>();
+  expectTypeOf(coll1.filter).returns.toEqualTypeOf<MyArray<string>>();
 });

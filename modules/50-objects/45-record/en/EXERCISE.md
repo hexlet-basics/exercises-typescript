@@ -19,3 +19,5 @@ console.log(isAdminAllowed); // => true
 const isUserAllowed = checkUserAccess('user', 'adminPanel');
 console.log(isUserAllowed); // => false
 ```
+
+The returned function takes exactly two arguments — a role and a resource — and returns a `boolean`. The types of the arguments come from the parameters of `createAccessChecker()`: in the example above they are `UserRole` and `UserResource`.

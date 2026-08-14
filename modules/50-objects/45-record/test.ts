@@ -22,5 +22,8 @@ test('function', () => {
   const isUserAllowed = checkUserAccess('user', 'adminPanel');
   expect(isUserAllowed).toBe(false);
 
-  expectTypeOf(checkUserAccess).parameters.toExtend<[UserRole, UserResource]>();
+  expectTypeOf(checkUserAccess).parameters.toEqualTypeOf<
+    [UserRole, UserResource]
+  >();
+  expectTypeOf(checkUserAccess).returns.toEqualTypeOf<boolean>();
 });
