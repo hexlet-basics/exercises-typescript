@@ -1,5 +1,4 @@
-
-В этом уроке мы разберем использование интерфейсов. В предыдущем уроке мы рассказывали, что их работа похожа на работу типов в TypeScript. Но у них есть и свои особенности, которые мы затронем сегодня.
+В этом уроке мы разберем использование интерфейсов. Их работа похожа на работу типов в TypeScript, однако есть и свои особенности.
 
 ## Расширение интерфейса дополнительными полями
 
@@ -7,12 +6,12 @@
 
 ```typescript
 interface IUser {
-  rating: number;
+  rating: number
 }
 
 interface IUser {
-  nickname: string;
-  birthdate: number;
+  nickname: string
+  birthdate: number
 }
 
 const sergey: IUser = {
@@ -28,11 +27,11 @@ const sergey: IUser = {
 
 ## Расширение интерфейса с помощью другого интерфейса
 
-Мы можем расширить интерфейс с помощью создания другого интерфейса, который наследуется от него:
+Также мы можем расширить интерфейс с помощью создания другого интерфейса, который наследуется от него:
 
 ```typescript
 interface IStudent extends IUser {
-  group: number;
+  group: number
 }
 
 const sergey: IStudent = {
@@ -53,17 +52,17 @@ const sergey: IStudent = {
 
 ```typescript
 interface IUser {
-  nickname: string;
-  rating: number;
+  nickname: string
+  rating: number
 }
 
 interface IEditor {
-  courses: [string];
-  canEdit: boolean;
+  courses: string[]
+  canEdit: boolean
 }
 
 interface IAuthor extends IUser, IEditor {
-  team: string;
+  team: string
 }
 
 const sergey: IAuthor = {
@@ -71,7 +70,7 @@ const sergey: IAuthor = {
   rating: 20,
   courses: ['typescript'],
   canEdit: true,
-  team: 'Hexlet College'
+  team: 'Hexlet College',
 }
 ```
 
@@ -79,18 +78,18 @@ const sergey: IAuthor = {
 
 ## Создание intersection types
 
-Также TypeScript позволяет нам создавать перекрестные типы (intersection types) из нескольких интерфейсов с помощью литерала `&`:
+Также TypeScript позволяет нам создавать перекрестные типы (_intersection types_) из нескольких интерфейсов с помощью литерала `&`:
 
 ```typescript
 interface IOneWay {
-  one: string;
+  one: string
 }
 
 interface IOrAnother {
-  another: string;
+  another: string
 }
 
-type OneWayOrAnother = IOneWay & IOrAnother;
+type OneWayOrAnother = IOneWay & IOrAnother
 
 const example: OneWayOrAnother = {
   one: 'A',
@@ -100,13 +99,13 @@ const example: OneWayOrAnother = {
 
 Здесь мы создали тип `OneWayOrAnother` на основе двух интерфейсов при помощи литерала `&`. Данный тип включил в себя все свойства указанных интерфейсов.
 
-Между созданием перекрестных типов и расширением интерфейсов нет существенных отличий. Почти всегда эти действия будут взаимозаменяемыми, поэтому это скорее вопрос удобства. Но существуют исключения, где [расширение интерфейса ведет себя не так, как создание перекрестного типа](https://stackoverflow.com/questions/52681316/difference-between-extending-and-intersecting-interfaces-in-typescript).
+Между созданием перекрестных типов и расширением интерфейсов нет существенных отличий. Почти всегда эти действия будут взаимозаменяемыми, поэтому это скорее вопрос удобства. Но существуют исключения: иногда расширение интерфейса [ведет себя не так](https://stackoverflow.com/questions/52681316/difference-between-extending-and-intersecting-interfaces-in-typescript), как создание перекрестного типа.
 
-Может случиться так, что мы не знаем заранее всех свойств, которые будут содержаться в нашем интерфейсе. Но нам известно их возможное содержание. В таком случае удобно использовать специальную индексную сигнатуру, которая позволяет описать типы возможных значений:
+Иногда мы не знаем заранее всех свойств, которые будут содержаться в нашем интерфейсе, но нам известно их возможное содержание. В таком случае удобно использовать специальную индексную сигнатуру, которая позволяет описать типы возможных значений:
 
 ```typescript
 interface IPhoneBook {
-  [index:string]: number;
+  [index: string]: number
 }
 
 const myNotePad: IPhoneBook = {
@@ -116,8 +115,6 @@ const myNotePad: IPhoneBook = {
 }
 ```
 
-В примере выше мы решили вопрос создания телефонной книги с помощью индексной сигнатуры. Это позволило нам не указывать множество свойств с именами, но лишь один раз указать тип ключа и тип его значения.
+В примере выше мы создали телефонную книгу с помощью индексной сигнатуры. Это позволило нам не указывать множество свойств с именами, а всего лишь один раз указать тип ключа и тип его значения.
 
-## Выводы
-
-Интерфейсы — это еще один мощный инструмент в TypeScript наряду с типами. Он позволяет гибко описать наши данные. Также он удобно поддается расширению и объединению с другими типами или интерфейсами.
+Так интерфейсы — это еще один мощный инструмент в TypeScript наряду с типами. Он позволяет гибко описать наши данные. Интерфейс удобно поддается расширению и объединению с другими типами или интерфейсами.

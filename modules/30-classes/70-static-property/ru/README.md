@@ -1,29 +1,26 @@
-
 Иногда нам требуется задать свойство или метод, который будет общим для всех экземпляров этого класса. Например, чтобы определить, является ли объект экземпляром класса. В таком случае при объявлении метода мы можем указать ключевое слово `static`, и он станет доступен через имя класса:
 
 ```typescript
 class CustomFile {
-  private static readonly maxCustomFileSize = 1000;
+  private static readonly maxCustomFileSize = 1000
 
   static isCustomFile(file: CustomFile): boolean {
-    return file instanceof CustomFile;
+    return file instanceof CustomFile
   }
 
   protected static isCustomFileTooBig(size: number): boolean {
-    return size > CustomFile.maxCustomFileSize;
+    return size > CustomFile.maxCustomFileSize
   }
 
   constructor(private name: string, private size: number) {
     if (CustomFile.isCustomFileTooBig(size)) {
-      throw new Error('CustomFile is too big');
+      throw new Error('CustomFile is too big')
     }
   }
 }
 
-CustomFile.isCustomFile(new CustomFile('open-world.jpeg', 1000)); // true
+CustomFile.isCustomFile(new CustomFile('open-world.jpeg', 1000)) // true
 ```
-
-<!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
 Статическим методам и свойствам также можно назначить модификаторы доступа `public`, `protected` и `private` и модификатор неизменяемости `readonly`. Это позволяет ограничить использование свойств и методов только текущим классом или наследниками.
 
@@ -31,25 +28,25 @@ CustomFile.isCustomFile(new CustomFile('open-world.jpeg', 1000)); // true
 
 ```typescript
 class CustomFile {
-  static maxCustomFileSize = 1000;
+  static maxCustomFileSize = 1000
 
   static isCustomFile(file: CustomFile): boolean {
-    return file instanceof CustomFile;
+    return file instanceof CustomFile
   }
 }
 
 class ImageCustomFile extends CustomFile {
-  static maxCustomFileSize = 2000;
+  static maxCustomFileSize = 2000
 
   static isCustomFile(file: CustomFile): boolean {
-    return file instanceof ImageCustomFile;
+    return file instanceof ImageCustomFile
   }
 }
 
-const file = new ImageCustomFile();
+const file = new ImageCustomFile()
 
-console.log(ImageCustomFile.maxCustomFileSize); // 2000
-console.log(ImageCustomFile.isCustomFile(file)); // true
+console.log(ImageCustomFile.maxCustomFileSize) // 2000
+console.log(ImageCustomFile.isCustomFile(file)) // true
 ```
 
 Здесь `ImageCustomFile` объявил свои `maxCustomFileSize` и `isCustomFile`, и обращение по имени подкласса даёт именно их.
@@ -58,7 +55,7 @@ TypeScript добавляет к этому одно требование: ти�
 
 ```typescript
 class TextCustomFile extends CustomFile {
-  static maxCustomFileSize = 'unlimited'; // Error!
+  static maxCustomFileSize = 'unlimited' // Error!
 }
 ```
 
@@ -69,5 +66,5 @@ class TextCustomFile extends CustomFile {
 ```typescript
 class VideoCustomFile extends CustomFile {}
 
-console.log(VideoCustomFile.maxCustomFileSize); // 1000
+console.log(VideoCustomFile.maxCustomFileSize) // 1000
 ```

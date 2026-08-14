@@ -1,4 +1,3 @@
-
 В разработке на JavaScript, где активно применяются функции высшего порядка, такие как `map`, `filter` и `reduce`, массивы меняются редко. Обычно вместо этого создаются новые.
 
 Технически JavaScript не может запретить изменять существующие массивы, поэтому ответственность за соблюдение этого правила лежит на программистах. В этом уроке разберем работу с массивами только для чтения.
@@ -9,7 +8,7 @@
 
 ```typescript
 function process(numbers: readonly number[]) {
-  numbers.push(1); // Error!
+  numbers.push(1) // Error!
 }
 ```
 
@@ -18,16 +17,16 @@ function process(numbers: readonly number[]) {
 Модификатор `readonly` запрещает изменение массива, но не запрещает изменение объектов, которые находятся внутри массива:
 
 ```typescript
-const items: readonly ({ key: string })[] = [{ key: 'value'}];
-items[0].key = 'another value'; // ok!
+const items: readonly ({ key: string })[] = [{ key: 'value' }]
+items[0].key = 'another value' // ok!
 ```
 
 Мы успешно изменили значение свойства `key` в объекте, который находится внутри массива.
 
-Модификатор `readonly` — синтаксический сахар. В случае массива `readonly` меняет тип `Array` на тип `ReadonlyArray`. Такая запись, как и `Array<Type>` улучшает читабельность кода, но в остальном не отличается от `readonly Type[]`. 
+Модификатор `readonly` — синтаксический сахар. В случае массива `readonly` меняет тип `Array` на тип `ReadonlyArray`. Как и `Array<Type>`, такая запись улучшает читабельность кода, но в остальном не отличается от `readonly Type[]`.
 
 Код выше можно было бы записать так:
 
 ```typescript
-const items: ReadonlyArray<{ key: string }> = [{ key: 'value'}];
+const items: ReadonlyArray<{ key: string }> = [{ key: 'value' }]
 ```

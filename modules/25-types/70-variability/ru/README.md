@@ -1,16 +1,16 @@
 Когда мы присваиваем значение или передаем аргументы в вызов функции, проверка типов TypeScript проверяет типы на совместимость. При передаче аргументов в функцию проверка выполняется и для типов параметров, и для возвращаемых типов.
 
-Если мы передадим возвращающую `number` функцию для колбека функции-сортировки, которая ожидает возврата `-1 | 0 | 1`, то получим ошибку `Type 'number' is not assignable to type '0 | 1 | -1'.`:
+Представим, что мы хотим передать функцию, возвращающую тип `number` для колбека функции сортировки, которая ожидает возврата `-1 | 0 | 1`. В таком случае мы получим ошибку _Type 'number' is not assignable to type '0 | 1 | -1'_:
 
 ```typescript
 type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
 declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
 
-const arr = [1, 2, 3];
-const comparator = (item1: number, item2: number) => Math.sign(item1 - item2);
+const arr = [1, 2, 3]
+const comparator = (item1: number, item2: number) => Math.sign(item1 - item2)
 // (item1: number, item2: number) => number;
 
-sort(arr, comparator); // Error: Type 'number' is not assignable to type '0 | 1 | -1'.
+sort(arr, comparator) // Error: Type 'number' is not assignable to type '0 | 1 | -1'.
 ```
 
 Множество значений из объединения трех литеральных типов `-1 | 0 | 1` является подмножеством `number`. Но из ошибки можно понять, что возвращаемый тип должен быть либо таким же, либо более узким. Такое поведение проверки типов называется **ковариантностью**.
@@ -21,17 +21,17 @@ sort(arr, comparator); // Error: Type 'number' is not assignable to type '0 | 1 
 type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
 declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
 
-const arr = [1, 2, 3];
+const arr = [1, 2, 3]
 const comparator = (item1: number, item2: number) => {
 // (item1: number, item2: number) => -1 | 0 | 1;
-    if (item1 === item2) {
-        return 0;
-    }
+  if (item1 === item2) {
+    return 0
+  }
 
-    return item1 > item2 ? 1 : -1;
-};
+  return item1 > item2 ? 1 : -1
+}
 
-sort(arr, comparator);
+sort(arr, comparator)
 ```
 
 Теперь код проходит проверку типов. Возвращаемый тип `comparator` стал более узким, чем требуемый в `ComparatorCallback`.
@@ -42,10 +42,10 @@ sort(arr, comparator);
 type ComparatorCallback = (item1: number, item2: number) => -1 | 0 | 1
 declare function sort(arr: Array<number>, callback: ComparatorCallback): Array<number>
 
-const arr = [1, 2, 3];
-const comparator = (item1: 1, item2: number) => Math.sign(item1 - item2) as -1 | 0 | 1;
+const arr = [1, 2, 3]
+const comparator = (item1: 1, item2: number) => Math.sign(item1 - item2) as -1 | 0 | 1
 
-sort(arr, comparator); // Type 'number' is not assignable to type '1'.
+sort(arr, comparator) // Type 'number' is not assignable to type '1'.
 ```
 
 Тип `1` является подмножеством `number`. И в нашем примере мы передаем в функцию `sort` функцию, которая ожидает более узкий тип на входе. Также вы можете обратить внимание, что мы приводим тип возвращаемого значения к `-1 | 0 | 1` с помощью ключевого слова `as`. Нам потребовалось приведение вниз, так как типизация `Math.sign` возвращает `number`.
@@ -55,16 +55,16 @@ sort(arr, comparator); // Type 'number' is not assignable to type '1'.
 Попробуйте самостоятельно объяснить поведение проверки типов через вариантность в следующем примере:
 
 ```typescript
-type Formatter = (val: string) => string;
+type Formatter = (val: string) => string
 
-const formatToConcrete: Formatter = (): 'test' => 'test';
-const formatToNumber: Formatter = (val: '1') => val; // Error!
+const formatToConcrete: Formatter = (): 'test' => 'test'
+const formatToNumber: Formatter = (val: '1') => val // Error!
 ```
 
 <details>
-  <summary>Ответ</summary>
+<summary>Ответ</summary>
   Тип параметров может быть шире, а тип на выходе — уже.
-  В примере formatToConcrete не принимает никаких параметров. Это дает более широкий тип, нежели требуемый string. А возвращает более узкий литеральный тип. formatToNumber ожидает более узкий тип на входе, поэтому и возникает ошибка.
+  В примере <code>formatToConcrete</code> не принимает никаких параметров. Это дает более широкий тип, нежели требуемый <code>string</code>. А возвращает более узкий литеральный тип. <code>formatToNumber</code> ожидает более узкий тип на входе, поэтому и возникает ошибка.
 </details>
 
 Если при работе с TypeScript учитывать наследие JavaScript с утиной типизацией, то все становится на свои места.

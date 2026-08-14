@@ -1,5 +1,4 @@
-
-В JavaScript возможно работать с объектами и классами одинаковым образом. При этом не нужно опираться ни на наследование, ни на интерфейсы. Нужны только ожидаемые поля и методы. Такой подход называют утиной типизацией — duck typing. То что ходит как утка и крякает как утка – утка:
+В JavaScript возможно работать с объектами и классами одинаковым образом. При этом не нужно опираться ни на наследование, ни на интерфейсы. Нужны только ожидаемые поля и методы. Такой подход называют **утиной типизацией** (_duck typing_). Если что-то ходит как утка и крякает как утка — значит, это утка:
 
 ```javascript
 const user = {
@@ -16,13 +15,13 @@ const admin = {
 
 const formatUser = (user) => [user.type, ':', user.firstName, user.lastName].join(' ');
 
-formatUser(user); // ok
-formatUser(admin); // ok
+formatUser(user); // 'user : Vasiliy Kuzenkov'
+formatUser(admin); // 'admin : Kirill Mokevnin'
 ```
 
 В языках как Java нам бы потребовалось определить интерфейс, после отдельно имплементировать его для классов `User` и `Admin`. А в параметрах метода форматирования тип аргумента был бы этим интерфейсом.
 
-Другой вариант — написать метод с перегрузкой для этих двух случаев. Языки с таким поведением используют номинативную типизацию — nominative typing.
+Другой вариант — написать метод с перегрузкой для этих двух случаев. Языки с таким поведением используют номинативную типизацию (_nominative typing_).
 
 Чтобы организовать подход утиной типизации в Java, нужно написать много дополнительного кода.
 
@@ -32,7 +31,7 @@ formatUser(admin); // ok
 
 ```typescript
 const user = {
-  firstName: 'Vassiliy',
+  firstName: 'Vasiliy',
   lastName: 'Kuzenkov',
   type: 'user'
 }
@@ -52,8 +51,8 @@ type User = {
 const formatUser = (user: User): string =>
   [user.type, ':', user.firstName, user.lastName].join(' ');
 
-formatUser(user); // ok
-formatUser(admin); // ok
+formatUser(user); // 'user : Vasiliy Kuzenkov'
+formatUser(admin); // 'admin : Kirill Mokevnin'
 ```
 
 Мы создали тип `User`, который описывает ожидаемую структуру объекта. При этом в функции `formatUser` мы указали, что ожидаемый аргумент должен соответствовать типу `User`. Таким образом функция `formatUser` принимает только объекты, которые содержат все поля из объектного типа `User`.
@@ -77,7 +76,7 @@ type User = {
 const formatUser = (user: User): string =>
   [user.type, ':', user.firstName, user.lastName].join(' ');
 
-formatUser(moderator); // ok
+formatUser(moderator); // 'moderator : Danil Polovinkin'
 ```
 
 При том что мы не указали поле `email` в типе `User`, TypeScript все равно не выдаст ошибку, так как в объекте `moderator` есть все поля, которые описаны в типе `User`.
@@ -97,23 +96,25 @@ type IntersectionUser = {
   username: string;
   password: string;
 } & {
-    type: string;
+  type: string;
 }
 
-const admin: IntersectionUser = {  // требуется совпадение c объектным типом и слева и справа от оператора &
+// Требуется совпадение c объектным типом и слева, и справа от оператора &
+const admin: IntersectionUser = {
   username: 'test',
   password: 'test',
   type: 'admin'
 }
 
 type UnionUser = {
-    username: string;
-    password: string;
+  username: string;
+  password: string;
 } | {
-    type: string;
+  type: string;
 }
 
-const user: UnionUser = { username: 'test', type: 'user' } // достаточно совпадения с одним из объектных типов
+// Достаточно совпадения с одним из объектных типов
+const user: UnionUser = { username: 'test', type: 'user' }
 ```
 
 Получившийся тип `IntersectionUser` описывает объекты, которые содержат поля `username`, `password` и `type`. А тип `UnionUser` — объекты, которые содержат поля `username` и `password` **ИЛИ** `type`.
@@ -125,8 +126,8 @@ const user: UnionUser = { username: 'test', type: 'user' } // достаточн
 Попробуйте ответить, что будет, если использовать в пересечении два объектных типа с одинаковым именем поля, но с отличающимися типами. Это распространенная ошибка по невнимательности или из-за недостаточного понимания типов как множеств.
 
 <details>
-  <summary>Ответ</summary>
-Когда при пересечении объектных типов встречаются поля с одинаковыми именами, то в результате типы этих полей будут также пересечены, и итоговый тип будет never.
+<summary>Ответ</summary>
+Когда при пересечении объектных типов встречаются поля с одинаковыми именами, типы этих полей тоже пересекаются. Если они несовместимы, итоговый тип поля становится <code>never</code>.
 </details>
 
 При использовании объединенных типов в функциях нужно учитывать следующий момент. Рассмотрим пример:

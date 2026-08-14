@@ -11,7 +11,7 @@
  */
 type Partial<T> = {
   [P in keyof T]?: T[P];
-};
+}
 
 /**
  * Делает все свойства типа `T` обязательными,
@@ -19,7 +19,7 @@ type Partial<T> = {
  */
 type Required<T> = {
   [P in keyof T]-?: T[P];
-};
+}
 
 /**
  * Делает все свойства типа `T` неизменяемыми,
@@ -27,7 +27,7 @@ type Required<T> = {
  */
 type Readonly<T> = {
   readonly [P in keyof T]: T[P];
-};
+}
 ```
 
 Подобным образом можно написать и тип, который делает все свойства типа изменяемыми, то есть удаляет атрибут `readonly`:
@@ -35,24 +35,24 @@ type Readonly<T> = {
 ```typescript
 type Mutable<T> = {
   -readonly [P in keyof T]: T[P];
-};
+}
 ```
 
 Благодаря таким типам легче делать производные типы из уже имеющихся.
 
-Например, в приложении может быть тип `DefaultUser` для неавторизованного пользователя у которого все поля не обязательные:
+Например, в приложении может быть тип `DefaultUser` для неавторизованного пользователя, у которого все поля необязательные:
 
 ```typescript
 type DefaultUser = {
-  id?: string;
-  firstName?: string;
-  secondName?: string;
-  email?: string;
-};
+  id?: string
+  firstName?: string
+  secondName?: string
+  email?: string
+}
 ```
 
 Из него можно сделать авторизованного пользователя с помощью типа `Required`:
 
 ```typescript
-type AuthorizedUser = Required<DefaultUser>;
+type AuthorizedUser = Required<DefaultUser>
 ```

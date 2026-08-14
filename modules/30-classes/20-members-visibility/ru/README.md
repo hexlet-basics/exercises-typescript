@@ -1,4 +1,3 @@
-
 В некоторых случаях свойства и методы в классе создаются только для внутреннего использования. Разработчики не хотят давать возможность вызывать их снаружи, иначе их случайно могут начать использовать, что не планировалось.
 
 В языках с классами принято разделять свойства на публичные, приватные и защищенные. Первые доступны для всех, вторые могут использоваться только внутри класса, а третьи — внутри класса и в его наследниках. В этом уроке разберем каждый из этих видов.
@@ -9,13 +8,13 @@
 
 ```typescript
 class Point {
-  public x: number;
+  public x: number
 
-  public y: number;
+  public y: number
 
   constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
+    this.x = x
+    this.y = y
   }
 
   public someMethod() {
@@ -24,64 +23,58 @@ class Point {
 }
 ```
 
-<!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
-
 ## Приватные свойства
 
 Также свойства можно сделать приватными. Тогда пропадет возможность обращаться к ним снаружи напрямую:
 
 ```typescript
 class Point {
-  private x: number;
+  private x: number
 
-  private y: number;
+  private y: number
 
   constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
+    this.x = x
+    this.y = y
   }
 }
 
-const p = new Point(10, 8);
-p.x; // Property 'x' is private and only accessible within class 'Point'.
-p.y; // Property 'y' is private and only accessible within class 'Point'.
+const p = new Point(10, 8)
+p.x // Property 'x' is private and only accessible within class 'Point'.
+p.y // Property 'y' is private and only accessible within class 'Point'.
 ```
-
-<!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->
 
 ## Защищенные свойства
 
-И наконец, свойства можно сделать защищенными. Это значит, что они доступны внутри класса и в наследниках:
+Наконец, свойства можно сделать защищенными. Это значит, что они доступны внутри класса и в наследниках:
 
 ```typescript
 class Point {
-  protected x: number;
+  protected x: number
 
-  protected y: number;
+  protected y: number
 
   constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
+    this.x = x
+    this.y = y
   }
 }
 
 class Point3D extends Point {
-  protected z: number;
+  protected z: number
 
   constructor(x: number, y: number, z: number) {
-    super(x, y);
-    this.z = z;
+    super(x, y)
+    this.z = z
   }
 
   public getCoordinates() {
-    return [this.x, this.y, this.z]; // OK
+    return [this.x, this.y, this.z] // OK
   }
 }
 
-const p = new Point3D(10, 8, 5);
-p.x; // Property 'x' is protected and only accessible within class 'Point' and its subclasses.
-p.y; // Property 'y' is protected and only accessible within class 'Point' and its subclasses.
-p.z; // Property 'z' is protected and only accessible within class 'Point3D' and its subclasses.
+const p = new Point3D(10, 8, 5)
+p.x // Property 'x' is protected and only accessible within class 'Point' and its subclasses.
+p.y //  Property 'y' is protected and only accessible within class 'Point' and its subclasses.
+p.z // Property 'z' is protected and only accessible within class 'Point3D' and its subclasses.
 ```
-
-<!-- TODO - автору: не хватает описания кода - на что обратить внимание, или что тут сделали -->

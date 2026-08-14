@@ -1,17 +1,16 @@
-
 Использование типа `any` в TypeScript отключает проверки типов, что нежелательно. Также в наиболее строгом режиме с помощью `"strict": true` в `tsconfig.json` использование `any` невозможно. А это значительно повышает безопасность кода.
 
 При этом бывают ситуации, когда тип неизвестен, но работа с ним должна быть безопасна с точки зрения типов. Для этого в TypeScript существует дополнение к `any` — `unknown`, которое разберем в этом уроке.
 
-## Использование типа unknown
+## Использование типа `unknown`
 
-Главное отличие `unknown` от `any` связано с проверкой типов. `unknown` запрещает выполнять любые операции:
+Главное отличие `unknown` от `any` связано с проверкой типов. Тип `unknown` запрещает выполнять любые операции:
 
 ```typescript
-let value: unknown = 'code-basics';
+const value: unknown = 'code-basics'
 
-value.toUpperCase(); // Error!
-value.trim(); // Error!
+value.toUpperCase() // Error!
+value.trim() // Error!
 ```
 
 Может показаться странным, что перед нами строка, но над ней нельзя выполнять строковые операции. К этому надо привыкнуть. Тип в статически типизированных языках определяется не тем, что мы видим своими глазами, а тем, как тип выводится — автоматически или через явное указание.
@@ -20,9 +19,9 @@ value.trim(); // Error!
 
 ```typescript
 // Пример из lodash
-_.isError(new Error); // true
-_.isError(Error); // false
-_.isError('code-basics'); // false
+_.isError(new Error()) // true
+_.isError(Error) // false
+_.isError('code-basics') // false
 ```
 
 Такую функцию можно реализовать с помощью `any`, но тогда мы отключим проверку типов:
@@ -41,7 +40,7 @@ function isError(value: unknown)
 
 ```typescript
 function isError(value: unknown): boolean {
-  return value instanceof Error;
+  return value instanceof Error
 }
 ```
 

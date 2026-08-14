@@ -1,4 +1,3 @@
-
 В этом уроке мы рассмотрим многомерные массивы.
 
 ## Работа с многомерными массивами
@@ -7,39 +6,39 @@
 
 ```typescript
 // Тип number[][] выводится автоматически
-const items1 = [[3, 8], [10, 4, 8]];
+const items1 = [[3, 8], [10, 4, 8]]
 
 const items2: number[][] = []
-// или так Array<number[]>
+// Или так — Array<number[]>
 
-// Используя псевдоним
+// Используем псевдоним
 type User = {
-  name: string;
+  name: string
 }
 
-// или так Array<User[]>
+// Или так — Array<User[]>
 const users: User[][] = [
-  [{ name: 'Eva'}, { name: 'Adam' }],
-];
+  [{ name: 'Eva' }, { name: 'Adam' }],
+]
 ```
 
-Добавление в такие массивы немассивов приведет к ошибке типизации:
+Добавление не массивов в такие массивы приведет к ошибке типизации:
 
 ```typescript
-items1.push(99); // Error: Type 'number' is not assignable
+items1.push(99) // Error: Type 'number' is not assignable
 ```
 
 Чтобы определить массивы составных типов, нужно использовать скобки:
 
 ```typescript
-const coll: (string | number)[][] = [];
+const coll: (string | number)[][] = []
 coll.push(['hexlet', 5])
 ```
 
 Также можно использовать синтаксис `Array<Array<Type>>`. В примере ниже массив, внутри которого находятся массивы, содержащие значения типа `Type`:
 
 ```typescript
-const coll: Array<Array<string | number>> = [];
+const coll: Array<Array<string | number>> = []
 coll.push(['hexlet', 5])
 ```
 
@@ -47,13 +46,13 @@ coll.push(['hexlet', 5])
 
 ```typescript
 type Course = {
-  name: string;
-  lessons: Lesson[];
+  name: string
+  lessons: Lesson[]
 }
 
 type Lesson = {
-  name: string;
-  links: string[];
+  name: string
+  links: string[]
 }
 ```
 
