@@ -9,10 +9,10 @@ The main problem of this approach is the lack of security. The program will not 
 
 The situation was corrected when data types appeared in high-level languages. They made it possible to fulfil two tasks:
 
-* Describe and restrict the set of all values of a particular type
-* Define the operations that can be performed on this type
+- Describe and restrict the set of all values of a particular type
+- Define the operations that can be performed on this type
 
-** A data type** is a set of all values and a set of allowed operations on them. With the help of types we impose restrictions on the code. For example, if we want to work with numbers, we need to use operations of addition, subtraction, etc. If we want to work with strings, we need to use operations of concatenation, substring search, etc. This approach avoids errors that can occur when working with data at runtime.
+**A data type** is a set of all values and a set of allowed operations on them. With the help of types we impose restrictions on the code. For example, if we want to work with numbers, we need to use operations of addition, subtraction, etc. If we want to work with strings, we need to use operations of concatenation, substring search, etc. This approach avoids errors that can occur when working with data at runtime.
 
 Even in a dynamic language like JavaScript, we have types, and we get stronger security than in assembly language where data is just a sequence of bits. In TypeScript, we can set more complex constraints on the data, thus getting even stronger security.
 

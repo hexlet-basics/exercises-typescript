@@ -50,7 +50,7 @@ const result = words.reduce((acc, word) => {
 
 The TypeScript compiler will not allow such code. It will indicate that the object that is in the `initial` constant does not contain keys with string type:
 
-```
+```text
 No index signature with a parameter of type 'string' was found on type '{}'.
 4 acc[word] = Object.hasOwn(acc, word) ? acc[word] + 1 : 1;
 ```

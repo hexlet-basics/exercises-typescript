@@ -4,6 +4,7 @@ In this lesson, we will look at the `void` type. It is specified as a return for
 ## Using Void Type
 
 `void` is automatically printed when there is no `return` instruction inside the function, or it is empty:
+
 ```typescript
 function noop() {
   // inside is empty

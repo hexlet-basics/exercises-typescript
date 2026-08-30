@@ -1,5 +1,5 @@
 
-Implement the `getHiddenCard()` function. It takes as input a credit card number, which consists of 16 digits, as a string and returns a hidden version of it. This version can be used on the site for display. For example, if the original card number was *2034399002125581*, the hidden version looks like this: *\*\*\*\*5581*.
+Implement the `getHiddenCard()` function. It takes as input a credit card number, which consists of 16 digits, as a string and returns a hidden version of it. This version can be used on the site for display. For example, if the original card number was _2034399002125581_, the hidden version looks like this: *\*\*\*\*5581*.
 
 The function replaces the first 12 characters with asterisks. The number of asterisks is controlled by the second optional parameter. The default value is 4.
 

@@ -22,10 +22,10 @@ sort(arr, comparator); // Error: Type 'number' is not assignable to type '0 | 1 
 
 Напомним, что литеральные типы существуют для четырех типов данных:
 
-* `boolean`
-* `string`
-* `number`
-* `BigInt`
+- `boolean`
+- `string`
+- `number`
+- `BigInt`
 
 В итоге любой литеральный тип можно присвоить переменной соответствующего типа:
 

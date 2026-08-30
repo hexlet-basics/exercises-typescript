@@ -54,7 +54,6 @@ const p = new Point(2, 5);
 console.log(p.inspect); // (2, 5)
 ```
 
-
 In the example, we defined a `inspect` getter that returns a string with the coordinates of a point. This property is read-only since we have not defined a setter.
 
 Fields can be initialized immediately when defining a class. This is convenient when the constructor is not needed or the data does not depend on its call - it is set statically inside:

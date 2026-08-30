@@ -6,6 +6,7 @@ Using the provided `IPhonebook` interface and the `Entry` type, implement the `P
 - `set` - method that writes the name and phone to the directory
 
 Examples:
+
 ```typescript
 const myNote = new Phonebook();
 myNote.set("help", 911);

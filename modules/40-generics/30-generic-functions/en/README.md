@@ -49,8 +49,8 @@ In the case of TypeScript, the logic will not even be duplicated, but this is a 
 
 Whichever implementation we choose, two things must be observed:
 
-* Values passed internally are not used in any way. They are only moved from one place to another
-* The logic always remains the same. There are no conditional constructs on data type
+- Values passed internally are not used in any way. They are only moved from one place to another
+- The logic always remains the same. There are no conditional constructs on data type
 
 In Computer Science, the property of a function that allows values of different types to be processed in one way (using one algorithm) is called parametric polymorphism. That is, generics are TypeScript's implementation of parametric polymorphism.
 

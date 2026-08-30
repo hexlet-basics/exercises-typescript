@@ -68,7 +68,6 @@ const formatToNumber: Formatter = (val: "1") => val; // Error!
   In the example, formatToConcrete takes no parameters. This gives a wider type than the required string. And it returns a narrower literal type. formatToNumber expects a narrower type on the input, that's why the error occurs.
 </details>
 
-
 If you consider the legacy of JavaScript with utility typing when working with TypeScript, everything falls into place.
 
 To prevent the code from crashing with an error, it is enough to check for the presence of fields or methods of the required types. And to get guarantees in the outside world, you need the variable to fall under external constraints. For this purpose, the type must be narrower or the same.

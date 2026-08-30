@@ -6,6 +6,7 @@
 - `set` — метод, записывающий имя и телефон в справочник
 
 Примеры:
+
 ```typescript
 const myNote = new Phonebook();
 myNote.set("help", 911);

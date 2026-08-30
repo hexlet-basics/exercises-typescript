@@ -46,8 +46,8 @@ type UserFields = User[keyof User]; // string | number
 
 In order not to duplicate completely all fields of one object type, auxiliary types are used in another:
 
-* `Pick<Type, Keys>` - creates an object type with `Keys` keys from `Type`
-* `Omit<Type, Keys>` - creates an object type from which the `Keys` keys of `Type` are excluded
+- `Pick<Type, Keys>` - creates an object type with `Keys` keys from `Type`
+- `Omit<Type, Keys>` - creates an object type from which the `Keys` keys of `Type` are excluded
 
 ```typescript
 interface Person {

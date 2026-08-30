@@ -1,7 +1,7 @@
 
 In programming there are situations when we work with a limited set of values of some type, for example, with certain strings. They may include reference data, statuses and so on. How the order status could look like:
 
-```
+```text
 Created
 Paid
 Shipped
@@ -12,10 +12,10 @@ The code that handles this data will save it to the database, send and receive i
 
 If we always use only generic types for such data, such as `string`, we will lose many advantages, e.g.:
 
-* The compiler will not see typos
-* The compiler will not see the use of invalid statuses
-* We won't be able to see what statuses we have.
-* The editor's autocomplete won't work
+- The compiler will not see typos
+- The compiler will not see the use of invalid statuses
+- We won't be able to see what statuses we have.
+- The editor's autocomplete won't work
 
 To solve this problem, TypeScript supports literal types. They represent a set consisting of only one element. They are only available for the following types: `string`, `boolean`, `number`, and `BigInt`:
 

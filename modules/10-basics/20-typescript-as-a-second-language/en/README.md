@@ -35,9 +35,9 @@ sum(10n, 5); // oops
 
 Statically typed languages like TypeScript work differently. They have a number of advantages:
 
-* Finding some types of errors even before the code is executed
-* Easier code refactoring
-* Full support for editor features: autocomplete add-ons, code navigation, etc.
+- Finding some types of errors even before the code is executed
+- Easier code refactoring
+- Full support for editor features: autocomplete add-ons, code navigation, etc.
 
 Before you can run code in TypeScript for execution, you must compile it.
 
@@ -67,12 +67,12 @@ course, we will look at the peculiarities of working with it.
 
 TypeScript has become one of the most popular typed languages due to the following features:
 
-* TypeScript is almost completely compatible with JavaScript in terms of features and types. Everything written in
+- TypeScript is almost completely compatible with JavaScript in terms of features and types. Everything written in
   TypeScript is also available in JavaScript, and vice versa. TypeScript is called a superset of the JavaScript
   language. Meaning that it is the same JavaScript + type description.
-* The TypeScript compiler turns TypeScript code into JavaScript code. That is, it removes type definitions from TypeScript code. This process is also known as **transpilation**.
-* The developer of TypeScript is Microsoft
-* Strong typing
+- The TypeScript compiler turns TypeScript code into JavaScript code. That is, it removes type definitions from TypeScript code. This process is also known as **transpilation**.
+- The developer of TypeScript is Microsoft
+- Strong typing
 
 Let's look at the last feature in more detail.
 
@@ -97,7 +97,7 @@ TypeScript is written in TypeScript, which is then transpiled into JavaScript an
 npm install typescript
 ```
 
-Then you need to create TypeScript source files. These have the extension *ts*. The TypeScript compiler is available through the `tsc` utility:
+Then you need to create TypeScript source files. These have the extension _ts_. The TypeScript compiler is available through the `tsc` utility:
 
 ```bash
 npx tsc index.ts
@@ -115,9 +115,9 @@ You can also supply the package [ts-node](https://github.com/TypeStrong/ts-node)
 
 In this lesson, we learned about the TypeScript language. We learned that it is the same as JavaScript, but with additional syntax for specifying data types. TypeScript has several advantages over JavaScript:
 
-* Finding some errors even before the code is executed
-* Easier code refactoring
-* Full support for editor features: autocomplete add-ons, code navigation, etc.
+- Finding some errors even before the code is executed
+- Easier code refactoring
+- Full support for editor features: autocomplete add-ons, code navigation, etc.
 
 It is impossible to say which language is better. It all depends on the specific task and features of the language.
 

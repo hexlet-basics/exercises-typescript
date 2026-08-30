@@ -24,8 +24,8 @@ concat(1.33, 10); // 110
 
 One function `concat()` is defined here. It has two versions that perform concatenation, but do it in different ways:
 
-* The first version accepts two numbers as input. The numbers first have the fractional part discarded, then they are concatenated;
-* Second version takes two strings as input. The strings are concatenated at once.
+- The first version accepts two numbers as input. The numbers first have the fractional part discarded, then they are concatenated;
+- Second version takes two strings as input. The strings are concatenated at once.
 
 The implementation of behavior for both versions is done in a third function with the same name. The description of parameters must be suitable for each version of the function. In the example above, the parameter types are defined as `unknown`. This makes it possible to call the function with both strings and numbers.
 
