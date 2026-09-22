@@ -38,7 +38,7 @@ The analyzer successfully skipped assigning the literal type of number to `numbe
 
 In this case, the `unknown` type comes to our rescue.
 
-## `unknown`
+## unknown
 
 The `unknown` type is a superset of all available types. It allows you to assign a value of an arbitrary type to a variable:
 
@@ -71,7 +71,7 @@ This behavior is explained by the fact that `unknown` is a superset of all types
 
 Next, let's consider the case when we want to prohibit assigning values to a variable.
 
-## `never`
+## never
 
 Sometimes in practice you need to be sure that no value is assigned to a variable. This can be implemented using the `never` type:
 
