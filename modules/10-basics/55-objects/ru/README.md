@@ -3,7 +3,7 @@
 Выводятся типы автоматически:
 
 ```typescript
-// Тип: { firstName: string, pointsCount: number }
+// Тип: { firstName: string; pointsCount: number; }
 const user = {
   firstName: "Mike",
   pointsCount: 1000,
@@ -17,14 +17,14 @@ user.firstName = 7;
 TypeScript не позволяет обращаться к несуществующим свойствам. Это значит, что структура любого объекта должна быть задана при его инициализации:
 
 ```typescript
-// Property 'age' does not exist on type '{ firstName: string, pointsCount: number; }'.
+// Property 'age' does not exist on type '{ firstName: string; pointsCount: number; }'.
 user.age = 100;
 ```
 
 Чтобы принять такой объект в функцию как параметр, нужно указать его структуру в описании функции:
 
 ```typescript
-// Свойства в описании типа разделяются через запятую
+// Свойства в описании типа разделяются точкой с запятой
 function doSomething(user: { firstName: string; pointsCount: number }) {
   // ...
 }
