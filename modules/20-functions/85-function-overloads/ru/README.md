@@ -62,15 +62,18 @@ const concat: Overloaded = (a, b) => {...}
 ```typescript
 function add(a: number, b: number, c: number): number;
 function add(a: number, b: number): number;
-function add(a: string, b: string): string;
 
 // Сигнатура подходит под все примеры выше
-function add(a: unknown, b: unknown, c?: number): unknown {
-  // тут вся логика
+function add(a: number, b: number, c?: number): number {
   if (c === undefined) {
-    // ...
+    return a + b;
   }
+
+  return a + b + c;
 }
+
+add(1, 2); // 3
+add(1, 2, 3); // 6
 ```
 
 Версии могут отличаться и числом параметров, и смыслом первого из них. Допустим, функция `formatPrice()` печатает цену. С одним числом она подставляет рубли, а другую валюту передают первым параметром перед суммой.
