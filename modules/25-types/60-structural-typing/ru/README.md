@@ -143,3 +143,22 @@ const func = (user: UnionUser) => {
 ```
 
 Компилятор выдаст ошибку, так как тип в переменной `user` может относиться либо к левому типу, либо к правому. В итоге нет гарантии, что в объекте `user` будет любое из свойств.
+
+Ошибку снимает общее поле с литеральным типом. Если у каждого варианта объединения есть поле `type` со своим значением, проверка этого поля сужает тип до одного варианта.
+
+```typescript
+type Shape = { type: "circle"; radius: number } | { type: "square"; side: number };
+
+const getArea = (shape: Shape): number => {
+  switch (shape.type) {
+    case "circle":
+      return Math.PI * shape.radius ** 2;
+    case "square":
+      return shape.side ** 2;
+  }
+};
+
+getArea({ type: "square", side: 3 }); // 9
+```
+
+Внутри ветки `case "circle"` TypeScript знает, что у `shape` есть поле `radius`. Обращение к `shape.side` в этой ветке даст ошибку компиляции, потому что у круга такого поля нет.
