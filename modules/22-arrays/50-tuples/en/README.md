@@ -12,15 +12,15 @@ In TypeScript, such arrays are called tuples, which we will learn about in this 
 Tuples have their own definition syntax. For example, consider the representation of a point:
 
 ```typescript
-const point: [number, number] = [1, 3]
+const point: [number, number] = [1, 3];
 // Can be changed
-const point[0] = 4;
+point[0] = 4;
 
 // Accessing a non-existent index will result in an error
 point[3]; // Error!
 
 // Can't create a non-matching type
-const point2: [number, number] = [1, 'x']; // Error!
+const point2: [number, number] = [1, "x"]; // Error!
 ```
 
 Since tuples have a fixed number of elements, it would make sense if the same behaviour applied to `push()` or `pop()`. After all, if we have defined a tuple of two elements, there should be exactly two elements.
