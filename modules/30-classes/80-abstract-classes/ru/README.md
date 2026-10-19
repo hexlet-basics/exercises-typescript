@@ -13,14 +13,19 @@ abstract class CustomFile {
     this.size = size;
   }
 
+  // Готовая реализация, наследник получает метод как есть
   sizeInKb(): number {
     return this.size / 1024;
   }
+
+  // Только сигнатура, наследник обязан реализовать метод
+  abstract open(): void;
 }
 
 class ImageCustomFile extends CustomFile {
-  constructor(name: string, size: number) {
-    super(name, size);
+  // Без open() TypeScript выдаст ошибку компиляции
+  open(): void {
+    console.log(`Открываем изображение ${this.name}`);
   }
 }
 ```

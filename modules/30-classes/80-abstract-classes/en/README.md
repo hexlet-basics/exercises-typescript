@@ -14,14 +14,19 @@ abstract class CustomFile {
     this.size = size;
   }
 
+  // Ready implementation, the subclass inherits the method as is
   sizeInKb(): number {
     return this.size / 1024;
   }
+
+  // Signature only, the subclass must implement the method
+  abstract open(): void;
 }
 
 class ImageCustomFile extends CustomFile {
-  constructor(name: string, size: number) {
-    super(name, size);
+  // Without open() TypeScript reports a compilation error
+  open(): void {
+    console.log(`Opening image ${this.name}`);
   }
 }
 ```
