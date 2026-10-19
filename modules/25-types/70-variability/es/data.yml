@@ -1,0 +1,14 @@
+---
+name: Covarianza y contravarianza
+tips:
+  - |
+    [Covarianza y contravarianza](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science))
+definitions:
+  - name: Covarianza
+    description: >
+      propiedad de los tipos en la que los tipos que forman una unión son
+      subconjuntos unos de otros.
+  - name: Contravarianza
+    description: >
+      propiedad de los tipos en la que los tipos que forman una unión son
+      superconjuntos unos de otros.

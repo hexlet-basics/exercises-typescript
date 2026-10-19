@@ -1,0 +1,9 @@
+---
+name: Introducción a los genéricos
+definitions:
+  - name: Tipo genérico
+    description: |
+      un tipo abstracto en cuyo lugar se puede poner un tipo concreto. Al escribir código, podemos describir el comportamiento de los tipos genéricos o su relación con otros tipos genéricos sin saber qué tipo se usará en el lugar donde se utilicen.
+tips:
+  - |
+    [Polimorfismo paramétrico](https://en.wikipedia.org/wiki/Parametric_polymorphism)

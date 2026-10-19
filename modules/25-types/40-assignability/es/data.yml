@@ -1,0 +1,13 @@
+---
+name: Asignación de valores
+tips:
+  - >
+    [Assignability en la documentación antigua](https://github.com/microsoft/TypeScript-New-Handbook/blob/master/reference/Assignability.md)
+  - >
+    [Tabla de assignability en la documentación oficial](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any-unknown-object-void-undefined-null-and-never-assignability)
+definitions:
+  - name: Compatibilidad de tipos (Types Compatibility)
+    description: >
+      conjunto de reglas a partir de las cuales, al analizar un tipo de datos, se
+      decide si es posible sustituir un tipo de datos por otro de manera que la
+      sustitución no rompa la ejecución del programa.

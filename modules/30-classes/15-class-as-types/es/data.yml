@@ -1,0 +1,6 @@
+---
+name: Clases como tipos
+tips:
+  - >
+    [Sobrecarga del
+    constructor](https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors)

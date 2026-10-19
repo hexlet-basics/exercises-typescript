@@ -1,0 +1,4 @@
+---
+name: Tipado de arrays
+description: |
+  En algunos casos, trabajar con arrays requiere un tipado más preciso. En este módulo veremos las particularidades del tipado de arrays: arrays con elementos de distintos tipos, arrays multidimensionales y arrays de longitud fija.

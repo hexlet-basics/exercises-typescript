@@ -1,0 +1,7 @@
+---
+name: Sobre el lenguaje
+tips:
+  - |
+    [Plantilla de proyecto TypeScript](https://github.com/hexlet-boilerplates/typescript-package)
+  - |
+    [Playground donde se puede ver el resultado de transpilar TypeScript a JavaScript](https://www.typescriptlang.org/play)

@@ -1,0 +1,18 @@
+---
+name: Modificadores de mapeo (Mapping Modifiers)
+tips:
+  - >
+    [Documentación oficial sobre Mapped
+    Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+  - >
+    [Documentación oficial sobre Mapping
+    Modifiers](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#mapping-modifiers)
+  - >
+    [Documentación oficial sobre
+    Partial](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)
+  - >
+    [Documentación oficial sobre
+    Required](https://www.typescriptlang.org/docs/handbook/utility-types.html#requiredtype)
+  - >
+    [Documentación oficial sobre
+    Readonly](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)

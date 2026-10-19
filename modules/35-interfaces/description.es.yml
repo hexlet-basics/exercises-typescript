@@ -1,0 +1,4 @@
+---
+name: Interfaces
+description: |
+  Las interfaces en TypeScript permiten describir los tipos de objeto de otra manera, con la sintaxis habitual de los lenguajes orientados a objetos, y amplían la semántica: añaden nuevas posibilidades útiles de uso.

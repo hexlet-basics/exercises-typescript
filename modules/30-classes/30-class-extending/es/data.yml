@@ -1,0 +1,7 @@
+---
+name: Herencia
+tips:
+  - |
+    [Herencia de clases](https://www.typescriptlang.org/docs/handbook/2/classes.html#extends-clauses)
+  - |
+    [Mixins](https://basarat.gitbook.io/typescript/type-system/mixins)

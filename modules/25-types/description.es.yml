@@ -1,0 +1,4 @@
+---
+name: Más sobre los tipos
+description: |
+  Combinación de tipos mediante la intersección y la unión, y sus particularidades. En este módulo veremos los conceptos básicos que permiten entender mejor cómo funciona el tipado en TypeScript y no tener miedo de los errores del compilador.

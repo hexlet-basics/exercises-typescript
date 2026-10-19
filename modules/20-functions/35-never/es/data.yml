@@ -1,0 +1,5 @@
+---
+name: Tipo never (retorno de una función)
+tips:
+  - |
+    [Never Type](https://basarat.gitbook.io/typescript/type-system/never)

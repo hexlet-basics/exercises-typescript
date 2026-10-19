@@ -1,0 +1,4 @@
+---
+name: Genéricos
+description: |
+  Los genéricos permiten escribir código más versátil, capaz de trabajar con distintos tipos de datos. TypeScript tiene un potente sistema de genéricos que permite crear partes del sistema flexibles y, al mismo tiempo, robustas.

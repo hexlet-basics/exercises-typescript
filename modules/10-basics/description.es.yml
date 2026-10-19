@@ -1,0 +1,5 @@
+---
+name: Fundamentos de TypeScript
+description: |
+  TypeScript es uno de los lenguajes de programación más populares del mundo. Se usa para crear páginas web interactivas, aplicaciones móviles y en el desarrollo del lado del servidor.
+  Aprenderemos TS desde cero, desde lo más básico. El primer módulo es la base para escribir programas con sentido. En él veremos cómo escribir tu primer código en TS. Te contaremos qué son los comentarios y para qué sirven. Con el ejemplo de la verificación de tus soluciones, veremos qué son las pruebas y cómo leer la salida de los tests.

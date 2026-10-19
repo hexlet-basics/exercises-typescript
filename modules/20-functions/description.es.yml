@@ -1,0 +1,4 @@
+---
+name: Tipado de funciones
+description: |
+  La mayoría de las tareas de tipado de funciones están relacionadas con la descripción correcta de los parámetros de entrada y los valores de retorno, que pueden ser bastante complejos. Aquí también entran las particularidades del trabajo con rest y destructuring.

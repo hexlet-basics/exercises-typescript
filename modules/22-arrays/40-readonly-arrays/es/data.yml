@@ -1,0 +1,5 @@
+---
+name: Arrays de solo lectura
+tips:
+  - |
+    [Arrays y tuplas de solo lectura en TypeScript](https://mariusschulz.com/blog/read-only-array-and-tuple-types-in-typescript/)

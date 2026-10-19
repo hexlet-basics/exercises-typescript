@@ -1,0 +1,9 @@
+---
+name: ¡Hola, Mundo!
+tips:
+  - |
+    [Repl para experimentar con TypeScript](https://www.typescriptlang.org/play)
+  - |
+    [strict en tsconfig](https://www.typescriptlang.org/tsconfig#strict)
+  - >
+    [Opciones del compilador de TypeScript](https://www.typescriptlang.org/docs/handbook/compiler-options.html#compiler-options)

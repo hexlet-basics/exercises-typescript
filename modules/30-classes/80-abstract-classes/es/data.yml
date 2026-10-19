@@ -1,0 +1,9 @@
+---
+name: Clases abstractas
+definitions:
+  - name: Clase abstracta
+    description: |
+      es una clase que no se puede crear directamente. Está pensada solo para la herencia. Para crear una clase abstracta se usa la palabra clave `abstract`.
+tips:
+  - |
+    [Cuándo usar clases abstractas en TypeScript](https://khalilstemmler.com/blogs/typescript/abstract-class)

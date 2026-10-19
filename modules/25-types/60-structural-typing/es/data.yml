@@ -1,0 +1,18 @@
+---
+name: Tipado estructural
+tips:
+  - |
+    [Structural typing en la documentación oficial](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-func.html#structural-typing)
+  - |
+    [Cómo obtener tipado nominal en TS](https://spin.atomicobject.com/2018/01/15/typescript-flexible-nominal-typing/)
+  - |
+    [Tipo producto](https://en.wikipedia.org/wiki/Product_type)
+  - |
+    [Tipo suma](https://en.wikipedia.org/wiki/Tagged_union)
+definitions:
+  - name: Tipado estructural
+    description: >
+      principio que determina la compatibilidad de los tipos a partir de su
+      descripción (estructura). Una variable de tipo `A` también puede usarse en
+      un lugar donde se espera el tipo `B` si tiene la misma estructura o una más
+      amplia.

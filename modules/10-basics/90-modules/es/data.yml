@@ -1,0 +1,11 @@
+---
+name: Sistema de módulos
+tips:
+  - |
+    [Documentación oficial sobre los módulos](https://www.typescriptlang.org/docs/handbook/modules.html)
+  - |
+    [Cómo funciona Module Resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html#how-nodejs-resolves-modules)
+  - |
+    [Documentación oficial sobre Namespaces](https://www.typescriptlang.org/docs/handbook/namespaces.html)
+  - |
+    [Método includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)

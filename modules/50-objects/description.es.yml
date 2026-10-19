@@ -1,0 +1,5 @@
+---
+
+name: Tipado de objetos
+description: |
+  En TypeScript, los objetos se pueden describir con interfaces y tipos. En esta sección veremos las particularidades del tipado de objetos, cómo obtener propiedades dinámicas y cómo definir tipos de objeto.
