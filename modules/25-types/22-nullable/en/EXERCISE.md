@@ -1,5 +1,5 @@
 
-Реализуйте функцию `formatPrice()`, которая принимает число и возвращает строку с округлением до второго числа после запятой. Если пришел `null` или `undefined` должна вернуться `'$0.00'`.
+Implement the `formatPrice()` function, which takes a number and returns a string rounded to two decimal places. If `null` or `undefined` is passed, it should return `'$0.00'`.
 
 ```typescript
 formatPrice(3.145); // '$3.15'

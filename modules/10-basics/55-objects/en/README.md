@@ -4,7 +4,7 @@ In this lesson, let's learn about the types of an object. They consist of the ty
 The types are inferred automatically:
 
 ```typescript
-// Тип: { firstName: string, pointsCount: number }
+// Type: { firstName: string; pointsCount: number; }
 const user = {
   firstName: "Mike",
   pointsCount: 1000,

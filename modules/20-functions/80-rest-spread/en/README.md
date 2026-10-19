@@ -1,9 +1,9 @@
 
-Today we'll look at rest- and spread-operators.
+In this lesson, we'll look at the rest and spread operators.
 
 ## Rest Operator
 
-The Rest operator allows you to create functions with a variable number of parameters, while collapsing them into an array:
+The rest operator lets you create functions with a variable number of parameters and collect them into an array:
 
 ```typescript
 function max(...numbers: number[]): number {
@@ -11,44 +11,44 @@ function max(...numbers: number[]): number {
 }
 ```
 
-This array is a normal function parameter, so it is given a type according to what values are expected within this array. Example with two parameters:
+This array is a regular function parameter, so it gets a type that matches the values expected inside the array. An example with two parameters:
 
 ```typescript
-function do(operation: string, ...numbers: number[]) {
-  // perform operation on all array members
+function calculate(operation: string, ...numbers: number[]) {
+  // Perform the operation on all numbers
 }
 ```
 
-In this sense, the rest operator in TypeScript is no different from the rest operator in JavaScript. But there is one peculiarity with the spread operator.
+In this sense, the rest operator in TypeScript is no different from the rest operator in JavaScript. But the spread operator has one peculiarity.
 
 ## Spread Operator
 
-Spread-оператор в функциях — это как rest-оператор наоборот. Он позволяет раскладывать массив на отдельные параметры:
+The spread operator in functions is the rest operator in reverse. It lets you spread an array into separate arguments:
 
 ```typescript
 const numbers = [1, 2, 3];
 Math.max(...numbers);
 ```
 
-Если функция принимает на вход любое количество аргументов, как в примере выше, то такой код работает без проблем. Но если функция принимает на вход определенное число аргументов, то TypeScript выдаст ошибку компиляции:
+If a function accepts any number of arguments, as in the example above, this code works without problems. But if a function accepts a fixed number of arguments, TypeScript reports a compilation error:
 
 ```typescript
 function sum(a: number, b: number): number {
   return a + b;
 }
 
-// Выведенный тип number[] — "ноль или больше чисел",
-// а не "массив из двух чисел"
+// The inferred type number[] means zero or more numbers,
+// not an array of two numbers
 const args = [1, 2];
 sum(...args);
 // A spread argument must either have a tuple type
 // or be passed to a rest parameter.
 ```
 
-В примере выше TypeScript не может понять, что массив `args` состоит из двух чисел. Массивы в JavaScript изменяемы, поэтому TypeScript не может полагаться на количество элементов в конкретный момент времени. Есть разные способы обойти это ограничение. Но в этой ситуации проще использовать Type Assertion — указание компилятору, что мы точно знаем о коде:
+In the example above, TypeScript can't tell that the `args` array consists of two numbers. Arrays in JavaScript are mutable, so TypeScript can't rely on the number of elements at a particular moment. There are different ways to get around this limitation, but here the simplest is a Type Assertion, which tells the compiler what we know for sure about the code:
 
 ```typescript
 const args = [1, 2] as const;
 ```
 
-Подробнее о Type Assertion поговорим в модуле о типах. С его помощью мы явно указываем, что этот массив состоит из двух конкретных значений, которые не поменяются.
+We'll talk more about Type Assertion in the module on types. With it, we explicitly state that this array consists of two specific values that won't change.

@@ -1,8 +1,8 @@
 ---
-name: Null и Undefined
+name: Null and Undefined
 tips:
   - >
-    [Type Guards и Differentiating
+    [Type Guards and Differentiating
     Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types)
   - |
     [Type Guard](https://basarat.gitbook.io/typescript/type-system/typeguard)

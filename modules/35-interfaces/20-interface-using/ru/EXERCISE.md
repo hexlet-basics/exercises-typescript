@@ -5,8 +5,6 @@
 
 ```typescript
 console.log(superMan.guessWho("bird")); // "It's a bird?";
-console.log(superMan.guessWho("plane"));
-("It's a plane?");
-console.log(superMan.guessWho("superman"));
-("It's a superman!");
+console.log(superMan.guessWho("plane")); // "It's a plane?";
+console.log(superMan.guessWho("superman")); // "It's a superman!";
 ```
