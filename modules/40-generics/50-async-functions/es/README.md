@@ -40,6 +40,8 @@ const hours = await getHours();
 
 En TypeScript, `await` se usa igual que en JavaScript.
 
+Usar `await` fuera de una función se llama _top-level await_. Solo funciona en módulos ES, así que en `tsconfig.json` necesitas `"module": "nodenext"` (o `esnext`, `es2022`) y `"target"` `es2017` o superior. Con `"module": "commonjs"` el compilador se detiene con el error TS1378, y en ese caso `await` se escribe dentro de una función async.
+
 A menudo se llama a una función asíncrona para cada elemento de un array, y entonces `map()` devuelve un array de promesas. Para reunirlo en una sola promesa sirve el método `Promise.all()`. Convierte `Promise<T>[]` en `Promise<T[]>`, así que después de `await` se obtiene un array de valores.
 
 ```typescript
