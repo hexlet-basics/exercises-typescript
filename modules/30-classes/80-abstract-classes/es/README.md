@@ -1,6 +1,6 @@
 Cuando necesitamos definir un comportamiento común para varias clases, conviene usar clases abstractas, que veremos en esta lección.
 
-Aunque las clases abstractas no se pueden crear directamente, sí se puede heredar de ellas. Además, pueden indicar explícitamente qué método deben implementar las subclases:
+No se puede crear una instancia de una clase abstracta directamente, pero sí se puede heredar de ella. Además, una clase abstracta puede indicar explícitamente qué método deben implementar las subclases:
 
 ```typescript
 abstract class CustomFile {
