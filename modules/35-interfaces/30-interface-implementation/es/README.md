@@ -1,8 +1,8 @@
-En TypeScript, las clases pueden interactuar estrechamente con las interfaces. En esta lección veremos cómo extender interfaces con clases y cómo crear clases basadas en interfaces.
+En esta lección estudiaremos cómo las clases implementan interfaces. Veremos cómo una clase cumple los requisitos de varias interfaces. Aprenderemos a distinguir la comprobación de una interfaz de la herencia de métodos ya implementados.
 
-## Extensión de una interfaz con clases
+## Implementación de varias interfaces
 
-En la lección anterior vimos cómo las interfaces pueden extender otras interfaces y combinarlas. De la misma manera, las interfaces pueden ser extendidas por clases:
+Una clase puede implementar varias interfaces mediante `implements`. TypeScript comprueba que la clase contenga todas las propiedades y los métodos obligatorios de esas interfaces.
 
 ```typescript
 interface IBeep {
@@ -23,11 +23,15 @@ const R2D2 = new Robo();
 R2D2.sayBeep(); // 'beep'
 ```
 
-Aquí extendimos dos interfaces con una clase que heredó todos los métodos de estas interfaces. Los métodos heredados tuvimos que escribirlos a mano.
+La clase `Robo` implementa dos interfaces. El diagrama muestra los métodos que exige cada una y dónde se encuentra su implementación.
+
+![Robo implementa las interfaces IBeep e IBoop](./assets/interfaces.png)
+
+Las flechas discontinuas con triángulo apuntan desde la clase hacia la interfaz que implementa. Escribimos ambas funciones dentro de `Robo`. `implements` comprueba su presencia y sus tipos, pero no añade el código de los métodos.
 
 ## Creación de clases basadas en interfaces
 
-Podemos crear clases basadas en interfaces igual que creamos interfaces basadas en interfaces. Pero hay diferencias.
+Las interfaces pueden extender otras interfaces mediante `extends`. Una clase declara mediante `implements` que cumple los requisitos de una interfaz. Esta comprobación no crea propiedades ni métodos en la clase.
 
 Si creamos una interfaz o un tipo y luego transpilamos TypeScript a JavaScript, en el código no quedará rastro de esa interfaz. En cambio, cuando creamos una clase, su plantilla siempre pasa a JavaScript durante la transpilación.
 

@@ -1,9 +1,8 @@
+In this lesson, we will study how classes implement interfaces. We will examine how one class satisfies the requirements of several interfaces. We will learn to distinguish interface checking from inheriting implemented methods.
 
-In TypeScript, classes can interact closely with interfaces. In this tutorial, we'll look at how to extend interfaces with classes and how to create classes based on interfaces.
+## Implementing several interfaces
 
-## Extending an interface with classes
-
-In the last lesson, we saw how interfaces can extend other interfaces and combine them. Similarly, interfaces can be extended by classes:
+A class can implement several interfaces using `implements`. TypeScript checks that the class contains all their required properties and methods.
 
 ```typescript
 interface IBeep {
@@ -24,11 +23,15 @@ const R2D2 = new Robo();
 R2D2.sayBeep(); // 'beep'
 ```
 
-Here we extended the two interfaces with a class that inherited all the methods of the given interfaces. We had to write the inherited methods manually.
+The `Robo` class implements two interfaces. The diagram shows the methods each interface requires and where they are implemented.
+
+![Robo implements IBeep and IBoop](./assets/interfaces.png)
+
+Dashed arrows with triangular heads point from the class to the interfaces it implements. We wrote both functions inside `Robo`. The `implements` clause checks their presence and types without adding any method implementations.
 
 ## Creating classes based on interfaces
 
-We can create classes based on interfaces in the same way we create interfaces based on interfaces. But there are some differences.
+Interfaces can extend other interfaces using `extends`. A class uses `implements` to declare that it satisfies an interface. This check does not create properties or methods in the class.
 
 If we create an interface or type and then transpilate TypeScript into JavaScript, there will be no sample of that interface left in the code. At the same time, when we create a class, its sample is always transpiled into JavaScript.
 

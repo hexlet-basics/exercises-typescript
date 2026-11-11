@@ -1,0 +1,16 @@
+classDiagram
+    direction TB
+    class IBeep {
+        <<interface>>
+        sayBeep() string
+    }
+    class IBoop {
+        <<interface>>
+        sayBoop() string
+    }
+    class Robo {
+        sayBeep() string
+        sayBoop() string
+    }
+    IBeep <|.. Robo : implements
+    IBoop <|.. Robo : implements
