@@ -39,7 +39,7 @@ Statically typed languages like TypeScript work differently. They have a number 
 - Easier code refactoring
 - Full support for editor features: autocomplete add-ons, code navigation, etc.
 
-Before you can run code in TypeScript for execution, you must compile it.
+The TypeScript compiler checks the code before it runs.
 
 During compilation, it is checked that the program is **type-safe** - it does not contain errors like the example above. If the compiler finds a type mismatch, it stops compilation and displays warnings about where the types do not match.
 
@@ -55,7 +55,7 @@ sum(10n, 5);
 // Argument of type 'bigint' is not assignable to parameter of type 'number'.
 ```
 
-Not only will the code above fail to run, but it will also fail to compile. The TypeScript compiler will stop execution and indicate a type mismatch error.
+The TypeScript compiler finds this error before the code runs and shows where the types don't match.
 
 If we look at the function definition, we can see that we are facing almost the same JavaScript, except for the type description of input variables in the function. It says that parameters `a` and `b` have type `number`. The rest of the TypeScript code is annotated with types in much the same way. The type descriptions can be very complex in places, but the idea remains the same.
 
@@ -92,19 +92,21 @@ TypeScript is written in TypeScript, which is then transpiled into JavaScript an
 npm install typescript
 ```
 
-Then you need to create TypeScript source files. These have the extension _ts_. The TypeScript compiler is available through the `tsc` utility:
+Then you need to create TypeScript source files. These have the extension _ts_. Node.js runs such a file directly. It strips the type annotations and executes the remaining JavaScript.
 
 ```bash
-npx tsc index.ts
+node index.ts
 ```
 
-The output is a file with JavaScript code that can already be executed with Node.js:
+Node.js doesn't check types when it runs the file. The `sum(10n, 5)` example will start and fail with the same `TypeError` as the JavaScript code. Types are checked by the TypeScript compiler, available through the `tsc` utility. The `--noEmit` flag tells it to check the code without writing JavaScript files.
 
 ```bash
-node index.js
+npx tsc --noEmit index.ts
 ```
 
-You can also supply the package [ts-node](https://github.com/TypeStrong/ts-node), which compiles and runs at the same time. This package provides a REPL for experimenting with TypeScript.
+If the types don't match, `tsc` prints errors with the file name and line number. So working with TypeScript takes two commands. First `tsc` checks the types, then `node` runs the code.
+
+Some TypeScript constructs are compiled into working code, and Node.js can't simply strip them out. On such code Node.js stops with the `ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX` error.
 
 ## Conclusions
 
